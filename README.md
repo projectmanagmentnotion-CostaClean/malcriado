@@ -33,4 +33,18 @@ La ejecución se rige por `AGENTS.md` y por los documentos de `/docs`. El orden 
 
 ## Estado
 
-Fase inicial: gobierno, estrategia, arquitectura y roadmap.
+Fase 0 completada y Fase 1 cerrada a nivel de bootstrap tecnico.
+
+La base actual ya incluye:
+
+- Vite + React + TypeScript estricto en la raiz del repositorio.
+- Routing provisional accesible.
+- SEO base y JSON-LD inicial.
+- Abstraccion de reservas sustituible.
+- Base GSAP segura para React y reduced motion.
+- Tests con Vitest, Testing Library, Axe y Playwright.
+- CI para format, lint, typecheck, tests y build.
+- Home provisional organizada por escenas.
+- Documentos creativos para direccion artistica, storyboard de motion y presupuesto GSAP.
+
+La home inmersiva final y las escenas GSAP completas pertenecen a la Fase 6 del roadmap.

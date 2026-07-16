@@ -1,0 +1,7 @@
+docs/adr/
+docs/assets/
+docs/audit/
+docs/content/
+docs/seo/
+docs/RESPONSIVE_PRODUCTION.md
+src/content/assets/asset-manifest.json
