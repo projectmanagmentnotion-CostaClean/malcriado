@@ -9,11 +9,22 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 - [x] Crear `AGENTS.md`.
 - [x] Documentar estrategia de producto y conversión.
 - [x] Definir arquitectura, diseño, motion, responsive, legal, SEO y assets.
-- [ ] Completar inventario técnico de la web actual.
-- [ ] Capturar todas las URLs, metadatos, redirecciones y assets.
+- [x] Completar inventario técnico de la web actual.
+- [x] Capturar todas las URLs, metadatos, redirecciones y assets.
 - [ ] Validar datos comerciales y legales con el titular.
 
 **Salida:** base documental aprobada y backlog de contenido pendiente.
+
+### Resultado del sprint
+
+- Auditoría actual: [audit/CURRENT_SITE_AUDIT.md](audit/CURRENT_SITE_AUDIT.md)
+- Inventario de contenido: [content/CONTENT_INVENTORY.md](content/CONTENT_INVENTORY.md)
+- Inventario de assets: [assets/ASSET_MANIFEST.md](assets/ASSET_MANIFEST.md)
+- Mapa de URLs: [seo/URL_MIGRATION_MAP.md](seo/URL_MIGRATION_MAP.md)
+- Validación del titular: [content/OWNER_VALIDATION_CHECKLIST.md](content/OWNER_VALIDATION_CHECKLIST.md)
+- Backlog: [BACKLOG.md](BACKLOG.md)
+- Riesgos: [audit/RISK_REGISTER.md](audit/RISK_REGISTER.md)
+- ADRs: [adr/0001-static-first-architecture.md](adr/0001-static-first-architecture.md), [adr/0002-content-as-typed-local-data.md](adr/0002-content-as-typed-local-data.md), [adr/0003-gsap-progressive-enhancement.md](adr/0003-gsap-progressive-enhancement.md), [adr/0004-reservation-provider-abstraction.md](adr/0004-reservation-provider-abstraction.md), [adr/0005-current-site-assets-as-migration-source.md](adr/0005-current-site-assets-as-migration-source.md)
 
 ## Fase 1 — Bootstrap técnico
 
