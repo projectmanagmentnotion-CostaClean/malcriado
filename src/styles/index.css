@@ -320,6 +320,50 @@ main {
   gap: 1rem;
 }
 
+.asset-summary-grid,
+.asset-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.asset-summary-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: 1.5rem;
+}
+
+.asset-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.asset-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.asset-card picture,
+.asset-card img {
+  width: 100%;
+  display: block;
+}
+
+.asset-card img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.asset-card__body {
+  padding: 1rem;
+}
+
+.asset-card__body dl {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.asset-card__warning {
+  color: #ffb670;
+}
+
 .form-layout {
   display: grid;
   gap: 1.5rem;

@@ -5,6 +5,7 @@ interface PageSeoProps {
   readonly title: string;
   readonly description: string;
   readonly path: string;
+  readonly robots?: string;
   readonly structuredData?: object;
 }
 
@@ -12,6 +13,7 @@ export function PageSeo({
   title,
   description,
   path,
+  robots,
   structuredData,
 }: PageSeoProps) {
   const canonicalUrl = new URL(path, env.VITE_PUBLIC_SITE_URL).toString();
@@ -25,6 +27,7 @@ export function PageSeo({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
+      {robots ? <meta name="robots" content={robots} /> : null}
       {structuredData ? (
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}

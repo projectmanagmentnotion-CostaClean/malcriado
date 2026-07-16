@@ -8,7 +8,7 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 
 - [x] Crear `AGENTS.md`.
 - [x] Documentar estrategia de producto y conversion.
-- [x] Definir arquitectura, diseño, motion, responsive, legal, SEO y assets.
+- [x] Definir arquitectura, diseno, motion, responsive, legal, SEO y assets.
 - [x] Completar inventario tecnico de la web actual.
 - [x] Capturar todas las URLs, metadatos, redirecciones y assets.
 - [ ] Validar datos comerciales y legales con el titular.
@@ -33,7 +33,7 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 - [x] Configurar ESLint, Prettier, Vitest y Playwright.
 - [x] Crear tokens, reset, shell, rutas y estructura oficial.
 - [x] Configurar CI para format, lint, typecheck, test y build.
-- [x] Añadir variables de entorno documentadas sin secretos.
+- [x] Anadir variables de entorno documentadas sin secretos.
 - [x] Documentar direccion artistica, storyboard de motion y presupuesto inicial GSAP.
 
 **Aceptacion:** build limpio, pruebas base verdes y estructura alineada con AGENTS.
@@ -54,14 +54,26 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 
 ## Fase 2 - Migracion y optimizacion de assets
 
-- [ ] Descargar originales autorizados.
-- [ ] Crear manifiesto y trazabilidad.
-- [ ] Eliminar duplicados.
-- [ ] Generar derivados responsive.
-- [ ] Preparar posters y variantes de video.
-- [ ] Validar logos y favicons.
+- [x] Auditar los assets fuente existentes y documentar su estado real.
+- [x] Crear manifiesto enriquecido y trazabilidad tipada.
+- [x] Detectar duplicados exactos y definir master por grupo.
+- [x] Generar derivados responsive para imagenes aprobadas.
+- [x] Validar logos y favicons dentro del pipeline.
+- [x] Exponer catalogo interno `/dev/assets/` para revision tecnica y editorial.
+- [ ] Recuperar los MP4 originales bloqueados por `SG-Captcha`.
+- [ ] Generar posters y variantes finales de video desde los originales.
 
 **Aceptacion:** ningun asset critico sin origen, dimensiones, alt/rol y variante optimizada.
+
+### Resultado de la Fase 2
+
+- Scripts creados: `npm run assets:audit`, `npm run assets:build` y `npm run assets:verify`.
+- Inventario actual: 27 assets fuente auditados, 1 grupo de duplicados detectado y 23 assets aceptados para produccion local.
+- Derivados generados: 322 variantes en `public/assets/optimized/`.
+- Peso de variantes primarias: `912025` bytes en el manifiesto actual.
+- Ruta interna: `/dev/assets/` protegida con `noindex, nofollow`.
+- Documentos producidos: `docs/assets/ASSET_MANIFEST.md`, `DUPLICATE_REPORT.md`, `IMAGE_OPTIMIZATION.md`, `ART_DIRECTION_CROPS.md`, `BRAND_ASSET_GUIDE.md`, `VIDEO_RECOVERY_STATUS.md`, `ASSET_PERFORMANCE_BUDGET.md`, `docs/creative/ASSET_SCENE_MAPPING.md` y `docs/content/PHOTO_VIDEO_SHOT_LIST.md`.
+- Bloqueos remanentes: dos MP4 publicos siguen inaccesibles por `SG-Captcha`; no se han podido extraer posters ni versiones finales de video sin recibir los originales.
 
 ## Fase 3 - Contenido y modelo editorial
 
@@ -73,7 +85,7 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 
 **Aceptacion:** cero contenido comercial duplicado y cero datos inventados.
 
-## Fase 4 - Sistema de diseño
+## Fase 4 - Sistema de diseno
 
 - [ ] Tokens completos.
 - [ ] Tipografia y escala fluida.
