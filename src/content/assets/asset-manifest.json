@@ -1,844 +1,4203 @@
 {
+  "generatedAt": "2026-07-16T15:48:52.389Z",
+  "sourceCount": 27,
+  "originalTotalBytes": 7446512,
+  "optimizedTotalBytes": 912025,
+  "derivativesCount": 322,
+  "duplicateGroups": [
+    {
+      "id": "dup-001",
+      "masterAssetId": "asset-024",
+      "duplicateAssetIds": [
+        "asset-021"
+      ],
+      "criterion": "SHA-256 exact match",
+      "action": "Retain master asset only for production derivatives.",
+      "productionPath": "/assets/optimized/asset-024/original-720.avif"
+    }
+  ],
+  "pendingVideos": [
+    {
+      "id": "video-001",
+      "url": "https://malcriadobcn.com/wp-content/uploads/2024/08/copy_A73CC0AA-8730-42AE-BE6A-58735EC81184.mp4",
+      "status": "PENDING_SOURCE",
+      "probableRole": "HOME_BACKGROUND",
+      "notes": "Public URL still returns SG-Captcha. Original file required for poster extraction."
+    },
+    {
+      "id": "video-002",
+      "url": "https://malcriadobcn.com/wp-content/uploads/2024/08/copy_AFFCA721-998C-4845-86C5-5596C68C83A4.mp4",
+      "status": "PENDING_SOURCE",
+      "probableRole": "HOME_BACKGROUND",
+      "notes": "Public URL still returns SG-Captcha. Original file required for poster extraction."
+    }
+  ],
   "assets": [
     {
       "id": "asset-001",
-      "original_name": "Arepas-malcriadas.webp",
-      "local_path": "public/assets/source/food/Arepas-malcriadas.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Arepas-malcriadas.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
-      "extension": ".webp",
-      "size_bytes": 282530,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "originalName": "cropped-logo-malcriado-pineda-de-mar-favicon.png",
+      "localPath": "/assets/source/brand/cropped-logo-malcriado-pineda-de-mar-favicon.png",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/png",
+      "extension": ".png",
+      "sizeBytes": 123617,
+      "sha256": "f5942333ad1ae536ce119701757f339211e69d1212d34d599e0335090c1a3ed8",
+      "width": 512,
+      "height": 512,
+      "orientation": "square",
+      "hasTransparency": true,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "Transparent PNG. Preserve native edges and avoid lossy formats.",
+      "cropSafety": "high",
+      "focalPoint": {
+        "x": 50,
+        "y": 50,
+        "confidence": "manual"
       },
-      "duration_seconds": null,
-      "sha256": "06cd1332c82fc9c34e2c60df65846c570b01d90c6ca3cf2e1ea7ad1ddbe9a515",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "Arepas malcriadas",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 50%",
+      "roles": [
+        "BRAND"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "brand",
+      "productionPath": "/assets/optimized/asset-001/original-512.png",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Favicon and compact brand marker.",
+      "suggestedScene": "Site identity",
+      "variants": [
+        {
+          "id": "asset-001-original-512-png",
+          "path": "/assets/optimized/asset-001/original-512.png",
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "bytes": 124348,
+          "crop": "original"
+        },
+        {
+          "id": "asset-001-original-1440-png",
+          "path": "/assets/optimized/asset-001/original-1440.png",
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "bytes": 124348,
+          "crop": "original"
+        },
+        {
+          "id": "asset-001-square-256-png",
+          "path": "/assets/optimized/asset-001/square-256.png",
+          "format": "png",
+          "width": 256,
+          "height": 256,
+          "bytes": 47611,
+          "crop": "square"
+        },
+        {
+          "id": "asset-001-square-512-png",
+          "path": "/assets/optimized/asset-001/square-512.png",
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "bytes": 124348,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-002",
-      "original_name": "Chicharon-con-aguacate-y-platano.webp",
-      "local_path": "public/assets/source/food/Chicharon-con-aguacate-y-platano.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Chicharon-con-aguacate-y-platano.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
-      "extension": ".webp",
-      "size_bytes": 221342,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "originalName": "cropped-logo-malcriado-pineda-de-mar.png",
+      "localPath": "/assets/source/brand/cropped-logo-malcriado-pineda-de-mar.png",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/png",
+      "extension": ".png",
+      "sizeBytes": 952195,
+      "sha256": "8347dcdabd2bda5a4f67a65175f24b8d2f23f58518b7ad3c9a8304e43553b638",
+      "width": 2559,
+      "height": 568,
+      "orientation": "landscape",
+      "hasTransparency": true,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "Transparent PNG. Preserve native edges and avoid lossy formats.",
+      "cropSafety": "high",
+      "focalPoint": {
+        "x": 50,
+        "y": 50,
+        "confidence": "manual"
       },
-      "duration_seconds": null,
-      "sha256": "12f31e694e7a5cd07a259eb4a89c58befa3542814050a9c5a03c5ca81bab5dba",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "Chicharon con aguacate y platano",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 50%",
+      "roles": [
+        "BRAND"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "brand",
+      "productionPath": "/assets/optimized/asset-002/original-512.png",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Primary horizontal logo for masthead and footer.",
+      "suggestedScene": "Site identity",
+      "variants": [
+        {
+          "id": "asset-002-original-512-png",
+          "path": "/assets/optimized/asset-002/original-512.png",
+          "format": "png",
+          "width": 512,
+          "height": 114,
+          "bytes": 82903,
+          "crop": "original"
+        },
+        {
+          "id": "asset-002-original-1440-png",
+          "path": "/assets/optimized/asset-002/original-1440.png",
+          "format": "png",
+          "width": 1440,
+          "height": 320,
+          "bytes": 465446,
+          "crop": "original"
+        },
+        {
+          "id": "asset-002-square-256-png",
+          "path": "/assets/optimized/asset-002/square-256.png",
+          "format": "png",
+          "width": 256,
+          "height": 57,
+          "bytes": 28264,
+          "crop": "square"
+        },
+        {
+          "id": "asset-002-square-512-png",
+          "path": "/assets/optimized/asset-002/square-512.png",
+          "format": "png",
+          "width": 512,
+          "height": 114,
+          "bytes": 82903,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-003",
-      "original_name": "Cubo-Coronitas-cerveza.webp",
-      "local_path": "public/assets/source/food/Cubo-Coronitas-cerveza.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Cubo-Coronitas-cerveza.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Arepas-malcriadas.webp",
+      "localPath": "/assets/source/food/Arepas-malcriadas.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 360026,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 282530,
+      "sha256": "06cd1332c82fc9c34e2c60df65846c570b01d90c6ca3cf2e1ea7ad1ddbe9a515",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "8638c800525d91f91abb6437bf481f4759bc0bd7141b25556e8daf7feccfdfa0",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "Cubo Coronitas cerveza",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-003/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-003-original-640-avif",
+          "path": "/assets/optimized/asset-003/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 31491,
+          "crop": "original"
+        },
+        {
+          "id": "asset-003-original-640-webp",
+          "path": "/assets/optimized/asset-003/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 39166,
+          "crop": "original"
+        },
+        {
+          "id": "asset-003-original-960-avif",
+          "path": "/assets/optimized/asset-003/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 55554,
+          "crop": "original"
+        },
+        {
+          "id": "asset-003-original-960-webp",
+          "path": "/assets/optimized/asset-003/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 68688,
+          "crop": "original"
+        },
+        {
+          "id": "asset-003-original-1280-avif",
+          "path": "/assets/optimized/asset-003/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 81987,
+          "crop": "original"
+        },
+        {
+          "id": "asset-003-original-1280-webp",
+          "path": "/assets/optimized/asset-003/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 100044,
+          "crop": "original"
+        },
+        {
+          "id": "asset-003-square-400-avif",
+          "path": "/assets/optimized/asset-003/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 15990,
+          "crop": "square"
+        },
+        {
+          "id": "asset-003-square-400-webp",
+          "path": "/assets/optimized/asset-003/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 20084,
+          "crop": "square"
+        },
+        {
+          "id": "asset-003-square-640-avif",
+          "path": "/assets/optimized/asset-003/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 31372,
+          "crop": "square"
+        },
+        {
+          "id": "asset-003-square-640-webp",
+          "path": "/assets/optimized/asset-003/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 38678,
+          "crop": "square"
+        },
+        {
+          "id": "asset-003-square-880-avif",
+          "path": "/assets/optimized/asset-003/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 48359,
+          "crop": "square"
+        },
+        {
+          "id": "asset-003-square-880-webp",
+          "path": "/assets/optimized/asset-003/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 59772,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-004",
-      "original_name": "Ensaladilla-de-gambas-2.webp",
-      "local_path": "public/assets/source/food/Ensaladilla-de-gambas-2.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Ensaladilla-de-gambas-2.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/contacto/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "cheese-cake-malcriado-2.webp",
+      "localPath": "/assets/source/food/cheese-cake-malcriado-2.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 251850,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 88018,
+      "sha256": "a423b9284160aefcd3f26431b96466c153f3c32eb4d88f330524e7a1c33a2df2",
+      "width": 2189,
+      "height": 3282,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "low",
+      "qualityNotes": "Image is too soft for the new art direction.",
+      "cropSafety": "low",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "271cd34602151767861ff1825f210adc50863ad567e7aca398124c9cb508459b",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "Ensaladilla de gambas 2",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "LOW_QUALITY",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "excluded",
+      "productionPath": null,
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Do not ship. Replace with a cleaner dessert photograph.",
+      "suggestedScene": "Replacement needed",
+      "variants": []
     },
     {
       "id": "asset-005",
-      "original_name": "Ensaladilla-de-gambas.webp",
-      "local_path": "public/assets/source/food/Ensaladilla-de-gambas.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Ensaladilla-de-gambas.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Chicharon-con-aguacate-y-platano.webp",
+      "localPath": "/assets/source/food/Chicharon-con-aguacate-y-platano.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 232410,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 221342,
+      "sha256": "12f31e694e7a5cd07a259eb4a89c58befa3542814050a9c5a03c5ca81bab5dba",
+      "width": 2445,
+      "height": 3669,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "88ff9f5d90ff26b20cb1865405528f0825669962a3f1e8c370090919e77a73bd",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "Ensaladilla de gambas",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-005/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-005-original-640-avif",
+          "path": "/assets/optimized/asset-005/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 26582,
+          "crop": "original"
+        },
+        {
+          "id": "asset-005-original-640-webp",
+          "path": "/assets/optimized/asset-005/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 35802,
+          "crop": "original"
+        },
+        {
+          "id": "asset-005-original-960-avif",
+          "path": "/assets/optimized/asset-005/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1441,
+          "bytes": 44952,
+          "crop": "original"
+        },
+        {
+          "id": "asset-005-original-960-webp",
+          "path": "/assets/optimized/asset-005/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1441,
+          "bytes": 61386,
+          "crop": "original"
+        },
+        {
+          "id": "asset-005-original-1280-avif",
+          "path": "/assets/optimized/asset-005/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1921,
+          "bytes": 65765,
+          "crop": "original"
+        },
+        {
+          "id": "asset-005-original-1280-webp",
+          "path": "/assets/optimized/asset-005/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1921,
+          "bytes": 89000,
+          "crop": "original"
+        },
+        {
+          "id": "asset-005-square-400-avif",
+          "path": "/assets/optimized/asset-005/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 12939,
+          "crop": "square"
+        },
+        {
+          "id": "asset-005-square-400-webp",
+          "path": "/assets/optimized/asset-005/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 16650,
+          "crop": "square"
+        },
+        {
+          "id": "asset-005-square-640-avif",
+          "path": "/assets/optimized/asset-005/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 23850,
+          "crop": "square"
+        },
+        {
+          "id": "asset-005-square-640-webp",
+          "path": "/assets/optimized/asset-005/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 31698,
+          "crop": "square"
+        },
+        {
+          "id": "asset-005-square-880-avif",
+          "path": "/assets/optimized/asset-005/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 36648,
+          "crop": "square"
+        },
+        {
+          "id": "asset-005-square-880-webp",
+          "path": "/assets/optimized/asset-005/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 48212,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-006",
-      "original_name": "Gambas-al-ajillo.webp",
-      "local_path": "public/assets/source/food/Gambas-al-ajillo.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Gambas-al-ajillo.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Cubo-Coronitas-cerveza.webp",
+      "localPath": "/assets/source/food/Cubo-Coronitas-cerveza.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 240182,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 360026,
+      "sha256": "8638c800525d91f91abb6437bf481f4759bc0bd7141b25556e8daf7feccfdfa0",
+      "width": 2366,
+      "height": 3549,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "d06a8ee782771e6253af7ef2048d9de642b7c00f470d8e244f0a083fb416fb08",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "Gambas al ajillo",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-006/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-006-original-640-avif",
+          "path": "/assets/optimized/asset-006/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 40300,
+          "crop": "original"
+        },
+        {
+          "id": "asset-006-original-640-webp",
+          "path": "/assets/optimized/asset-006/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 59338,
+          "crop": "original"
+        },
+        {
+          "id": "asset-006-original-960-avif",
+          "path": "/assets/optimized/asset-006/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 70551,
+          "crop": "original"
+        },
+        {
+          "id": "asset-006-original-960-webp",
+          "path": "/assets/optimized/asset-006/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 101560,
+          "crop": "original"
+        },
+        {
+          "id": "asset-006-original-1280-avif",
+          "path": "/assets/optimized/asset-006/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 105526,
+          "crop": "original"
+        },
+        {
+          "id": "asset-006-original-1280-webp",
+          "path": "/assets/optimized/asset-006/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 148460,
+          "crop": "original"
+        },
+        {
+          "id": "asset-006-square-400-avif",
+          "path": "/assets/optimized/asset-006/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 17425,
+          "crop": "square"
+        },
+        {
+          "id": "asset-006-square-400-webp",
+          "path": "/assets/optimized/asset-006/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 25452,
+          "crop": "square"
+        },
+        {
+          "id": "asset-006-square-640-avif",
+          "path": "/assets/optimized/asset-006/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 33716,
+          "crop": "square"
+        },
+        {
+          "id": "asset-006-square-640-webp",
+          "path": "/assets/optimized/asset-006/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 50418,
+          "crop": "square"
+        },
+        {
+          "id": "asset-006-square-880-avif",
+          "path": "/assets/optimized/asset-006/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 53394,
+          "crop": "square"
+        },
+        {
+          "id": "asset-006-square-880-webp",
+          "path": "/assets/optimized/asset-006/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 77758,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-007",
-      "original_name": "Jarra-de-Margarita-coctel.webp",
-      "local_path": "public/assets/source/food/Jarra-de-Margarita-coctel.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Jarra-de-Margarita-coctel.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "ensalada-de-burrata.webp",
+      "localPath": "/assets/source/food/ensalada-de-burrata.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 303576,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 210650,
+      "sha256": "5587f5aa105af8c5bf22d1abb48ebe7f8339cccca97d7175330d455595161f79",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "292ed00d80a37bd2f1abf7eb0b50cbf2aa9a7ae34ff7f506d4a46c32eb5b9324",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "Jarra de Margarita coctel",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-007/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-007-original-640-avif",
+          "path": "/assets/optimized/asset-007/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 24737,
+          "crop": "original"
+        },
+        {
+          "id": "asset-007-original-640-webp",
+          "path": "/assets/optimized/asset-007/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 31102,
+          "crop": "original"
+        },
+        {
+          "id": "asset-007-original-960-avif",
+          "path": "/assets/optimized/asset-007/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 42825,
+          "crop": "original"
+        },
+        {
+          "id": "asset-007-original-960-webp",
+          "path": "/assets/optimized/asset-007/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 53100,
+          "crop": "original"
+        },
+        {
+          "id": "asset-007-original-1280-avif",
+          "path": "/assets/optimized/asset-007/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 63813,
+          "crop": "original"
+        },
+        {
+          "id": "asset-007-original-1280-webp",
+          "path": "/assets/optimized/asset-007/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 78212,
+          "crop": "original"
+        },
+        {
+          "id": "asset-007-square-400-avif",
+          "path": "/assets/optimized/asset-007/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 11067,
+          "crop": "square"
+        },
+        {
+          "id": "asset-007-square-400-webp",
+          "path": "/assets/optimized/asset-007/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 13908,
+          "crop": "square"
+        },
+        {
+          "id": "asset-007-square-640-avif",
+          "path": "/assets/optimized/asset-007/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 21367,
+          "crop": "square"
+        },
+        {
+          "id": "asset-007-square-640-webp",
+          "path": "/assets/optimized/asset-007/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 26584,
+          "crop": "square"
+        },
+        {
+          "id": "asset-007-square-880-avif",
+          "path": "/assets/optimized/asset-007/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 32993,
+          "crop": "square"
+        },
+        {
+          "id": "asset-007-square-880-webp",
+          "path": "/assets/optimized/asset-007/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 40564,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-008",
-      "original_name": "Margaritas-cocteles.webp",
-      "local_path": "public/assets/source/food/Margaritas-cocteles.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Margaritas-cocteles.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Ensaladilla-de-gambas-2.webp",
+      "localPath": "/assets/source/food/Ensaladilla-de-gambas-2.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 165730,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 251850,
+      "sha256": "271cd34602151767861ff1825f210adc50863ad567e7aca398124c9cb508459b",
+      "width": 2625,
+      "height": 3937,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "2238c0ce896531d28689df2586d9d64fce1f10329dc97a19e8e1b9c05066636e",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "Margaritas cocteles",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-008/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-008-original-640-avif",
+          "path": "/assets/optimized/asset-008/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 31840,
+          "crop": "original"
+        },
+        {
+          "id": "asset-008-original-640-webp",
+          "path": "/assets/optimized/asset-008/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 41046,
+          "crop": "original"
+        },
+        {
+          "id": "asset-008-original-960-avif",
+          "path": "/assets/optimized/asset-008/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 52540,
+          "crop": "original"
+        },
+        {
+          "id": "asset-008-original-960-webp",
+          "path": "/assets/optimized/asset-008/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 68376,
+          "crop": "original"
+        },
+        {
+          "id": "asset-008-original-1280-avif",
+          "path": "/assets/optimized/asset-008/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 75582,
+          "crop": "original"
+        },
+        {
+          "id": "asset-008-original-1280-webp",
+          "path": "/assets/optimized/asset-008/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 97416,
+          "crop": "original"
+        },
+        {
+          "id": "asset-008-square-400-avif",
+          "path": "/assets/optimized/asset-008/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 14044,
+          "crop": "square"
+        },
+        {
+          "id": "asset-008-square-400-webp",
+          "path": "/assets/optimized/asset-008/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 19486,
+          "crop": "square"
+        },
+        {
+          "id": "asset-008-square-640-avif",
+          "path": "/assets/optimized/asset-008/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 26315,
+          "crop": "square"
+        },
+        {
+          "id": "asset-008-square-640-webp",
+          "path": "/assets/optimized/asset-008/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 35894,
+          "crop": "square"
+        },
+        {
+          "id": "asset-008-square-880-avif",
+          "path": "/assets/optimized/asset-008/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 39396,
+          "crop": "square"
+        },
+        {
+          "id": "asset-008-square-880-webp",
+          "path": "/assets/optimized/asset-008/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 53236,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-009",
-      "original_name": "Mjoitos-fresa-y-maracuya-malcriado.webp",
-      "local_path": "public/assets/source/miscellaneous/Mjoitos-fresa-y-maracuya-malcriado.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Mjoitos-fresa-y-maracuya-malcriado.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Ensaladilla-de-gambas.webp",
+      "localPath": "/assets/source/food/Ensaladilla-de-gambas.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 206262,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 232410,
+      "sha256": "88ff9f5d90ff26b20cb1865405528f0825669962a3f1e8c370090919e77a73bd",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "33d921582e8038267b1e176db955378671a677c005d0975a707e660679ae13e2",
-      "proposed_role": "miscellaneous",
-      "category": "miscellaneous",
-      "orientation": null,
-      "current_alt_text": "Mjoitos fresa y maracuya malcriado",
-      "provisional_alt_text": "",
-      "rights_status": "REQUIRES_CONFIRMATION",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-009/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-009-original-640-avif",
+          "path": "/assets/optimized/asset-009/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 26854,
+          "crop": "original"
+        },
+        {
+          "id": "asset-009-original-640-webp",
+          "path": "/assets/optimized/asset-009/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 36664,
+          "crop": "original"
+        },
+        {
+          "id": "asset-009-original-960-avif",
+          "path": "/assets/optimized/asset-009/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 44409,
+          "crop": "original"
+        },
+        {
+          "id": "asset-009-original-960-webp",
+          "path": "/assets/optimized/asset-009/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 61042,
+          "crop": "original"
+        },
+        {
+          "id": "asset-009-original-1280-avif",
+          "path": "/assets/optimized/asset-009/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 64313,
+          "crop": "original"
+        },
+        {
+          "id": "asset-009-original-1280-webp",
+          "path": "/assets/optimized/asset-009/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 87288,
+          "crop": "original"
+        },
+        {
+          "id": "asset-009-square-400-avif",
+          "path": "/assets/optimized/asset-009/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 13413,
+          "crop": "square"
+        },
+        {
+          "id": "asset-009-square-400-webp",
+          "path": "/assets/optimized/asset-009/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 19098,
+          "crop": "square"
+        },
+        {
+          "id": "asset-009-square-640-avif",
+          "path": "/assets/optimized/asset-009/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 25390,
+          "crop": "square"
+        },
+        {
+          "id": "asset-009-square-640-webp",
+          "path": "/assets/optimized/asset-009/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 35154,
+          "crop": "square"
+        },
+        {
+          "id": "asset-009-square-880-avif",
+          "path": "/assets/optimized/asset-009/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 37820,
+          "crop": "square"
+        },
+        {
+          "id": "asset-009-square-880-webp",
+          "path": "/assets/optimized/asset-009/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 52130,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-010",
-      "original_name": "Nachos-Malcriados.webp",
-      "local_path": "public/assets/source/food/Nachos-Malcriados.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Nachos-Malcriados.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Gambas-al-ajillo.webp",
+      "localPath": "/assets/source/food/Gambas-al-ajillo.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 398360,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 240182,
+      "sha256": "d06a8ee782771e6253af7ef2048d9de642b7c00f470d8e244f0a083fb416fb08",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "8e368f5dc65a3ee8ce67b48db9b8b1464805e65d4a828fcf723f05c0f4913892",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "Nachos Malcriados",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-010/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-010-original-640-avif",
+          "path": "/assets/optimized/asset-010/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 28957,
+          "crop": "original"
+        },
+        {
+          "id": "asset-010-original-640-webp",
+          "path": "/assets/optimized/asset-010/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 38328,
+          "crop": "original"
+        },
+        {
+          "id": "asset-010-original-960-avif",
+          "path": "/assets/optimized/asset-010/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 49245,
+          "crop": "original"
+        },
+        {
+          "id": "asset-010-original-960-webp",
+          "path": "/assets/optimized/asset-010/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 63816,
+          "crop": "original"
+        },
+        {
+          "id": "asset-010-original-1280-avif",
+          "path": "/assets/optimized/asset-010/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 72641,
+          "crop": "original"
+        },
+        {
+          "id": "asset-010-original-1280-webp",
+          "path": "/assets/optimized/asset-010/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 93274,
+          "crop": "original"
+        },
+        {
+          "id": "asset-010-square-400-avif",
+          "path": "/assets/optimized/asset-010/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 13958,
+          "crop": "square"
+        },
+        {
+          "id": "asset-010-square-400-webp",
+          "path": "/assets/optimized/asset-010/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 18582,
+          "crop": "square"
+        },
+        {
+          "id": "asset-010-square-640-avif",
+          "path": "/assets/optimized/asset-010/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 25521,
+          "crop": "square"
+        },
+        {
+          "id": "asset-010-square-640-webp",
+          "path": "/assets/optimized/asset-010/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 33850,
+          "crop": "square"
+        },
+        {
+          "id": "asset-010-square-880-avif",
+          "path": "/assets/optimized/asset-010/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 39285,
+          "crop": "square"
+        },
+        {
+          "id": "asset-010-square-880-webp",
+          "path": "/assets/optimized/asset-010/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 50958,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-011",
-      "original_name": "Pizza-malcriado.webp",
-      "local_path": "public/assets/source/food/Pizza-malcriado.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Pizza-malcriado.webp",
-      "page_urls": [
-        "https://malcriadobcn.com/menu/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Jarra-de-Margarita-coctel.webp",
+      "localPath": "/assets/source/food/Jarra-de-Margarita-coctel.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 629262,
-      "dimensions": {
-        "width": 1707,
-        "height": 2560
-      },
-      "duration_seconds": null,
-      "sha256": "94d76df6f8de57c49c4b1625d2a2650c8d05a9ae479befa84cf79a2220b6a000",
-      "proposed_role": "food",
-      "category": "food",
+      "sizeBytes": 303576,
+      "sha256": "292ed00d80a37bd2f1abf7eb0b50cbf2aa9a7ae34ff7f506d4a46c32eb5b9324",
+      "width": 2624,
+      "height": 3936,
       "orientation": "portrait",
-      "current_alt_text": "Pizza malcriado",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
+      },
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-011/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-011-original-640-avif",
+          "path": "/assets/optimized/asset-011/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 33678,
+          "crop": "original"
+        },
+        {
+          "id": "asset-011-original-640-webp",
+          "path": "/assets/optimized/asset-011/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 41432,
+          "crop": "original"
+        },
+        {
+          "id": "asset-011-original-960-avif",
+          "path": "/assets/optimized/asset-011/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 60573,
+          "crop": "original"
+        },
+        {
+          "id": "asset-011-original-960-webp",
+          "path": "/assets/optimized/asset-011/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 73958,
+          "crop": "original"
+        },
+        {
+          "id": "asset-011-original-1280-avif",
+          "path": "/assets/optimized/asset-011/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 90553,
+          "crop": "original"
+        },
+        {
+          "id": "asset-011-original-1280-webp",
+          "path": "/assets/optimized/asset-011/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 110398,
+          "crop": "original"
+        },
+        {
+          "id": "asset-011-square-400-avif",
+          "path": "/assets/optimized/asset-011/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 14180,
+          "crop": "square"
+        },
+        {
+          "id": "asset-011-square-400-webp",
+          "path": "/assets/optimized/asset-011/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 17474,
+          "crop": "square"
+        },
+        {
+          "id": "asset-011-square-640-avif",
+          "path": "/assets/optimized/asset-011/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 29344,
+          "crop": "square"
+        },
+        {
+          "id": "asset-011-square-640-webp",
+          "path": "/assets/optimized/asset-011/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 35978,
+          "crop": "square"
+        },
+        {
+          "id": "asset-011-square-880-avif",
+          "path": "/assets/optimized/asset-011/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 46538,
+          "crop": "square"
+        },
+        {
+          "id": "asset-011-square-880-webp",
+          "path": "/assets/optimized/asset-011/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 57296,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-012",
-      "original_name": "Pulpo-al-chimichurri.webp",
-      "local_path": "public/assets/source/food/Pulpo-al-chimichurri.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/Pulpo-al-chimichurri.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "margarita-de-fresa-coctel-malcriado.webp",
+      "localPath": "/assets/source/food/margarita-de-fresa-coctel-malcriado.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 296844,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 174918,
+      "sha256": "b8e4228dd7efebf071a617e9b845b1bce3a1c1d9b42f3a605aee46a6d74f5329",
+      "width": 2625,
+      "height": 3937,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 60,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "6b52eb4834f32f7d716d2418bd3730ce2cb8465e544fffa4400fad6c3cdf4a49",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "Pulpo al chimichurri",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 60%",
+      "roles": [
+        "COCKTAIL"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "cocktail",
+      "productionPath": "/assets/optimized/asset-012/original-720.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting cocktail image for drinks carousel or grid.",
+      "suggestedScene": "Cocktail support",
+      "variants": [
+        {
+          "id": "asset-012-original-720-avif",
+          "path": "/assets/optimized/asset-012/original-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 1080,
+          "bytes": 28416,
+          "crop": "original"
+        },
+        {
+          "id": "asset-012-original-720-webp",
+          "path": "/assets/optimized/asset-012/original-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 1080,
+          "bytes": 35158,
+          "crop": "original"
+        },
+        {
+          "id": "asset-012-original-1080-avif",
+          "path": "/assets/optimized/asset-012/original-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1620,
+          "bytes": 47571,
+          "crop": "original"
+        },
+        {
+          "id": "asset-012-original-1080-webp",
+          "path": "/assets/optimized/asset-012/original-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1620,
+          "bytes": 59986,
+          "crop": "original"
+        },
+        {
+          "id": "asset-012-original-1440-avif",
+          "path": "/assets/optimized/asset-012/original-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 68064,
+          "crop": "original"
+        },
+        {
+          "id": "asset-012-original-1440-webp",
+          "path": "/assets/optimized/asset-012/original-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 85002,
+          "crop": "original"
+        },
+        {
+          "id": "asset-012-square-480-avif",
+          "path": "/assets/optimized/asset-012/square-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 480,
+          "bytes": 14573,
+          "crop": "square"
+        },
+        {
+          "id": "asset-012-square-480-webp",
+          "path": "/assets/optimized/asset-012/square-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 17072,
+          "crop": "square"
+        },
+        {
+          "id": "asset-012-square-720-avif",
+          "path": "/assets/optimized/asset-012/square-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 720,
+          "bytes": 24887,
+          "crop": "square"
+        },
+        {
+          "id": "asset-012-square-720-webp",
+          "path": "/assets/optimized/asset-012/square-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 720,
+          "bytes": 29556,
+          "crop": "square"
+        },
+        {
+          "id": "asset-012-square-960-avif",
+          "path": "/assets/optimized/asset-012/square-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 960,
+          "bytes": 35439,
+          "crop": "square"
+        },
+        {
+          "id": "asset-012-square-960-webp",
+          "path": "/assets/optimized/asset-012/square-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 43506,
+          "crop": "square"
+        },
+        {
+          "id": "asset-012-portrait-480-avif",
+          "path": "/assets/optimized/asset-012/portrait-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 16431,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-012-portrait-480-webp",
+          "path": "/assets/optimized/asset-012/portrait-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 18836,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-012-portrait-720-avif",
+          "path": "/assets/optimized/asset-012/portrait-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 900,
+          "bytes": 27182,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-012-portrait-720-webp",
+          "path": "/assets/optimized/asset-012/portrait-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 32460,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-012-portrait-960-avif",
+          "path": "/assets/optimized/asset-012/portrait-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 38816,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-012-portrait-960-webp",
+          "path": "/assets/optimized/asset-012/portrait-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 47134,
+          "crop": "portrait"
+        }
+      ]
     },
     {
       "id": "asset-013",
-      "original_name": "cheese-cake-malcriado-2.webp",
-      "local_path": "public/assets/source/food/cheese-cake-malcriado-2.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/cheese-cake-malcriado-2.webp",
-      "page_urls": [
-        "https://malcriadobcn.com/menu/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "margarita-de-fresa.webp",
+      "localPath": "/assets/source/food/margarita-de-fresa.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 88018,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 180100,
+      "sha256": "aa7790e073a61a030d69fa8b527da7ae78c71efe795c97cf7d9823919778dca7",
+      "width": 2623,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": true,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "Background includes neon lettering. Use where embedded text does not conflict with UI copy.",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 62,
+        "confidence": "manual"
       },
-      "duration_seconds": null,
-      "sha256": "a423b9284160aefcd3f26431b96466c153f3c32eb4d88f330524e7a1c33a2df2",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "cheese cake malcriado 2",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 62%",
+      "roles": [
+        "COCKTAIL",
+        "FEATURED_DISH"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": true,
+      "productionProfile": "cocktail",
+      "productionPath": "/assets/optimized/asset-013/original-720.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Cocktail feature, drinks section lead and mobile portrait scene.",
+      "suggestedScene": "Cocktail spotlight",
+      "variants": [
+        {
+          "id": "asset-013-original-720-avif",
+          "path": "/assets/optimized/asset-013/original-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 1080,
+          "bytes": 25495,
+          "crop": "original"
+        },
+        {
+          "id": "asset-013-original-720-webp",
+          "path": "/assets/optimized/asset-013/original-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 1080,
+          "bytes": 32970,
+          "crop": "original"
+        },
+        {
+          "id": "asset-013-original-1080-avif",
+          "path": "/assets/optimized/asset-013/original-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1621,
+          "bytes": 42871,
+          "crop": "original"
+        },
+        {
+          "id": "asset-013-original-1080-webp",
+          "path": "/assets/optimized/asset-013/original-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1621,
+          "bytes": 56742,
+          "crop": "original"
+        },
+        {
+          "id": "asset-013-original-1440-avif",
+          "path": "/assets/optimized/asset-013/original-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 2161,
+          "bytes": 62364,
+          "crop": "original"
+        },
+        {
+          "id": "asset-013-original-1440-webp",
+          "path": "/assets/optimized/asset-013/original-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 2161,
+          "bytes": 81368,
+          "crop": "original"
+        },
+        {
+          "id": "asset-013-square-480-avif",
+          "path": "/assets/optimized/asset-013/square-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 480,
+          "bytes": 10441,
+          "crop": "square"
+        },
+        {
+          "id": "asset-013-square-480-webp",
+          "path": "/assets/optimized/asset-013/square-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 13160,
+          "crop": "square"
+        },
+        {
+          "id": "asset-013-square-720-avif",
+          "path": "/assets/optimized/asset-013/square-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 720,
+          "bytes": 18461,
+          "crop": "square"
+        },
+        {
+          "id": "asset-013-square-720-webp",
+          "path": "/assets/optimized/asset-013/square-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 720,
+          "bytes": 23850,
+          "crop": "square"
+        },
+        {
+          "id": "asset-013-square-960-avif",
+          "path": "/assets/optimized/asset-013/square-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 960,
+          "bytes": 26618,
+          "crop": "square"
+        },
+        {
+          "id": "asset-013-square-960-webp",
+          "path": "/assets/optimized/asset-013/square-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 35562,
+          "crop": "square"
+        },
+        {
+          "id": "asset-013-portrait-480-avif",
+          "path": "/assets/optimized/asset-013/portrait-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 14731,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-013-portrait-480-webp",
+          "path": "/assets/optimized/asset-013/portrait-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 17730,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-013-portrait-720-avif",
+          "path": "/assets/optimized/asset-013/portrait-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 900,
+          "bytes": 24273,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-013-portrait-720-webp",
+          "path": "/assets/optimized/asset-013/portrait-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 30842,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-013-portrait-960-avif",
+          "path": "/assets/optimized/asset-013/portrait-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 35225,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-013-portrait-960-webp",
+          "path": "/assets/optimized/asset-013/portrait-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 45002,
+          "crop": "portrait"
+        }
+      ]
     },
     {
       "id": "asset-014",
-      "original_name": "ensalada-de-burrata.webp",
-      "local_path": "public/assets/source/food/ensalada-de-burrata.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/ensalada-de-burrata.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Margaritas-cocteles.webp",
+      "localPath": "/assets/source/food/Margaritas-cocteles.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 210650,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 165730,
+      "sha256": "2238c0ce896531d28689df2586d9d64fce1f10329dc97a19e8e1b9c05066636e",
+      "width": 2457,
+      "height": 3684,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "low",
+      "qualityNotes": "Quality too weak for production presentation.",
+      "cropSafety": "low",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "5587f5aa105af8c5bf22d1abb48ebe7f8339cccca97d7175330d455595161f79",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "ensalada de burrata",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "COCKTAIL"
+      ],
+      "state": "LOW_QUALITY",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "excluded",
+      "productionPath": null,
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Do not ship. Keep only as audit evidence until replaced.",
+      "suggestedScene": "Replacement needed",
+      "variants": []
     },
     {
       "id": "asset-015",
-      "original_name": "margarita-de-fresa-coctel-malcriado.webp",
-      "local_path": "public/assets/source/food/margarita-de-fresa-coctel-malcriado.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/margarita-de-fresa-coctel-malcriado.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "mojito-malcriado.webp",
+      "localPath": "/assets/source/food/mojito-malcriado.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 174918,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 220874,
+      "sha256": "592fd30cbe147e9e6a95fea171845aa0236e43def12c4409e093f2d442adf0e5",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "b8e4228dd7efebf071a617e9b845b1bce3a1c1d9b42f3a605aee46a6d74f5329",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "margarita de fresa coctel malcriado",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-015/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-015-original-640-avif",
+          "path": "/assets/optimized/asset-015/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 25733,
+          "crop": "original"
+        },
+        {
+          "id": "asset-015-original-640-webp",
+          "path": "/assets/optimized/asset-015/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 32366,
+          "crop": "original"
+        },
+        {
+          "id": "asset-015-original-960-avif",
+          "path": "/assets/optimized/asset-015/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 43005,
+          "crop": "original"
+        },
+        {
+          "id": "asset-015-original-960-webp",
+          "path": "/assets/optimized/asset-015/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 55012,
+          "crop": "original"
+        },
+        {
+          "id": "asset-015-original-1280-avif",
+          "path": "/assets/optimized/asset-015/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 62636,
+          "crop": "original"
+        },
+        {
+          "id": "asset-015-original-1280-webp",
+          "path": "/assets/optimized/asset-015/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 79700,
+          "crop": "original"
+        },
+        {
+          "id": "asset-015-square-400-avif",
+          "path": "/assets/optimized/asset-015/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 12034,
+          "crop": "square"
+        },
+        {
+          "id": "asset-015-square-400-webp",
+          "path": "/assets/optimized/asset-015/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 15256,
+          "crop": "square"
+        },
+        {
+          "id": "asset-015-square-640-avif",
+          "path": "/assets/optimized/asset-015/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 22717,
+          "crop": "square"
+        },
+        {
+          "id": "asset-015-square-640-webp",
+          "path": "/assets/optimized/asset-015/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 28354,
+          "crop": "square"
+        },
+        {
+          "id": "asset-015-square-880-avif",
+          "path": "/assets/optimized/asset-015/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 34405,
+          "crop": "square"
+        },
+        {
+          "id": "asset-015-square-880-webp",
+          "path": "/assets/optimized/asset-015/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 42896,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-016",
-      "original_name": "margarita-de-fresa.webp",
-      "local_path": "public/assets/source/food/margarita-de-fresa.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/margarita-de-fresa.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "mollejas-malcriadas.webp",
+      "localPath": "/assets/source/food/mollejas-malcriadas.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 180100,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 233832,
+      "sha256": "d8e73202eef023e3a7a367c4053eb50de93d239f876bf21b6637ca6cd79590a5",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "aa7790e073a61a030d69fa8b527da7ae78c71efe795c97cf7d9823919778dca7",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "margarita de fresa",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-016/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-016-original-640-avif",
+          "path": "/assets/optimized/asset-016/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 25485,
+          "crop": "original"
+        },
+        {
+          "id": "asset-016-original-640-webp",
+          "path": "/assets/optimized/asset-016/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 31950,
+          "crop": "original"
+        },
+        {
+          "id": "asset-016-original-960-avif",
+          "path": "/assets/optimized/asset-016/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 44927,
+          "crop": "original"
+        },
+        {
+          "id": "asset-016-original-960-webp",
+          "path": "/assets/optimized/asset-016/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 56598,
+          "crop": "original"
+        },
+        {
+          "id": "asset-016-original-1280-avif",
+          "path": "/assets/optimized/asset-016/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 66314,
+          "crop": "original"
+        },
+        {
+          "id": "asset-016-original-1280-webp",
+          "path": "/assets/optimized/asset-016/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 84114,
+          "crop": "original"
+        },
+        {
+          "id": "asset-016-square-400-avif",
+          "path": "/assets/optimized/asset-016/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 12239,
+          "crop": "square"
+        },
+        {
+          "id": "asset-016-square-400-webp",
+          "path": "/assets/optimized/asset-016/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 15172,
+          "crop": "square"
+        },
+        {
+          "id": "asset-016-square-640-avif",
+          "path": "/assets/optimized/asset-016/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 23917,
+          "crop": "square"
+        },
+        {
+          "id": "asset-016-square-640-webp",
+          "path": "/assets/optimized/asset-016/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 30056,
+          "crop": "square"
+        },
+        {
+          "id": "asset-016-square-880-avif",
+          "path": "/assets/optimized/asset-016/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 37590,
+          "crop": "square"
+        },
+        {
+          "id": "asset-016-square-880-webp",
+          "path": "/assets/optimized/asset-016/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 47074,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-017",
-      "original_name": "mojito-malcriado.webp",
-      "local_path": "public/assets/source/food/mojito-malcriado.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/mojito-malcriado.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Nachos-Malcriados.webp",
+      "localPath": "/assets/source/food/Nachos-Malcriados.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 220874,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 398360,
+      "sha256": "8e368f5dc65a3ee8ce67b48db9b8b1464805e65d4a828fcf723f05c0f4913892",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "",
+      "cropSafety": "high",
+      "focalPoint": {
+        "x": 47,
+        "y": 60,
+        "confidence": "manual"
       },
-      "duration_seconds": null,
-      "sha256": "592fd30cbe147e9e6a95fea171845aa0236e43def12c4409e093f2d442adf0e5",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "mojito malcriado",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "47% 60%",
+      "roles": [
+        "FEATURED_DISH"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "featured-dish",
+      "productionPath": "/assets/optimized/asset-017/original-720.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Featured dish tile and menu section lead.",
+      "suggestedScene": "Featured dishes",
+      "variants": [
+        {
+          "id": "asset-017-original-720-avif",
+          "path": "/assets/optimized/asset-017/original-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 1080,
+          "bytes": 39101,
+          "crop": "original"
+        },
+        {
+          "id": "asset-017-original-720-webp",
+          "path": "/assets/optimized/asset-017/original-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 1080,
+          "bytes": 56774,
+          "crop": "original"
+        },
+        {
+          "id": "asset-017-original-1080-avif",
+          "path": "/assets/optimized/asset-017/original-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1620,
+          "bytes": 67123,
+          "crop": "original"
+        },
+        {
+          "id": "asset-017-original-1080-webp",
+          "path": "/assets/optimized/asset-017/original-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1620,
+          "bytes": 95688,
+          "crop": "original"
+        },
+        {
+          "id": "asset-017-original-1440-avif",
+          "path": "/assets/optimized/asset-017/original-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 101414,
+          "crop": "original"
+        },
+        {
+          "id": "asset-017-original-1440-webp",
+          "path": "/assets/optimized/asset-017/original-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 141074,
+          "crop": "original"
+        },
+        {
+          "id": "asset-017-square-480-avif",
+          "path": "/assets/optimized/asset-017/square-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 480,
+          "bytes": 22041,
+          "crop": "square"
+        },
+        {
+          "id": "asset-017-square-480-webp",
+          "path": "/assets/optimized/asset-017/square-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 32438,
+          "crop": "square"
+        },
+        {
+          "id": "asset-017-square-720-avif",
+          "path": "/assets/optimized/asset-017/square-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 720,
+          "bytes": 37411,
+          "crop": "square"
+        },
+        {
+          "id": "asset-017-square-720-webp",
+          "path": "/assets/optimized/asset-017/square-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 720,
+          "bytes": 55220,
+          "crop": "square"
+        },
+        {
+          "id": "asset-017-square-1080-avif",
+          "path": "/assets/optimized/asset-017/square-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 64323,
+          "crop": "square"
+        },
+        {
+          "id": "asset-017-square-1080-webp",
+          "path": "/assets/optimized/asset-017/square-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 92228,
+          "crop": "square"
+        },
+        {
+          "id": "asset-017-portrait-480-avif",
+          "path": "/assets/optimized/asset-017/portrait-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 23442,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-017-portrait-480-webp",
+          "path": "/assets/optimized/asset-017/portrait-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 33876,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-017-portrait-720-avif",
+          "path": "/assets/optimized/asset-017/portrait-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 900,
+          "bytes": 39209,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-017-portrait-720-webp",
+          "path": "/assets/optimized/asset-017/portrait-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 57334,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-017-portrait-960-avif",
+          "path": "/assets/optimized/asset-017/portrait-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 57428,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-017-portrait-960-webp",
+          "path": "/assets/optimized/asset-017/portrait-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 83304,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-017-editorial-720-avif",
+          "path": "/assets/optimized/asset-017/editorial-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 39535,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-017-editorial-720-webp",
+          "path": "/assets/optimized/asset-017/editorial-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 57426,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-017-editorial-1080-avif",
+          "path": "/assets/optimized/asset-017/editorial-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 67757,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-017-editorial-1080-webp",
+          "path": "/assets/optimized/asset-017/editorial-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 95400,
+          "crop": "editorial"
+        }
+      ]
     },
     {
       "id": "asset-018",
-      "original_name": "mollejas-malcriadas.webp",
-      "local_path": "public/assets/source/food/mollejas-malcriadas.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/mollejas-malcriadas.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Pizza-malcriado.webp",
+      "localPath": "/assets/source/food/Pizza-malcriado.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 233832,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 629262,
+      "sha256": "94d76df6f8de57c49c4b1625d2a2650c8d05a9ae479befa84cf79a2220b6a000",
+      "width": 2625,
+      "height": 3937,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "",
+      "cropSafety": "high",
+      "focalPoint": {
+        "x": 48,
+        "y": 52,
+        "confidence": "manual"
       },
-      "duration_seconds": null,
-      "sha256": "d8e73202eef023e3a7a367c4053eb50de93d239f876bf21b6637ca6cd79590a5",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "mollejas malcriadas",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "48% 52%",
+      "roles": [
+        "FEATURED_DISH"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "featured-dish",
+      "productionPath": "/assets/optimized/asset-018/original-720.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Featured dish card and editorial portrait crop.",
+      "suggestedScene": "Featured dishes",
+      "variants": [
+        {
+          "id": "asset-018-original-720-avif",
+          "path": "/assets/optimized/asset-018/original-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 1080,
+          "bytes": 74830,
+          "crop": "original"
+        },
+        {
+          "id": "asset-018-original-720-webp",
+          "path": "/assets/optimized/asset-018/original-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 1080,
+          "bytes": 99868,
+          "crop": "original"
+        },
+        {
+          "id": "asset-018-original-1080-avif",
+          "path": "/assets/optimized/asset-018/original-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1620,
+          "bytes": 142153,
+          "crop": "original"
+        },
+        {
+          "id": "asset-018-original-1080-webp",
+          "path": "/assets/optimized/asset-018/original-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1620,
+          "bytes": 187986,
+          "crop": "original"
+        },
+        {
+          "id": "asset-018-original-1440-avif",
+          "path": "/assets/optimized/asset-018/original-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 219136,
+          "crop": "original"
+        },
+        {
+          "id": "asset-018-original-1440-webp",
+          "path": "/assets/optimized/asset-018/original-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 279392,
+          "crop": "original"
+        },
+        {
+          "id": "asset-018-square-480-avif",
+          "path": "/assets/optimized/asset-018/square-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 480,
+          "bytes": 29788,
+          "crop": "square"
+        },
+        {
+          "id": "asset-018-square-480-webp",
+          "path": "/assets/optimized/asset-018/square-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 42158,
+          "crop": "square"
+        },
+        {
+          "id": "asset-018-square-720-avif",
+          "path": "/assets/optimized/asset-018/square-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 720,
+          "bytes": 57913,
+          "crop": "square"
+        },
+        {
+          "id": "asset-018-square-720-webp",
+          "path": "/assets/optimized/asset-018/square-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 720,
+          "bytes": 81232,
+          "crop": "square"
+        },
+        {
+          "id": "asset-018-square-1080-avif",
+          "path": "/assets/optimized/asset-018/square-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 109232,
+          "crop": "square"
+        },
+        {
+          "id": "asset-018-square-1080-webp",
+          "path": "/assets/optimized/asset-018/square-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 145170,
+          "crop": "square"
+        },
+        {
+          "id": "asset-018-portrait-480-avif",
+          "path": "/assets/optimized/asset-018/portrait-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 34841,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-018-portrait-480-webp",
+          "path": "/assets/optimized/asset-018/portrait-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 49016,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-018-portrait-720-avif",
+          "path": "/assets/optimized/asset-018/portrait-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 900,
+          "bytes": 68074,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-018-portrait-720-webp",
+          "path": "/assets/optimized/asset-018/portrait-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 93106,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-018-portrait-960-avif",
+          "path": "/assets/optimized/asset-018/portrait-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 108169,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-018-portrait-960-webp",
+          "path": "/assets/optimized/asset-018/portrait-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 143910,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-018-editorial-720-avif",
+          "path": "/assets/optimized/asset-018/editorial-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 70620,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-018-editorial-720-webp",
+          "path": "/assets/optimized/asset-018/editorial-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 95738,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-018-editorial-1080-avif",
+          "path": "/assets/optimized/asset-018/editorial-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 134586,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-018-editorial-1080-webp",
+          "path": "/assets/optimized/asset-018/editorial-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 175956,
+          "crop": "editorial"
+        }
+      ]
     },
     {
       "id": "asset-019",
-      "original_name": "pulpo-al-chimichurri-2.webp",
-      "local_path": "public/assets/source/food/pulpo-al-chimichurri-2.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/pulpo-al-chimichurri-2.webp",
-      "page_urls": [
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "pulpo-al-chimichurri-2.webp",
+      "localPath": "/assets/source/food/pulpo-al-chimichurri-2.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 198712,
-      "dimensions": {
-        "width": 2560,
-        "height": 1570
-      },
-      "duration_seconds": null,
+      "sizeBytes": 198712,
       "sha256": "1c379acba26d80e993f97c7c09445b95f92c7f66367260698d33fab9cf27ca43",
-      "proposed_role": "food",
-      "category": "food",
+      "width": 3578,
+      "height": 2195,
       "orientation": "landscape",
-      "current_alt_text": "pulpo al chimichurri 2",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "hasTransparency": false,
+      "containsEmbeddedText": true,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "Strong landscape hero. Embedded neon text in the background should remain intentional.",
+      "cropSafety": "high",
+      "focalPoint": {
+        "x": 54,
+        "y": 64,
+        "confidence": "manual"
+      },
+      "recommendedObjectPosition": "54% 64%",
+      "roles": [
+        "HERO_CANDIDATE",
+        "FEATURED_DISH"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": true,
+      "backgroundCandidate": true,
+      "productionProfile": "hero",
+      "productionPath": "/assets/optimized/asset-019/original-960.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Desktop hero, editorial scene divider and immersive dish opener.",
+      "suggestedScene": "Hero - sea and neon energy",
+      "variants": [
+        {
+          "id": "asset-019-original-960-avif",
+          "path": "/assets/optimized/asset-019/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 589,
+          "bytes": 32702,
+          "crop": "original"
+        },
+        {
+          "id": "asset-019-original-960-webp",
+          "path": "/assets/optimized/asset-019/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 589,
+          "bytes": 37412,
+          "crop": "original"
+        },
+        {
+          "id": "asset-019-original-1440-avif",
+          "path": "/assets/optimized/asset-019/original-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 883,
+          "bytes": 55087,
+          "crop": "original"
+        },
+        {
+          "id": "asset-019-original-1440-webp",
+          "path": "/assets/optimized/asset-019/original-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 883,
+          "bytes": 63430,
+          "crop": "original"
+        },
+        {
+          "id": "asset-019-original-1920-avif",
+          "path": "/assets/optimized/asset-019/original-1920.avif",
+          "format": "avif",
+          "width": 1920,
+          "height": 1178,
+          "bytes": 79599,
+          "crop": "original"
+        },
+        {
+          "id": "asset-019-original-1920-webp",
+          "path": "/assets/optimized/asset-019/original-1920.webp",
+          "format": "webp",
+          "width": 1920,
+          "height": 1178,
+          "bytes": 91268,
+          "crop": "original"
+        },
+        {
+          "id": "asset-019-landscape-960-avif",
+          "path": "/assets/optimized/asset-019/landscape-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 30995,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-019-landscape-960-webp",
+          "path": "/assets/optimized/asset-019/landscape-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 35468,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-019-landscape-1440-avif",
+          "path": "/assets/optimized/asset-019/landscape-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 810,
+          "bytes": 51739,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-019-landscape-1440-webp",
+          "path": "/assets/optimized/asset-019/landscape-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 810,
+          "bytes": 59988,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-019-landscape-1920-avif",
+          "path": "/assets/optimized/asset-019/landscape-1920.avif",
+          "format": "avif",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 75322,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-019-landscape-1920-webp",
+          "path": "/assets/optimized/asset-019/landscape-1920.webp",
+          "format": "webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 86540,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-019-mobile-480-avif",
+          "path": "/assets/optimized/asset-019/mobile-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 23289,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-019-mobile-480-webp",
+          "path": "/assets/optimized/asset-019/mobile-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 25596,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-019-mobile-768-avif",
+          "path": "/assets/optimized/asset-019/mobile-768.avif",
+          "format": "avif",
+          "width": 768,
+          "height": 960,
+          "bytes": 41605,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-019-mobile-768-webp",
+          "path": "/assets/optimized/asset-019/mobile-768.webp",
+          "format": "webp",
+          "width": 768,
+          "height": 960,
+          "bytes": 46938,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-019-mobile-960-avif",
+          "path": "/assets/optimized/asset-019/mobile-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 56216,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-019-mobile-960-webp",
+          "path": "/assets/optimized/asset-019/mobile-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 62416,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-019-editorial-720-avif",
+          "path": "/assets/optimized/asset-019/editorial-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 39477,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-019-editorial-720-webp",
+          "path": "/assets/optimized/asset-019/editorial-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 44724,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-019-editorial-1080-avif",
+          "path": "/assets/optimized/asset-019/editorial-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 67463,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-019-editorial-1080-webp",
+          "path": "/assets/optimized/asset-019/editorial-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 76200,
+          "crop": "editorial"
+        }
+      ]
     },
     {
       "id": "asset-020",
-      "original_name": "sushi-malcriado-1.webp",
-      "local_path": "public/assets/source/food/sushi-malcriado-1.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/sushi-malcriado-1.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "Pulpo-al-chimichurri.webp",
+      "localPath": "/assets/source/food/Pulpo-al-chimichurri.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 215246,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 296844,
+      "sha256": "6b52eb4834f32f7d716d2418bd3730ce2cb8465e544fffa4400fad6c3cdf4a49",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "1a146f9687a39123ba145e679515c7d4bb55d5279e6f59f36f858597c51ded15",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "sushi malcriado",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": "asset-023",
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-020/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-020-original-640-avif",
+          "path": "/assets/optimized/asset-020/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 28672,
+          "crop": "original"
+        },
+        {
+          "id": "asset-020-original-640-webp",
+          "path": "/assets/optimized/asset-020/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 38440,
+          "crop": "original"
+        },
+        {
+          "id": "asset-020-original-960-avif",
+          "path": "/assets/optimized/asset-020/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 49872,
+          "crop": "original"
+        },
+        {
+          "id": "asset-020-original-960-webp",
+          "path": "/assets/optimized/asset-020/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 68008,
+          "crop": "original"
+        },
+        {
+          "id": "asset-020-original-1280-avif",
+          "path": "/assets/optimized/asset-020/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 74270,
+          "crop": "original"
+        },
+        {
+          "id": "asset-020-original-1280-webp",
+          "path": "/assets/optimized/asset-020/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 99604,
+          "crop": "original"
+        },
+        {
+          "id": "asset-020-square-400-avif",
+          "path": "/assets/optimized/asset-020/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 14457,
+          "crop": "square"
+        },
+        {
+          "id": "asset-020-square-400-webp",
+          "path": "/assets/optimized/asset-020/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 18904,
+          "crop": "square"
+        },
+        {
+          "id": "asset-020-square-640-avif",
+          "path": "/assets/optimized/asset-020/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 28125,
+          "crop": "square"
+        },
+        {
+          "id": "asset-020-square-640-webp",
+          "path": "/assets/optimized/asset-020/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 37608,
+          "crop": "square"
+        },
+        {
+          "id": "asset-020-square-880-avif",
+          "path": "/assets/optimized/asset-020/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 43606,
+          "crop": "square"
+        },
+        {
+          "id": "asset-020-square-880-webp",
+          "path": "/assets/optimized/asset-020/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 57908,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-021",
-      "original_name": "sushi-malcriado-2.webp",
-      "local_path": "public/assets/source/food/sushi-malcriado-2.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/sushi-malcriado-2.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "sushi-malcriado-1.webp",
+      "localPath": "/assets/source/food/sushi-malcriado-1.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 159136,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 215246,
+      "sha256": "1a146f9687a39123ba145e679515c7d4bb55d5279e6f59f36f858597c51ded15",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "Byte-identical duplicate of asset-023.",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "b9803b4d8a49aaa172575f0cc2adb3a2c03f8f6d7c6fa8f3842aece3fbb4a328",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "sushi malcriado 2",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "FEATURED_DISH"
+      ],
+      "state": "DUPLICATE",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "excluded",
+      "productionPath": null,
+      "duplicateGroup": "dup-001",
+      "duplicateOf": "asset-023",
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Do not build derivatives. Keep only as duplicate evidence.",
+      "suggestedScene": "Duplicate source",
+      "variants": []
     },
     {
       "id": "asset-022",
-      "original_name": "sushi-malcriado-3.webp",
-      "local_path": "public/assets/source/food/sushi-malcriado-3.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/sushi-malcriado-3.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "sushi-malcriado-2.webp",
+      "localPath": "/assets/source/food/sushi-malcriado-2.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 354154,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 159136,
+      "sha256": "b9803b4d8a49aaa172575f0cc2adb3a2c03f8f6d7c6fa8f3842aece3fbb4a328",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "7a1349af71ae516d80a2528294c4ffd3c9cca427239ff243e2bf15967e013dba",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "sushi malcriado 3",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-022/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-022-original-640-avif",
+          "path": "/assets/optimized/asset-022/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 18915,
+          "crop": "original"
+        },
+        {
+          "id": "asset-022-original-640-webp",
+          "path": "/assets/optimized/asset-022/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 25584,
+          "crop": "original"
+        },
+        {
+          "id": "asset-022-original-960-avif",
+          "path": "/assets/optimized/asset-022/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 30062,
+          "crop": "original"
+        },
+        {
+          "id": "asset-022-original-960-webp",
+          "path": "/assets/optimized/asset-022/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 41082,
+          "crop": "original"
+        },
+        {
+          "id": "asset-022-original-1280-avif",
+          "path": "/assets/optimized/asset-022/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 42680,
+          "crop": "original"
+        },
+        {
+          "id": "asset-022-original-1280-webp",
+          "path": "/assets/optimized/asset-022/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 57980,
+          "crop": "original"
+        },
+        {
+          "id": "asset-022-square-400-avif",
+          "path": "/assets/optimized/asset-022/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 10436,
+          "crop": "square"
+        },
+        {
+          "id": "asset-022-square-400-webp",
+          "path": "/assets/optimized/asset-022/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 14204,
+          "crop": "square"
+        },
+        {
+          "id": "asset-022-square-640-avif",
+          "path": "/assets/optimized/asset-022/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 17762,
+          "crop": "square"
+        },
+        {
+          "id": "asset-022-square-640-webp",
+          "path": "/assets/optimized/asset-022/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 24536,
+          "crop": "square"
+        },
+        {
+          "id": "asset-022-square-880-avif",
+          "path": "/assets/optimized/asset-022/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 26329,
+          "crop": "square"
+        },
+        {
+          "id": "asset-022-square-880-webp",
+          "path": "/assets/optimized/asset-022/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 35556,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-023",
-      "original_name": "sushi-malcriado.webp",
-      "local_path": "public/assets/source/food/sushi-malcriado.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/sushi-malcriado.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "sushi-malcriado-3.webp",
+      "localPath": "/assets/source/food/sushi-malcriado-3.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 215246,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 354154,
+      "sha256": "7a1349af71ae516d80a2528294c4ffd3c9cca427239ff243e2bf15967e013dba",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "1a146f9687a39123ba145e679515c7d4bb55d5279e6f59f36f858597c51ded15",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "sushi malcriado",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": "asset-020",
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-023/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-023-original-640-avif",
+          "path": "/assets/optimized/asset-023/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 39002,
+          "crop": "original"
+        },
+        {
+          "id": "asset-023-original-640-webp",
+          "path": "/assets/optimized/asset-023/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 55436,
+          "crop": "original"
+        },
+        {
+          "id": "asset-023-original-960-avif",
+          "path": "/assets/optimized/asset-023/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 67585,
+          "crop": "original"
+        },
+        {
+          "id": "asset-023-original-960-webp",
+          "path": "/assets/optimized/asset-023/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 93488,
+          "crop": "original"
+        },
+        {
+          "id": "asset-023-original-1280-avif",
+          "path": "/assets/optimized/asset-023/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 100661,
+          "crop": "original"
+        },
+        {
+          "id": "asset-023-original-1280-webp",
+          "path": "/assets/optimized/asset-023/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 134914,
+          "crop": "original"
+        },
+        {
+          "id": "asset-023-square-400-avif",
+          "path": "/assets/optimized/asset-023/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 16818,
+          "crop": "square"
+        },
+        {
+          "id": "asset-023-square-400-webp",
+          "path": "/assets/optimized/asset-023/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 24690,
+          "crop": "square"
+        },
+        {
+          "id": "asset-023-square-640-avif",
+          "path": "/assets/optimized/asset-023/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 33137,
+          "crop": "square"
+        },
+        {
+          "id": "asset-023-square-640-webp",
+          "path": "/assets/optimized/asset-023/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 47036,
+          "crop": "square"
+        },
+        {
+          "id": "asset-023-square-880-avif",
+          "path": "/assets/optimized/asset-023/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 51680,
+          "crop": "square"
+        },
+        {
+          "id": "asset-023-square-880-webp",
+          "path": "/assets/optimized/asset-023/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 71490,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-024",
-      "original_name": "tacos-malcriados-2.webp",
-      "local_path": "public/assets/source/food/tacos-malcriados-2.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/tacos-malcriados-2.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "sushi-malcriado.webp",
+      "localPath": "/assets/source/food/sushi-malcriado.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 281108,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 215246,
+      "sha256": "1a146f9687a39123ba145e679515c7d4bb55d5279e6f59f36f858597c51ded15",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 60,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "950db93ed2b911ad180adaf905b7546e7dd311dad9d05ab9bc4d4e7ad3c9275f",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "tacos malcriados 2",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 60%",
+      "roles": [
+        "FEATURED_DISH"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "featured-dish",
+      "productionPath": "/assets/optimized/asset-024/original-720.avif",
+      "duplicateGroup": "dup-001",
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Primary sushi feature in dishes module.",
+      "suggestedScene": "Featured dishes",
+      "variants": [
+        {
+          "id": "asset-024-original-720-avif",
+          "path": "/assets/optimized/asset-024/original-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 1080,
+          "bytes": 33433,
+          "crop": "original"
+        },
+        {
+          "id": "asset-024-original-720-webp",
+          "path": "/assets/optimized/asset-024/original-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 1080,
+          "bytes": 46176,
+          "crop": "original"
+        },
+        {
+          "id": "asset-024-original-1080-avif",
+          "path": "/assets/optimized/asset-024/original-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1620,
+          "bytes": 54759,
+          "crop": "original"
+        },
+        {
+          "id": "asset-024-original-1080-webp",
+          "path": "/assets/optimized/asset-024/original-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1620,
+          "bytes": 74928,
+          "crop": "original"
+        },
+        {
+          "id": "asset-024-original-1440-avif",
+          "path": "/assets/optimized/asset-024/original-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 78452,
+          "crop": "original"
+        },
+        {
+          "id": "asset-024-original-1440-webp",
+          "path": "/assets/optimized/asset-024/original-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 105826,
+          "crop": "original"
+        },
+        {
+          "id": "asset-024-square-480-avif",
+          "path": "/assets/optimized/asset-024/square-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 480,
+          "bytes": 18763,
+          "crop": "square"
+        },
+        {
+          "id": "asset-024-square-480-webp",
+          "path": "/assets/optimized/asset-024/square-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 26552,
+          "crop": "square"
+        },
+        {
+          "id": "asset-024-square-720-avif",
+          "path": "/assets/optimized/asset-024/square-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 720,
+          "bytes": 30839,
+          "crop": "square"
+        },
+        {
+          "id": "asset-024-square-720-webp",
+          "path": "/assets/optimized/asset-024/square-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 720,
+          "bytes": 42584,
+          "crop": "square"
+        },
+        {
+          "id": "asset-024-square-1080-avif",
+          "path": "/assets/optimized/asset-024/square-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 49972,
+          "crop": "square"
+        },
+        {
+          "id": "asset-024-square-1080-webp",
+          "path": "/assets/optimized/asset-024/square-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 69204,
+          "crop": "square"
+        },
+        {
+          "id": "asset-024-portrait-480-avif",
+          "path": "/assets/optimized/asset-024/portrait-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 20548,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-024-portrait-480-webp",
+          "path": "/assets/optimized/asset-024/portrait-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 29096,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-024-portrait-720-avif",
+          "path": "/assets/optimized/asset-024/portrait-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 900,
+          "bytes": 33610,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-024-portrait-720-webp",
+          "path": "/assets/optimized/asset-024/portrait-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 46628,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-024-portrait-960-avif",
+          "path": "/assets/optimized/asset-024/portrait-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 47547,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-024-portrait-960-webp",
+          "path": "/assets/optimized/asset-024/portrait-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 65320,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-024-editorial-720-avif",
+          "path": "/assets/optimized/asset-024/editorial-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 33687,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-024-editorial-720-webp",
+          "path": "/assets/optimized/asset-024/editorial-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 46600,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-024-editorial-1080-avif",
+          "path": "/assets/optimized/asset-024/editorial-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 54641,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-024-editorial-1080-webp",
+          "path": "/assets/optimized/asset-024/editorial-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 75112,
+          "crop": "editorial"
+        }
+      ]
     },
     {
       "id": "asset-025",
-      "original_name": "tartar-de-atun.webp",
-      "local_path": "public/assets/source/food/tartar-de-atun.webp",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/08/tartar-de-atun.webp",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/"
-      ],
-      "mime_type": "image/webp",
+      "originalName": "tacos-malcriados-2.webp",
+      "localPath": "/assets/source/food/tacos-malcriados-2.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
       "extension": ".webp",
-      "size_bytes": 250332,
-      "dimensions": {
-        "width": null,
-        "height": null
+      "sizeBytes": 281108,
+      "sha256": "950db93ed2b911ad180adaf905b7546e7dd311dad9d05ab9bc4d4e7ad3c9275f",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "181b35b88444546b20ebf85f401ab2440bcdd60078f3d72e2c425579957ec0a9",
-      "proposed_role": "food",
-      "category": "food",
-      "orientation": null,
-      "current_alt_text": "tartar de atun",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "MENU_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "menu-support",
+      "productionPath": "/assets/optimized/asset-025/original-640.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Supporting visual asset.",
+      "suggestedScene": "Menu support grid",
+      "variants": [
+        {
+          "id": "asset-025-original-640-avif",
+          "path": "/assets/optimized/asset-025/original-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 27937,
+          "crop": "original"
+        },
+        {
+          "id": "asset-025-original-640-webp",
+          "path": "/assets/optimized/asset-025/original-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 37664,
+          "crop": "original"
+        },
+        {
+          "id": "asset-025-original-960-avif",
+          "path": "/assets/optimized/asset-025/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 48229,
+          "crop": "original"
+        },
+        {
+          "id": "asset-025-original-960-webp",
+          "path": "/assets/optimized/asset-025/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 64644,
+          "crop": "original"
+        },
+        {
+          "id": "asset-025-original-1280-avif",
+          "path": "/assets/optimized/asset-025/original-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 70947,
+          "crop": "original"
+        },
+        {
+          "id": "asset-025-original-1280-webp",
+          "path": "/assets/optimized/asset-025/original-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 1920,
+          "bytes": 93982,
+          "crop": "original"
+        },
+        {
+          "id": "asset-025-square-400-avif",
+          "path": "/assets/optimized/asset-025/square-400.avif",
+          "format": "avif",
+          "width": 400,
+          "height": 400,
+          "bytes": 14488,
+          "crop": "square"
+        },
+        {
+          "id": "asset-025-square-400-webp",
+          "path": "/assets/optimized/asset-025/square-400.webp",
+          "format": "webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 19978,
+          "crop": "square"
+        },
+        {
+          "id": "asset-025-square-640-avif",
+          "path": "/assets/optimized/asset-025/square-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 27115,
+          "crop": "square"
+        },
+        {
+          "id": "asset-025-square-640-webp",
+          "path": "/assets/optimized/asset-025/square-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 37072,
+          "crop": "square"
+        },
+        {
+          "id": "asset-025-square-880-avif",
+          "path": "/assets/optimized/asset-025/square-880.avif",
+          "format": "avif",
+          "width": 880,
+          "height": 880,
+          "bytes": 42230,
+          "crop": "square"
+        },
+        {
+          "id": "asset-025-square-880-webp",
+          "path": "/assets/optimized/asset-025/square-880.webp",
+          "format": "webp",
+          "width": 880,
+          "height": 880,
+          "bytes": 54986,
+          "crop": "square"
+        }
+      ]
     },
     {
       "id": "asset-026",
-      "original_name": "cropped-logo-malcriado-pineda-de-mar-favicon.png",
-      "local_path": "public/assets/source/brand/cropped-logo-malcriado-pineda-de-mar-favicon.png",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/09/cropped-logo-malcriado-pineda-de-mar-favicon.png",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/aviso-legal/",
-        "https://malcriadobcn.com/contacto/",
-        "https://malcriadobcn.com/declaracion-de-privacidad/",
-        "https://malcriadobcn.com/descargo-de-responsabilidad/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/",
-        "https://malcriadobcn.com/politica-de-cookies/",
-        "https://malcriadobcn.com/sample-page/"
-      ],
-      "mime_type": "image/png",
-      "extension": ".png",
-      "size_bytes": 123617,
-      "dimensions": {
-        "width": 512,
-        "height": 512
+      "originalName": "tartar-de-atun.webp",
+      "localPath": "/assets/source/food/tartar-de-atun.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
+      "extension": ".webp",
+      "sizeBytes": 250332,
+      "sha256": "181b35b88444546b20ebf85f401ab2440bcdd60078f3d72e2c425579957ec0a9",
+      "width": 2624,
+      "height": 3936,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "",
+      "cropSafety": "high",
+      "focalPoint": {
+        "x": 42,
+        "y": 68,
+        "confidence": "manual"
       },
-      "duration_seconds": null,
-      "sha256": "f5942333ad1ae536ce119701757f339211e69d1212d34d599e0335090c1a3ed8",
-      "proposed_role": "brand",
-      "category": "brand",
-      "orientation": "square",
-      "current_alt_text": "",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "42% 68%",
+      "roles": [
+        "FEATURED_DISH",
+        "HERO_CANDIDATE"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": true,
+      "backgroundCandidate": false,
+      "productionProfile": "hero",
+      "productionPath": "/assets/optimized/asset-026/original-960.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "OWNED_ASSUMED_FROM_CURRENT_SITE",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Mobile hero candidate and premium food editorial crop.",
+      "suggestedScene": "Hero - signature plate",
+      "variants": [
+        {
+          "id": "asset-026-original-960-avif",
+          "path": "/assets/optimized/asset-026/original-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1440,
+          "bytes": 60614,
+          "crop": "original"
+        },
+        {
+          "id": "asset-026-original-960-webp",
+          "path": "/assets/optimized/asset-026/original-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 69008,
+          "crop": "original"
+        },
+        {
+          "id": "asset-026-original-1440-avif",
+          "path": "/assets/optimized/asset-026/original-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 104446,
+          "crop": "original"
+        },
+        {
+          "id": "asset-026-original-1440-webp",
+          "path": "/assets/optimized/asset-026/original-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 114390,
+          "crop": "original"
+        },
+        {
+          "id": "asset-026-original-1920-avif",
+          "path": "/assets/optimized/asset-026/original-1920.avif",
+          "format": "avif",
+          "width": 1920,
+          "height": 2880,
+          "bytes": 157947,
+          "crop": "original"
+        },
+        {
+          "id": "asset-026-original-1920-webp",
+          "path": "/assets/optimized/asset-026/original-1920.webp",
+          "format": "webp",
+          "width": 1920,
+          "height": 2880,
+          "bytes": 169992,
+          "crop": "original"
+        },
+        {
+          "id": "asset-026-landscape-960-avif",
+          "path": "/assets/optimized/asset-026/landscape-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 40464,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-026-landscape-960-webp",
+          "path": "/assets/optimized/asset-026/landscape-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 44066,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-026-landscape-1440-avif",
+          "path": "/assets/optimized/asset-026/landscape-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 810,
+          "bytes": 69769,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-026-landscape-1440-webp",
+          "path": "/assets/optimized/asset-026/landscape-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 810,
+          "bytes": 75048,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-026-landscape-1920-avif",
+          "path": "/assets/optimized/asset-026/landscape-1920.avif",
+          "format": "avif",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 104841,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-026-landscape-1920-webp",
+          "path": "/assets/optimized/asset-026/landscape-1920.webp",
+          "format": "webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 109866,
+          "crop": "landscape"
+        },
+        {
+          "id": "asset-026-mobile-480-avif",
+          "path": "/assets/optimized/asset-026/mobile-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 25081,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-026-mobile-480-webp",
+          "path": "/assets/optimized/asset-026/mobile-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 28920,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-026-mobile-768-avif",
+          "path": "/assets/optimized/asset-026/mobile-768.avif",
+          "format": "avif",
+          "width": 768,
+          "height": 960,
+          "bytes": 45652,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-026-mobile-768-webp",
+          "path": "/assets/optimized/asset-026/mobile-768.webp",
+          "format": "webp",
+          "width": 768,
+          "height": 960,
+          "bytes": 52066,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-026-mobile-960-avif",
+          "path": "/assets/optimized/asset-026/mobile-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 60751,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-026-mobile-960-webp",
+          "path": "/assets/optimized/asset-026/mobile-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 68748,
+          "crop": "mobile"
+        },
+        {
+          "id": "asset-026-editorial-720-avif",
+          "path": "/assets/optimized/asset-026/editorial-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 41724,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-026-editorial-720-webp",
+          "path": "/assets/optimized/asset-026/editorial-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 47804,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-026-editorial-1080-avif",
+          "path": "/assets/optimized/asset-026/editorial-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 70590,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-026-editorial-1080-webp",
+          "path": "/assets/optimized/asset-026/editorial-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 80248,
+          "crop": "editorial"
+        }
+      ]
     },
     {
       "id": "asset-027",
-      "original_name": "cropped-logo-malcriado-pineda-de-mar.png",
-      "local_path": "public/assets/source/brand/cropped-logo-malcriado-pineda-de-mar.png",
-      "source_url": "https://malcriadobcn.com/wp-content/uploads/2024/09/cropped-logo-malcriado-pineda-de-mar.png",
-      "page_urls": [
-        "https://malcriadobcn.com",
-        "https://malcriadobcn.com/",
-        "https://malcriadobcn.com/aviso-legal/",
-        "https://malcriadobcn.com/contacto/",
-        "https://malcriadobcn.com/declaracion-de-privacidad/",
-        "https://malcriadobcn.com/descargo-de-responsabilidad/",
-        "https://malcriadobcn.com/menu/",
-        "https://malcriadobcn.com/nosotros/",
-        "https://malcriadobcn.com/politica-de-cookies/",
-        "https://malcriadobcn.com/sample-page/"
-      ],
-      "mime_type": "image/png",
-      "extension": ".png",
-      "size_bytes": 952195,
-      "dimensions": {
-        "width": 2559,
-        "height": 568
+      "originalName": "Mjoitos-fresa-y-maracuya-malcriado.webp",
+      "localPath": "/assets/source/miscellaneous/Mjoitos-fresa-y-maracuya-malcriado.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
+      "extension": ".webp",
+      "sizeBytes": 206262,
+      "sha256": "33d921582e8038267b1e176db955378671a677c005d0975a707e660679ae13e2",
+      "width": 2326,
+      "height": 3489,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "medium",
+      "qualityNotes": "Do not ship until source ownership is confirmed.",
+      "cropSafety": "medium",
+      "focalPoint": {
+        "x": 50,
+        "y": 58,
+        "confidence": "heuristic"
       },
-      "duration_seconds": null,
-      "sha256": "8347dcdabd2bda5a4f67a65175f24b8d2f23f58518b7ad3c9a8304e43553b638",
-      "proposed_role": "brand",
-      "category": "brand",
-      "orientation": "landscape",
-      "current_alt_text": "logo malcriado pineda de mar",
-      "provisional_alt_text": "",
-      "rights_status": "OWNED_ASSUMED_FROM_CURRENT_SITE",
-      "needs_optimization": true,
-      "duplicate_of": null,
-      "quality_notes": "",
-      "recommended_focal_point": null
+      "recommendedObjectPosition": "50% 58%",
+      "roles": [
+        "COCKTAIL"
+      ],
+      "state": "PENDING_RIGHTS",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "excluded",
+      "productionPath": null,
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "REQUIRES_CONFIRMATION",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Hold from production until image rights are explicitly confirmed.",
+      "suggestedScene": "Pending rights review",
+      "variants": []
     }
   ]
 }

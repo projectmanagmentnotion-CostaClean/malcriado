@@ -1,23 +1,23 @@
-# Malcriado BCN — Website Rebuild
+# Malcriado BCN - Website Rebuild
 
-Nueva web oficial de Malcriado, restaurante de cocina fusión latinoamericana y mediterránea frente al mar en Pineda de Mar.
+Nueva web oficial de Malcriado, restaurante de cocina fusion latinoamericana y mediterranea frente al mar en Pineda de Mar.
 
-Este repositorio se trata como un proyecto nuevo. La web existente se usa únicamente como fuente auditada de marca, logos, fotografías, vídeos, carta, datos comerciales y contenido editorial. No se reutiliza ninguna base de datos ni arquitectura heredada.
+Este repositorio se trata como un proyecto nuevo. La web existente se usa unicamente como fuente auditada de marca, logos, fotografias, videos, carta, datos comerciales y contenido editorial. No se reutiliza ninguna base de datos ni arquitectura heredada.
 
 ## Objetivo
 
-Construir una experiencia web inmersiva, rápida, accesible y orientada a conversión que:
+Construir una experiencia web inmersiva, rapida, accesible y orientada a conversion que:
 
 - convierta visitas en reservas mediante un formulario claro;
-- permita destacar platos, menús y ofertas por día, semana o temporada;
-- posicione Malcriado en búsquedas locales de Pineda de Mar, Maresme y costa de Barcelona;
-- reutilice y optimice todos los assets válidos de la web actual;
-- use GSAP y ScrollTrigger como sistema de movimiento, sin sacrificar rendimiento, accesibilidad ni navegación;
-- funcione de forma robusta en móvil, tablet, escritorio y dispositivos con capacidades reducidas.
+- permita destacar platos, menus y ofertas por dia, semana o temporada;
+- posicione Malcriado en busquedas locales de Pineda de Mar, Maresme y costa de Barcelona;
+- reutilice y optimice todos los assets validos de la web actual;
+- use GSAP y ScrollTrigger como sistema de movimiento, sin sacrificar rendimiento, accesibilidad ni navegacion;
+- funcione de forma robusta en movil, tablet, escritorio y dispositivos con capacidades reducidas.
 
-## Documentación de gobierno
+## Documentacion de gobierno
 
-La ejecución se rige por `AGENTS.md` y por los documentos de `/docs`. El orden obligatorio de lectura para Codex es:
+La ejecucion se rige por `AGENTS.md` y por los documentos de `/docs`. El orden obligatorio de lectura para Codex es:
 
 1. `AGENTS.md`
 2. `docs/PRODUCT_STRATEGY.md`
@@ -33,7 +33,7 @@ La ejecución se rige por `AGENTS.md` y por los documentos de `/docs`. El orden 
 
 ## Estado
 
-Fase 0 completada y Fase 1 cerrada a nivel de bootstrap tecnico.
+Fase 0, Fase 1 y Fase 2 cerradas en local.
 
 La base actual ya incluye:
 
@@ -46,5 +46,14 @@ La base actual ya incluye:
 - CI para format, lint, typecheck, tests y build.
 - Home provisional organizada por escenas.
 - Documentos creativos para direccion artistica, storyboard de motion y presupuesto GSAP.
+- Pipeline de assets con auditoria, manifiesto enriquecido, derivados responsive y ruta interna `/dev/assets/`.
+
+En Fase 2 quedaron implementados:
+
+- `scripts/assets/audit.mjs`, `scripts/assets/build.mjs` y `scripts/assets/verify.mjs`.
+- Manifiesto tipado en `src/content/assets/asset-manifest.json`.
+- Componentes `ResponsiveImage` y `ResponsiveVideo`.
+- Catalogo interno `/dev/assets/` con `noindex, nofollow`.
+- Documentacion operativa de duplicados, crops, performance, marca y recuperacion de video.
 
 La home inmersiva final y las escenas GSAP completas pertenecen a la Fase 6 del roadmap.

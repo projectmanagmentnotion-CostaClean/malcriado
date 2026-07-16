@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { legalPages } from "@/content/siteContent";
+import { DevAssetsPage } from "@/pages/DevAssetsPage";
 import { EspecialesPage } from "@/pages/EspecialesPage";
 import { HomePage } from "@/pages/HomePage";
 import { LegalPage } from "@/pages/LegalPage";
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
     errorElement: <NotFoundPage />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: "/dev/assets/", element: <DevAssetsPage /> },
       { path: "/menu/", element: <MenuPage /> },
       { path: "/especiales/", element: <EspecialesPage /> },
       { path: "/nosotros/", element: <NosotrosPage /> },

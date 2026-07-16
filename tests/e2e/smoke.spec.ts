@@ -66,3 +66,13 @@ test("not found route returns 404 content", async ({ page }) => {
   await page.goto("/ruta-inexistente/");
   await expect(page.getByRole("heading", { name: "404" })).toBeVisible();
 });
+
+test("dev assets route exposes the internal asset catalog", async ({
+  page,
+}) => {
+  await page.goto("/dev/assets/");
+  await expect(
+    page.getByRole("heading", { name: /catalogo de assets/i }),
+  ).toBeVisible();
+  await expect(page.getByText(/Dev only/i)).toBeVisible();
+});
