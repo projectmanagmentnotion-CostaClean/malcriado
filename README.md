@@ -33,7 +33,7 @@ La ejecucion se rige por `AGENTS.md` y por los documentos de `/docs`. El orden o
 
 ## Estado
 
-Fase 0, Fase 1, Fase 2, Fase 3, Fase 4 y Fase 5 cerradas en local.
+Fase 0, Fase 1, Fase 2, Fase 3, Fase 4, Fase 5 y Fase 6 cerradas en local.
 
 La base actual ya incluye:
 
@@ -44,13 +44,16 @@ La base actual ya incluye:
 - Base GSAP segura para React y reduced motion.
 - Tests con Vitest, Testing Library, Axe y Playwright.
 - CI para format, lint, typecheck, tests y build.
-- Home provisional organizada por escenas.
+- Home inmersiva final organizada por escenas.
 - Documentos creativos para direccion artistica, storyboard de motion y presupuesto GSAP.
 - Pipeline de assets con auditoria, manifiesto enriquecido, derivados responsive y ruta interna `/dev/assets/`.
 - Modelo editorial tipado con validacion Zod, scripts de auditoria y ruta interna `/dev/content/`.
 - Shell publico separado del shell interno `/dev/`.
 - SEO tecnico generado y validado con `robots.txt`, `sitemap.xml`, redirects heredados y metadata reforzada.
 - CTA de reserva persistente con contexto de entrada para QA y trazabilidad editorial.
+- QA visual de Fase 6 cerrada con matriz de viewports, evidencia final reducida y auditoria Axe dedicada.
+- GSAP y ScrollTrigger en carga diferida, con rutas secundarias lazy y presupuesto de bundle verificado.
+- Lighthouse local de Fase 6 sobre build de produccion: Performance 98, Accessibility 100, Best Practices 100, SEO 100.
 
 En Fase 2 quedaron implementados:
 
@@ -87,4 +90,4 @@ En Fase 5 quedaron implementados:
 - Scripts `npm run routes:validate` y `npm run seo:validate` integrados en QA y CI.
 - Ruta publica `/declaracion-de-accesibilidad/`, `/404` explicita y redirects heredados desde URLs antiguas y basura indexable.
 
-La home inmersiva final y las escenas GSAP completas pertenecen a la Fase 6 del roadmap.
+La siguiente fase funcional del roadmap es Fase 7, pero no forma parte de este cierre.

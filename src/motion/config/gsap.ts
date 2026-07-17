@@ -1,14 +1,24 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+type GsapRuntime = {
+  readonly gsap: typeof import("gsap").default;
+  readonly ScrollTrigger: typeof import("gsap/ScrollTrigger").ScrollTrigger;
+};
 
-let registered = false;
+let runtimePromise: Promise<GsapRuntime> | null = null;
 
-export function ensureGsapRegistration() {
-  if (!registered) {
-    gsap.registerPlugin(useGSAP, ScrollTrigger);
-    registered = true;
+export function loadGsapRuntime(): Promise<GsapRuntime> {
+  if (!runtimePromise) {
+    runtimePromise = Promise.all([
+      import("gsap"),
+      import("gsap/ScrollTrigger"),
+    ]).then(([gsapModule, scrollTriggerModule]) => {
+      const gsap = gsapModule.default;
+      const { ScrollTrigger } = scrollTriggerModule;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      return { gsap, ScrollTrigger };
+    });
   }
 
-  return gsap;
+  return runtimePromise;
 }

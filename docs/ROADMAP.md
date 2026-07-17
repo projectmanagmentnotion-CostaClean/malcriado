@@ -131,17 +131,55 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 
 ## Fase 6 - Home inmersiva
 
-- [ ] Hero y preloader.
-- [ ] Especial activo.
-- [ ] Platos estrella.
-- [ ] Narrativa de fusion.
-- [ ] Experiencia frente al mar.
-- [ ] Historia del chef.
-- [ ] Prueba social.
-- [ ] Bloque de reserva y ubicacion.
-- [ ] Variantes reduced motion y movil.
+- [x] Hero y preloader.
+- [x] Especial activo.
+- [x] Platos estrella.
+- [x] Narrativa de fusion.
+- [x] Experiencia frente al mar.
+- [x] Historia del chef.
+- [x] Prueba social.
+- [x] Bloque de reserva y ubicacion.
+- [x] Variantes reduced motion y movil.
 
 **Aceptacion:** narrativa completa, CTA claro, sin bloqueo de scroll y Core Web Vitals dentro del presupuesto de laboratorio.
+
+### Resultado de la Fase 6
+
+- Escenas implementadas: 10 escenas inmersivas y editoriales sobre `HomePage`, mas preloader de primera visita.
+- Assets visibles en home: hero, especial, fusion, platos, costa y noche servidos desde el manifiesto tipado; el video sigue fuera del alcance por bloqueo de origen.
+- GSAP: carga diferida, registro unico, `matchMedia`, cleanup al desmontar y sin pinning.
+- ScrollTriggers medidos en dev:
+  - mobile estable: `26`
+  - desktop estable: `27`
+  - pins: `0`
+- Reduced motion: sin reveals ni parallax; preloader cerrado sin secuencia larga.
+- Responsive: matriz cerrada en `320x568`, `360x800`, `390x844`, `430x932`, `768x1024`, `820x1180`, `1024x768`, `1280x800`, `1366x768`, `1440x900`, `1728x1117` y `1920x1080`.
+- Bundle:
+  - anterior: `632.64 kB`
+  - final Vite: `494.23 kB`
+  - chunk principal analizado: `482.65 KiB`
+  - `ScrollTrigger`: `42.53 KiB`
+- Lighthouse local sobre build de produccion:
+  - Performance `98`
+  - Accessibility `100`
+  - Best Practices `100`
+  - SEO `100`
+  - LCP `~829 ms`
+  - CLS `~0.0107`
+  - TBT `0 ms`
+- Axe:
+  - home, menu movil abierto, reduced motion, reservar, footer y `/dev/design-system/` con `0` violaciones serias o criticas.
+- Tests:
+  - unitarios/integracion: `31` verdes
+  - E2E: ampliados para CTA persistente, menu movil, redirects, reservar y rutas dev
+- Warnings editoriales:
+  - permanecen `92`
+  - no bloquean porque siguen siendo los mismos pendientes de contenido y legales
+- Deuda restante:
+  - material MP4 original
+  - validacion editorial y legal del titular
+  - pasada humana con lector de pantalla real
+  - proveedor real de reservas en Fase 8
 
 ## Fase 7 - Carta y especiales
 

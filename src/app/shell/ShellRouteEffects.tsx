@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   NavigationType,
   ScrollRestoration,
@@ -21,6 +21,8 @@ export function ShellRouteEffects() {
   const navigationType = useNavigationType();
   const activeHandle = useActiveShellHandle();
   const [announcement, setAnnouncement] = useState(activeHandle.pageTitle);
+  const initialLocationKeyRef = useRef(location.key);
+  const skippedInitialFocusRef = useRef(false);
 
   const scrollKey = useMemo(
     () => `${location.pathname}${location.search}${location.hash}`,
@@ -39,6 +41,14 @@ export function ShellRouteEffects() {
 
       if (navigationType !== NavigationType.Pop) {
         window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      }
+
+      if (
+        !skippedInitialFocusRef.current &&
+        location.key === initialLocationKeyRef.current
+      ) {
+        skippedInitialFocusRef.current = true;
+        return;
       }
 
       const focusTargetId = activeHandle.focusTargetId ?? "main-content";
