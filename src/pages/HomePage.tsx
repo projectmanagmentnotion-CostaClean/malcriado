@@ -9,14 +9,15 @@ import { MenuCategoryLink } from "@/components/food/MenuCategoryLink";
 import { EditorialImage } from "@/components/media/EditorialImage";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { LinkButton } from "@/components/ui/LinkButton";
+import { buildBookingIntentHref } from "@/lib/booking/buildBookingIntentHref";
 import { FullBleedMediaSection } from "@/sections/shared/FullBleedMediaSection";
 import { StatementSection } from "@/sections/shared/StatementSection";
+import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 import {
   businessContent,
   getAsset,
   getFeaturedMenuItems,
   getMenuItemsByCategory,
-  getRestaurantStructuredData,
   getTelephoneHref,
   getWhatsappHref,
   homeScenes,
@@ -37,13 +38,7 @@ export function HomePage() {
 
   return (
     <>
-      <PageSeo
-        description={seoPage.metadata.description}
-        path={seoPage.metadata.path}
-        robots={seoPage.metadata.robots}
-        structuredData={getRestaurantStructuredData(seoPage)}
-        title={seoPage.metadata.title}
-      />
+      <PageSeo {...buildPageSeoProps(seoPage)} />
       <Section spacing="scene">
         <Container width="wide">
           <div className="hero-shell">
@@ -51,12 +46,14 @@ export function HomePage() {
               <p className="eyebrow">
                 {heroScene.content.eyebrow ?? "Pineda de Mar"}
               </p>
-              <h1>{heroScene.content.heading}</h1>
+              <h1 data-route-heading="true" id="page-heading-home">
+                {heroScene.content.heading}
+              </h1>
               <p className="hero-shell__lede">{heroScene.content.copy}</p>
               <Cluster gap="sm">
                 <LinkButton
                   iconEnd="arrow-right"
-                  to="/reservar/"
+                  to={buildBookingIntentHref({ context: "home-hero" })}
                   variant="editorial"
                 >
                   Reservar

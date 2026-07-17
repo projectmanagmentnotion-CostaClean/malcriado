@@ -6,7 +6,9 @@ test("home renders without overflow and keeps booking CTA visible", async ({
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   await expect(
-    page.locator("#main-content").getByRole("link", { name: "Reservar" }),
+    page
+      .locator("#main-content")
+      .getByRole("link", { name: "Reservar", exact: true }),
   ).toBeVisible();
 
   const overflow = await page.evaluate(
@@ -64,9 +66,35 @@ test("reservation form reports pending confirmation", async ({ page }) => {
   ).toBeVisible();
 });
 
+test("legacy privacy route redirects to the current legal URL", async ({
+  page,
+}) => {
+  await page.goto("/declaracion-de-privacidad/");
+  await expect(page).toHaveURL(/\/privacidad\/$/);
+  await expect(
+    page.getByRole("heading", { name: /privacidad/i }),
+  ).toBeVisible();
+});
+
+test("booking route surfaces contextual entry copy", async ({ page }) => {
+  await page.goto(
+    "/reservar/?context=featured-dish&item=pulpo-al-chimichurri&category=cat-hot-dishes",
+  );
+  await expect(page.getByText(/solicitud iniciada desde carta/i)).toBeVisible();
+});
+
 test("not found route returns 404 content", async ({ page }) => {
   await page.goto("/ruta-inexistente/");
   await expect(page.getByRole("heading", { name: "404" })).toBeVisible();
+});
+
+test("accessibility statement route renders public compliance copy", async ({
+  page,
+}) => {
+  await page.goto("/declaracion-de-accesibilidad/");
+  await expect(
+    page.getByRole("heading", { name: /declaracion de accesibilidad/i }),
+  ).toBeVisible();
 });
 
 test("dev assets route exposes the internal asset catalog", async ({

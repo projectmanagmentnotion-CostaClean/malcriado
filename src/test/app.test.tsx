@@ -31,6 +31,27 @@ describe("app shell", () => {
     ).toBeInTheDocument();
   });
 
+  it("renders accessibility statement route", () => {
+    renderApp(["/declaracion-de-accesibilidad/"]);
+
+    expect(
+      screen.getByRole("heading", {
+        level: 1,
+        name: /declaracion de accesibilidad/i,
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it("renders booking context copy when arriving with intent params", () => {
+    renderApp([
+      "/reservar/?context=featured-dish&item=pulpo-al-chimichurri&category=cat-hot-dishes",
+    ]);
+
+    expect(
+      screen.getByText(/solicitud iniciada desde carta/i),
+    ).toBeInTheDocument();
+  });
+
   it("opens and closes the mobile menu with escape and restores focus", async () => {
     window.innerWidth = 390;
     renderApp(["/"]);

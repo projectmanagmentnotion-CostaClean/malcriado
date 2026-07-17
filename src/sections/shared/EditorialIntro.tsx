@@ -6,15 +6,26 @@ interface EditorialIntroProps {
   readonly eyebrow: string;
   readonly title: string;
   readonly body: string;
+  readonly headingId?: string;
 }
 
-export function EditorialIntro({ eyebrow, title, body }: EditorialIntroProps) {
+export function EditorialIntro({
+  eyebrow,
+  title,
+  body,
+  headingId,
+}: EditorialIntroProps) {
   return (
     <Section spacing="spacious" tone="editorial">
       <Container width="editorial">
         <Stack className="editorial-intro" gap="md">
           <p className="eyebrow">{eyebrow}</p>
-          <h1>{title}</h1>
+          <h1
+            data-route-heading={headingId ? "true" : undefined}
+            id={headingId}
+          >
+            {title}
+          </h1>
           <p>{body}</p>
         </Stack>
       </Container>

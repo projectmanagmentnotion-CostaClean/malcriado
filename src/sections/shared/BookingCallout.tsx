@@ -2,6 +2,7 @@ import { Cluster } from "@/components/layout/Cluster";
 import { Section } from "@/components/layout/Section";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { getTelephoneHref, getWhatsappHref } from "@/content";
+import { buildBookingIntentHref } from "@/lib/booking/buildBookingIntentHref";
 
 export function BookingCallout() {
   return (
@@ -14,7 +15,10 @@ export function BookingCallout() {
           del equipo de Malcriado.
         </p>
         <Cluster gap="sm">
-          <LinkButton to="/reservar/" variant="primary">
+          <LinkButton
+            to={buildBookingIntentHref({ context: "section-booking-callout" })}
+            variant="primary"
+          >
             Ir al formulario
           </LinkButton>
           <LinkButton

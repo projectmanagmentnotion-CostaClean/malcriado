@@ -23,9 +23,16 @@ export const seoPageSchema = z.object({
       imageAssetId: z.string().nullable(),
     }),
     structuredData: z.object({
-      type: z.enum(["Restaurant", "WebPage"]),
+      type: z.enum([
+        "Restaurant",
+        "WebSite",
+        "WebPage",
+        "ContactPage",
+        "AboutPage",
+      ]),
       includeMenu: z.boolean(),
       includeOffers: z.boolean(),
+      includeBreadcrumbs: z.boolean().optional(),
     }),
     validationStatus: verificationStatusSchema,
     references: contentReferenceSchema,

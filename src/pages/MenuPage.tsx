@@ -6,10 +6,10 @@ import { Container } from "@/components/layout/Container";
 import { EditorialGrid } from "@/components/layout/EditorialGrid";
 import { Frame } from "@/components/layout/Frame";
 import { PageSeo } from "@/components/seo/PageSeo";
+import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 import {
   getFeaturedMenuItems,
   getMenuItemsByCategory,
-  getRestaurantStructuredData,
   menuContent,
   seoPages,
 } from "@/content";
@@ -19,16 +19,11 @@ export function MenuPage() {
 
   return (
     <>
-      <PageSeo
-        description={seoPage.metadata.description}
-        path={seoPage.metadata.path}
-        robots={seoPage.metadata.robots}
-        structuredData={getRestaurantStructuredData(seoPage)}
-        title={seoPage.metadata.title}
-      />
+      <PageSeo {...buildPageSeoProps(seoPage)} />
       <SectionIntro
         body="Las categorias se publican desde el modelo editorial tipado. Precios, alergenos y descripciones finales siguen pendientes de validacion."
         eyebrow="Carta"
+        headingId="page-heading-menu"
         title={menuContent.title}
       />
       <Container width="wide">

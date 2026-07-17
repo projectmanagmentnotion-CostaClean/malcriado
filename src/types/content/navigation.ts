@@ -11,3 +11,10 @@ export interface NavigationLink {
   readonly accessibleName?: string;
   readonly status: VerificationStatus;
 }
+
+export interface LegacyRedirect {
+  readonly id: string;
+  readonly from: string;
+  readonly to: string;
+  readonly statusCode: 301 | 302;
+}

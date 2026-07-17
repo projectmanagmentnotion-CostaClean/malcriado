@@ -1,4 +1,5 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Checkbox } from "@/components/forms/Checkbox";
 import { DateInput } from "@/components/forms/DateInput";
 import { FormField } from "@/components/forms/FormField";
@@ -10,12 +11,15 @@ import { TimeInput } from "@/components/forms/TimeInput";
 import { Container } from "@/components/layout/Container";
 import { Frame } from "@/components/layout/Frame";
 import { LinkButton } from "@/components/ui/LinkButton";
+import { TextLink } from "@/components/ui/TextLink";
 import { PageSeo } from "@/components/seo/PageSeo";
+import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 import {
   bookingChannels,
   bookingPolicy,
   bookingRequestContext,
-  getRestaurantStructuredData,
+  menuContent,
+  offers,
   seoPages,
 } from "@/content";
 import { bookingProvider } from "@/services/booking/BookingProvider";
@@ -31,9 +35,65 @@ function readFormValue(data: FormData, key: string) {
   return typeof value === "string" ? value : "";
 }
 
+function getBookingContextSummary(searchParams: URLSearchParams) {
+  const context = searchParams.get("context");
+  const itemSlug = searchParams.get("item");
+  const categorySlug = searchParams.get("category");
+  const offerSlug = searchParams.get("offer");
+
+  const item = itemSlug
+    ? menuContent.items.find((entry) => entry.slug === itemSlug)
+    : null;
+  const category = categorySlug
+    ? menuContent.categories.find(
+        (entry) => entry.slug === categorySlug || entry.id === categorySlug,
+      )
+    : null;
+  const offer = offerSlug
+    ? offers.find((entry) => entry.slug === offerSlug)
+    : null;
+
+  if (offer) {
+    return {
+      title: "Solicitud iniciada desde un especial",
+      body: `Llegas desde ${offer.title}. El equipo vera ese contexto junto con tu solicitud.`,
+    };
+  }
+
+  if (item || category) {
+    const parts = [item?.name, category?.label].filter(Boolean);
+
+    return {
+      title: "Solicitud iniciada desde carta",
+      body: `Llegas con contexto de ${parts.join(" / ")}. Se conserva para orientar la respuesta manual.`,
+    };
+  }
+
+  if (context === "contact") {
+    return {
+      title: "Solicitud iniciada desde contacto",
+      body: "Has pasado a la reserva desde contacto y sigues teniendo WhatsApp y telefono como alternativa.",
+    };
+  }
+
+  if (context) {
+    return {
+      title: "Solicitud iniciada desde navegacion",
+      body: "La solicitud conserva el origen de entrada para QA y trazabilidad editorial.",
+    };
+  }
+
+  return null;
+}
+
 export function ReservarPage() {
   const [result, setResult] = useState(initialResult);
+  const [searchParams] = useSearchParams();
   const seoPage = seoPages.booking!;
+  const bookingContextSummary = useMemo(
+    () => getBookingContextSummary(searchParams),
+    [searchParams],
+  );
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -54,19 +114,21 @@ export function ReservarPage() {
 
   return (
     <>
-      <PageSeo
-        description={seoPage.metadata.description}
-        path={seoPage.metadata.path}
-        robots={seoPage.metadata.robots}
-        structuredData={getRestaurantStructuredData(seoPage)}
-        title={seoPage.metadata.title}
-      />
+      <PageSeo {...buildPageSeoProps(seoPage)} />
       <Container width="wide">
         <section className="split split--content-first">
           <header className="editorial-intro">
             <p className="eyebrow">Reservar</p>
-            <h1>Solicitud de reserva</h1>
+            <h1 data-route-heading="true" id="page-heading-reservar">
+              Solicitud de reserva
+            </h1>
             <p>{bookingPolicy.summary}</p>
+            {bookingContextSummary ? (
+              <div className="panel panel--soft">
+                <p className="eyebrow">{bookingContextSummary.title}</p>
+                <p>{bookingContextSummary.body}</p>
+              </div>
+            ) : null}
             <ul>
               {bookingChannels.map((channel) => (
                 <li key={channel.id}>
@@ -140,6 +202,9 @@ export function ReservarPage() {
                 <LinkButton to="/contacto/" variant="ghost">
                   Ver canales alternativos
                 </LinkButton>
+                <TextLink to="/contacto/">
+                  Tambien puedes confirmar por telefono o WhatsApp
+                </TextLink>
               </FormSection>
               <button className="ui-button ui-button--editorial" type="submit">
                 Enviar solicitud
