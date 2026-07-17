@@ -33,17 +33,30 @@ test("keyboard starts on skip link before entering home content", async ({
   await expect(skipLink).toHaveAttribute("href", "#main-content");
 });
 
-test("menu and especiales routes render provisional content", async ({
+test("menu and especiales routes render editorial content", async ({
   page,
 }) => {
   await page.goto("/menu/");
   await expect(
     page.getByRole("heading", { name: /carta malcriado/i }),
   ).toBeVisible();
+  await expect(page.getByText(/carta html/i)).toBeVisible();
 
   await page.goto("/especiales/");
   await expect(
-    page.getByText(/no se han recuperado ofertas publicas vigentes/i),
+    page.getByRole("heading", {
+      name: /estado editorial de ofertas y vigencia/i,
+    }),
+  ).toBeVisible();
+});
+
+test("menu deep links land on the requested category chapter", async ({
+  page,
+}) => {
+  await page.goto("/menu/#menu-category-pizzas");
+  await expect(page).toHaveURL(/#menu-category-pizzas$/);
+  await expect(
+    page.getByRole("heading", { level: 2, name: /^pizzas$/i }),
   ).toBeVisible();
 });
 

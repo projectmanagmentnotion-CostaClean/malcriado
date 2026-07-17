@@ -26,9 +26,7 @@ describe("app shell", () => {
         name: /carta malcriado/i,
       }),
     ).toBeInTheDocument();
-    expect(
-      screen.getByText(/precios, alergenos y descripciones finales/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/carta html/i)).toBeInTheDocument();
   });
 
   it("renders accessibility statement route", () => {

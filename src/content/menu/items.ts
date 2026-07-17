@@ -357,7 +357,7 @@ export const menuItems: readonly MenuItem[] = [
   }),
   menuItem({
     id: "item-pizza-margarita",
-    slug: "margarita",
+    slug: "pizza-margarita",
     sourceName: "Margarita",
     name: "Margarita",
     description: null,

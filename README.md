@@ -35,59 +35,38 @@ La ejecucion se rige por `AGENTS.md` y por los documentos de `/docs`. El orden o
 
 Fase 0, Fase 1, Fase 2, Fase 3, Fase 4, Fase 5 y Fase 6 cerradas en local.
 
-La base actual ya incluye:
+Fase 7 queda cerrada tecnicamente en local y pendiente de publicacion remota del draft PR:
+
+- carta HTML editorial por categorias reales
+- especiales con estado `active`, `upcoming`, `expired` y `empty`
+- deep links de categoria y anchors de plato
+- slug `margarita` resuelto con identidad publica unica
+- shell visual abierto consolidado en rutas publicas secundarias
+- JSON-LD ampliado para `Menu`, `MenuSection`, `MenuItem` y `Offer`
+- QA local completo de lint, typecheck, build, tests, SEO, bundle y responsive
+
+## Hitos implementados
 
 - Vite + React + TypeScript estricto en la raiz del repositorio.
-- Routing provisional accesible.
-- SEO base y JSON-LD inicial.
+- Routing accesible con shell publico y shell interno `/dev/`.
+- SEO base, canonical, sitemap, redirects y JSON-LD extensible.
 - Abstraccion de reservas sustituible.
 - Base GSAP segura para React y reduced motion.
 - Tests con Vitest, Testing Library, Axe y Playwright.
-- CI para format, lint, typecheck, tests y build.
 - Home inmersiva final organizada por escenas.
-- Documentos creativos para direccion artistica, storyboard de motion y presupuesto GSAP.
 - Pipeline de assets con auditoria, manifiesto enriquecido, derivados responsive y ruta interna `/dev/assets/`.
 - Modelo editorial tipado con validacion Zod, scripts de auditoria y ruta interna `/dev/content/`.
-- Shell publico separado del shell interno `/dev/`.
-- SEO tecnico generado y validado con `robots.txt`, `sitemap.xml`, redirects heredados y metadata reforzada.
-- CTA de reserva persistente con contexto de entrada para QA y trazabilidad editorial.
-- QA visual de Fase 6 cerrada con matriz de viewports, evidencia final reducida y auditoria Axe dedicada.
-- GSAP y ScrollTrigger en carga diferida, con rutas secundarias lazy y presupuesto de bundle verificado.
-- Lighthouse local de Fase 6 sobre build de produccion: Performance 98, Accessibility 100, Best Practices 100, SEO 100.
+- Sistema de diseno con tokens, tipografia autocontenida y catalogo `/dev/design-system/`.
+- Carta HTML, especiales honestos y documentacion especifica de Fase 7 en `docs/menu/` y `docs/qa/`.
 
-En Fase 2 quedaron implementados:
+## Calidad conocida
 
-- `scripts/assets/audit.mjs`, `scripts/assets/build.mjs` y `scripts/assets/verify.mjs`.
-- Manifiesto tipado en `src/content/assets/asset-manifest.json`.
-- Componentes `ResponsiveImage` y `ResponsiveVideo`.
-- Catalogo interno `/dev/assets/` con `noindex, nofollow`.
-- Documentacion operativa de duplicados, crops, performance, marca y recuperacion de video.
+- `content:validate`: `0` errores, `130` warnings
+- `test:run`: `42/42`
+- `test:e2e`: `26` passed, `4` skipped
+- `bundle:budget`: pass
+- Axe: `0` violaciones en escenarios de Fase 7 auditados en preview
 
-En Fase 3 quedaron implementados:
+## Siguiente bloque
 
-- `src/content/` como dominio editorial tipado para negocio, carta, ofertas, historia, legales y SEO.
-- Pages y layout reconectados al modelo unico sin hardcodes comerciales legacy.
-- Scripts `npm run content:validate` y `npm run content:report`.
-- Ruta interna `/dev/content/` con resumen operativo del modelo.
-- Tests para helpers de negocio, selectores de ofertas, guardas de assets y validacion editorial.
-
-En Fase 4 quedaron implementados:
-
-- Sistema de tokens en `src/styles/tokens/`.
-- Tipografia autocontenida con `Bodoni Moda Variable` y `Manrope Variable`.
-- Layout primitives, botones, iconografia y estados reutilizables.
-- Componentes editoriales de media, comida, ofertas y formularios base.
-- Navegacion visual preparada con estados y menu movil editorial.
-- Ruta interna `/dev/design-system/` con `noindex, nofollow`.
-- Documentacion de auditoria UI, tokens, tipografia, accesibilidad y responsive.
-- Tests unitarios y Axe sobre el catalogo interno del sistema.
-
-En Fase 5 quedaron implementados:
-
-- `src/app/layout/PublicLayout.tsx` y `src/app/layout/DevLayout.tsx` con efectos de foco, scroll y anuncio de ruta.
-- Header/fallback/footer publicos completos y CTA persistente de reserva no invasivo.
-- `robots.txt`, `sitemap.xml` y `_redirects` generados desde contenido tipado mediante `npm run seo:generate`.
-- Scripts `npm run routes:validate` y `npm run seo:validate` integrados en QA y CI.
-- Ruta publica `/declaracion-de-accesibilidad/`, `/404` explicita y redirects heredados desde URLs antiguas y basura indexable.
-
-La siguiente fase funcional del roadmap es Fase 7, pero no forma parte de este cierre.
+El siguiente bloque funcional del roadmap, una vez publicada la Fase 7, es `Fase 8 - Reserva`.

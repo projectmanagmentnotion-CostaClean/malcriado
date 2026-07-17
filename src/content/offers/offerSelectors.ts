@@ -72,6 +72,7 @@ export function getActiveOffers(offers: readonly Offer[], now = new Date()) {
 export function getUpcomingOffers(offers: readonly Offer[], now = new Date()) {
   const today = getMadridDateParts(now).date;
   return offers
+    .filter((offer) => offer.editorialStatus === "VERIFIED")
     .filter(
       (offer) => offer.validity.startsAt && offer.validity.startsAt > today,
     )
@@ -84,11 +85,62 @@ export function getUpcomingOffers(offers: readonly Offer[], now = new Date()) {
 
 export function getExpiredOffers(offers: readonly Offer[], now = new Date()) {
   const today = getMadridDateParts(now).date;
-  return offers.filter((offer) =>
-    Boolean(offer.validity.endsAt && offer.validity.endsAt < today),
-  );
+  return offers
+    .filter((offer) => offer.editorialStatus === "VERIFIED")
+    .filter((offer) =>
+      Boolean(offer.validity.endsAt && offer.validity.endsAt < today),
+    )
+    .sort((left, right) =>
+      (right.validity.endsAt ?? "").localeCompare(left.validity.endsAt ?? ""),
+    );
 }
 
 export function getPrimaryOffer(offers: readonly Offer[], now = new Date()) {
   return getActiveOffers(offers, now)[0] ?? null;
+}
+
+export function getOfferEditorialSnapshot(
+  offers: readonly Offer[],
+  now = new Date(),
+) {
+  const activeOffers = getActiveOffers(offers, now);
+  if (activeOffers.length > 0) {
+    return {
+      kind: "active" as const,
+      primaryOffer: activeOffers[0] ?? null,
+      activeOffers,
+      upcomingOffers: [],
+      expiredOffers: [],
+    };
+  }
+
+  const upcomingOffers = getUpcomingOffers(offers, now);
+  if (upcomingOffers.length > 0) {
+    return {
+      kind: "upcoming" as const,
+      primaryOffer: upcomingOffers[0] ?? null,
+      activeOffers: [],
+      upcomingOffers,
+      expiredOffers: [],
+    };
+  }
+
+  const expiredOffers = getExpiredOffers(offers, now);
+  if (expiredOffers.length > 0) {
+    return {
+      kind: "expired" as const,
+      primaryOffer: expiredOffers[0] ?? null,
+      activeOffers: [],
+      upcomingOffers: [],
+      expiredOffers,
+    };
+  }
+
+  return {
+    kind: "empty" as const,
+    primaryOffer: null,
+    activeOffers: [],
+    upcomingOffers: [],
+    expiredOffers: [],
+  };
 }

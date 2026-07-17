@@ -1,0 +1,646 @@
+{
+  "viewportResults": [
+    {
+      "viewport": "320x568",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": true,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "320x568",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "320x568",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "320x568",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "320x568",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "360x800",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "360x800",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "360x800",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "360x800",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "360x800",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "390x844",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "390x844",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "390x844",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "390x844",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "390x844",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "430x932",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "430x932",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "430x932",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "430x932",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "430x932",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "768x1024",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "768x1024",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "768x1024",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "768x1024",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "768x1024",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "820x1180",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "820x1180",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "820x1180",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "820x1180",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "820x1180",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1024x768",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1024x768",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1024x768",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1024x768",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1024x768",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1280x800",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1280x800",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1280x800",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1280x800",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1280x800",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1366x768",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1366x768",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1366x768",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1366x768",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1366x768",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1440x900",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1440x900",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1440x900",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1440x900",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1440x900",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1728x1117",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1728x1117",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1728x1117",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1728x1117",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1728x1117",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1920x1080",
+      "route": "/menu/",
+      "title": "Carta | Malcriado",
+      "h1": "Carta Malcriado",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1920x1080",
+      "route": "/especiales/",
+      "title": "Especiales | Malcriado",
+      "h1": "Estado editorial de ofertas y vigencia",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1920x1080",
+      "route": "/nosotros/",
+      "title": "Nosotros | Malcriado",
+      "h1": "Historia y propuesta editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1920x1080",
+      "route": "/reservar/",
+      "title": "Reservar | Malcriado",
+      "h1": "Solicitud de reserva",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    },
+    {
+      "viewport": "1920x1080",
+      "route": "/contacto/",
+      "title": "Contacto | Malcriado",
+      "h1": "Direccion, canales y horario editorial",
+      "overflow": false,
+      "footerVisible": true,
+      "headerVisible": true,
+      "stickyHeader": "sticky"
+    }
+  ],
+  "axeResults": [
+    {
+      "scenario": "menu",
+      "violations": []
+    },
+    {
+      "scenario": "especiales-empty",
+      "violations": []
+    },
+    {
+      "scenario": "menu-deep-link",
+      "violations": []
+    },
+    {
+      "scenario": "reservar-context",
+      "violations": []
+    },
+    {
+      "scenario": "mobile-menu-open",
+      "violations": []
+    }
+  ],
+  "zoomResults": [
+    {
+      "route": "/menu/",
+      "overflow": false,
+      "activeElement": "BODY",
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "overflow": false,
+      "activeElement": "BODY",
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/reservar/",
+      "overflow": false,
+      "activeElement": "BODY",
+      "h1": "Solicitud de reserva"
+    }
+  ]
+}

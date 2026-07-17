@@ -18,14 +18,14 @@ interface BaseLinkButtonProps {
 type InternalLinkProps = BaseLinkButtonProps & {
   readonly to: string;
   readonly href?: never;
-};
+} & Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "aria-label" | "onClick">;
 
 type ExternalLinkProps = BaseLinkButtonProps & {
   readonly href: string;
   readonly to?: never;
   readonly target?: string;
   readonly rel?: string;
-} & Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "aria-label">;
+} & Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "aria-label" | "onClick">;
 
 type LinkButtonProps = InternalLinkProps | ExternalLinkProps;
 
@@ -63,6 +63,7 @@ export function LinkButton(props: LinkButtonProps) {
       <Link
         aria-hidden={props.ariaHidden}
         className={classes}
+        onClick={props.onClick}
         tabIndex={props.tabIndex}
         to={props.to}
       >
@@ -77,6 +78,7 @@ export function LinkButton(props: LinkButtonProps) {
       href={props.href}
       target={props.target}
       rel={props.rel}
+      onClick={props.onClick}
       aria-hidden={props.ariaHidden}
       tabIndex={props.tabIndex}
       aria-label={props["aria-label"]}

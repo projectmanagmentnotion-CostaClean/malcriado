@@ -9,11 +9,14 @@ export function PriceDisplay({ price }: PriceDisplayProps) {
   if (price.status !== "VERIFIED" || price.amount === null) {
     return (
       <StatusMessage
-        className="inline-status"
-        title="Precio pendiente"
+        className="inline-status menu-item-status"
+        title="Precio pendiente de actualizacion"
         tone="pending"
       >
-        <p>{price.note ?? "Pendiente de validacion editorial."}</p>
+        <p>
+          {price.note ??
+            "Consulta el precio actual antes de reservar o contactar."}
+        </p>
       </StatusMessage>
     );
   }

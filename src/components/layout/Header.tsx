@@ -15,6 +15,8 @@ import {
 } from "@/content";
 import { buildBookingIntentHref } from "@/lib/booking/buildBookingIntentHref";
 import { siteRoutes } from "@/lib/routes";
+import { useReducedMotion } from "@/motion/hooks/useReducedMotion";
+import { loadGsapRuntime } from "@/motion/config/gsap";
 
 interface HeaderProps {
   readonly theme?: HeaderTheme;
@@ -28,14 +30,17 @@ export function Header({
   hideBookingCta = false,
 }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileMounted, setMobileMounted] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const logoAsset = getAsset("asset-002");
   const whatsappHref = getWhatsappHref();
   const phoneHref = getTelephoneHref();
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
-    if (!mobileOpen) {
+    if (!mobileMounted) {
       return;
     }
 
@@ -70,16 +75,152 @@ export function Header({
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      document.body.classList.remove("has-mobile-nav");
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [mobileOpen]);
+  }, [mobileMounted]);
+
+  useEffect(() => {
+    if (!mobileMounted) {
+      document.body.classList.remove("has-mobile-nav");
+      buttonRef.current?.focus();
+      return;
+    }
+
+    document.body.classList.add("has-mobile-nav");
+  }, [mobileMounted]);
 
   useEffect(() => {
     if (!mobileOpen) {
-      buttonRef.current?.focus();
+      return;
     }
+
+    setMobileMounted(true);
   }, [mobileOpen]);
+
+  useEffect(() => {
+    if (!mobileMounted) {
+      return;
+    }
+
+    const panel = dialogRef.current;
+    const overlay = overlayRef.current;
+
+    if (!panel || !overlay || import.meta.env.MODE === "test") {
+      if (!mobileOpen) {
+        setMobileMounted(false);
+      }
+      return;
+    }
+
+    let cancelled = false;
+    let ctx: { revert: () => void } | null = null;
+
+    void loadGsapRuntime()
+      .then(({ gsap }) => {
+        if (cancelled) {
+          return;
+        }
+
+        ctx = gsap.context(() => {
+          const navLinks = panel.querySelectorAll(".mobile-nav-panel nav li");
+          const meta = panel.querySelector(".mobile-nav-panel__meta");
+          const ctas = panel.querySelector(".mobile-nav-panel__actions");
+
+          if (mobileOpen) {
+            gsap.set(overlay, { autoAlpha: 0 });
+            gsap.set(panel, { xPercent: 12, autoAlpha: 0 });
+            gsap.set([navLinks, ctas, meta], {
+              y: reducedMotion ? 0 : 20,
+              autoAlpha: reducedMotion ? 1 : 0,
+            });
+
+            const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+            tl.to(overlay, {
+              autoAlpha: 1,
+              duration: reducedMotion ? 0.12 : 0.2,
+            })
+              .to(
+                panel,
+                {
+                  xPercent: 0,
+                  autoAlpha: 1,
+                  duration: reducedMotion ? 0.12 : 0.28,
+                },
+                0,
+              )
+              .to(
+                navLinks,
+                {
+                  y: 0,
+                  autoAlpha: 1,
+                  duration: reducedMotion ? 0.08 : 0.22,
+                  stagger: reducedMotion ? 0 : 0.05,
+                },
+                reducedMotion ? 0 : 0.06,
+              )
+              .to(
+                [ctas, meta],
+                {
+                  y: 0,
+                  autoAlpha: 1,
+                  duration: reducedMotion ? 0.08 : 0.18,
+                },
+                reducedMotion ? 0.02 : 0.12,
+              );
+          } else {
+            const tl = gsap.timeline({
+              defaults: { ease: "power2.inOut" },
+              onComplete: () => {
+                setMobileMounted(false);
+              },
+            });
+
+            tl.to([ctas, meta], {
+              y: reducedMotion ? 0 : 10,
+              autoAlpha: 0,
+              duration: reducedMotion ? 0.06 : 0.12,
+            })
+              .to(
+                navLinks,
+                {
+                  y: reducedMotion ? 0 : 12,
+                  autoAlpha: 0,
+                  duration: reducedMotion ? 0.06 : 0.12,
+                  stagger: reducedMotion ? 0 : 0.03,
+                },
+                0,
+              )
+              .to(
+                panel,
+                {
+                  xPercent: 10,
+                  autoAlpha: 0,
+                  duration: reducedMotion ? 0.08 : 0.18,
+                },
+                reducedMotion ? 0 : 0.04,
+              )
+              .to(
+                overlay,
+                {
+                  autoAlpha: 0,
+                  duration: reducedMotion ? 0.08 : 0.18,
+                },
+                0,
+              );
+          }
+        });
+      })
+      .catch(() => {
+        if (!mobileOpen) {
+          setMobileMounted(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+      ctx?.revert();
+    };
+  }, [mobileMounted, mobileOpen, reducedMotion]);
 
   return (
     <header
@@ -88,6 +229,14 @@ export function Header({
       data-menu-open={mobileOpen ? "true" : "false"}
       data-theme={theme}
     >
+      {mobileMounted ? (
+        <div
+          aria-hidden="true"
+          className="mobile-nav-overlay"
+          onClick={() => setMobileOpen(false)}
+          ref={overlayRef}
+        />
+      ) : null}
       <Container width="wide">
         <div className="site-header__shell">
           <div className="site-header__inner">
@@ -131,7 +280,7 @@ export function Header({
           </div>
         </div>
       </Container>
-      {mobileOpen ? (
+      {mobileMounted ? (
         <Container width="wide">
           <div
             ref={dialogRef}
@@ -139,6 +288,7 @@ export function Header({
             className="mobile-nav-panel"
             id="mobile-navigation"
             role="dialog"
+            aria-modal="true"
           >
             <nav aria-label="Principal movil">
               <ul>
@@ -154,17 +304,19 @@ export function Header({
                 ))}
               </ul>
             </nav>
-            <Cluster gap="sm">
+            <Cluster className="mobile-nav-panel__actions" gap="sm">
               <LinkButton
                 iconEnd="arrow-right"
                 to={buildBookingIntentHref({ context: "mobile-nav" })}
                 variant="editorial"
+                onClick={() => setMobileOpen(false)}
               >
                 Reservar mesa
               </LinkButton>
               {whatsappHref ? (
                 <LinkButton
                   href={whatsappHref}
+                  onClick={() => setMobileOpen(false)}
                   rel="noreferrer"
                   target="_blank"
                   variant="secondary"
