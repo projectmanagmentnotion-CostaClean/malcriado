@@ -36,8 +36,8 @@ export function DevContentPage() {
         <p className="eyebrow">Dev only</p>
         <h1>Auditoria editorial</h1>
         <p>
-          Resumen operativo del modelo de contenido: fuentes, estados pendientes y
-          superficies publicas ya conectadas al dominio tipado.
+          Resumen operativo del modelo de contenido: fuentes, estados pendientes
+          y superficies publicas ya conectadas al dominio tipado.
         </p>
       </section>
       <section className="asset-summary-grid">

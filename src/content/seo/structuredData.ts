@@ -2,7 +2,8 @@ import { businessContent } from "@/content/business/business";
 import type { LocalSeoPage } from "@/types/content";
 
 export function getRestaurantStructuredData(page: LocalSeoPage) {
-  const canonicalBase = businessContent.contact.canonicalUrl.value ?? "https://malcriadobcn.com/";
+  const canonicalBase =
+    businessContent.contact.canonicalUrl.value ?? "https://malcriadobcn.com/";
   return {
     "@context": "https://schema.org",
     "@type": "Restaurant",

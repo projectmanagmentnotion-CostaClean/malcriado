@@ -1,5 +1,8 @@
 import { z } from "zod";
-import { contentReferenceSchema, verificationStatusSchema } from "./sharedSchema";
+import {
+  contentReferenceSchema,
+  verificationStatusSchema,
+} from "./sharedSchema";
 
 const weekdaySchema = z.enum([
   "monday",
@@ -17,7 +20,14 @@ export const offerSchema = z.object({
   title: z.string().min(1),
   description: z.string().nullable(),
   label: z.string().nullable(),
-  type: z.enum(["daily", "weekly", "seasonal", "event", "promotion", "scheduled"]),
+  type: z.enum([
+    "daily",
+    "weekly",
+    "seasonal",
+    "event",
+    "promotion",
+    "scheduled",
+  ]),
   validity: z.object({
     startsAt: z.string().nullable(),
     endsAt: z.string().nullable(),

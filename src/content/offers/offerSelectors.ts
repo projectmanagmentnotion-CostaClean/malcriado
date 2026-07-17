@@ -43,7 +43,10 @@ function isWithinDateRange(offer: Offer, now: Date) {
 function isWithinSchedule(offer: Offer, now: Date) {
   const madrid = getMadridDateParts(now);
 
-  if (offer.schedule.weekdays && !offer.schedule.weekdays.includes(madrid.weekday as never)) {
+  if (
+    offer.schedule.weekdays &&
+    !offer.schedule.weekdays.includes(madrid.weekday as never)
+  ) {
     return false;
   }
 
@@ -69,15 +72,21 @@ export function getActiveOffers(offers: readonly Offer[], now = new Date()) {
 export function getUpcomingOffers(offers: readonly Offer[], now = new Date()) {
   const today = getMadridDateParts(now).date;
   return offers
-    .filter((offer) => offer.validity.startsAt && offer.validity.startsAt > today)
+    .filter(
+      (offer) => offer.validity.startsAt && offer.validity.startsAt > today,
+    )
     .sort((left, right) =>
-      (left.validity.startsAt ?? "").localeCompare(right.validity.startsAt ?? ""),
+      (left.validity.startsAt ?? "").localeCompare(
+        right.validity.startsAt ?? "",
+      ),
     );
 }
 
 export function getExpiredOffers(offers: readonly Offer[], now = new Date()) {
   const today = getMadridDateParts(now).date;
-  return offers.filter((offer) => Boolean(offer.validity.endsAt && offer.validity.endsAt < today));
+  return offers.filter((offer) =>
+    Boolean(offer.validity.endsAt && offer.validity.endsAt < today),
+  );
 }
 
 export function getPrimaryOffer(offers: readonly Offer[], now = new Date()) {

@@ -24,4 +24,3 @@ Se usarán solo assets públicos trazables del sitio actual como fuente inicial 
 
 - Algunos recursos pueden estar bloqueados por captcha.
 - Puede haber assets útiles no enlazados públicamente aún.
-

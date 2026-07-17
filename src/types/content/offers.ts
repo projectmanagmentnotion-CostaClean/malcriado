@@ -1,11 +1,7 @@
 import type { ContentReference, VerificationStatus } from "./shared";
 
 export type OfferStatus =
-  | "SCHEDULED"
-  | "ACTIVE"
-  | "EXPIRED"
-  | "DISABLED"
-  | "PENDING_CONTENT";
+  "SCHEDULED" | "ACTIVE" | "EXPIRED" | "DISABLED" | "PENDING_CONTENT";
 
 export type OfferAudience = "ALL" | "DINNER" | "GROUPS" | "DRINKS";
 
@@ -44,12 +40,7 @@ export interface Offer {
   readonly description: string | null;
   readonly label: string | null;
   readonly type:
-    | "daily"
-    | "weekly"
-    | "seasonal"
-    | "event"
-    | "promotion"
-    | "scheduled";
+    "daily" | "weekly" | "seasonal" | "event" | "promotion" | "scheduled";
   readonly validity: OfferValidity;
   readonly schedule: OfferSchedule;
   readonly assetId: string | null;

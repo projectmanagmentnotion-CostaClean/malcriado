@@ -28,7 +28,9 @@ export function EspecialesPage() {
       />
       <section className="panel">
         <h2>Estado actual</h2>
-        <p data-offer-type={offerEditorialState.status}>{offerEditorialState.message}</p>
+        <p data-offer-type={offerEditorialState.status}>
+          {offerEditorialState.message}
+        </p>
         <p>{activeOffers.length} especiales activos publicados.</p>
       </section>
     </>

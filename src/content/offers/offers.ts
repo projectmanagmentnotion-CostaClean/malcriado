@@ -8,6 +8,9 @@ export const offerEditorialState = {
   message:
     "No se han recuperado ofertas publicas vigentes con fechas verificables. La ruta de especiales debe permanecer sin promociones ficticias.",
   references: {
-    sourceIds: [contentSources.currentSiteAudit.id, contentSources.contentInventory.id],
+    sourceIds: [
+      contentSources.currentSiteAudit.id,
+      contentSources.contentInventory.id,
+    ],
   },
 };

@@ -6,12 +6,7 @@ export interface NavigationLink {
   readonly path: string;
   readonly priority: number;
   readonly context:
-    | "primary"
-    | "mobile"
-    | "footer"
-    | "legal"
-    | "social"
-    | "legacy";
+    "primary" | "mobile" | "footer" | "legal" | "social" | "legacy";
   readonly behavior: "internal" | "external";
   readonly accessibleName?: string;
   readonly status: VerificationStatus;

@@ -19,7 +19,10 @@ export const venueStoryBlocks: readonly StoryBlock[] = [
     body: "Se trata de un claim editorial, no de una caracteristica operativa cuantificable.",
     status: "VERIFIED",
     references: {
-      sourceIds: [contentSources.siteNosotros.id, contentSources.contentInventory.id],
+      sourceIds: [
+        contentSources.siteNosotros.id,
+        contentSources.contentInventory.id,
+      ],
     },
   },
 ];

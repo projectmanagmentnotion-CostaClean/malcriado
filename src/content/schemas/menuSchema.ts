@@ -1,5 +1,8 @@
 import { z } from "zod";
-import { contentReferenceSchema, verificationStatusSchema } from "./sharedSchema";
+import {
+  contentReferenceSchema,
+  verificationStatusSchema,
+} from "./sharedSchema";
 
 const menuPublicationStatusSchema = z.enum([
   "PUBLIC",

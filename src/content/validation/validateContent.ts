@@ -1,6 +1,4 @@
-import {
-  businessContent,
-} from "../business/business";
+import { businessContent } from "../business/business";
 import { homeScenes } from "../home/scenes";
 import { legalPages } from "../legal/legal";
 import { menuContent } from "../menu/menu";
@@ -53,7 +51,9 @@ function validateSchema(
 export function validateContentModel(): ContentValidationResult {
   const issues: ContentValidationIssue[] = [];
 
-  issues.push(...validateSchema("business", businessSchema.safeParse(businessContent)));
+  issues.push(
+    ...validateSchema("business", businessSchema.safeParse(businessContent)),
+  );
   issues.push(...validateSchema("menu", menuSchema.safeParse(menuContent)));
   issues.push(
     ...homeScenes.flatMap((scene, index) =>
@@ -78,12 +78,17 @@ export function validateContentModel(): ContentValidationResult {
   );
   issues.push(
     ...contentSourceList.flatMap((source, index) =>
-      validateSchema(`contentSources[${index}]`, contentSourceSchema.safeParse(source)),
+      validateSchema(
+        `contentSources[${index}]`,
+        contentSourceSchema.safeParse(source),
+      ),
     ),
   );
 
   menuContent.categories.forEach((category) => {
-    const itemCount = menuContent.items.filter((item) => item.categoryId === category.id).length;
+    const itemCount = menuContent.items.filter(
+      (item) => item.categoryId === category.id,
+    ).length;
     if (itemCount === 0) {
       issues.push({
         level: "warning",

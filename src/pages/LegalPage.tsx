@@ -1,5 +1,9 @@
 import { PageSeo } from "@/components/seo/PageSeo";
-import { getLegalPageByPath, getRestaurantStructuredData, getSeoPageByPath } from "@/content";
+import {
+  getLegalPageByPath,
+  getRestaurantStructuredData,
+  getSeoPageByPath,
+} from "@/content";
 
 interface LegalPageProps {
   readonly title: string;
@@ -21,7 +25,9 @@ export function LegalPage({ title, path, body }: LegalPageProps) {
           `${title} provisional en espera de validacion juridica final.`
         }
         path={path}
-        {...(seoPage?.metadata.robots ? { robots: seoPage.metadata.robots } : {})}
+        {...(seoPage?.metadata.robots
+          ? { robots: seoPage.metadata.robots }
+          : {})}
         {...(structuredData ? { structuredData } : {})}
       />
       <section className="legal-page">

@@ -26,10 +26,14 @@ function menuItem(
 ): MenuItem {
   return {
     ...item,
-    ingredientStatus: item.publishedIngredients.length > 0 ? "VERIFIED" : "PENDING_CONTENT",
+    ingredientStatus:
+      item.publishedIngredients.length > 0 ? "VERIFIED" : "PENDING_CONTENT",
     allergenStatus: "PENDING_VALIDATION",
     references: {
-      sourceIds: [contentSources.siteMenu.id, contentSources.contentInventory.id],
+      sourceIds: [
+        contentSources.siteMenu.id,
+        contentSources.contentInventory.id,
+      ],
     },
   };
 }
@@ -116,7 +120,9 @@ export const menuItems: readonly MenuItem[] = [
     categoryId: "cat-hot-dishes",
     subcategory: null,
     publishedIngredients: [],
-    price: pendingPrice("The suffix U.D is ambiguous and requires owner validation."),
+    price: pendingPrice(
+      "The suffix U.D is ambiguous and requires owner validation.",
+    ),
     allergens: [],
     dietaryTags: [],
     spicyLevel: null,
@@ -124,7 +130,8 @@ export const menuItems: readonly MenuItem[] = [
     media: null,
     editorialOrder: 5,
     publicationStatus: "PENDING_VALIDATION",
-    validationNotes: "The audited source preserves the original wording. Unit meaning still needs confirmation.",
+    validationNotes:
+      "The audited source preserves the original wording. Unit meaning still needs confirmation.",
   }),
   menuItem({
     id: "item-infladita-res",
@@ -161,7 +168,8 @@ export const menuItems: readonly MenuItem[] = [
     media: null,
     editorialOrder: 7,
     publicationStatus: "PENDING_VALIDATION",
-    validationNotes: "Naming should be reviewed with the owner before normalization.",
+    validationNotes:
+      "Naming should be reviewed with the owner before normalization.",
   }),
   menuItem({
     id: "item-canelon-xxl",
@@ -226,7 +234,9 @@ export const menuItems: readonly MenuItem[] = [
     categoryId: "cat-cold-dishes",
     subcategory: null,
     publishedIngredients: [],
-    price: pendingPrice("Asset naming suggests tartar, but the recovered menu content says Tarta de Atún."),
+    price: pendingPrice(
+      "Asset naming suggests tartar, but the recovered menu content says Tarta de Atún.",
+    ),
     allergens: [],
     dietaryTags: [],
     spicyLevel: null,
@@ -234,7 +244,8 @@ export const menuItems: readonly MenuItem[] = [
     media: pendingMedia("asset-026", "Tarta de Atun de Malcriado"),
     editorialOrder: 3,
     publicationStatus: "PUBLIC",
-    validationNotes: "Naming discrepancy between recovered copy and asset filename remains pending.",
+    validationNotes:
+      "Naming discrepancy between recovered copy and asset filename remains pending.",
   }),
   menuItem({
     id: "item-carpaccio-salmon-curado",
@@ -487,14 +498,16 @@ export const menuItems: readonly MenuItem[] = [
     media: pendingMedia("asset-013", "Margarita de fresa"),
     editorialOrder: 3,
     publicationStatus: "PENDING_VALIDATION",
-    validationNotes: "The audited menu mixes Margarita with flavor-only entries Maracuyá and Fresa.",
+    validationNotes:
+      "The audited menu mixes Margarita with flavor-only entries Maracuyá and Fresa.",
   }),
   menuItem({
     id: "item-margarita-maracuya",
     slug: "margarita-maracuya",
     sourceName: "Maracuyá",
     name: "Maracuya",
-    description: "Entrada visible en la categoria de cocteles; requiere confirmacion de si es variante de Margarita u oferta independiente.",
+    description:
+      "Entrada visible en la categoria de cocteles; requiere confirmacion de si es variante de Margarita u oferta independiente.",
     categoryId: "cat-cocktails",
     subcategory: "Margaritas",
     publishedIngredients: [],
@@ -512,7 +525,8 @@ export const menuItems: readonly MenuItem[] = [
     slug: "margarita-fresa",
     sourceName: "Fresa",
     name: "Fresa",
-    description: "Entrada visible en la categoria de cocteles; requiere confirmacion de si es variante de Margarita u oferta independiente.",
+    description:
+      "Entrada visible en la categoria de cocteles; requiere confirmacion de si es variante de Margarita u oferta independiente.",
     categoryId: "cat-cocktails",
     subcategory: "Margaritas",
     publishedIngredients: [],
@@ -692,7 +706,8 @@ export const menuItems: readonly MenuItem[] = [
     slug: "vino-tinto",
     sourceName: "Tinto",
     name: "Vino Tinto",
-    description: "Entrada generica recuperada desde la categoria de vinos. Formato visible: copa y botella.",
+    description:
+      "Entrada generica recuperada desde la categoria de vinos. Formato visible: copa y botella.",
     categoryId: "cat-wines",
     subcategory: "Copa y botella",
     publishedIngredients: [],
@@ -710,7 +725,8 @@ export const menuItems: readonly MenuItem[] = [
     slug: "vino-blanco",
     sourceName: "Blanco",
     name: "Vino Blanco",
-    description: "Entrada generica recuperada desde la categoria de vinos. Formato visible: copa y botella.",
+    description:
+      "Entrada generica recuperada desde la categoria de vinos. Formato visible: copa y botella.",
     categoryId: "cat-wines",
     subcategory: "Copa y botella",
     publishedIngredients: [],
@@ -728,7 +744,8 @@ export const menuItems: readonly MenuItem[] = [
     slug: "vino-rosado",
     sourceName: "Rosado",
     name: "Vino Rosado",
-    description: "Entrada generica recuperada desde la categoria de vinos. Formato visible: copa y botella.",
+    description:
+      "Entrada generica recuperada desde la categoria de vinos. Formato visible: copa y botella.",
     categoryId: "cat-wines",
     subcategory: "Copa y botella",
     publishedIngredients: [],
@@ -746,7 +763,8 @@ export const menuItems: readonly MenuItem[] = [
     slug: "cava",
     sourceName: "Cava",
     name: "Cava",
-    description: "Entrada generica recuperada desde la categoria de vinos. Formato visible: copa y botella.",
+    description:
+      "Entrada generica recuperada desde la categoria de vinos. Formato visible: copa y botella.",
     categoryId: "cat-wines",
     subcategory: "Copa y botella",
     publishedIngredients: [],

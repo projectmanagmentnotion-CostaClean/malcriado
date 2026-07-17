@@ -103,7 +103,8 @@ export const contentSources = {
     kind: "owner",
     url: null,
     owner: "Malcriado",
-    notes: "Expected approver for prices, allergens, hours, legal and rights confirmations.",
+    notes:
+      "Expected approver for prices, allergens, hours, legal and rights confirmations.",
   },
 } as const satisfies Record<string, ContentSource>;
 

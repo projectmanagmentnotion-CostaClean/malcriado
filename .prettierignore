@@ -1,7 +1,9 @@
-docs/adr/
-docs/assets/
-docs/audit/
-docs/content/
-docs/seo/
-docs/RESPONSIVE_PRODUCTION.md
+dist/
+node_modules/
+playwright-report/
+test-results/
+coverage/
+public/assets/source/
+public/assets/optimized/
 src/content/assets/asset-manifest.json
+*.tsbuildinfo

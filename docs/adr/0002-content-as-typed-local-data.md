@@ -24,4 +24,3 @@ Todo el contenido comercial y legal migrable se modelará como datos locales tip
 
 - Requiere disciplina de modelado.
 - Obliga a validar primero los datos con el titular.
-

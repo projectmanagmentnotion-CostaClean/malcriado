@@ -16,13 +16,22 @@ export const contentReferenceSchema = z.object({
 export const contentSourceSchema = z.object({
   id: z.string().min(1),
   label: z.string().min(1),
-  kind: z.enum(["website", "document", "asset", "owner", "internal-audit", "derived"]),
+  kind: z.enum([
+    "website",
+    "document",
+    "asset",
+    "owner",
+    "internal-audit",
+    "derived",
+  ]),
   url: z.string().url().nullable(),
   owner: z.string().min(1),
   notes: z.string().min(1),
 });
 
-export function verificationFieldSchema<T extends z.ZodTypeAny>(valueSchema: T) {
+export function verificationFieldSchema<T extends z.ZodTypeAny>(
+  valueSchema: T,
+) {
   return z.object({
     value: valueSchema.nullable(),
     status: verificationStatusSchema,

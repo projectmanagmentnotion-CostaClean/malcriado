@@ -9,12 +9,7 @@ export interface ContentSource {
   readonly id: string;
   readonly label: string;
   readonly kind:
-    | "website"
-    | "document"
-    | "asset"
-    | "owner"
-    | "internal-audit"
-    | "derived";
+    "website" | "document" | "asset" | "owner" | "internal-audit" | "derived";
   readonly url: string | null;
   readonly owner: string;
   readonly notes: string;

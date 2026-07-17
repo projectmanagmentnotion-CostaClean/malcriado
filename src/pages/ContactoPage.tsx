@@ -26,8 +26,8 @@ export function ContactoPage() {
           <p className="eyebrow">Contacto</p>
           <h1>Direccion, canales y horario editorial</h1>
           <p>
-            Esta ruta publica solo datos verificados. Horario diario y coordenadas siguen
-            bloqueados hasta validacion del titular.
+            Esta ruta publica solo datos verificados. Horario diario y
+            coordenadas siguen bloqueados hasta validacion del titular.
           </p>
         </header>
         <article className="panel">
@@ -55,7 +55,11 @@ export function ContactoPage() {
             <div>
               <dt>WhatsApp</dt>
               <dd>
-                <a href={getWhatsappHref() ?? "#"} target="_blank" rel="noreferrer">
+                <a
+                  href={getWhatsappHref() ?? "#"}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Solicitar mesa
                 </a>
               </dd>

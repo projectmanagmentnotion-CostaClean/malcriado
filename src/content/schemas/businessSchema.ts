@@ -5,7 +5,9 @@ import {
   verificationStatusSchema,
 } from "./sharedSchema";
 
-const languageFieldSchema = verificationFieldSchema(z.array(z.string().min(2)).min(1));
+const languageFieldSchema = verificationFieldSchema(
+  z.array(z.string().min(2)).min(1),
+);
 const stringFieldSchema = verificationFieldSchema(z.string().min(1));
 
 const businessHoursDaySchema = z.object({

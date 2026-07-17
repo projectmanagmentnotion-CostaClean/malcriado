@@ -24,4 +24,3 @@ GSAP y ScrollTrigger se aplicarán solo como progressive enhancement sobre conte
 
 - Sobrecoste si no se limita el número de escenas.
 - Tentación de recrear efectos del sitio heredado sin medir impacto.
-

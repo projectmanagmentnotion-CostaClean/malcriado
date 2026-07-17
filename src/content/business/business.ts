@@ -55,8 +55,12 @@ export const businessContent: BusinessContent = {
         contentSources.siteNosotros.id,
       ],
     ),
-    currentLanguages: field(["es"], "VERIFIED", [contentSources.currentSiteAudit.id]),
-    businessStatus: field("ACTIVE", "VERIFIED", [contentSources.currentSiteAudit.id]),
+    currentLanguages: field(["es"], "VERIFIED", [
+      contentSources.currentSiteAudit.id,
+    ]),
+    businessStatus: field("ACTIVE", "VERIFIED", [
+      contentSources.currentSiteAudit.id,
+    ]),
   },
   location: {
     publicAddress: field(
@@ -81,7 +85,10 @@ export const businessContent: BusinessContent = {
       contentSources.siteHome.id,
       contentSources.siteContacto.id,
     ]),
-    coordinates: field<{ readonly latitude: number; readonly longitude: number }>(
+    coordinates: field<{
+      readonly latitude: number;
+      readonly longitude: number;
+    }>(
       null,
       "PENDING_VALIDATION",
       [contentSources.ownerChecklist.id],
@@ -114,11 +121,10 @@ export const businessContent: BusinessContent = {
         id: "instagram",
         label: "Instagram",
         platform: "instagram",
-        href: field(
-          "https://www.instagram.com/malcriado_pineda",
-          "VERIFIED",
-          [contentSources.siteHome.id, contentSources.contentInventory.id],
-        ),
+        href: field("https://www.instagram.com/malcriado_pineda", "VERIFIED", [
+          contentSources.siteHome.id,
+          contentSources.contentInventory.id,
+        ]),
       },
       {
         id: "whatsapp",

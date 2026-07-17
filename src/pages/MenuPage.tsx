@@ -1,7 +1,12 @@
 import { BookingCta } from "@/components/common/BookingCta";
 import { SectionIntro } from "@/components/common/SectionIntro";
 import { PageSeo } from "@/components/seo/PageSeo";
-import { getMenuItemsByCategory, getRestaurantStructuredData, menuContent, seoPages } from "@/content";
+import {
+  getMenuItemsByCategory,
+  getRestaurantStructuredData,
+  menuContent,
+  seoPages,
+} from "@/content";
 
 export function MenuPage() {
   const seoPage = seoPages.menu!;

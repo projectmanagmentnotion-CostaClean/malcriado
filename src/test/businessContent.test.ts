@@ -16,6 +16,8 @@ describe("business content helpers", () => {
 
   it("keeps current business identity mapped", () => {
     expect(businessContent.identity.commercialName.value).toBe("Malcriado");
-    expect(businessContent.contact.canonicalUrl.value).toBe("https://malcriadobcn.com/");
+    expect(businessContent.contact.canonicalUrl.value).toBe(
+      "https://malcriadobcn.com/",
+    );
   });
 });

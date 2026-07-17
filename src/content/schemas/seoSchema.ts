@@ -1,5 +1,8 @@
 import { z } from "zod";
-import { contentReferenceSchema, verificationStatusSchema } from "./sharedSchema";
+import {
+  contentReferenceSchema,
+  verificationStatusSchema,
+} from "./sharedSchema";
 
 export const seoPageSchema = z.object({
   pageId: z.string().min(1),

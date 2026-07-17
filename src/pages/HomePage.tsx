@@ -22,8 +22,10 @@ export function HomePage() {
   const seoPage = seoPages.home!;
   const heroAsset = getAsset("asset-019");
   const signatureAsset = getAsset("asset-017");
-  const heroScene = homeScenes.find((scene) => scene.slug === "hero") ?? homeScenes[0]!;
-  const address = businessContent.location.publicAddress.value ?? "Direccion pendiente";
+  const heroScene =
+    homeScenes.find((scene) => scene.slug === "hero") ?? homeScenes[0]!;
+  const address =
+    businessContent.location.publicAddress.value ?? "Direccion pendiente";
   const phone = businessContent.contact.phone.value ?? "Telefono pendiente";
 
   return (
@@ -38,7 +40,9 @@ export function HomePage() {
       <section className="hero">
         <div className="hero__backdrop" aria-hidden="true" />
         <div className="hero__content">
-          <p className="eyebrow">{heroScene.content.eyebrow ?? "Pineda de Mar"}</p>
+          <p className="eyebrow">
+            {heroScene.content.eyebrow ?? "Pineda de Mar"}
+          </p>
           <h1>{heroScene.content.heading}</h1>
           <p>{heroScene.content.copy}</p>
           <div className="actions">
@@ -74,10 +78,15 @@ export function HomePage() {
             sizes="(max-width: 900px) 100vw, 42vw"
             eager
           />
-          <figcaption>Escena hero basada en asset aceptado y contenido verificado.</figcaption>
+          <figcaption>
+            Escena hero basada en asset aceptado y contenido verificado.
+          </figcaption>
         </figure>
       </section>
-      <section className="scene-strip" aria-label="Storyboard editorial de la home">
+      <section
+        className="scene-strip"
+        aria-label="Storyboard editorial de la home"
+      >
         {homeScenes.slice(2, 10).map((scene, index) => (
           <article
             className={`scene-card ${sceneThemeClassNames[scene.theme] ?? "scene-card--sand"}`}
@@ -85,7 +94,8 @@ export function HomePage() {
           >
             <p className="eyebrow">{scene.content.eyebrow}</p>
             <h2>
-              <span>{String(index + 1).padStart(2, "0")}</span> {scene.content.heading}
+              <span>{String(index + 1).padStart(2, "0")}</span>{" "}
+              {scene.content.heading}
             </h2>
             <p>{scene.content.copy}</p>
           </article>

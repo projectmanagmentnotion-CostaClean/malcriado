@@ -6,13 +6,13 @@ Mobile-first, progressive enhancement y diseño por capacidades. La experiencia 
 
 ## Matriz mínima
 
-| Clase | Viewports de control | Uso |
-|---|---:|---|
-| Móvil compacto | 320, 360 | mínimos reales, textos largos y teclado abierto |
-| Móvil estándar | 390, 430 | iPhone/Android actuales |
-| Tablet | 768, 820, 1024 | portrait y landscape |
-| Desktop | 1280, 1440 | portátil y monitor estándar |
-| Wide | 1728, 1920 | límites de lectura y escala visual |
+| Clase          | Viewports de control | Uso                                             |
+| -------------- | -------------------: | ----------------------------------------------- |
+| Móvil compacto |             320, 360 | mínimos reales, textos largos y teclado abierto |
+| Móvil estándar |             390, 430 | iPhone/Android actuales                         |
+| Tablet         |       768, 820, 1024 | portrait y landscape                            |
+| Desktop        |           1280, 1440 | portátil y monitor estándar                     |
+| Wide           |           1728, 1920 | límites de lectura y escala visual              |
 
 Los breakpoints se definirán por necesidad del contenido, no por marcas de dispositivos.
 

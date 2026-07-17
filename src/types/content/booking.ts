@@ -1,9 +1,7 @@
 import type { ContentReference, VerificationStatus } from "./shared";
 
 export type BookingAvailabilityStatus =
-  | "REQUEST_ONLY"
-  | "MANUAL_CONFIRMATION"
-  | "UNAVAILABLE";
+  "REQUEST_ONLY" | "MANUAL_CONFIRMATION" | "UNAVAILABLE";
 
 export interface BookingChannel {
   readonly id: string;

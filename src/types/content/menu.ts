@@ -1,10 +1,7 @@
 import type { ContentReference, VerificationStatus } from "./shared";
 
 export type MenuPublicationStatus =
-  | "PUBLIC"
-  | "PENDING_VALIDATION"
-  | "PENDING_CONTENT"
-  | "UNAVAILABLE";
+  "PUBLIC" | "PENDING_VALIDATION" | "PENDING_CONTENT" | "UNAVAILABLE";
 
 export type MenuAvailability = "AVAILABLE" | "SEASONAL" | "UNKNOWN";
 

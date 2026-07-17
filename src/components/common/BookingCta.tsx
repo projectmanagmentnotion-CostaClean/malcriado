@@ -4,7 +4,9 @@ export function BookingCta() {
   const whatsappChannel = bookingChannels.find(
     (channel) => channel.method === "whatsapp",
   );
-  const formChannel = bookingChannels.find((channel) => channel.method === "form");
+  const formChannel = bookingChannels.find(
+    (channel) => channel.method === "form",
+  );
 
   return (
     <section className="panel">
@@ -23,7 +25,10 @@ export function BookingCta() {
         >
           WhatsApp
         </a>
-        <a className="button button--secondary" href={formChannel?.href ?? "/reservar/"}>
+        <a
+          className="button button--secondary"
+          href={formChannel?.href ?? "/reservar/"}
+        >
           Ir al formulario
         </a>
       </div>

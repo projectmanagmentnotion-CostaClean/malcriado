@@ -1,5 +1,8 @@
 import { z } from "zod";
-import { contentReferenceSchema, verificationStatusSchema } from "./sharedSchema";
+import {
+  contentReferenceSchema,
+  verificationStatusSchema,
+} from "./sharedSchema";
 
 const sceneContentSchema = z.object({
   eyebrow: z.string().nullable(),

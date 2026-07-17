@@ -4,7 +4,9 @@ describe("content validation", () => {
   it("keeps the content model schema-valid", () => {
     const result = validateContentModel();
     expect(result.ok).toBe(true);
-    expect(result.issues.filter((issue) => issue.level === "error")).toHaveLength(0);
+    expect(
+      result.issues.filter((issue) => issue.level === "error"),
+    ).toHaveLength(0);
   });
 
   it("builds an operational report", () => {

@@ -17,7 +17,12 @@ export const homeScenes: readonly HomeScene[] = [
     motionIntent: "reveal",
     editorialStatus: "VERIFIED",
     mobileVariant: null,
-    references: { sourceIds: [contentSources.siteHome.id, contentSources.currentSiteAudit.id] },
+    references: {
+      sourceIds: [
+        contentSources.siteHome.id,
+        contentSources.currentSiteAudit.id,
+      ],
+    },
   },
   {
     id: "scene-hero",
@@ -39,26 +44,35 @@ export const homeScenes: readonly HomeScene[] = [
       copy: "Version movil resumida del mensaje principal.",
     },
     references: {
-      sourceIds: [contentSources.siteHome.id, contentSources.contentInventory.id],
+      sourceIds: [
+        contentSources.siteHome.id,
+        contentSources.contentInventory.id,
+      ],
     },
   },
   {
     id: "scene-special",
     slug: "especial-activo",
-    purpose: "Reservar espacio para el especial activo cuando existan datos verificados.",
+    purpose:
+      "Reservar espacio para el especial activo cuando existan datos verificados.",
     content: {
       eyebrow: "Especial activo",
       heading: null,
       copy: "No se ha recuperado una oferta vigente verificable; la escena debe renderizar estado pendiente.",
     },
     media: [],
-    ctas: [{ label: "Ver especiales", href: "/especiales/", status: "VERIFIED" }],
+    ctas: [
+      { label: "Ver especiales", href: "/especiales/", status: "VERIFIED" },
+    ],
     theme: "special",
     motionIntent: "booking-focus",
     editorialStatus: "PENDING_CONTENT",
     mobileVariant: null,
     references: {
-      sourceIds: [contentSources.currentSiteAudit.id, contentSources.contentInventory.id],
+      sourceIds: [
+        contentSources.currentSiteAudit.id,
+        contentSources.contentInventory.id,
+      ],
     },
   },
   {
@@ -122,7 +136,9 @@ export const homeScenes: readonly HomeScene[] = [
     motionIntent: "quiet-reading",
     editorialStatus: "VERIFIED",
     mobileVariant: null,
-    references: { sourceIds: [contentSources.siteHome.id, contentSources.siteNosotros.id] },
+    references: {
+      sourceIds: [contentSources.siteHome.id, contentSources.siteNosotros.id],
+    },
   },
   {
     id: "scene-night",
@@ -139,15 +155,19 @@ export const homeScenes: readonly HomeScene[] = [
     motionIntent: "layered",
     editorialStatus: "VERIFIED",
     mobileVariant: null,
-    references: { sourceIds: [contentSources.siteMenu.id, contentSources.assetManifest.id] },
+    references: {
+      sourceIds: [contentSources.siteMenu.id, contentSources.assetManifest.id],
+    },
   },
   {
     id: "scene-story",
     slug: "historia",
-    purpose: "Humanizar la marca con contenido verificable del chef y el origen.",
+    purpose:
+      "Humanizar la marca con contenido verificable del chef y el origen.",
     content: {
       eyebrow: "Historia",
-      heading: "Malcriado se presenta como una fusion de culturas con autoria de Héctor.",
+      heading:
+        "Malcriado se presenta como una fusion de culturas con autoria de Héctor.",
       copy: "La biografia ampliada y el nombre completo del chef siguen pendientes de confirmacion.",
     },
     media: [],
@@ -156,7 +176,12 @@ export const homeScenes: readonly HomeScene[] = [
     motionIntent: "quiet-reading",
     editorialStatus: "VERIFIED",
     mobileVariant: null,
-    references: { sourceIds: [contentSources.siteNosotros.id, contentSources.contentInventory.id] },
+    references: {
+      sourceIds: [
+        contentSources.siteNosotros.id,
+        contentSources.contentInventory.id,
+      ],
+    },
   },
   {
     id: "scene-menu",
@@ -164,7 +189,8 @@ export const homeScenes: readonly HomeScene[] = [
     purpose: "Preparar la futura carta visual sin desacoplar la fuente HTML.",
     content: {
       eyebrow: "Carta",
-      heading: "Categorias reales ya recuperadas: calientes, frios, pizzas, cocteles, vinos y postres.",
+      heading:
+        "Categorias reales ya recuperadas: calientes, frios, pizzas, cocteles, vinos y postres.",
       copy: "La navegacion futura debe salir del modelo tipado, no de tarjetas hardcodeadas.",
     },
     media: [{ assetId: "asset-024", crop: "square", status: "VERIFIED" }],
@@ -173,7 +199,12 @@ export const homeScenes: readonly HomeScene[] = [
     motionIntent: "horizontal-gallery",
     editorialStatus: "VERIFIED",
     mobileVariant: null,
-    references: { sourceIds: [contentSources.siteMenu.id, contentSources.contentInventory.id] },
+    references: {
+      sourceIds: [
+        contentSources.siteMenu.id,
+        contentSources.contentInventory.id,
+      ],
+    },
   },
   {
     id: "scene-booking",
@@ -187,13 +218,22 @@ export const homeScenes: readonly HomeScene[] = [
     media: [],
     ctas: [
       { label: "Reservar", href: "/reservar/", status: "VERIFIED" },
-      { label: "WhatsApp", href: "https://wa.me/34672695670", status: "VERIFIED" },
+      {
+        label: "WhatsApp",
+        href: "https://wa.me/34672695670",
+        status: "VERIFIED",
+      },
     ],
     theme: "booking",
     motionIntent: "booking-focus",
     editorialStatus: "VERIFIED",
     mobileVariant: null,
-    references: { sourceIds: [contentSources.currentSiteAudit.id, contentSources.siteContacto.id] },
+    references: {
+      sourceIds: [
+        contentSources.currentSiteAudit.id,
+        contentSources.siteContacto.id,
+      ],
+    },
   },
   {
     id: "scene-location",
@@ -210,6 +250,11 @@ export const homeScenes: readonly HomeScene[] = [
     motionIntent: "quiet-reading",
     editorialStatus: "VERIFIED",
     mobileVariant: null,
-    references: { sourceIds: [contentSources.siteContacto.id, contentSources.ownerChecklist.id] },
+    references: {
+      sourceIds: [
+        contentSources.siteContacto.id,
+        contentSources.ownerChecklist.id,
+      ],
+    },
   },
 ];

@@ -2,10 +2,10 @@
 
 ## Approved brand files
 
-| Asset | Dimensions | Transparency | Usage |
-|---|---|---|---|
-| cropped-logo-malcriado-pineda-de-mar-favicon.png | 512x512 | yes | Favicon and compact brand marker. |
-| cropped-logo-malcriado-pineda-de-mar.png | 2559x568 | yes | Primary horizontal logo for masthead and footer. |
+| Asset                                            | Dimensions | Transparency | Usage                                            |
+| ------------------------------------------------ | ---------- | ------------ | ------------------------------------------------ |
+| cropped-logo-malcriado-pineda-de-mar-favicon.png | 512x512    | yes          | Favicon and compact brand marker.                |
+| cropped-logo-malcriado-pineda-de-mar.png         | 2559x568   | yes          | Primary horizontal logo for masthead and footer. |
 
 ## Rules
 

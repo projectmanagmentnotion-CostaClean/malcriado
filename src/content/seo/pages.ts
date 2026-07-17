@@ -29,7 +29,10 @@ export const seoPages: Record<string, LocalSeoPage> = {
       },
       validationStatus: "VERIFIED",
       references: {
-        sourceIds: [contentSources.siteHome.id, contentSources.contentInventory.id],
+        sourceIds: [
+          contentSources.siteHome.id,
+          contentSources.contentInventory.id,
+        ],
       },
     },
   },
@@ -60,7 +63,10 @@ export const seoPages: Record<string, LocalSeoPage> = {
       },
       validationStatus: "VERIFIED",
       references: {
-        sourceIds: [contentSources.siteMenu.id, contentSources.contentInventory.id],
+        sourceIds: [
+          contentSources.siteMenu.id,
+          contentSources.contentInventory.id,
+        ],
       },
     },
   },
@@ -91,7 +97,10 @@ export const seoPages: Record<string, LocalSeoPage> = {
       },
       validationStatus: "VERIFIED",
       references: {
-        sourceIds: [contentSources.currentSiteAudit.id, contentSources.contentInventory.id],
+        sourceIds: [
+          contentSources.currentSiteAudit.id,
+          contentSources.contentInventory.id,
+        ],
       },
     },
   },
@@ -122,7 +131,10 @@ export const seoPages: Record<string, LocalSeoPage> = {
       },
       validationStatus: "VERIFIED",
       references: {
-        sourceIds: [contentSources.siteNosotros.id, contentSources.contentInventory.id],
+        sourceIds: [
+          contentSources.siteNosotros.id,
+          contentSources.contentInventory.id,
+        ],
       },
     },
   },
@@ -153,7 +165,10 @@ export const seoPages: Record<string, LocalSeoPage> = {
       },
       validationStatus: "VERIFIED",
       references: {
-        sourceIds: [contentSources.currentSiteAudit.id, contentSources.siteContacto.id],
+        sourceIds: [
+          contentSources.currentSiteAudit.id,
+          contentSources.siteContacto.id,
+        ],
       },
     },
   },
@@ -184,7 +199,10 @@ export const seoPages: Record<string, LocalSeoPage> = {
       },
       validationStatus: "VERIFIED",
       references: {
-        sourceIds: [contentSources.siteContacto.id, contentSources.contentInventory.id],
+        sourceIds: [
+          contentSources.siteContacto.id,
+          contentSources.contentInventory.id,
+        ],
       },
     },
   },
@@ -194,7 +212,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       id: "seo-legal-aviso",
       path: "/aviso-legal/",
       title: "Aviso legal | Malcriado",
-      description: "Aviso legal de Malcriado en estado pendiente de validacion juridica.",
+      description:
+        "Aviso legal de Malcriado en estado pendiente de validacion juridica.",
       canonicalPath: "/aviso-legal/",
       robots: "index, follow",
       primaryKeyword: "aviso legal malcriado",
@@ -202,7 +221,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       entities: ["Malcriado", "Aviso legal"],
       openGraph: {
         title: "Aviso legal | Malcriado",
-        description: "Aviso legal de Malcriado en estado pendiente de validacion juridica.",
+        description:
+          "Aviso legal de Malcriado en estado pendiente de validacion juridica.",
         type: "website",
         imageAssetId: null,
       },
@@ -221,7 +241,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       id: "seo-legal-privacidad",
       path: "/privacidad/",
       title: "Privacidad | Malcriado",
-      description: "Politica de privacidad de Malcriado en estado pendiente de validacion.",
+      description:
+        "Politica de privacidad de Malcriado en estado pendiente de validacion.",
       canonicalPath: "/privacidad/",
       robots: "index, follow",
       primaryKeyword: "privacidad malcriado",
@@ -229,7 +250,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       entities: ["Malcriado", "Privacidad"],
       openGraph: {
         title: "Privacidad | Malcriado",
-        description: "Politica de privacidad de Malcriado en estado pendiente de validacion.",
+        description:
+          "Politica de privacidad de Malcriado en estado pendiente de validacion.",
         type: "website",
         imageAssetId: null,
       },
@@ -248,7 +270,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       id: "seo-legal-cookies",
       path: "/cookies/",
       title: "Cookies | Malcriado",
-      description: "Politica de cookies de Malcriado en espera de inventario real de terceros.",
+      description:
+        "Politica de cookies de Malcriado en espera de inventario real de terceros.",
       canonicalPath: "/cookies/",
       robots: "index, follow",
       primaryKeyword: "cookies malcriado",
@@ -256,7 +279,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       entities: ["Malcriado", "Cookies"],
       openGraph: {
         title: "Cookies | Malcriado",
-        description: "Politica de cookies de Malcriado en espera de inventario real de terceros.",
+        description:
+          "Politica de cookies de Malcriado en espera de inventario real de terceros.",
         type: "website",
         imageAssetId: null,
       },
@@ -302,7 +326,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       id: "seo-dev-assets",
       path: "/dev/assets/",
       title: "Dev Assets | Malcriado",
-      description: "Catalogo interno de assets optimizados y originales para direccion artistica.",
+      description:
+        "Catalogo interno de assets optimizados y originales para direccion artistica.",
       canonicalPath: "/dev/assets/",
       robots: "noindex, nofollow",
       primaryKeyword: "dev assets malcriado",
@@ -310,7 +335,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       entities: ["Malcriado", "Assets"],
       openGraph: {
         title: "Dev Assets | Malcriado",
-        description: "Catalogo interno de assets optimizados y originales para direccion artistica.",
+        description:
+          "Catalogo interno de assets optimizados y originales para direccion artistica.",
         type: "website",
         imageAssetId: null,
       },
@@ -329,7 +355,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       id: "seo-dev-content",
       path: "/dev/content/",
       title: "Dev Content | Malcriado",
-      description: "Panel interno de auditoria editorial, fuentes y estados de validacion.",
+      description:
+        "Panel interno de auditoria editorial, fuentes y estados de validacion.",
       canonicalPath: "/dev/content/",
       robots: "noindex, nofollow",
       primaryKeyword: "dev content malcriado",
@@ -337,7 +364,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       entities: ["Malcriado", "Content"],
       openGraph: {
         title: "Dev Content | Malcriado",
-        description: "Panel interno de auditoria editorial, fuentes y estados de validacion.",
+        description:
+          "Panel interno de auditoria editorial, fuentes y estados de validacion.",
         type: "website",
         imageAssetId: null,
       },
@@ -353,5 +381,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
 };
 
 export function getSeoPageByPath(path: string) {
-  return Object.values(seoPages).find((page) => page.metadata.path === path) ?? null;
+  return (
+    Object.values(seoPages).find((page) => page.metadata.path === path) ?? null
+  );
 }

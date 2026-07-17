@@ -79,7 +79,9 @@ test("dev assets route exposes the internal asset catalog", async ({
   await expect(page.getByText(/Dev only/i)).toBeVisible();
 });
 
-test("dev content route exposes the editorial audit panel", async ({ page }) => {
+test("dev content route exposes the editorial audit panel", async ({
+  page,
+}) => {
   await page.goto("/dev/content/");
   await expect(
     page.getByRole("heading", { name: /auditoria editorial/i }),

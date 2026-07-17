@@ -1,4 +1,9 @@
-import type { PersonProfile, QuoteSource, StoryBlock, TimelineItem } from "@/types/content";
+import type {
+  PersonProfile,
+  QuoteSource,
+  StoryBlock,
+  TimelineItem,
+} from "@/types/content";
 import { contentSources } from "@/content/shared/sources";
 
 export const peopleProfiles: readonly PersonProfile[] = [
@@ -11,7 +16,10 @@ export const peopleProfiles: readonly PersonProfile[] = [
     status: "VERIFIED",
     mediaAssetId: null,
     references: {
-      sourceIds: [contentSources.siteNosotros.id, contentSources.contentInventory.id],
+      sourceIds: [
+        contentSources.siteNosotros.id,
+        contentSources.contentInventory.id,
+      ],
     },
   },
 ];
@@ -20,22 +28,28 @@ export const storyBlocks: readonly StoryBlock[] = [
   {
     id: "story-origin",
     eyebrow: "Origen",
-    heading: "Malcriado nace de una pasion por la gastronomia y la fusion de culturas.",
+    heading:
+      "Malcriado nace de una pasion por la gastronomia y la fusion de culturas.",
     body: null,
     status: "VERIFIED",
     references: {
-      sourceIds: [contentSources.siteNosotros.id, contentSources.contentInventory.id],
+      sourceIds: [
+        contentSources.siteNosotros.id,
+        contentSources.contentInventory.id,
+      ],
     },
   },
   {
     id: "story-chef",
     eyebrow: "Chef",
     heading: "Héctor aparece como la autoria culinaria visible del proyecto.",
-    body:
-      "La trayectoria ampliada y el cargo exacto siguen pendientes de confirmacion directa del titular.",
+    body: "La trayectoria ampliada y el cargo exacto siguen pendientes de confirmacion directa del titular.",
     status: "PENDING_VALIDATION",
     references: {
-      sourceIds: [contentSources.siteNosotros.id, contentSources.contentInventory.id],
+      sourceIds: [
+        contentSources.siteNosotros.id,
+        contentSources.contentInventory.id,
+      ],
     },
   },
 ];

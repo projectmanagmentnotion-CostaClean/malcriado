@@ -1,4 +1,8 @@
-import type { BookingChannel, BookingPolicy, BookingRequestContext } from "@/types/content";
+import type {
+  BookingChannel,
+  BookingPolicy,
+  BookingRequestContext,
+} from "@/types/content";
 import { contentSources } from "@/content/shared/sources";
 
 export const bookingChannels: readonly BookingChannel[] = [
@@ -26,7 +30,10 @@ export const bookingPolicy: BookingPolicy = {
   cancellationPolicy: null,
   delayTolerance: null,
   references: {
-    sourceIds: [contentSources.currentSiteAudit.id, contentSources.ownerChecklist.id],
+    sourceIds: [
+      contentSources.currentSiteAudit.id,
+      contentSources.ownerChecklist.id,
+    ],
   },
 };
 
