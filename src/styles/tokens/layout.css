@@ -5,11 +5,8 @@
     var(--layout-gutter),
     env(safe-area-inset-right)
   );
-  --layout-width-base: min(78rem, calc(100vw - (var(--layout-gutter) * 2)));
-  --layout-width-editorial: min(
-    66rem,
-    calc(100vw - (var(--layout-gutter) * 2))
-  );
-  --layout-width-reading: min(46rem, calc(100vw - (var(--layout-gutter) * 2)));
-  --layout-width-wide: min(92rem, calc(100vw - (var(--layout-gutter) * 2)));
+  --layout-width-base: 78rem;
+  --layout-width-editorial: 66rem;
+  --layout-width-reading: 46rem;
+  --layout-width-wide: 92rem;
 }

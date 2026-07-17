@@ -147,6 +147,7 @@ h4 {
   font-family: var(--font-display);
   line-height: var(--line-height-heading);
   letter-spacing: var(--tracking-heading);
+  overflow-wrap: anywhere;
 }
 
 h1 {
@@ -169,6 +170,7 @@ li,
 dd,
 dt {
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 ul,
@@ -335,6 +337,14 @@ ol {
 .split {
   display: grid;
   gap: var(--space-xl);
+}
+
+.split > *,
+.editorial-grid > *,
+.hero-shell > *,
+.hero-shell__content > *,
+.hero-shell__meta > * {
+  min-width: 0;
 }
 
 .split--balanced {
