@@ -1,0 +1,5 @@
+:root {
+  --shadow-soft: 0 22px 80px rgba(0, 0, 0, 0.24);
+  --shadow-focus: 0 0 0 3px
+    color-mix(in srgb, var(--color-focus) 28%, transparent);
+}

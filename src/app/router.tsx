@@ -4,6 +4,7 @@ import { legalPages } from "@/content";
 import { ContactoPage } from "@/pages/ContactoPage";
 import { DevAssetsPage } from "@/pages/DevAssetsPage";
 import { DevContentPage } from "@/pages/DevContentPage";
+import { DevDesignSystemPage } from "@/pages/DevDesignSystemPage";
 import { EspecialesPage } from "@/pages/EspecialesPage";
 import { HomePage } from "@/pages/HomePage";
 import { LegalPage } from "@/pages/LegalPage";
@@ -25,6 +26,7 @@ export const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "/dev/assets/", element: <DevAssetsPage /> },
       { path: "/dev/content/", element: <DevContentPage /> },
+      { path: "/dev/design-system/", element: <DevDesignSystemPage /> },
       { path: "/menu/", element: <MenuPage /> },
       { path: "/especiales/", element: <EspecialesPage /> },
       { path: "/nosotros/", element: <NosotrosPage /> },

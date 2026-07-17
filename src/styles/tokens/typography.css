@@ -1,0 +1,30 @@
+:root {
+  --font-display:
+    "Bodoni Moda Variable", "Iowan Old Style", "Times New Roman", serif;
+  --font-body:
+    "Manrope Variable", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --font-size-display-xl: clamp(3.7rem, 9vw, 8.5rem);
+  --font-size-display-lg: clamp(3rem, 7vw, 6rem);
+  --font-size-display-md: clamp(2.3rem, 5vw, 4.5rem);
+  --font-size-heading-xl: clamp(2rem, 4vw, 3.6rem);
+  --font-size-heading-lg: clamp(1.65rem, 3vw, 2.6rem);
+  --font-size-heading-md: clamp(1.35rem, 2vw, 1.9rem);
+  --font-size-body-lg: clamp(1.05rem, 1.3vw, 1.2rem);
+  --font-size-body-md: 1rem;
+  --font-size-body-sm: 0.94rem;
+  --font-size-label: 0.86rem;
+  --font-size-meta: 0.8rem;
+
+  --line-height-tight: 0.95;
+  --line-height-display: 0.98;
+  --line-height-heading: 1.08;
+  --line-height-body: 1.55;
+  --line-height-relaxed: 1.7;
+
+  --tracking-display: -0.045em;
+  --tracking-heading: -0.03em;
+  --tracking-label: 0.16em;
+  --tracking-nav: 0.08em;
+}

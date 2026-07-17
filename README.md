@@ -33,7 +33,7 @@ La ejecucion se rige por `AGENTS.md` y por los documentos de `/docs`. El orden o
 
 ## Estado
 
-Fase 0, Fase 1, Fase 2 y Fase 3 cerradas en local.
+Fase 0, Fase 1, Fase 2, Fase 3 y Fase 4 cerradas en local.
 
 La base actual ya incluye:
 
@@ -64,5 +64,16 @@ En Fase 3 quedaron implementados:
 - Scripts `npm run content:validate` y `npm run content:report`.
 - Ruta interna `/dev/content/` con resumen operativo del modelo.
 - Tests para helpers de negocio, selectores de ofertas, guardas de assets y validacion editorial.
+
+En Fase 4 quedaron implementados:
+
+- Sistema de tokens en `src/styles/tokens/`.
+- Tipografia autocontenida con `Bodoni Moda Variable` y `Manrope Variable`.
+- Layout primitives, botones, iconografia y estados reutilizables.
+- Componentes editoriales de media, comida, ofertas y formularios base.
+- Navegacion visual preparada con estados y menu movil editorial.
+- Ruta interna `/dev/design-system/` con `noindex, nofollow`.
+- Documentacion de auditoria UI, tokens, tipografia, accesibilidad y responsive.
+- Tests unitarios y Axe sobre el catalogo interno del sistema.
 
 La home inmersiva final y las escenas GSAP completas pertenecen a la Fase 6 del roadmap.

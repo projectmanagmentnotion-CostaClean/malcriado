@@ -1,0 +1,37 @@
+:root {
+  --color-raw-charcoal-950: #0f0a09;
+  --color-raw-charcoal-900: #171111;
+  --color-raw-charcoal-800: #241a18;
+  --color-raw-ivory-50: #f6efe3;
+  --color-raw-ivory-100: #ecdfce;
+  --color-raw-sand-300: #cab49a;
+  --color-raw-terracotta-500: #c35a34;
+  --color-raw-terracotta-400: #d87347;
+  --color-raw-red-700: #88251f;
+  --color-raw-teal-700: #245e63;
+  --color-raw-teal-500: #2f7c82;
+  --color-raw-gold-400: #bb8f4a;
+  --color-raw-success-500: #4b8c63;
+  --color-raw-warning-500: #cc8a3d;
+  --color-raw-danger-500: #ba4e46;
+
+  --color-bg-base: var(--color-raw-charcoal-950);
+  --color-bg-elevated: rgba(22, 16, 15, 0.92);
+  --color-bg-editorial: #1f1714;
+  --color-fg-base: var(--color-raw-ivory-50);
+  --color-fg-secondary: var(--color-raw-ivory-100);
+  --color-fg-muted: var(--color-raw-sand-300);
+  --color-border-subtle: rgba(246, 239, 227, 0.14);
+  --color-border-strong: rgba(246, 239, 227, 0.28);
+  --color-accent-primary: var(--color-raw-terracotta-500);
+  --color-accent-secondary: var(--color-raw-teal-500);
+  --color-danger: var(--color-raw-danger-500);
+  --color-success: var(--color-raw-success-500);
+  --color-warning: var(--color-raw-warning-500);
+  --color-focus: #f7bf68;
+  --color-overlay: rgba(9, 7, 7, 0.6);
+  --color-scrim: rgba(7, 5, 5, 0.78);
+  --color-surface-warm: rgba(195, 90, 52, 0.12);
+  --color-surface-night: rgba(36, 26, 24, 0.88);
+  --color-surface-coast: rgba(36, 94, 99, 0.16);
+}

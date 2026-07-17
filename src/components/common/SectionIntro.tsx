@@ -1,3 +1,5 @@
+import { EditorialIntro } from "@/sections/shared/EditorialIntro";
+
 interface SectionIntroProps {
   readonly eyebrow: string;
   readonly title: string;
@@ -5,11 +7,5 @@ interface SectionIntroProps {
 }
 
 export function SectionIntro({ eyebrow, title, body }: SectionIntroProps) {
-  return (
-    <header className="section-intro">
-      <p className="eyebrow">{eyebrow}</p>
-      <h1>{title}</h1>
-      <p>{body}</p>
-    </header>
-  );
+  return <EditorialIntro body={body} eyebrow={eyebrow} title={title} />;
 }

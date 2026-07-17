@@ -90,3 +90,19 @@ test("dev content route exposes the editorial audit panel", async ({
     page.getByRole("heading", { name: /estados pendientes/i }),
   ).toBeVisible();
 });
+
+test("dev design system route exposes the internal component catalog", async ({
+  page,
+}) => {
+  await page.goto("/dev/design-system/");
+  await expect(
+    page.getByRole("heading", {
+      name: /catalogo interno del sistema de diseno/i,
+    }),
+  ).toBeVisible();
+
+  const overflow = await page.evaluate(
+    () => document.documentElement.scrollWidth > window.innerWidth,
+  );
+  expect(overflow).toBeFalsy();
+});

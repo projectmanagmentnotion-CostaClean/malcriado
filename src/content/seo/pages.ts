@@ -378,6 +378,40 @@ export const seoPages: Record<string, LocalSeoPage> = {
       references: { sourceIds: [contentSources.contentInventory.id] },
     },
   },
+  devDesignSystem: {
+    pageId: "dev-design-system",
+    metadata: {
+      id: "seo-dev-design-system",
+      path: "/dev/design-system/",
+      title: "Dev Design System | Malcriado",
+      description:
+        "Catalogo interno del sistema de diseno, tokens, componentes y contraste.",
+      canonicalPath: "/dev/design-system/",
+      robots: "noindex, nofollow",
+      primaryKeyword: "dev design system malcriado",
+      intent: "informational",
+      entities: ["Malcriado", "Design System"],
+      openGraph: {
+        title: "Dev Design System | Malcriado",
+        description:
+          "Catalogo interno del sistema de diseno, tokens, componentes y contraste.",
+        type: "website",
+        imageAssetId: null,
+      },
+      structuredData: {
+        type: "WebPage",
+        includeMenu: false,
+        includeOffers: false,
+      },
+      validationStatus: "VERIFIED",
+      references: {
+        sourceIds: [
+          contentSources.contentInventory.id,
+          contentSources.assetManifest.id,
+        ],
+      },
+    },
+  },
 };
 
 export function getSeoPageByPath(path: string) {

@@ -63,7 +63,9 @@ export function ResponsiveImage({
       ) : null}
       <img
         src={fallback.path}
-        srcSet={buildSrcSet([fallback])}
+        srcSet={buildSrcSet(
+          webp.length > 0 ? webp : avif.length > 0 ? avif : [fallback],
+        )}
         sizes={sizes}
         width={fallback.width}
         height={fallback.height}

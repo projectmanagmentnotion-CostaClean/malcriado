@@ -1,0 +1,6 @@
+:root {
+  --z-base: 1;
+  --z-header: 20;
+  --z-overlay: 30;
+  --z-skip-link: 40;
+}
