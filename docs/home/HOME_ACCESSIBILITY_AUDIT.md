@@ -1,19 +1,19 @@
 # Home Accessibility Audit
 
 Fecha: 2026-07-17
-Base URL: `http://127.0.0.1:4173/`
+Base URL: `http://127.0.0.1:4175/`
 Metodo: `Playwright + axe-core`
 
 ## Resumen
 
-| Superficie               | Violaciones Axe | Violaciones serias o criticas |
-| ------------------------ | --------------- | ----------------------------- |
-| Home                     | 0               | 0                             |
-| Home mobile menu abierto | 0               | 0                             |
-| Home reduced motion      | 0               | 0                             |
-| Reservar                 | 0               | 0                             |
-| Footer home              | 0               | 0                             |
-| Dev design system        | 0               | 0                             |
+| Superficie | Violaciones Axe | Violaciones serias o criticas |
+| --- | --- | --- |
+| Home | 0 | 0 |
+| Home mobile menu abierto | 0 | 0 |
+| Home reduced motion | 0 | 0 |
+| Reservar | 0 | 0 |
+| Footer home | 0 | 0 |
+| Dev design system | 0 | 0 |
 
 ## Detalle serio o critico
 
