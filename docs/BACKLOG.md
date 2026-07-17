@@ -66,16 +66,16 @@
   Fase: `Fase 3`.
   Criterio de cierre: copy aprobado y unico.
 
+- Pasada humana con lector de pantalla real sobre la home inmersiva final.
+  Razon: Axe y teclado estan cerrados, pero la verificacion de Fase 6 no sustituye una prueba humana de NVDA o VoiceOver.
+  Dependencia: sesion manual de accesibilidad.
+  Fase: `Fase 11`.
+  Criterio de cierre: incidencias documentadas y resueltas o aceptadas.
+
 ## P3
 
-- Documentar capturas visuales o QA manual complementaria desde navegador interactivo.
-  Razon: util para Fase 4+ pero no bloqueante para este sprint documental.
-  Dependencia: entorno de QA visual.
-  Fase: `Fase 11`.
-  Criterio de cierre: evidencias archivadas por viewport y reduced motion.
-
-- Reforzar variantes futuras del header cuando entren escenas GSAP reales.
-  Razon: la API de estados ya existe, pero el comportamiento definitivo de scroll todavia pertenece a Fase 6.
-  Dependencia: home inmersiva final.
-  Fase: `Fase 6`.
-  Criterio de cierre: transiciones medidas en contexto real sin degradar accesibilidad.
+- Medir LCP e INP en preview o produccion real con red y hardware menos favorables.
+  Razon: el Lighthouse local de Fase 6 es excelente, pero sigue siendo una medicion de laboratorio local.
+  Dependencia: entorno de preview o produccion controlado.
+  Fase: `Fase 11` y `Fase 12`.
+  Criterio de cierre: metrica real registrada y dentro de presupuesto aceptado.

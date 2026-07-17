@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { ReactNode } from "react";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { cn } from "@/lib/cn";
 
@@ -11,6 +11,8 @@ interface BaseLinkButtonProps {
   readonly iconEnd?: IconName;
   readonly className?: string;
   readonly children: ReactNode;
+  readonly ariaHidden?: boolean | undefined;
+  readonly tabIndex?: number | undefined;
 }
 
 type InternalLinkProps = BaseLinkButtonProps & {
@@ -23,7 +25,7 @@ type ExternalLinkProps = BaseLinkButtonProps & {
   readonly to?: never;
   readonly target?: string;
   readonly rel?: string;
-};
+} & Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "aria-label">;
 
 type LinkButtonProps = InternalLinkProps | ExternalLinkProps;
 
@@ -58,7 +60,12 @@ export function LinkButton(props: LinkButtonProps) {
 
   if ("to" in props) {
     return (
-      <Link className={classes} to={props.to}>
+      <Link
+        aria-hidden={props.ariaHidden}
+        className={classes}
+        tabIndex={props.tabIndex}
+        to={props.to}
+      >
         {content}
       </Link>
     );
@@ -70,6 +77,9 @@ export function LinkButton(props: LinkButtonProps) {
       href={props.href}
       target={props.target}
       rel={props.rel}
+      aria-hidden={props.ariaHidden}
+      tabIndex={props.tabIndex}
+      aria-label={props["aria-label"]}
     >
       {content}
     </a>

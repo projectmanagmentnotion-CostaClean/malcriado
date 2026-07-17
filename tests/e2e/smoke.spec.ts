@@ -8,13 +8,29 @@ test("home renders without overflow and keeps booking CTA visible", async ({
   await expect(
     page
       .locator("#main-content")
-      .getByRole("link", { name: "Reservar", exact: true }),
+      .getByRole("link", { name: "Reservar mesa", exact: true }),
   ).toBeVisible();
 
   const overflow = await page.evaluate(
     () => document.documentElement.scrollWidth > window.innerWidth,
   );
   expect(overflow).toBeFalsy();
+});
+
+test("keyboard starts on skip link before entering home content", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(isMobile, "Desktop keyboard assertion");
+  await page.goto("/");
+  await page.keyboard.press("Tab");
+
+  const skipLink = page.getByRole("link", {
+    name: "Saltar al contenido principal",
+  });
+
+  await expect(skipLink).toBeFocused();
+  await expect(skipLink).toHaveAttribute("href", "#main-content");
 });
 
 test("menu and especiales routes render provisional content", async ({
@@ -48,6 +64,42 @@ test("mobile menu opens, closes and keyboard returns focus", async ({
     page.getByRole("navigation", { name: /principal movil/i }),
   ).toHaveCount(0);
   await expect(menuButton).toBeFocused();
+});
+
+test("persistent CTA hides at footer and reappears when leaving footer", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(!isMobile, "Mobile-only assertion");
+  await page.goto("/");
+
+  const cta = page.locator(".persistent-booking-cta");
+  await expect(cta).toHaveAttribute("data-hidden", "false");
+
+  await page.locator("footer").scrollIntoViewIfNeeded();
+  await expect(cta).toHaveAttribute("data-hidden", "true");
+
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: "auto" }));
+  await expect(cta).toHaveAttribute("data-hidden", "false");
+});
+
+test("persistent CTA stays off on reservar and returns on home navigation", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(!isMobile, "Mobile-only assertion");
+  await page.goto("/");
+
+  const cta = page.locator(".persistent-booking-cta");
+  await expect(cta).toBeVisible();
+
+  await page.goto("/reservar/");
+  await expect(cta).toHaveCount(0);
+
+  await page.goBack();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(cta).toBeVisible();
+  await expect(cta).toHaveAttribute("data-hidden", "false");
 });
 
 test("reservation form reports pending confirmation", async ({ page }) => {

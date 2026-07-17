@@ -1,20 +1,58 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { DevLayout } from "@/app/layout/DevLayout";
 import { PublicLayout } from "@/app/layout/PublicLayout";
 import type { ShellRouteHandle } from "@/app/shell/routeHandles";
 import { legacyRedirects, legalPages } from "@/content";
-import { ContactoPage } from "@/pages/ContactoPage";
-import { DeclaracionAccesibilidadPage } from "@/pages/DeclaracionAccesibilidadPage";
-import { DevAssetsPage } from "@/pages/DevAssetsPage";
-import { DevContentPage } from "@/pages/DevContentPage";
-import { DevDesignSystemPage } from "@/pages/DevDesignSystemPage";
-import { EspecialesPage } from "@/pages/EspecialesPage";
 import { HomePage } from "@/pages/HomePage";
 import { LegalPage } from "@/pages/LegalPage";
-import { MenuPage } from "@/pages/MenuPage";
-import { NosotrosPage } from "@/pages/NosotrosPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
-import { ReservarPage } from "@/pages/ReservarPage";
+
+const ContactoPage = lazy(() =>
+  import("@/pages/ContactoPage").then((module) => ({
+    default: module.ContactoPage,
+  })),
+);
+const DeclaracionAccesibilidadPage = lazy(() =>
+  import("@/pages/DeclaracionAccesibilidadPage").then((module) => ({
+    default: module.DeclaracionAccesibilidadPage,
+  })),
+);
+const DevAssetsPage = lazy(() =>
+  import("@/pages/DevAssetsPage").then((module) => ({
+    default: module.DevAssetsPage,
+  })),
+);
+const DevContentPage = lazy(() =>
+  import("@/pages/DevContentPage").then((module) => ({
+    default: module.DevContentPage,
+  })),
+);
+const DevDesignSystemPage = lazy(() =>
+  import("@/pages/DevDesignSystemPage").then((module) => ({
+    default: module.DevDesignSystemPage,
+  })),
+);
+const EspecialesPage = lazy(() =>
+  import("@/pages/EspecialesPage").then((module) => ({
+    default: module.EspecialesPage,
+  })),
+);
+const MenuPage = lazy(() =>
+  import("@/pages/MenuPage").then((module) => ({
+    default: module.MenuPage,
+  })),
+);
+const NosotrosPage = lazy(() =>
+  import("@/pages/NosotrosPage").then((module) => ({
+    default: module.NosotrosPage,
+  })),
+);
+const ReservarPage = lazy(() =>
+  import("@/pages/ReservarPage").then((module) => ({
+    default: module.ReservarPage,
+  })),
+);
 
 const avisoLegalPage = legalPages[0]!;
 const privacidadPage = legalPages[1]!;
@@ -48,6 +86,20 @@ function devHandle(pageTitle: string): ShellRouteHandle {
   };
 }
 
+function withSuspense(element: React.ReactNode) {
+  return (
+    <Suspense
+      fallback={
+        <div aria-live="polite" className="sr-only">
+          Cargando pagina
+        </div>
+      }
+    >
+      {element}
+    </Suspense>
+  );
+}
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -65,35 +117,35 @@ export const router = createBrowserRouter([
       },
       {
         path: "/menu/",
-        element: <MenuPage />,
+        element: withSuspense(<MenuPage />),
         handle: publicHandle("Carta", {
           focusTargetId: "page-heading-menu",
         }),
       },
       {
         path: "/especiales/",
-        element: <EspecialesPage />,
+        element: withSuspense(<EspecialesPage />),
         handle: publicHandle("Especiales", {
           focusTargetId: "page-heading-especiales",
         }),
       },
       {
         path: "/nosotros/",
-        element: <NosotrosPage />,
+        element: withSuspense(<NosotrosPage />),
         handle: publicHandle("Nosotros", {
           focusTargetId: "page-heading-nosotros",
         }),
       },
       {
         path: "/contacto/",
-        element: <ContactoPage />,
+        element: withSuspense(<ContactoPage />),
         handle: publicHandle("Contacto", {
           focusTargetId: "page-heading-contacto",
         }),
       },
       {
         path: "/reservar/",
-        element: <ReservarPage />,
+        element: withSuspense(<ReservarPage />),
         handle: publicHandle("Reservar", {
           showPersistentBookingCta: false,
           hideHeaderBookingCta: true,
@@ -141,7 +193,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/declaracion-de-accesibilidad/",
-        element: <DeclaracionAccesibilidadPage />,
+        element: withSuspense(<DeclaracionAccesibilidadPage />),
         handle: publicHandle("Declaracion de accesibilidad", {
           focusTargetId: "page-heading-accesibilidad",
         }),
@@ -168,17 +220,17 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "assets/",
-        element: <DevAssetsPage />,
+        element: withSuspense(<DevAssetsPage />),
         handle: devHandle("Dev assets"),
       },
       {
         path: "content/",
-        element: <DevContentPage />,
+        element: withSuspense(<DevContentPage />),
         handle: devHandle("Dev content"),
       },
       {
         path: "design-system/",
-        element: <DevDesignSystemPage />,
+        element: withSuspense(<DevDesignSystemPage />),
         handle: devHandle("Dev design system"),
       },
     ],
