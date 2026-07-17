@@ -7,6 +7,7 @@
 | Informacion gastronomica sin precios | Alta | Alta | `P0` | Validar carta real antes de modelarla | Anderson | `Fase 3` |
 | Alergenos ausentes | Alta | Alta | `P0` | No publicar claims dieteticos sin validacion | Anderson | `Fase 3` |
 | Horario desactualizado | Alta | Alta | `P0` | Confirmacion por dia y festivos | Anderson | `Fase 3` |
+| Warnings editoriales permanentes ignorados en CI | Media | Media | `P1` | Mantener `content:validate` con errores bloqueantes y `content:report` como visibilidad operativa de warnings | Frontend | `Fase 3` |
 | `sample-page` indexable | Alta | Alta | `P0` | Retirar o redirigir | Implementacion | `Fase 5` |
 | Dependencia de WhatsApp como reserva principal | Alta | Alta | `P0` | Proveedor desacoplado y copia legal correcta | Producto/Anderson | `Fase 8` |
 | Formulario actual sin disponibilidad real confirmada | Media | Alta | `P1` | Separar `solicitud enviada` de `reserva confirmada` | Producto | `Fase 8` |

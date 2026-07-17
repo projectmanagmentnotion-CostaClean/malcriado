@@ -1,28 +1,36 @@
 import { BookingCta } from "@/components/common/BookingCta";
 import { SectionIntro } from "@/components/common/SectionIntro";
 import { PageSeo } from "@/components/seo/PageSeo";
-import { menuCategories } from "@/content/siteContent";
-import { getRestaurantStructuredData } from "@/content/structuredData";
+import { getMenuItemsByCategory, getRestaurantStructuredData, menuContent, seoPages } from "@/content";
 
 export function MenuPage() {
+  const seoPage = seoPages.menu!;
+
   return (
     <>
       <PageSeo
-        title="Carta | Malcriado"
-        description="Categorias verificadas desde la auditoria base; precios y alergenos siguen pendientes."
-        path="/menu/"
-        structuredData={getRestaurantStructuredData("/menu/")}
+        title={seoPage.metadata.title}
+        description={seoPage.metadata.description}
+        path={seoPage.metadata.path}
+        robots={seoPage.metadata.robots}
+        structuredData={getRestaurantStructuredData(seoPage)}
       />
       <SectionIntro
         eyebrow="Carta"
-        title="Carta HTML provisional"
-        body="Las categorias estan preparadas para indexacion. Precios, alergenos y descripciones finales siguen pendientes de validacion."
+        title={menuContent.title}
+        body="Las categorias se publican desde el modelo editorial tipado. Precios, alergenos y descripciones finales siguen pendientes de validacion."
       />
       <section className="cards-grid">
-        {menuCategories.map((category) => (
+        {menuContent.categories.map((category) => (
           <article className="panel" key={category.slug}>
             <h2>{category.label}</h2>
-            <p>{category.description}</p>
+            <p>{category.note ?? "Categoria activa en el modelo editorial."}</p>
+            <p>
+              {getMenuItemsByCategory(category.id).length} items auditados
+              {category.publicationStatus !== "PUBLIC"
+                ? ` · ${category.publicationStatus}`
+                : ""}
+            </p>
           </article>
         ))}
       </section>

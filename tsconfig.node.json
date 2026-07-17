@@ -17,6 +17,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "types": ["node"]
   },
   "include": ["*.config.ts", "scripts"]

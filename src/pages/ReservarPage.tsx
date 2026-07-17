@@ -1,6 +1,12 @@
 import { FormEvent, useState } from "react";
 import { PageSeo } from "@/components/seo/PageSeo";
-import { getRestaurantStructuredData } from "@/content/structuredData";
+import {
+  bookingChannels,
+  bookingPolicy,
+  bookingRequestContext,
+  getRestaurantStructuredData,
+  seoPages,
+} from "@/content";
 import { bookingProvider } from "@/services/booking/BookingProvider";
 import type { BookingSubmissionResult } from "@/services/booking/bookingTypes";
 
@@ -16,6 +22,7 @@ function readFormValue(data: FormData, key: string) {
 
 export function ReservarPage() {
   const [result, setResult] = useState(initialResult);
+  const seoPage = seoPages.booking!;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -37,16 +44,24 @@ export function ReservarPage() {
   return (
     <>
       <PageSeo
-        title="Reservar | Malcriado"
-        description="Formulario base desacoplado del proveedor final, con estado pending y mensajes accesibles."
-        path="/reservar/"
-        structuredData={getRestaurantStructuredData("/reservar/")}
+        title={seoPage.metadata.title}
+        description={seoPage.metadata.description}
+        path={seoPage.metadata.path}
+        robots={seoPage.metadata.robots}
+        structuredData={getRestaurantStructuredData(seoPage)}
       />
       <section className="form-layout">
         <header className="section-intro">
           <p className="eyebrow">Reservar</p>
           <h1>Solicitud de reserva</h1>
-          <p>Este flujo no confirma disponibilidad automaticamente.</p>
+          <p>{bookingPolicy.summary}</p>
+          <ul>
+            {bookingChannels.map((channel) => (
+              <li key={channel.id}>
+                {channel.label}: {channel.href}
+              </li>
+            ))}
+          </ul>
         </header>
         <form
           className="booking-form"
@@ -80,7 +95,7 @@ export function ReservarPage() {
           </label>
           <label className="checkbox">
             <input required name="privacy" type="checkbox" />
-            He leido la informacion provisional de privacidad.
+            {bookingRequestContext.privacyCopy}
           </label>
           <button className="button button--primary" type="submit">
             Enviar solicitud

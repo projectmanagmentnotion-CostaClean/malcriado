@@ -77,13 +77,22 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 
 ## Fase 3 - Contenido y modelo editorial
 
-- [ ] Crear fuentes tipadas para negocio, menu, ofertas, FAQ y testimonios.
-- [ ] Migrar contenido real y corregir erratas verificadas.
-- [ ] Modelar vigencia de ofertas.
-- [ ] Preparar estados de contenido pendiente.
-- [ ] Validar precios, alergenos, horarios y condiciones.
+- [x] Crear fuentes tipadas para negocio, menu, ofertas, FAQ y testimonios.
+- [x] Migrar contenido real y corregir erratas verificadas.
+- [x] Modelar vigencia de ofertas.
+- [x] Preparar estados de contenido pendiente.
+- [x] Validar estructura del contenido, dejando pendientes editoriales explicitos.
 
 **Aceptacion:** cero contenido comercial duplicado y cero datos inventados.
+
+### Resultado de la Fase 3
+
+- Dominio editorial consolidado en `src/content/`.
+- Legacy retirado: `siteContent.ts`, `homeScenes.ts` y `structuredData.ts`.
+- Nuevas rutas: `/contacto/` y `/dev/content/`.
+- Validacion Zod y scripts: `content:validate`, `content:report`.
+- Estado actual: `0` errores estructurales y `92` warnings editoriales conocidos.
+- Deuda abierta: precios, alergenos, legales, horarios por dia y ciertas taxonomias ambiguas.
 
 ## Fase 4 - Sistema de diseno
 

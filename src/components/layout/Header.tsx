@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { ResponsiveImage } from "@/components/media/ResponsiveImage";
+import { getAsset } from "@/content";
 import { siteRoutes } from "@/lib/routes";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const logoAsset = getAsset("asset-002");
 
   useEffect(() => {
     if (!mobileOpen) {
@@ -41,11 +44,12 @@ export function Header() {
     <header className="site-header">
       <div className="site-header__inner">
         <NavLink className="brand-mark" to="/">
-          <img
-            src="/assets/source/brand/cropped-logo-malcriado-pineda-de-mar.png"
+          <ResponsiveImage
+            asset={logoAsset}
+            crop="original"
+            sizes="170px"
             alt="Malcriado"
-            width={2559}
-            height={568}
+            eager
           />
         </NavLink>
         <nav className="desktop-nav" aria-label="Principal">

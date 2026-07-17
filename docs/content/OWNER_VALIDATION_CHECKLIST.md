@@ -1,6 +1,6 @@
 # Owner Validation Checklist
 
-Todos los puntos siguientes quedan `PENDING` a 2026-07-16.
+Todos los puntos siguientes quedan `PENDING` a 2026-07-17. La Fase 3 ya los modela en codigo, pero siguen sin validacion del titular.
 
 | Dato a confirmar con Anderson | Estado |
 |---|---|

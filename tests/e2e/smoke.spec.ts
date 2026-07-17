@@ -20,11 +20,13 @@ test("menu and especiales routes render provisional content", async ({
 }) => {
   await page.goto("/menu/");
   await expect(
-    page.getByRole("heading", { name: /carta html provisional/i }),
+    page.getByRole("heading", { name: /carta malcriado/i }),
   ).toBeVisible();
 
   await page.goto("/especiales/");
-  await expect(page.getByText("PENDING_CONTENT")).toBeVisible();
+  await expect(
+    page.getByText(/no se han recuperado ofertas publicas vigentes/i),
+  ).toBeVisible();
 });
 
 test("mobile menu opens, closes and keyboard returns focus", async ({
@@ -75,4 +77,14 @@ test("dev assets route exposes the internal asset catalog", async ({
     page.getByRole("heading", { name: /catalogo de assets/i }),
   ).toBeVisible();
   await expect(page.getByText(/Dev only/i)).toBeVisible();
+});
+
+test("dev content route exposes the editorial audit panel", async ({ page }) => {
+  await page.goto("/dev/content/");
+  await expect(
+    page.getByRole("heading", { name: /auditoria editorial/i }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: /estados pendientes/i }),
+  ).toBeVisible();
 });
