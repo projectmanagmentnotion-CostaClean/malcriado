@@ -33,7 +33,7 @@ La ejecucion se rige por `AGENTS.md` y por los documentos de `/docs`. El orden o
 
 ## Estado
 
-Fase 0, Fase 1, Fase 2, Fase 3 y Fase 4 cerradas en local.
+Fase 0, Fase 1, Fase 2, Fase 3, Fase 4 y Fase 5 cerradas en local.
 
 La base actual ya incluye:
 
@@ -48,6 +48,9 @@ La base actual ya incluye:
 - Documentos creativos para direccion artistica, storyboard de motion y presupuesto GSAP.
 - Pipeline de assets con auditoria, manifiesto enriquecido, derivados responsive y ruta interna `/dev/assets/`.
 - Modelo editorial tipado con validacion Zod, scripts de auditoria y ruta interna `/dev/content/`.
+- Shell publico separado del shell interno `/dev/`.
+- SEO tecnico generado y validado con `robots.txt`, `sitemap.xml`, redirects heredados y metadata reforzada.
+- CTA de reserva persistente con contexto de entrada para QA y trazabilidad editorial.
 
 En Fase 2 quedaron implementados:
 
@@ -75,5 +78,13 @@ En Fase 4 quedaron implementados:
 - Ruta interna `/dev/design-system/` con `noindex, nofollow`.
 - Documentacion de auditoria UI, tokens, tipografia, accesibilidad y responsive.
 - Tests unitarios y Axe sobre el catalogo interno del sistema.
+
+En Fase 5 quedaron implementados:
+
+- `src/app/layout/PublicLayout.tsx` y `src/app/layout/DevLayout.tsx` con efectos de foco, scroll y anuncio de ruta.
+- Header/fallback/footer publicos completos y CTA persistente de reserva no invasivo.
+- `robots.txt`, `sitemap.xml` y `_redirects` generados desde contenido tipado mediante `npm run seo:generate`.
+- Scripts `npm run routes:validate` y `npm run seo:validate` integrados en QA y CI.
+- Ruta publica `/declaracion-de-accesibilidad/`, `/404` explicita y redirects heredados desde URLs antiguas y basura indexable.
 
 La home inmersiva final y las escenas GSAP completas pertenecen a la Fase 6 del roadmap.

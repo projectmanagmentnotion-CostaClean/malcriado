@@ -184,6 +184,13 @@ export function getEmailHref() {
   return value ? `mailto:${value}` : null;
 }
 
+export function getGoogleMapsHref() {
+  const address = businessContent.location.publicAddress.value;
+  return address
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
+    : null;
+}
+
 export function getFooterBusinessData() {
   return {
     name: businessContent.identity.commercialName.value ?? "Malcriado",

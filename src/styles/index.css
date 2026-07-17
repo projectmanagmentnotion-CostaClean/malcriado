@@ -139,6 +139,10 @@ main {
   padding-bottom: var(--space-4xl);
 }
 
+main:focus {
+  outline: none;
+}
+
 h1,
 h2,
 h3,
@@ -424,6 +428,12 @@ ol {
     var(--color-bg-elevated);
 }
 
+.panel--soft {
+  background:
+    linear-gradient(180deg, rgba(36, 94, 99, 0.14), rgba(0, 0, 0, 0.04)),
+    var(--color-bg-elevated);
+}
+
 .frame--night {
   background:
     linear-gradient(180deg, rgba(187, 143, 74, 0.08), rgba(0, 0, 0, 0.08)),
@@ -443,6 +453,10 @@ ol {
   padding-block: var(--space-md);
 }
 
+.site-header[data-density="compact"] {
+  padding-block: var(--space-sm);
+}
+
 .site-header__shell {
   display: grid;
   gap: var(--space-sm);
@@ -460,19 +474,21 @@ ol {
   background: color-mix(in srgb, var(--color-scrim) 84%, transparent);
 }
 
-.site-header[data-state="overlay"] .site-header__inner {
+.site-header[data-theme="overlay"] .site-header__inner {
   background: color-mix(in srgb, var(--color-scrim) 72%, transparent);
 }
 
-.site-header[data-state="solid"] .site-header__inner,
-.site-header[data-state="dark"] .site-header__inner,
-.site-header[data-state="compact"] .site-header__inner {
+.site-header[data-theme="dark"] .site-header__inner {
   background: color-mix(in srgb, var(--color-bg-base) 92%, transparent);
 }
 
 .site-header[data-theme="light"] .site-header__inner {
   background: rgba(236, 223, 206, 0.86);
   color: var(--color-bg-base);
+}
+
+.site-header[data-menu-open="true"] .site-header__inner {
+  background: color-mix(in srgb, var(--color-bg-base) 94%, transparent);
 }
 
 .brand-mark {
@@ -1033,6 +1049,34 @@ ol {
   color: var(--color-fg-secondary);
 }
 
+.site-footer__note {
+  color: var(--color-fg-muted);
+}
+
+.site-footer__actions {
+  display: grid;
+  align-content: start;
+  gap: var(--space-sm);
+}
+
+.persistent-booking-cta {
+  position: fixed;
+  right: var(--layout-gutter);
+  bottom: calc(var(--layout-gutter) + env(safe-area-inset-bottom));
+  z-index: calc(var(--z-header) - 1);
+  display: none;
+}
+
+.persistent-booking-cta__link {
+  min-width: min(18rem, calc(100vw - (var(--layout-gutter) * 2)));
+  box-shadow: var(--shadow-soft);
+}
+
+.legal-page {
+  display: grid;
+  gap: var(--space-lg);
+}
+
 .token-swatch {
   display: grid;
   gap: var(--space-sm);
@@ -1162,6 +1206,16 @@ ol {
 
   .hero-shell__meta {
     grid-template-columns: 1fr;
+  }
+
+  .persistent-booking-cta {
+    display: block;
+    left: var(--layout-gutter);
+    right: var(--layout-gutter);
+  }
+
+  .persistent-booking-cta__link {
+    width: 100%;
   }
 }
 

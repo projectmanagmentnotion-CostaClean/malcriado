@@ -12,6 +12,9 @@
     "assets:verify": "node scripts/assets/verify.mjs",
     "content:validate": "tsx scripts/content/validate.ts",
     "content:report": "tsx scripts/content/report.ts",
+    "routes:validate": "tsx scripts/routes/validate.ts",
+    "seo:generate": "tsx scripts/seo/generate.ts",
+    "seo:validate": "tsx scripts/seo/validate.ts",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
@@ -25,7 +28,7 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "qa": "npm run format:check && npm run lint && npm run typecheck && npm run content:validate && npm run test:run && npm run build",
+    "qa": "npm run format:check && npm run lint && npm run typecheck && npm run content:validate && npm run routes:validate && npm run seo:validate && npm run assets:verify && npm run test:run && npm run build",
     "qa:full": "npm run qa && npm run test:e2e"
   },
   "dependencies": {

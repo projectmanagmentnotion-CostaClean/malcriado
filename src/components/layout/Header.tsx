@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
+import type { HeaderDensity, HeaderTheme } from "@/app/shell/routeHandles";
 import { Cluster } from "@/components/layout/Cluster";
 import { Container } from "@/components/layout/Container";
 import { ResponsiveImage } from "@/components/media/ResponsiveImage";
@@ -12,14 +13,20 @@ import {
   getTelephoneHref,
   getWhatsappHref,
 } from "@/content";
+import { buildBookingIntentHref } from "@/lib/booking/buildBookingIntentHref";
 import { siteRoutes } from "@/lib/routes";
 
 interface HeaderProps {
-  readonly state?: "overlay" | "solid" | "compact" | "light" | "dark";
-  readonly theme?: "light" | "dark";
+  readonly theme?: HeaderTheme;
+  readonly density?: HeaderDensity;
+  readonly hideBookingCta?: boolean;
 }
 
-export function Header({ state = "solid", theme = "dark" }: HeaderProps) {
+export function Header({
+  theme = "dark",
+  density = "default",
+  hideBookingCta = false,
+}: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -77,7 +84,8 @@ export function Header({ state = "solid", theme = "dark" }: HeaderProps) {
   return (
     <header
       className="site-header"
-      data-state={mobileOpen ? "solid" : state}
+      data-density={mobileOpen ? "default" : density}
+      data-menu-open={mobileOpen ? "true" : "false"}
       data-theme={theme}
     >
       <Container width="wide">
@@ -101,14 +109,16 @@ export function Header({ state = "solid", theme = "dark" }: HeaderProps) {
                 ))}
               </ul>
             </nav>
-            <LinkButton
-              className="desktop-cta"
-              iconEnd="arrow-right"
-              to="/reservar/"
-              variant="editorial"
-            >
-              Reservar mesa
-            </LinkButton>
+            {hideBookingCta ? null : (
+              <LinkButton
+                className="desktop-cta"
+                iconEnd="arrow-right"
+                to={buildBookingIntentHref({ context: "header" })}
+                variant="editorial"
+              >
+                Reservar mesa
+              </LinkButton>
+            )}
             <IconButton
               ref={buttonRef}
               aria-controls="mobile-navigation"
@@ -147,7 +157,7 @@ export function Header({ state = "solid", theme = "dark" }: HeaderProps) {
             <Cluster gap="sm">
               <LinkButton
                 iconEnd="arrow-right"
-                to="/reservar/"
+                to={buildBookingIntentHref({ context: "mobile-nav" })}
                 variant="editorial"
               >
                 Reservar mesa
@@ -174,6 +184,9 @@ export function Header({ state = "solid", theme = "dark" }: HeaderProps) {
                       "Telefono pendiente"}
                   </TextLink>
                 ) : null}
+                <TextLink icon="location" to="/contacto/">
+                  Contacto
+                </TextLink>
               </Cluster>
             </div>
           </div>

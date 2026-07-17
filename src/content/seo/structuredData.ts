@@ -1,12 +1,27 @@
+import { getAssetFallback } from "@/content/assets/assetSelectors";
 import { businessContent } from "@/content/business/business";
+import { env } from "@/lib/env";
 import type { LocalSeoPage } from "@/types/content";
 
-export function getRestaurantStructuredData(page: LocalSeoPage) {
-  const canonicalBase =
-    businessContent.contact.canonicalUrl.value ?? "https://malcriadobcn.com/";
+function getCanonicalUrl(path: string) {
+  return new URL(path, env.VITE_PUBLIC_SITE_URL).toString();
+}
+
+export function getSeoImageUrl(assetId: string | null) {
+  if (!assetId) {
+    return null;
+  }
+
+  const fallback = getAssetFallback(assetId, "landscape");
+  if (!fallback) {
+    return null;
+  }
+
+  return new URL(fallback.path, env.VITE_PUBLIC_SITE_URL).toString();
+}
+
+function getOrganizationBase() {
   return {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
     name: businessContent.identity.commercialName.value,
     description: businessContent.identity.shortDescription.value,
     address: {
@@ -22,6 +37,85 @@ export function getRestaurantStructuredData(page: LocalSeoPage) {
     sameAs: businessContent.contact.socials
       .map((link) => link.href.value)
       .filter((href): href is string => Boolean(href)),
-    url: new URL(page.metadata.canonicalPath, canonicalBase).toString(),
   };
+}
+
+export function getRestaurantStructuredData(page: LocalSeoPage) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    ...getOrganizationBase(),
+    url: getCanonicalUrl(page.metadata.canonicalPath),
+  };
+}
+
+function getWebsiteStructuredData() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: businessContent.identity.seoName.value,
+    url: getCanonicalUrl("/"),
+    inLanguage: "es",
+  };
+}
+
+function getPageStructuredData(page: LocalSeoPage) {
+  return {
+    "@context": "https://schema.org",
+    "@type": page.metadata.structuredData.type,
+    name: page.metadata.title,
+    description: page.metadata.description,
+    url: getCanonicalUrl(page.metadata.canonicalPath),
+    inLanguage: page.metadata.language ?? "es",
+  };
+}
+
+function getBreadcrumbStructuredData(page: LocalSeoPage) {
+  const itemListElement = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: getCanonicalUrl("/"),
+    },
+  ];
+
+  if (page.metadata.path !== "/") {
+    itemListElement.push({
+      "@type": "ListItem",
+      position: 2,
+      name: page.metadata.breadcrumbLabel ?? page.metadata.title,
+      item: getCanonicalUrl(page.metadata.canonicalPath),
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement,
+  };
+}
+
+export function getStructuredDataForPage(page: LocalSeoPage) {
+  const entries: object[] = [getPageStructuredData(page)];
+
+  if (page.metadata.path === "/") {
+    entries.unshift(
+      getWebsiteStructuredData(),
+      getRestaurantStructuredData(page),
+    );
+  }
+
+  if (
+    page.metadata.structuredData.type === "ContactPage" ||
+    page.metadata.structuredData.type === "AboutPage"
+  ) {
+    entries.unshift(getRestaurantStructuredData(page));
+  }
+
+  if (page.metadata.structuredData.includeBreadcrumbs !== false) {
+    entries.push(getBreadcrumbStructuredData(page));
+  }
+
+  return entries;
 }

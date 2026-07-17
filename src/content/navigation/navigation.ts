@@ -1,4 +1,4 @@
-import type { NavigationLink } from "@/types/content";
+import type { LegacyRedirect, NavigationLink } from "../../types/content";
 
 export const mainNavigation: readonly NavigationLink[] = [
   {
@@ -94,6 +94,15 @@ export const legalNavigation: readonly NavigationLink[] = [
     behavior: "internal",
     status: "VERIFIED",
   },
+  {
+    id: "legal-accessibility",
+    label: "Accesibilidad",
+    path: "/declaracion-de-accesibilidad/",
+    priority: 4,
+    context: "legal",
+    behavior: "internal",
+    status: "VERIFIED",
+  },
 ];
 
 export const legacyNavigation: readonly NavigationLink[] = [
@@ -107,12 +116,60 @@ export const legacyNavigation: readonly NavigationLink[] = [
     status: "PENDING_VALIDATION",
   },
   {
-    id: "legacy-disclaimer",
-    label: "Descargo de responsabilidad",
-    path: "/descargo-de-responsabilidad/",
+    id: "legacy-cookies",
+    label: "Politica de cookies",
+    path: "/politica-de-cookies/",
     priority: 2,
     context: "legacy",
     behavior: "internal",
     status: "PENDING_VALIDATION",
+  },
+  {
+    id: "legacy-disclaimer",
+    label: "Descargo de responsabilidad",
+    path: "/descargo-de-responsabilidad/",
+    priority: 3,
+    context: "legacy",
+    behavior: "internal",
+    status: "PENDING_VALIDATION",
+  },
+];
+
+export const legacyRedirects: readonly LegacyRedirect[] = [
+  {
+    id: "redirect-privacy",
+    from: "/declaracion-de-privacidad/",
+    to: "/privacidad/",
+    statusCode: 301,
+  },
+  {
+    id: "redirect-cookies",
+    from: "/politica-de-cookies/",
+    to: "/cookies/",
+    statusCode: 301,
+  },
+  {
+    id: "redirect-disclaimer",
+    from: "/descargo-de-responsabilidad/",
+    to: "/aviso-legal/",
+    statusCode: 301,
+  },
+  {
+    id: "redirect-sample-page",
+    from: "/sample-page/",
+    to: "/404",
+    statusCode: 301,
+  },
+  {
+    id: "redirect-elementor-cta",
+    from: "/elementor-hf/cta/",
+    to: "/404",
+    statusCode: 301,
+  },
+  {
+    id: "redirect-elementor-footer",
+    from: "/elementor-hf/footer/",
+    to: "/404",
+    statusCode: 301,
   },
 ];

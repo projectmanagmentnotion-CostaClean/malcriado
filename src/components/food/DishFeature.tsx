@@ -6,6 +6,7 @@ import { DietaryTags } from "@/components/food/DietaryTags";
 import { PriceDisplay } from "@/components/food/PriceDisplay";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { getAsset } from "@/content";
+import { buildBookingIntentHref } from "@/lib/booking/buildBookingIntentHref";
 import type { MenuItem } from "@/types/content";
 
 interface DishFeatureProps {
@@ -43,9 +44,21 @@ export function DishFeature({ item }: DishFeatureProps) {
           allergens={item.allergens}
           status={item.allergenStatus}
         />
-        <LinkButton iconEnd="arrow-right" to="/menu/" variant="editorial">
-          Ver carta
-        </LinkButton>
+        <Cluster gap="sm">
+          <LinkButton iconEnd="arrow-right" to="/menu/" variant="editorial">
+            Ver carta
+          </LinkButton>
+          <LinkButton
+            to={buildBookingIntentHref({
+              context: "featured-dish",
+              item: item.slug,
+              category: item.categoryId,
+            })}
+            variant="secondary"
+          >
+            Reservar este plan
+          </LinkButton>
+        </Cluster>
       </Stack>
     </article>
   );

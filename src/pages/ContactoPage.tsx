@@ -1,11 +1,13 @@
 import { Container } from "@/components/layout/Container";
 import { Frame } from "@/components/layout/Frame";
 import { PageSeo } from "@/components/seo/PageSeo";
+import { TextLink } from "@/components/ui/TextLink";
+import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 import {
   businessContent,
   getEmailHref,
+  getGoogleMapsHref,
   getReadableAddress,
-  getRestaurantStructuredData,
   getTelephoneHref,
   getWhatsappHref,
   seoPages,
@@ -16,21 +18,21 @@ export function ContactoPage() {
 
   return (
     <>
-      <PageSeo
-        description={seoPage.metadata.description}
-        path={seoPage.metadata.path}
-        robots={seoPage.metadata.robots}
-        structuredData={getRestaurantStructuredData(seoPage)}
-        title={seoPage.metadata.title}
-      />
+      <PageSeo {...buildPageSeoProps(seoPage)} />
       <Container width="wide">
         <section className="split split--content-first">
           <header className="editorial-intro">
             <p className="eyebrow">Contacto</p>
-            <h1>Direccion, canales y horario editorial</h1>
+            <h1 data-route-heading="true" id="page-heading-contacto">
+              Direccion, canales y horario editorial
+            </h1>
             <p>
               Esta ruta publica solo datos verificados. Horario diario y
               coordenadas siguen bloqueados hasta validacion del titular.
+            </p>
+            <p>
+              El enlace de mapa usa la direccion postal auditada y evita fijar
+              coordenadas no confirmadas.
             </p>
           </header>
           <Frame>
@@ -65,6 +67,23 @@ export function ContactoPage() {
                   >
                     Solicitar mesa
                   </a>
+                </dd>
+              </div>
+              <div>
+                <dt>Mapa</dt>
+                <dd>
+                  {getGoogleMapsHref() ? (
+                    <TextLink
+                      href={getGoogleMapsHref() ?? "#"}
+                      icon="external-link"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Abrir ubicacion verificada
+                    </TextLink>
+                  ) : (
+                    "Pendiente"
+                  )}
                 </dd>
               </div>
               <div>

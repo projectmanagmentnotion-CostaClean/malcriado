@@ -2,9 +2,9 @@ import { SectionIntro } from "@/components/common/SectionIntro";
 import { Container } from "@/components/layout/Container";
 import { OfferFeature } from "@/components/offers/OfferFeature";
 import { PageSeo } from "@/components/seo/PageSeo";
+import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 import {
   getActiveOffers,
-  getRestaurantStructuredData,
   offerEditorialState,
   offers,
   seoPages,
@@ -16,16 +16,11 @@ export function EspecialesPage() {
 
   return (
     <>
-      <PageSeo
-        description={seoPage.metadata.description}
-        path={seoPage.metadata.path}
-        robots={seoPage.metadata.robots}
-        structuredData={getRestaurantStructuredData(seoPage)}
-        title={seoPage.metadata.title}
-      />
+      <PageSeo {...buildPageSeoProps(seoPage)} />
       <SectionIntro
         body="La capa editorial ya distingue entre contenido activo y contenido pendiente."
         eyebrow="Especiales"
+        headingId="page-heading-especiales"
         title="Especiales pendientes de validacion"
       />
       <Container width="reading">

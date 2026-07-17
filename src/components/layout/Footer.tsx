@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
+import { LinkButton } from "@/components/ui/LinkButton";
+import { TextLink } from "@/components/ui/TextLink";
 import {
   businessContent,
   footerNavigation,
   getEmailHref,
+  getGoogleMapsHref,
   getFooterBusinessData,
   getReadableAddress,
   getTelephoneHref,
+  getWhatsappHref,
   legalNavigation,
 } from "@/content";
+import { buildBookingIntentHref } from "@/lib/booking/buildBookingIntentHref";
 
 export function Footer() {
   const footerBusiness = getFooterBusinessData();
@@ -23,6 +28,9 @@ export function Footer() {
           <p className="eyebrow">{footerBusiness.name}</p>
           <p>{getReadableAddress()}</p>
           <p>{businessContent.hours.summary.value ?? "Horario pendiente"}</p>
+          <p className="site-footer__note">
+            Horario y acceso exacto pendientes de validacion final.
+          </p>
         </div>
         <div>
           {footerBusiness.phone ? (
@@ -34,6 +42,20 @@ export function Footer() {
           {instagram?.href.value ? (
             <a href={instagram.href.value} rel="noreferrer" target="_blank">
               {instagram.label}
+            </a>
+          ) : null}
+          {getWhatsappHref() ? (
+            <a href={getWhatsappHref() ?? "#"} rel="noreferrer" target="_blank">
+              WhatsApp
+            </a>
+          ) : null}
+          {getGoogleMapsHref() ? (
+            <a
+              href={getGoogleMapsHref() ?? "#"}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Ver en el mapa
             </a>
           ) : null}
         </div>
@@ -50,6 +72,16 @@ export function Footer() {
               {route.label}
             </Link>
           ))}
+        </div>
+        <div className="site-footer__actions">
+          <LinkButton
+            size="sm"
+            to={buildBookingIntentHref({ context: "footer" })}
+            variant="primary"
+          >
+            Reservar
+          </LinkButton>
+          <TextLink to="/contacto/">Canales alternativos</TextLink>
         </div>
       </div>
     </Container>

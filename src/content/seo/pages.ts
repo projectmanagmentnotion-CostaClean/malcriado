@@ -12,6 +12,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         "Restaurante de cocina fusion latinoamericana y mediterranea frente al mar en Pineda de Mar.",
       canonicalPath: "/",
       robots: "index, follow",
+      language: "es",
       primaryKeyword: "restaurante de cocina fusion en Pineda de Mar",
       intent: "informational",
       entities: ["Malcriado", "Pineda de Mar", "cocina fusion"],
@@ -22,11 +23,20 @@ export const seoPages: Record<string, LocalSeoPage> = {
         type: "website",
         imageAssetId: "asset-019",
       },
+      twitter: {
+        card: "summary_large_image",
+        title: "Malcriado | Cocina fusion frente al mar en Pineda de Mar",
+        description:
+          "Restaurante de cocina fusion latinoamericana y mediterranea frente al mar en Pineda de Mar.",
+        imageAssetId: "asset-019",
+      },
       structuredData: {
         type: "Restaurant",
         includeMenu: false,
         includeOffers: false,
+        includeBreadcrumbs: false,
       },
+      breadcrumbLabel: "Inicio",
       validationStatus: "VERIFIED",
       references: {
         sourceIds: [
@@ -46,6 +56,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         "Carta HTML de Malcriado con categorias reales auditadas y estados explicitos para precios y alergenos pendientes.",
       canonicalPath: "/menu/",
       robots: "index, follow",
+      language: "es",
       primaryKeyword: "carta malcriado pineda de mar",
       intent: "informational",
       entities: ["Malcriado", "Carta", "Pineda de Mar"],
@@ -56,11 +67,19 @@ export const seoPages: Record<string, LocalSeoPage> = {
         type: "website",
         imageAssetId: "asset-024",
       },
+      twitter: {
+        card: "summary_large_image",
+        title: "Carta | Malcriado",
+        description:
+          "Carta HTML de Malcriado con categorias reales auditadas y estados explicitos para precios y alergenos pendientes.",
+        imageAssetId: "asset-024",
+      },
       structuredData: {
-        type: "Restaurant",
+        type: "WebPage",
         includeMenu: true,
         includeOffers: false,
       },
+      breadcrumbLabel: "Carta",
       validationStatus: "VERIFIED",
       references: {
         sourceIds: [
@@ -80,6 +99,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         "Estado editorial de especiales y ofertas. No se publican promociones sin vigencia verificada.",
       canonicalPath: "/especiales/",
       robots: "index, follow",
+      language: "es",
       primaryKeyword: "especiales malcriado",
       intent: "informational",
       entities: ["Malcriado", "Especiales"],
@@ -90,11 +110,19 @@ export const seoPages: Record<string, LocalSeoPage> = {
         type: "website",
         imageAssetId: "asset-013",
       },
+      twitter: {
+        card: "summary_large_image",
+        title: "Especiales | Malcriado",
+        description:
+          "Estado editorial de especiales y ofertas. No se publican promociones sin vigencia verificada.",
+        imageAssetId: "asset-013",
+      },
       structuredData: {
         type: "WebPage",
         includeMenu: false,
         includeOffers: true,
       },
+      breadcrumbLabel: "Especiales",
       validationStatus: "VERIFIED",
       references: {
         sourceIds: [
@@ -114,9 +142,10 @@ export const seoPages: Record<string, LocalSeoPage> = {
         "Historia, propuesta culinaria y relato editorial de Malcriado a partir del contenido publico auditado.",
       canonicalPath: "/nosotros/",
       robots: "index, follow",
+      language: "es",
       primaryKeyword: "historia malcriado",
       intent: "informational",
-      entities: ["Malcriado", "Héctor", "Pineda de Mar"],
+      entities: ["Malcriado", "Hector", "Pineda de Mar"],
       openGraph: {
         title: "Nosotros | Malcriado",
         description:
@@ -124,11 +153,19 @@ export const seoPages: Record<string, LocalSeoPage> = {
         type: "website",
         imageAssetId: "asset-026",
       },
+      twitter: {
+        card: "summary_large_image",
+        title: "Nosotros | Malcriado",
+        description:
+          "Historia, propuesta culinaria y relato editorial de Malcriado a partir del contenido publico auditado.",
+        imageAssetId: "asset-026",
+      },
       structuredData: {
-        type: "WebPage",
+        type: "AboutPage",
         includeMenu: false,
         includeOffers: false,
       },
+      breadcrumbLabel: "Nosotros",
       validationStatus: "VERIFIED",
       references: {
         sourceIds: [
@@ -148,6 +185,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         "Solicitud de reserva de Malcriado con confirmacion manual y canales alternativos verificados.",
       canonicalPath: "/reservar/",
       robots: "index, follow",
+      language: "es",
       primaryKeyword: "reservar malcriado",
       intent: "transactional",
       entities: ["Malcriado", "Reserva"],
@@ -158,11 +196,19 @@ export const seoPages: Record<string, LocalSeoPage> = {
         type: "website",
         imageAssetId: "asset-019",
       },
+      twitter: {
+        card: "summary_large_image",
+        title: "Reservar | Malcriado",
+        description:
+          "Solicitud de reserva de Malcriado con confirmacion manual y canales alternativos verificados.",
+        imageAssetId: "asset-019",
+      },
       structuredData: {
-        type: "Restaurant",
+        type: "WebPage",
         includeMenu: false,
         includeOffers: false,
       },
+      breadcrumbLabel: "Reservar",
       validationStatus: "VERIFIED",
       references: {
         sourceIds: [
@@ -182,6 +228,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         "Direccion, telefono, email y estado de horario de Malcriado en Pineda de Mar.",
       canonicalPath: "/contacto/",
       robots: "index, follow",
+      language: "es",
       primaryKeyword: "contacto malcriado pineda de mar",
       intent: "navigational",
       entities: ["Malcriado", "Pineda de Mar", "Contacto"],
@@ -192,11 +239,19 @@ export const seoPages: Record<string, LocalSeoPage> = {
         type: "website",
         imageAssetId: "asset-019",
       },
+      twitter: {
+        card: "summary_large_image",
+        title: "Contacto | Malcriado",
+        description:
+          "Direccion, telefono, email y estado de horario de Malcriado en Pineda de Mar.",
+        imageAssetId: "asset-019",
+      },
       structuredData: {
-        type: "Restaurant",
+        type: "ContactPage",
         includeMenu: false,
         includeOffers: false,
       },
+      breadcrumbLabel: "Contacto",
       validationStatus: "VERIFIED",
       references: {
         sourceIds: [
@@ -215,7 +270,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       description:
         "Aviso legal de Malcriado en estado pendiente de validacion juridica.",
       canonicalPath: "/aviso-legal/",
-      robots: "index, follow",
+      robots: "noindex, follow",
+      language: "es",
       primaryKeyword: "aviso legal malcriado",
       intent: "informational",
       entities: ["Malcriado", "Aviso legal"],
@@ -231,6 +287,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         includeMenu: false,
         includeOffers: false,
       },
+      breadcrumbLabel: "Aviso legal",
       validationStatus: "VERIFIED",
       references: { sourceIds: [contentSources.siteAvisoLegal.id] },
     },
@@ -244,7 +301,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       description:
         "Politica de privacidad de Malcriado en estado pendiente de validacion.",
       canonicalPath: "/privacidad/",
-      robots: "index, follow",
+      robots: "noindex, follow",
+      language: "es",
       primaryKeyword: "privacidad malcriado",
       intent: "informational",
       entities: ["Malcriado", "Privacidad"],
@@ -260,6 +318,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         includeMenu: false,
         includeOffers: false,
       },
+      breadcrumbLabel: "Privacidad",
       validationStatus: "VERIFIED",
       references: { sourceIds: [contentSources.sitePrivacidad.id] },
     },
@@ -273,7 +332,8 @@ export const seoPages: Record<string, LocalSeoPage> = {
       description:
         "Politica de cookies de Malcriado en espera de inventario real de terceros.",
       canonicalPath: "/cookies/",
-      robots: "index, follow",
+      robots: "noindex, follow",
+      language: "es",
       primaryKeyword: "cookies malcriado",
       intent: "informational",
       entities: ["Malcriado", "Cookies"],
@@ -289,8 +349,40 @@ export const seoPages: Record<string, LocalSeoPage> = {
         includeMenu: false,
         includeOffers: false,
       },
+      breadcrumbLabel: "Cookies",
       validationStatus: "VERIFIED",
       references: { sourceIds: [contentSources.siteCookies.id] },
+    },
+  },
+  accessibility: {
+    pageId: "legal-accessibility",
+    metadata: {
+      id: "seo-legal-accessibility",
+      path: "/declaracion-de-accesibilidad/",
+      title: "Declaracion de accesibilidad | Malcriado",
+      description:
+        "Estado tecnico provisional de accesibilidad y limitaciones conocidas del proyecto de Malcriado.",
+      canonicalPath: "/declaracion-de-accesibilidad/",
+      robots: "noindex, follow",
+      language: "es",
+      primaryKeyword: "declaracion de accesibilidad malcriado",
+      intent: "informational",
+      entities: ["Malcriado", "Accesibilidad"],
+      openGraph: {
+        title: "Declaracion de accesibilidad | Malcriado",
+        description:
+          "Estado tecnico provisional de accesibilidad y limitaciones conocidas del proyecto de Malcriado.",
+        type: "website",
+        imageAssetId: null,
+      },
+      structuredData: {
+        type: "WebPage",
+        includeMenu: false,
+        includeOffers: false,
+      },
+      breadcrumbLabel: "Accesibilidad",
+      validationStatus: "VERIFIED",
+      references: { sourceIds: [contentSources.ownerChecklist.id] },
     },
   },
   notFound: {
@@ -302,6 +394,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       description: "La ruta solicitada no existe.",
       canonicalPath: "/404",
       robots: "noindex, nofollow",
+      language: "es",
       primaryKeyword: "404 malcriado",
       intent: "navigational",
       entities: ["Malcriado", "404"],
@@ -316,6 +409,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         includeMenu: false,
         includeOffers: false,
       },
+      breadcrumbLabel: "404",
       validationStatus: "VERIFIED",
       references: { sourceIds: [contentSources.currentSiteAudit.id] },
     },
@@ -330,6 +424,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         "Catalogo interno de assets optimizados y originales para direccion artistica.",
       canonicalPath: "/dev/assets/",
       robots: "noindex, nofollow",
+      language: "es",
       primaryKeyword: "dev assets malcriado",
       intent: "informational",
       entities: ["Malcriado", "Assets"],
@@ -344,6 +439,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         type: "WebPage",
         includeMenu: false,
         includeOffers: false,
+        includeBreadcrumbs: false,
       },
       validationStatus: "VERIFIED",
       references: { sourceIds: [contentSources.assetManifest.id] },
@@ -359,6 +455,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         "Panel interno de auditoria editorial, fuentes y estados de validacion.",
       canonicalPath: "/dev/content/",
       robots: "noindex, nofollow",
+      language: "es",
       primaryKeyword: "dev content malcriado",
       intent: "informational",
       entities: ["Malcriado", "Content"],
@@ -373,6 +470,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         type: "WebPage",
         includeMenu: false,
         includeOffers: false,
+        includeBreadcrumbs: false,
       },
       validationStatus: "VERIFIED",
       references: { sourceIds: [contentSources.contentInventory.id] },
@@ -388,6 +486,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         "Catalogo interno del sistema de diseno, tokens, componentes y contraste.",
       canonicalPath: "/dev/design-system/",
       robots: "noindex, nofollow",
+      language: "es",
       primaryKeyword: "dev design system malcriado",
       intent: "informational",
       entities: ["Malcriado", "Design System"],
@@ -402,6 +501,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         type: "WebPage",
         includeMenu: false,
         includeOffers: false,
+        includeBreadcrumbs: false,
       },
       validationStatus: "VERIFIED",
       references: {

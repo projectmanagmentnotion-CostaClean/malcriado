@@ -1,5 +1,6 @@
 import { EmptyState } from "@/components/ui/EmptyState";
 import { LinkButton } from "@/components/ui/LinkButton";
+import { buildBookingIntentHref } from "@/lib/booking/buildBookingIntentHref";
 import { OfferBadge } from "@/components/offers/OfferBadge";
 import { OfferValidity } from "@/components/offers/OfferValidity";
 import type { Offer } from "@/types/content";
@@ -33,7 +34,17 @@ export function OfferCard({ offer, pendingMessage }: OfferCardProps) {
       </p>
       <OfferValidity offer={offer} />
       {offer.cta ? (
-        <LinkButton to={offer.cta.route} variant="secondary">
+        <LinkButton
+          to={
+            offer.cta.route === "/reservar/"
+              ? buildBookingIntentHref({
+                  context: "offer",
+                  offer: offer.slug,
+                })
+              : offer.cta.route
+          }
+          variant="secondary"
+        >
           {offer.cta.label}
         </LinkButton>
       ) : null}

@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5
       - name: Setup Node
-        uses: actions/setup-node@v4.4.0
+        uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -31,6 +31,12 @@ jobs:
         run: npm run typecheck
       - name: Content validation
         run: npm run content:validate
+      - name: Routes validation
+        run: npm run routes:validate
+      - name: SEO artifacts validation
+        run: npm run seo:validate
+      - name: Assets verification
+        run: npm run assets:verify
       - name: Unit tests
         run: npm run test:run
       - name: Build

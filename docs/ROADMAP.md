@@ -120,12 +120,12 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 
 ## Fase 5 - Shell, navegacion y SEO tecnico
 
-- [ ] Header desktop/movil.
-- [ ] CTA de reserva persistente y no invasivo.
-- [ ] Footer completo.
-- [ ] Routing, canonical, sitemap, robots y 404.
-- [ ] Metadata, Open Graph y JSON-LD base.
-- [ ] Redirecciones desde URLs antiguas.
+- [x] Header desktop/movil.
+- [x] CTA de reserva persistente y no invasivo.
+- [x] Footer completo.
+- [x] Routing, canonical, sitemap, robots y 404.
+- [x] Metadata, Open Graph y JSON-LD base.
+- [x] Redirecciones desde URLs antiguas.
 
 **Aceptacion:** navegacion completa con teclado, sin JS de animacion y con metadatos validos.
 

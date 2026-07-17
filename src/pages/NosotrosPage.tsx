@@ -3,8 +3,8 @@ import { Container } from "@/components/layout/Container";
 import { EditorialGrid } from "@/components/layout/EditorialGrid";
 import { Frame } from "@/components/layout/Frame";
 import { PageSeo } from "@/components/seo/PageSeo";
+import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 import {
-  getRestaurantStructuredData,
   homeStoryContent,
   peopleProfiles,
   seoPages,
@@ -16,16 +16,11 @@ export function NosotrosPage() {
 
   return (
     <>
-      <PageSeo
-        description={seoPage.metadata.description}
-        path={seoPage.metadata.path}
-        robots={seoPage.metadata.robots}
-        structuredData={getRestaurantStructuredData(seoPage)}
-        title={seoPage.metadata.title}
-      />
+      <PageSeo {...buildPageSeoProps(seoPage)} />
       <SectionIntro
         body="La narrativa publica ya sale del modelo tipado: autoria, fusion cultural y contexto frente al mar se trazan contra fuentes auditadas."
         eyebrow="Nosotros"
+        headingId="page-heading-nosotros"
         title="Historia y propuesta editorial"
       />
       <Container width="wide">

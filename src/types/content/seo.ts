@@ -7,10 +7,19 @@ export interface OpenGraphData {
   readonly imageAssetId: string | null;
 }
 
+export interface TwitterCardData {
+  readonly card: "summary" | "summary_large_image";
+  readonly title: string;
+  readonly description: string;
+  readonly imageAssetId: string | null;
+}
+
 export interface StructuredDataContext {
-  readonly type: "Restaurant" | "WebPage";
+  readonly type:
+    "Restaurant" | "WebSite" | "WebPage" | "ContactPage" | "AboutPage";
   readonly includeMenu: boolean;
   readonly includeOffers: boolean;
+  readonly includeBreadcrumbs?: boolean;
 }
 
 export interface SeoMetadata {
@@ -20,11 +29,15 @@ export interface SeoMetadata {
   readonly description: string;
   readonly canonicalPath: string;
   readonly robots: string;
+  readonly language?: string;
   readonly primaryKeyword: string;
   readonly intent: "informational" | "transactional" | "navigational";
   readonly entities: readonly string[];
   readonly openGraph: OpenGraphData;
+  readonly twitter?: TwitterCardData;
   readonly structuredData: StructuredDataContext;
+  readonly breadcrumbLabel?: string;
+  readonly updatedAt?: string | null;
   readonly validationStatus: VerificationStatus;
   readonly references: ContentReference;
 }
