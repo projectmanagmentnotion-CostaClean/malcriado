@@ -6,20 +6,20 @@ Estado: `completado sobre estado actual de Fase 6`
 
 ## Matriz de viewports
 
-| Viewport | Estado | Notas |
-| --- | --- | --- |
-| 320x568 | PASS | sin incidencias visuales relevantes |
-| 360x800 | PASS | sin incidencias visuales relevantes |
-| 390x844 | PASS | sin incidencias visuales relevantes |
-| 430x932 | PASS | sin incidencias visuales relevantes |
-| 768x1024 | PASS | sin incidencias visuales relevantes |
-| 820x1180 | PASS | sin incidencias visuales relevantes |
-| 1024x768 | PASS | sin incidencias visuales relevantes |
-| 1280x800 | PASS | sin incidencias visuales relevantes |
-| 1366x768 | PASS | sin incidencias visuales relevantes |
-| 1440x900 | PASS | sin incidencias visuales relevantes |
-| 1728x1117 | PASS | sin incidencias visuales relevantes |
-| 1920x1080 | PASS | sin incidencias visuales relevantes |
+| Viewport  | Estado | Notas                               |
+| --------- | ------ | ----------------------------------- |
+| 320x568   | PASS   | sin incidencias visuales relevantes |
+| 360x800   | PASS   | sin incidencias visuales relevantes |
+| 390x844   | PASS   | sin incidencias visuales relevantes |
+| 430x932   | PASS   | sin incidencias visuales relevantes |
+| 768x1024  | PASS   | sin incidencias visuales relevantes |
+| 820x1180  | PASS   | sin incidencias visuales relevantes |
+| 1024x768  | PASS   | sin incidencias visuales relevantes |
+| 1280x800  | PASS   | sin incidencias visuales relevantes |
+| 1366x768  | PASS   | sin incidencias visuales relevantes |
+| 1440x900  | PASS   | sin incidencias visuales relevantes |
+| 1728x1117 | PASS   | sin incidencias visuales relevantes |
+| 1920x1080 | PASS   | sin incidencias visuales relevantes |
 
 ## Evidencia final retenida
 
