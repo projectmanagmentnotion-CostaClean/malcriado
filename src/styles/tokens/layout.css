@@ -1,0 +1,12 @@
+:root {
+  --layout-gutter: clamp(1rem, 2vw, 1.5rem);
+  --layout-safe-inline: max(var(--layout-gutter), env(safe-area-inset-left));
+  --layout-safe-inline-end: max(
+    var(--layout-gutter),
+    env(safe-area-inset-right)
+  );
+  --layout-width-base: 78rem;
+  --layout-width-editorial: 66rem;
+  --layout-width-reading: 46rem;
+  --layout-width-wide: 92rem;
+}

@@ -1,3 +1,6 @@
+import { DevNavigation } from "@/components/layout/DevNavigation";
+import { Container } from "@/components/layout/Container";
+import { Section } from "@/components/layout/Section";
 import { PageSeo } from "@/components/seo/PageSeo";
 import {
   businessContent,
@@ -27,12 +30,17 @@ export function DevContentPage() {
   return (
     <>
       <PageSeo
-        title={seoPage.metadata.title}
         description={seoPage.metadata.description}
         path={seoPage.metadata.path}
         robots={seoPage.metadata.robots}
+        title={seoPage.metadata.title}
       />
-      <section className="section-intro">
+      <Section spacing="compact">
+        <Container width="wide">
+          <DevNavigation />
+        </Container>
+      </Section>
+      <section className="container container--editorial editorial-intro">
         <p className="eyebrow">Dev only</p>
         <h1>Auditoria editorial</h1>
         <p>
@@ -40,7 +48,7 @@ export function DevContentPage() {
           y superficies publicas ya conectadas al dominio tipado.
         </p>
       </section>
-      <section className="asset-summary-grid">
+      <section className="asset-summary-grid container container--wide">
         <article className="panel">
           <h2>Fuentes</h2>
           <p>{contentSourceList.length}</p>
@@ -58,7 +66,7 @@ export function DevContentPage() {
           <p>{countPendingStatuses()}</p>
         </article>
       </section>
-      <section className="cards-grid">
+      <section className="cards-grid container container--wide">
         <article className="panel">
           <p className="eyebrow">Negocio</p>
           <h2>{businessContent.identity.commercialName.value}</h2>

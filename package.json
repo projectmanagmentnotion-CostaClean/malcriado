@@ -29,6 +29,8 @@
     "qa:full": "npm run qa && npm run test:e2e"
   },
   "dependencies": {
+    "@fontsource-variable/bodoni-moda": "^5.2.7",
+    "@fontsource-variable/manrope": "^5.2.8",
     "@gsap/react": "^2.1.2",
     "gsap": "^3.13.0",
     "react": "^18.3.1",

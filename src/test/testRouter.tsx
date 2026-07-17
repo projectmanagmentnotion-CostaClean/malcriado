@@ -6,6 +6,7 @@ import { AppLayout } from "@/components/layout/AppLayout";
 import { legalPages } from "@/content";
 import { ContactoPage } from "@/pages/ContactoPage";
 import { DevContentPage } from "@/pages/DevContentPage";
+import { DevDesignSystemPage } from "@/pages/DevDesignSystemPage";
 import { EspecialesPage } from "@/pages/EspecialesPage";
 import { HomePage } from "@/pages/HomePage";
 import { LegalPage } from "@/pages/LegalPage";
@@ -27,6 +28,7 @@ export function renderApp(initialEntries: string[]) {
         children: [
           { index: true, element: <HomePage /> },
           { path: "/dev/content/", element: <DevContentPage /> },
+          { path: "/dev/design-system/", element: <DevDesignSystemPage /> },
           { path: "/menu/", element: <MenuPage /> },
           { path: "/especiales/", element: <EspecialesPage /> },
           { path: "/nosotros/", element: <NosotrosPage /> },

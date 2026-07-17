@@ -5,10 +5,11 @@ const port = 4317;
 export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: true,
-  retries: 0,
+  retries: process.env.CI ? 1 : 0,
+  ...(process.env.CI ? { workers: 2 } : {}),
   use: {
     baseURL: `http://127.0.0.1:${port}`,
-    trace: "on-first-retry",
+    trace: process.env.CI ? "retain-on-failure" : "on-first-retry",
   },
   webServer: {
     command: "npm run dev -- --mode test --host 127.0.0.1 --port 4317",

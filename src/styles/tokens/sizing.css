@@ -1,0 +1,5 @@
+:root {
+  --size-touch: 2.875rem;
+  --size-icon: 1.125rem;
+  --size-logo-width: clamp(9rem, 16vw, 13rem);
+}

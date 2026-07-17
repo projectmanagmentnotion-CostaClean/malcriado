@@ -42,6 +42,12 @@
 
 ## P2
 
+- Revisar el peso final de las fuentes autocontenidas y valorar subsetting mas agresivo si afecta al presupuesto movil.
+  Razon: `Bodoni Moda Variable` y `Manrope Variable` mejoran la direccion artistica, pero aun puede optimizarse el set final servido.
+  Dependencia: medicion continua en Fase 11.
+  Fase: `Fase 4` y `Fase 11`.
+  Criterio de cierre: subsets definitivos validados sin perder idiomas requeridos.
+
 - Sustituir o re-fotografiar los assets marcados como `LOW_QUALITY`.
   Razon: `Margaritas-cocteles.webp` y `cheese-cake-malcriado-2.webp` quedaron fuera del pipeline productivo por calidad insuficiente.
   Dependencia: nueva fuente visual aprobada.
@@ -67,3 +73,9 @@
   Dependencia: entorno de QA visual.
   Fase: `Fase 11`.
   Criterio de cierre: evidencias archivadas por viewport y reduced motion.
+
+- Reforzar variantes futuras del header cuando entren escenas GSAP reales.
+  Razon: la API de estados ya existe, pero el comportamiento definitivo de scroll todavia pertenece a Fase 6.
+  Dependencia: home inmersiva final.
+  Fase: `Fase 6`.
+  Criterio de cierre: transiciones medidas en contexto real sin degradar accesibilidad.

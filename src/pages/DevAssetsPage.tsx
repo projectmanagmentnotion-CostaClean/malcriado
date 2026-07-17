@@ -1,3 +1,6 @@
+import { DevNavigation } from "@/components/layout/DevNavigation";
+import { Container } from "@/components/layout/Container";
+import { Section } from "@/components/layout/Section";
 import { ResponsiveImage } from "@/components/media/ResponsiveImage";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { assetManifest, seoPages } from "@/content";
@@ -8,12 +11,17 @@ export function DevAssetsPage() {
   return (
     <>
       <PageSeo
-        title={seoPage.metadata.title}
         description={seoPage.metadata.description}
         path={seoPage.metadata.path}
         robots={seoPage.metadata.robots}
+        title={seoPage.metadata.title}
       />
-      <section className="section-intro">
+      <Section spacing="compact">
+        <Container width="wide">
+          <DevNavigation />
+        </Container>
+      </Section>
+      <section className="container container--editorial editorial-intro">
         <p className="eyebrow">Dev only</p>
         <h1>Catalogo de assets</h1>
         <p>
@@ -21,7 +29,7 @@ export function DevAssetsPage() {
           decisiones de direccion artistica.
         </p>
       </section>
-      <section className="asset-summary-grid">
+      <section className="asset-summary-grid container container--wide">
         <article className="panel">
           <h2>Originales</h2>
           <p>{assetManifest.sourceCount}</p>
@@ -39,7 +47,7 @@ export function DevAssetsPage() {
           <p>{Math.round(assetManifest.optimizedTotalBytes / 1024)} KB</p>
         </article>
       </section>
-      <section className="asset-grid">
+      <section className="asset-grid container container--wide">
         {assetManifest.assets.map((asset) => (
           <article className="asset-card panel" key={asset.id}>
             <ResponsiveImage

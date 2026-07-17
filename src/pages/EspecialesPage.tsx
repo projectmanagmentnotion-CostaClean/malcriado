@@ -1,4 +1,6 @@
 import { SectionIntro } from "@/components/common/SectionIntro";
+import { Container } from "@/components/layout/Container";
+import { OfferFeature } from "@/components/offers/OfferFeature";
 import { PageSeo } from "@/components/seo/PageSeo";
 import {
   getActiveOffers,
@@ -15,24 +17,23 @@ export function EspecialesPage() {
   return (
     <>
       <PageSeo
-        title={seoPage.metadata.title}
         description={seoPage.metadata.description}
         path={seoPage.metadata.path}
         robots={seoPage.metadata.robots}
         structuredData={getRestaurantStructuredData(seoPage)}
+        title={seoPage.metadata.title}
       />
       <SectionIntro
+        body="La capa editorial ya distingue entre contenido activo y contenido pendiente."
         eyebrow="Especiales"
         title="Especiales pendientes de validacion"
-        body="La capa editorial ya distingue entre contenido activo y contenido pendiente."
       />
-      <section className="panel">
-        <h2>Estado actual</h2>
-        <p data-offer-type={offerEditorialState.status}>
-          {offerEditorialState.message}
-        </p>
-        <p>{activeOffers.length} especiales activos publicados.</p>
-      </section>
+      <Container width="reading">
+        <OfferFeature
+          offer={activeOffers[0] ?? null}
+          pendingMessage={`${offerEditorialState.message} Activos publicados: ${activeOffers.length}.`}
+        />
+      </Container>
     </>
   );
 }

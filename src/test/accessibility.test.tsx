@@ -26,4 +26,11 @@ describe("accessibility smoke", () => {
     const violations = await runAxe();
     expect(violations).toHaveLength(0);
   });
+
+  it("has no serious or critical axe violations on dev design system", async () => {
+    renderApp(["/dev/design-system/"]);
+
+    const violations = await runAxe();
+    expect(violations).toHaveLength(0);
+  });
 });

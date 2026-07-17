@@ -96,14 +96,27 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 
 ## Fase 4 - Sistema de diseno
 
-- [ ] Tokens completos.
-- [ ] Tipografia y escala fluida.
-- [ ] Botones, enlaces, formularios y navegacion.
-- [ ] MediaFrame, DishCard, OfferCard y layouts.
-- [ ] Estados y documentacion visual.
-- [ ] Accesibilidad de componentes base.
+- [x] Tokens completos.
+- [x] Tipografia y escala fluida.
+- [x] Botones, enlaces, formularios y navegacion.
+- [x] MediaFrame, DishCard, OfferCard y layouts.
+- [x] Estados y documentacion visual.
+- [x] Accesibilidad de componentes base.
 
 **Aceptacion:** componentes operables por teclado y consistentes en la matriz responsive.
+
+### Resultado de la Fase 4
+
+- Tokens centralizados en `src/styles/tokens/`.
+- Paleta semantica documentada en `docs/design/DESIGN_TOKENS.md`.
+- Tipografia autocontenida con `Bodoni Moda Variable` y `Manrope Variable`.
+- Componentes UI, layouts, media, comida, ofertas y formularios base implementados.
+- Navegacion visual preparada con menu movil editorial y estados para evoluciones futuras.
+- Catalogo interno `/dev/design-system/` disponible con `noindex, nofollow`.
+- Pruebas: `28` tests unitarios verdes, Axe verde en home, reservar y design system, Playwright ampliado para el catalogo.
+- Responsive y accesibilidad documentados en `docs/design/ACCESSIBILITY_MATRIX.md` y `docs/design/RESPONSIVE_DESIGN_RULES.md`.
+- Deuda abierta: optimizacion futura de subsets de fuentes, estado definitivo del header en escenas GSAP reales y contenido editorial aun pendiente de validacion.
+- Preparacion para GSAP: HTML, tokens, layouts y componentes listos para Fase 6 sin rehacer el sistema base.
 
 ## Fase 5 - Shell, navegacion y SEO tecnico
 
