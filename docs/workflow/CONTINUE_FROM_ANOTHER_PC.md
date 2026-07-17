@@ -4,8 +4,8 @@
 
 - Fase: `Fase 7 - Carta HTML y especiales`
 - Rama activa: `codex/phase-7-menu-and-specials`
-- Ultimo commit: `PENDING_PUSH_SHA`
-- Pull Request: `PENDING_PR`
+- Ultimo commit: `1d0a79059bb68792198a133f1e104a3a20ad53a0`
+- Pull Request: `no creado todavia; pendiente de autenticacion GitHub`
 - Gates verdes:
   - `npm run format:check`
   - `npm run lint`
@@ -28,7 +28,7 @@
   - No hay bugs funcionales P0/P1 abiertos en este checkpoint local
   - La categoria `Vermut` sigue vacia y oculta al publico
 - Siguiente tarea concreta:
-  - Publicar este checkpoint en GitHub y retomar el cierre formal de Fase 7 con verificacion remota de PR y CI
+  - Abrir el draft PR de Fase 7 y retomar el cierre formal con verificacion remota de PR y CI
 
 ## Requisitos
 
