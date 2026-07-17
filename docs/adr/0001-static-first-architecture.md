@@ -25,4 +25,3 @@ La primera versión se construirá como frontend estático con integración de r
 
 - Menor comodidad editorial inicial.
 - Dependencia de una buena estrategia de contenido tipado.
-

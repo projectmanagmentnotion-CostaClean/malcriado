@@ -418,6 +418,22 @@ main {
   gap: 0.35rem;
 }
 
+.contact-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-grid dt {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+.contact-grid dd {
+  margin: 0.3rem 0 0;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,

@@ -9,7 +9,7 @@
   Criterio de cierre: la URL deja de ser indexable o redirige correctamente.
 
 - Confirmar datos comerciales y legales con Anderson.
-  Razon: faltan razon social, NIF/CIF, horarios por dia, precios y alergenos.
+  Razon: el modelo editorial ya existe, pero faltan razon social, NIF/CIF, horarios por dia, precios y alergenos.
   Dependencia: respuesta del titular.
   Fase: `Fase 3` y `Fase 9`.
   Criterio de cierre: fuentes tipadas completas y checklist validada.
@@ -49,7 +49,7 @@
   Criterio de cierre: reemplazos auditados y derivados generados.
 
 - Normalizar taxonomia de cocteles, vinos y categorias ambiguas del menu.
-  Razon: hay entradas demasiado genericas o mezcladas (`Margarita`, `Maracuya`, `Fresa`, `U.D`).
+  Razon: el modelo actual conserva entradas ambiguas auditadas (`Margarita`, `Maracuya`, `Fresa`, `U.D`) para no inventar contenido.
   Dependencia: validacion de carta.
   Fase: `Fase 3`.
   Criterio de cierre: modelo tipado sin ambiguedad.

@@ -24,4 +24,3 @@ La nueva web separará la interfaz de reserva del proveedor real mediante una ca
 
 - Requiere definir contrato y estados desde Fase 8.
 - Si el titular no decide proveedor a tiempo, la puesta en producción se bloquea.
-

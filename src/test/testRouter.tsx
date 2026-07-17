@@ -3,7 +3,9 @@ import { render } from "@testing-library/react";
 import { HelmetProvider } from "react-helmet-async";
 import { RouterProvider } from "react-router-dom";
 import { AppLayout } from "@/components/layout/AppLayout";
-import { legalPages } from "@/content/siteContent";
+import { legalPages } from "@/content";
+import { ContactoPage } from "@/pages/ContactoPage";
+import { DevContentPage } from "@/pages/DevContentPage";
 import { EspecialesPage } from "@/pages/EspecialesPage";
 import { HomePage } from "@/pages/HomePage";
 import { LegalPage } from "@/pages/LegalPage";
@@ -11,6 +13,10 @@ import { MenuPage } from "@/pages/MenuPage";
 import { NosotrosPage } from "@/pages/NosotrosPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { ReservarPage } from "@/pages/ReservarPage";
+
+const avisoLegalPage = legalPages[0]!;
+const privacidadPage = legalPages[1]!;
+const cookiesPage = legalPages[2]!;
 
 export function renderApp(initialEntries: string[]) {
   const router = createMemoryRouter(
@@ -20,17 +26,19 @@ export function renderApp(initialEntries: string[]) {
         element: <AppLayout />,
         children: [
           { index: true, element: <HomePage /> },
+          { path: "/dev/content/", element: <DevContentPage /> },
           { path: "/menu/", element: <MenuPage /> },
           { path: "/especiales/", element: <EspecialesPage /> },
           { path: "/nosotros/", element: <NosotrosPage /> },
+          { path: "/contacto/", element: <ContactoPage /> },
           { path: "/reservar/", element: <ReservarPage /> },
           {
             path: "/aviso-legal/",
             element: (
               <LegalPage
-                title={legalPages.avisoLegal.title}
+                title={avisoLegalPage.title}
                 path="/aviso-legal/"
-                body={legalPages.avisoLegal.body}
+                body={avisoLegalPage.body ?? avisoLegalPage.summary}
               />
             ),
           },
@@ -38,9 +46,9 @@ export function renderApp(initialEntries: string[]) {
             path: "/privacidad/",
             element: (
               <LegalPage
-                title={legalPages.privacidad.title}
+                title={privacidadPage.title}
                 path="/privacidad/"
-                body={legalPages.privacidad.body}
+                body={privacidadPage.body ?? privacidadPage.summary}
               />
             ),
           },
@@ -48,9 +56,9 @@ export function renderApp(initialEntries: string[]) {
             path: "/cookies/",
             element: (
               <LegalPage
-                title={legalPages.cookies.title}
+                title={cookiesPage.title}
                 path="/cookies/"
-                body={legalPages.cookies.body}
+                body={cookiesPage.body ?? cookiesPage.summary}
               />
             ),
           },

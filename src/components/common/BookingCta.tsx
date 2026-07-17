@@ -1,6 +1,13 @@
-import { businessIdentity } from "@/content/siteContent";
+import { bookingChannels } from "@/content";
 
 export function BookingCta() {
+  const whatsappChannel = bookingChannels.find(
+    (channel) => channel.method === "whatsapp",
+  );
+  const formChannel = bookingChannels.find(
+    (channel) => channel.method === "form",
+  );
+
   return (
     <section className="panel">
       <p className="eyebrow">Reserva</p>
@@ -12,13 +19,16 @@ export function BookingCta() {
       <div className="actions">
         <a
           className="button button--primary"
-          href={businessIdentity.whatsappReservationUrl}
+          href={whatsappChannel?.href ?? "/reservar/"}
           target="_blank"
           rel="noreferrer"
         >
           WhatsApp
         </a>
-        <a className="button button--secondary" href="/reservar/">
+        <a
+          className="button button--secondary"
+          href={formChannel?.href ?? "/reservar/"}
+        >
           Ir al formulario
         </a>
       </div>

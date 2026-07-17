@@ -1,15 +1,17 @@
 import { ResponsiveImage } from "@/components/media/ResponsiveImage";
 import { PageSeo } from "@/components/seo/PageSeo";
-import { assetManifest } from "@/content/assets/assetManifest";
+import { assetManifest, seoPages } from "@/content";
 
 export function DevAssetsPage() {
+  const seoPage = seoPages.devAssets!;
+
   return (
     <>
       <PageSeo
-        title="Dev Assets | Malcriado"
-        description="Catalogo interno de assets optimizados y originales para direccion artistica."
-        path="/dev/assets/"
-        robots="noindex, nofollow"
+        title={seoPage.metadata.title}
+        description={seoPage.metadata.description}
+        path={seoPage.metadata.path}
+        robots={seoPage.metadata.robots}
       />
       <section className="section-intro">
         <p className="eyebrow">Dev only</p>
@@ -56,7 +58,7 @@ export function DevAssetsPage() {
                 <div>
                   <dt>Dimensiones</dt>
                   <dd>
-                    {asset.width} × {asset.height}
+                    {asset.width} x {asset.height}
                   </dd>
                 </div>
                 <div>

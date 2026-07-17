@@ -11,7 +11,7 @@ describe("app shell", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: /cocina fusion frente al mar/i,
+        name: /cocina fusion latinoamericana y mediterranea frente al mar/i,
       }),
     ).toBeInTheDocument();
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
@@ -23,7 +23,7 @@ describe("app shell", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: /carta html provisional/i,
+        name: /carta malcriado/i,
       }),
     ).toBeInTheDocument();
     expect(

@@ -33,7 +33,7 @@ La ejecucion se rige por `AGENTS.md` y por los documentos de `/docs`. El orden o
 
 ## Estado
 
-Fase 0, Fase 1 y Fase 2 cerradas en local.
+Fase 0, Fase 1, Fase 2 y Fase 3 cerradas en local.
 
 La base actual ya incluye:
 
@@ -47,6 +47,7 @@ La base actual ya incluye:
 - Home provisional organizada por escenas.
 - Documentos creativos para direccion artistica, storyboard de motion y presupuesto GSAP.
 - Pipeline de assets con auditoria, manifiesto enriquecido, derivados responsive y ruta interna `/dev/assets/`.
+- Modelo editorial tipado con validacion Zod, scripts de auditoria y ruta interna `/dev/content/`.
 
 En Fase 2 quedaron implementados:
 
@@ -55,5 +56,13 @@ En Fase 2 quedaron implementados:
 - Componentes `ResponsiveImage` y `ResponsiveVideo`.
 - Catalogo interno `/dev/assets/` con `noindex, nofollow`.
 - Documentacion operativa de duplicados, crops, performance, marca y recuperacion de video.
+
+En Fase 3 quedaron implementados:
+
+- `src/content/` como dominio editorial tipado para negocio, carta, ofertas, historia, legales y SEO.
+- Pages y layout reconectados al modelo unico sin hardcodes comerciales legacy.
+- Scripts `npm run content:validate` y `npm run content:report`.
+- Ruta interna `/dev/content/` con resumen operativo del modelo.
+- Tests para helpers de negocio, selectores de ofertas, guardas de assets y validacion editorial.
 
 La home inmersiva final y las escenas GSAP completas pertenecen a la Fase 6 del roadmap.
