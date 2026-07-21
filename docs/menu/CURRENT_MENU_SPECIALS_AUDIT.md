@@ -1,10 +1,10 @@
 # Current Menu And Specials Audit
 
-Fecha: 2026-07-17
+Fecha: 2026-07-21
 Branch: `codex/phase-7-menu-and-specials`
-Baseline viva: `http://127.0.0.1:5175/`
+Baseline viva: `http://127.0.0.1:5173/`
 Preview de produccion auditado: `http://127.0.0.1:4173/`
-Estado auditado: cierre tecnico local de Fase 7
+Estado auditado: cierre tecnico local de Fase 7 listo para revision independiente
 
 ## Resumen ejecutivo
 
@@ -20,10 +20,12 @@ Estado local confirmado:
 - deep links operativos por categoria y plato;
 - reserva contextual conservada;
 - 42 tests unitarios/integracion verdes;
-- 25 E2E verdes y 4 skips justificados;
+- 26 E2E verdes y 4 skips justificados;
 - `content:validate`: `0` errores, `130` warnings;
 - sin errores de consola ni de red en la auditoria de preview;
-- Axe sin violaciones en los escenarios auditados.
+- Axe sin violaciones en los escenarios auditados;
+- overflow horizontal resuelto en `320x568` para `/menu/`;
+- menu movil auditado con landmark explicito y sin violaciones Axe.
 
 ## Metricas reales del modelo
 
@@ -73,4 +75,4 @@ Explicacion del delta:
 - las 3 paginas legales siguen pendientes de validacion;
 - `Vermut` sigue sin items recuperados;
 - no existe oferta real activa en datos tipados;
-- la publicacion remota del draft PR depende de credenciales GitHub.
+- Lighthouse local sobre Windows sigue saliendo peor de lo esperado en `home` y `menu`; queda documentado como riesgo de laboratorio y requiere contraste posterior en preview/produccion real.

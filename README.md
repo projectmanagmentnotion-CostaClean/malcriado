@@ -33,17 +33,19 @@ La ejecucion se rige por `AGENTS.md` y por los documentos de `/docs`. El orden o
 
 ## Estado
 
-Fase 0, Fase 1, Fase 2, Fase 3, Fase 4, Fase 5 y Fase 6 cerradas en local.
+Fase 0, Fase 1, Fase 2, Fase 3, Fase 4, Fase 5 y Fase 6 cerradas.
 
-Fase 7 queda cerrada tecnicamente en local y pendiente de publicacion remota del draft PR:
+Fase 7 queda en cierre tecnico y lista para revision independiente sobre la rama `codex/phase-7-menu-and-specials`:
 
+- PR remoto existente: `#8 Phase 7: accessible HTML menu and specials`
+- estado remoto verificado del checkpoint previo: draft abierto sobre `main` con CI `#19` en `completed / success`
 - carta HTML editorial por categorias reales
 - especiales con estado `active`, `upcoming`, `expired` y `empty`
 - deep links de categoria y anchors de plato
 - slug `margarita` resuelto con identidad publica unica
 - shell visual abierto consolidado en rutas publicas secundarias
 - JSON-LD ampliado para `Menu`, `MenuSection`, `MenuItem` y `Offer`
-- QA local completo de lint, typecheck, build, tests, SEO, bundle y responsive
+- QA local actualizada el `2026-07-21` con responsive, Axe, tests, build, SEO y bundle
 
 ## Hitos implementados
 
@@ -65,7 +67,8 @@ Fase 7 queda cerrada tecnicamente en local y pendiente de publicacion remota del
 - `test:run`: `42/42`
 - `test:e2e`: `26` passed, `4` skipped
 - `bundle:budget`: pass
-- Axe: `0` violaciones en escenarios de Fase 7 auditados en preview
+- Axe: `0` violaciones en escenarios de Fase 7 auditados en preview el `2026-07-21`
+- responsive de Fase 7: `0` overflows en la matriz documentada tras corregir el hero de `/menu/` y el landmark del menu movil
 
 ## Siguiente bloque
 

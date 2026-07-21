@@ -70,11 +70,11 @@ test("mobile menu opens, closes and keyboard returns focus", async ({
   const menuButton = page.getByRole("button", { name: /abrir menu/i });
   await menuButton.click();
   await expect(
-    page.getByRole("navigation", { name: /principal movil/i }),
+    page.getByRole("navigation", { name: /menu movil/i }),
   ).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(
-    page.getByRole("navigation", { name: /principal movil/i }),
+    page.getByRole("navigation", { name: /menu movil/i }),
   ).toHaveCount(0);
   await expect(menuButton).toBeFocused();
 });

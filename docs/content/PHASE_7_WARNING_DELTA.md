@@ -1,6 +1,6 @@
 # Phase 7 Warning Delta
 
-Fecha: 2026-07-17
+Fecha: 2026-07-21
 Baseline Fase 6: `92`
 Estado ampliado inicial Fase 7: `131`
 Estado final local Fase 7: `130`
@@ -21,3 +21,9 @@ Estado final local Fase 7: `130`
 1. El salto `92 -> 131` no fue ruido: `38` warnings vienen de medir descripciones pendientes y `1` de un slug realmente duplicado.
 2. El warning nuevo accidental de slug ya esta corregido.
 3. El estado final `130` deja visible deuda antigua, pero no oculta ni maquilla contenido no verificado.
+4. El baseline de `130` sigue compuesto por:
+   - `44` precios pendientes
+   - `44` alergenos pendientes
+   - `38` descripciones pendientes
+   - `3` legales pendientes
+   - `1` categoria vacia oculta (`Vermut`)

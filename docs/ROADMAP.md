@@ -203,9 +203,14 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 - QA local cerrada:
   - `content:validate`: `0` errores, `130` warnings
   - `test:run`: `42/42`
-  - `test:e2e`: `25` passed, `4` skipped
+  - `test:e2e`: `26` passed, `4` skipped
   - `bundle:budget`: pass
   - Axe en escenarios clave: `0` violaciones
+  - matriz responsive regenerada el `2026-07-21`: `0` overflows
+- Estado remoto del checkpoint previo a cierre final:
+  - branch publicada: `codex/phase-7-menu-and-specials`
+  - draft PR existente: `#8 Phase 7: accessible HTML menu and specials`
+  - CI remoto verificado en el checkpoint: run `#19` `completed / success`
 - Warning delta explicado en `docs/content/PHASE_7_WARNING_DELTA.md`.
 - Documentacion de fase creada en `docs/menu/` y `docs/qa/`.
 
@@ -213,9 +218,10 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 
 Fase 7 no debe marcarse como completamente publicada hasta tener:
 
-- branch empujada a remoto
-- draft PR abierto
-- CI remoto verde
+- head final del bloque empujado a remoto
+- PR `#8` actualizado con resultados reales del head final
+- CI remoto terminal verde sobre el head final
+- revision independiente completada
 - decision expresa sobre los `130` warnings pendientes de contenido y legales
 
 ## Fase 8 - Reserva

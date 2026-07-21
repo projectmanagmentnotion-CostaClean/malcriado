@@ -290,7 +290,7 @@ export function Header({
             role="dialog"
             aria-modal="true"
           >
-            <nav aria-label="Principal movil">
+            <nav aria-label="Menu movil" className="mobile-nav-panel__landmark">
               <ul>
                 {siteRoutes.map((route) => (
                   <li key={route.path}>
@@ -303,44 +303,44 @@ export function Header({
                   </li>
                 ))}
               </ul>
-            </nav>
-            <Cluster className="mobile-nav-panel__actions" gap="sm">
-              <LinkButton
-                iconEnd="arrow-right"
-                to={buildBookingIntentHref({ context: "mobile-nav" })}
-                variant="editorial"
-                onClick={() => setMobileOpen(false)}
-              >
-                Reservar mesa
-              </LinkButton>
-              {whatsappHref ? (
+              <Cluster className="mobile-nav-panel__actions" gap="sm">
                 <LinkButton
-                  href={whatsappHref}
+                  iconEnd="arrow-right"
+                  to={buildBookingIntentHref({ context: "mobile-nav" })}
+                  variant="editorial"
                   onClick={() => setMobileOpen(false)}
-                  rel="noreferrer"
-                  target="_blank"
-                  variant="secondary"
                 >
-                  WhatsApp
+                  Reservar mesa
                 </LinkButton>
-              ) : null}
-            </Cluster>
-            <div className="mobile-nav-panel__meta">
-              <p>
-                {businessContent.hours.summary.value ?? "Horario pendiente"}
-              </p>
-              <Cluster gap="sm">
-                {phoneHref ? (
-                  <TextLink href={phoneHref} icon="phone">
-                    {businessContent.contact.phone.value ??
-                      "Telefono pendiente"}
-                  </TextLink>
+                {whatsappHref ? (
+                  <LinkButton
+                    href={whatsappHref}
+                    onClick={() => setMobileOpen(false)}
+                    rel="noreferrer"
+                    target="_blank"
+                    variant="secondary"
+                  >
+                    WhatsApp
+                  </LinkButton>
                 ) : null}
-                <TextLink icon="location" to="/contacto/">
-                  Contacto
-                </TextLink>
               </Cluster>
-            </div>
+              <div className="mobile-nav-panel__meta">
+                <p>
+                  {businessContent.hours.summary.value ?? "Horario pendiente"}
+                </p>
+                <Cluster gap="sm">
+                  {phoneHref ? (
+                    <TextLink href={phoneHref} icon="phone">
+                      {businessContent.contact.phone.value ??
+                        "Telefono pendiente"}
+                    </TextLink>
+                  ) : null}
+                  <TextLink icon="location" to="/contacto/">
+                    Contacto
+                  </TextLink>
+                </Cluster>
+              </div>
+            </nav>
           </div>
         </Container>
       ) : null}

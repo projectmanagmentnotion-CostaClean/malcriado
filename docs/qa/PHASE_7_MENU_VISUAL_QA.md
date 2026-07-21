@@ -1,6 +1,6 @@
 # Phase 7 Menu Visual QA
 
-Fecha: 2026-07-17
+Fecha: 2026-07-21
 Entorno auditado: `http://127.0.0.1:4173/`
 
 ## Matriz responsive auditada
@@ -28,7 +28,7 @@ Rutas auditadas:
 
 ## Resultado
 
-- sin overflow en todas las rutas y viewports auditados tras corregir el margen de `figure`
+- sin overflow en todas las rutas y viewports auditados
 - header sticky presente en todas las rutas
 - footer presente en todas las rutas
 - `h1` correcto en las 5 rutas
@@ -36,8 +36,14 @@ Rutas auditadas:
 
 ## Hallazgo corregido durante la QA
 
-- `320x568` en `/menu/` presentaba overflow horizontal por margen por defecto del `figure` de `MediaFrame`
-- correccion aplicada: `margin: 0` en `.media-frame`
+- `320x568` en `/menu/` presentaba overflow horizontal por combinacion de:
+  - hero editorial con grid no colapsado del todo en movil
+  - contenedores internos calculando anchura por contenido
+  - modificador `menu-category--reverse` reinstalando dos columnas bajo breakpoint movil
+- correcciones aplicadas:
+  - colapso explicito del hero y grids editoriales en movil
+  - contencion de `container` y wrappers del menu
+  - neutralizacion de la variante `menu-category--reverse` bajo `900px`
 
 ## Zoom 200 %
 

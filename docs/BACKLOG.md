@@ -78,6 +78,12 @@
   Fase: `Fase 11`.
   Criterio de cierre: incidencias documentadas y resueltas o aceptadas.
 
+- Contrastar el Lighthouse de `home` y `menu` en preview o produccion real.
+  Razon: el laboratorio local de Windows mantiene lecturas pobres de CLS/LCP aunque la QA funcional y la matriz responsive de Fase 7 esten verdes.
+  Dependencia: entorno de preview o produccion equivalente y repeticion de la medicion fuera del escritorio local.
+  Fase: `Fase 11`.
+  Criterio de cierre: discrepancia explicada o corregida con evidencia reproducible.
+
 ## P3
 
 - Medir LCP e INP en preview o produccion real con red y hardware menos favorables.

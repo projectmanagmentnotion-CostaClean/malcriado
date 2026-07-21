@@ -193,7 +193,8 @@ ol {
 }
 
 .container {
-  width: 100%;
+  width: min(100%, 100vw);
+  max-width: 100vw;
   margin-inline: auto;
   padding-inline: var(--layout-safe-inline) var(--layout-safe-inline-end);
 }
@@ -594,6 +595,12 @@ ol {
 .mobile-nav-panel > * {
   position: relative;
   z-index: 1;
+}
+
+.mobile-nav-panel__landmark {
+  display: grid;
+  gap: var(--space-lg);
+  align-content: start;
 }
 
 .mobile-nav-panel ul {
@@ -1309,6 +1316,8 @@ ol {
 .menu-page {
   display: grid;
   gap: 0;
+  width: 100%;
+  min-width: 0;
 }
 
 .menu-hero,
@@ -1316,14 +1325,24 @@ ol {
 .menu-notes {
   position: relative;
   overflow: clip;
+  width: 100%;
+  min-width: 0;
 }
 
 .menu-hero {
   min-height: min(92vh, 58rem);
-  display: flex;
+  display: grid;
   align-items: flex-end;
+  width: min(100%, 100vw);
+  max-width: 100vw;
   padding-block: clamp(7rem, 10vw, 10rem) clamp(3rem, 5vw, 5rem);
   color: var(--color-fg-primary);
+}
+
+.menu-hero > .container {
+  width: min(100%, 100vw);
+  max-width: 100vw;
+  min-width: 0;
 }
 
 .menu-hero__media,
@@ -1371,8 +1390,16 @@ ol {
   z-index: 1;
 }
 
+.menu-hero__grid > *,
+.menu-category__grid > *,
+.menu-notes__grid > * {
+  min-width: 0;
+}
+
 .menu-hero__grid {
   display: grid;
+  width: 100%;
+  max-width: 100%;
   grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.7fr);
   gap: clamp(1.5rem, 4vw, 4rem);
   align-items: end;
@@ -1438,11 +1465,14 @@ ol {
   display: grid;
   gap: var(--space-xs);
   margin-bottom: var(--space-md);
+  width: 100%;
   max-width: 42rem;
 }
 
 .menu-navigation__rail {
   display: grid;
+  width: 100%;
+  max-width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: var(--space-sm);
 }
@@ -1505,6 +1535,7 @@ ol {
   display: grid;
   gap: var(--space-sm);
   margin-bottom: clamp(1.4rem, 3vw, 2.4rem);
+  width: 100%;
   max-width: 46rem;
 }
 
@@ -1520,6 +1551,8 @@ ol {
 
 .menu-category__grid {
   display: grid;
+  width: 100%;
+  max-width: 100%;
   grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
   gap: clamp(1.4rem, 3vw, 3rem);
   align-items: start;
@@ -1600,6 +1633,8 @@ ol {
 
 .menu-notes__grid {
   display: grid;
+  width: 100%;
+  max-width: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(1.4rem, 3vw, 3rem);
 }
@@ -2675,6 +2710,9 @@ ol {
   .story-hero__grid,
   .story-statement__grid,
   .story-columns__grid,
+  .menu-hero__grid,
+  .menu-notes__grid,
+  .menu-category__grid,
   .specials-hero__grid,
   .specials-state__grid,
   .contact-grid {
@@ -2699,6 +2737,10 @@ ol {
   }
 
   .home-featured__rail {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-category--reverse .menu-category__grid {
     grid-template-columns: 1fr;
   }
 

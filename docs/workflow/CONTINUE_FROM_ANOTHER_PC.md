@@ -4,8 +4,9 @@
 
 - Fase: `Fase 7 - Carta HTML y especiales`
 - Rama activa: `codex/phase-7-menu-and-specials`
-- Ultimo commit: `1d0a79059bb68792198a133f1e104a3a20ad53a0`
-- Pull Request: `no creado todavia; pendiente de autenticacion GitHub`
+- Head de checkpoint conocido: `19a899e7177135806eb3c50ee91d0dad5dec309d`
+- Pull Request: `#8 Phase 7: accessible HTML menu and specials`
+- Estado remoto del checkpoint: draft abierto sobre `main` con CI `#19` `completed / success`
 - Gates verdes:
   - `npm run format:check`
   - `npm run lint`
@@ -21,14 +22,14 @@
   - `npm run qa`
   - `git diff --check`
 - Gates pendientes:
-  - Apertura o actualizacion remota del draft PR si GitHub CLI sigue sin autenticacion
-  - Verificacion del CI remoto tras el push
+  - Actualizacion del PR `#8` con el head final del bloque
+  - Verificacion del CI remoto tras el siguiente push
 - Warnings actuales: `130`
 - Bugs conocidos:
   - No hay bugs funcionales P0/P1 abiertos en este checkpoint local
   - La categoria `Vermut` sigue vacia y oculta al publico
 - Siguiente tarea concreta:
-  - Abrir el draft PR de Fase 7 y retomar el cierre formal con verificacion remota de PR y CI
+  - Empujar el head final del bloque, actualizar el PR `#8` y esperar el CI remoto terminal
 
 ## Requisitos
 
@@ -128,8 +129,8 @@ Condicion correcta:
 
 ## Trabajo pendiente exacto de Fase 7
 
-- Verificar el draft PR remoto o crearlo si aun no existe
-- Confirmar que el CI remoto se inicia y queda verde
+- Verificar el draft PR remoto ya existente y actualizarlo con resultados reales
+- Confirmar que el CI remoto sobre el head final se inicia y queda verde
 - Mantener la deuda editorial documentada:
   - 44 precios pendientes
   - 44 alergenos pendientes

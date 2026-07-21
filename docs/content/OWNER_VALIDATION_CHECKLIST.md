@@ -1,6 +1,6 @@
 # Owner Validation Checklist
 
-Todos los puntos siguientes quedan `PENDING` a 2026-07-17. La Fase 7 los hace mas visibles en la capa publica, pero siguen sin validacion del titular.
+Todos los puntos siguientes quedan `PENDING` a 2026-07-21. La Fase 7 los hace mas visibles en la capa publica, pero siguen sin validacion del titular.
 
 | Dato a confirmar con Anderson             | Estado    |
 | ----------------------------------------- | --------- |
