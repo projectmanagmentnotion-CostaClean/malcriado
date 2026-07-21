@@ -23,3 +23,4 @@
 - El proyecto se monta en la raiz del repositorio.
 - Los assets verificados de Fase 0 se sirven desde `public/assets/source/`.
 - El formulario de reserva actual es solo una abstraccion provisional y no confirma disponibilidad real.
+- Si cambias de proyecto reutilizando el mismo origen local, por ejemplo `http://localhost:5173/`, haz un refresh completo o cierra el tab abierto antes de validar navegacion. Un tab ya abierto puede seguir ejecutando el bundle SPA anterior aunque el servidor del puerto ya pertenezca a otro repositorio.

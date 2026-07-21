@@ -1,13 +1,16 @@
-import type { TextareaHTMLAttributes } from "react";
+import { forwardRef, type TextareaHTMLAttributes } from "react";
 import { cn } from "@/lib/cn";
 
 type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-export function TextArea({ className, ...props }: TextAreaProps) {
-  return (
-    <textarea
-      className={cn("input-control input-control--textarea", className)}
-      {...props}
-    />
-  );
-}
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
+  function TextArea({ className, ...props }, ref) {
+    return (
+      <textarea
+        className={cn("input-control input-control--textarea", className)}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);

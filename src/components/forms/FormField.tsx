@@ -4,10 +4,10 @@ import { cn } from "@/lib/cn";
 interface FormFieldProps {
   readonly label: string;
   readonly htmlFor: string;
-  readonly description?: string;
-  readonly error?: string;
+  readonly description?: string | undefined;
+  readonly error?: string | undefined;
   readonly required?: boolean;
-  readonly className?: string;
+  readonly className?: string | undefined;
   readonly children: ReactNode;
 }
 
