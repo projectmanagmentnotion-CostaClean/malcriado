@@ -2235,6 +2235,12 @@ ol {
   transform: scale(1.02);
 }
 
+@media (max-width: 22.5rem) {
+  .home-hero__background img {
+    transform: none;
+  }
+}
+
 .home-hero__veil {
   position: absolute;
   inset: 0;
