@@ -261,6 +261,51 @@ export const seoPages: Record<string, LocalSeoPage> = {
       },
     },
   },
+  faq: {
+    pageId: "faq",
+    metadata: {
+      id: "seo-faq",
+      path: "/faq/",
+      title: "FAQ | Malcriado",
+      description:
+        "Preguntas frecuentes visibles de Malcriado sobre cocina, reserva, ubicacion, carta y consentimiento.",
+      canonicalPath: "/faq/",
+      robots: "index, follow",
+      language: "es",
+      primaryKeyword: "faq malcriado",
+      intent: "informational",
+      entities: ["Malcriado", "FAQ", "Reserva", "Pineda de Mar"],
+      openGraph: {
+        title: "FAQ | Malcriado",
+        description:
+          "Preguntas frecuentes visibles de Malcriado sobre cocina, reserva, ubicacion, carta y consentimiento.",
+        type: "website",
+        imageAssetId: "asset-019",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "FAQ | Malcriado",
+        description:
+          "Preguntas frecuentes visibles de Malcriado sobre cocina, reserva, ubicacion, carta y consentimiento.",
+        imageAssetId: "asset-019",
+      },
+      structuredData: {
+        type: "WebPage",
+        includeMenu: false,
+        includeOffers: false,
+        includeFaq: true,
+      },
+      breadcrumbLabel: "FAQ",
+      validationStatus: "VERIFIED",
+      references: {
+        sourceIds: [
+          contentSources.siteHome.id,
+          contentSources.siteContacto.id,
+          contentSources.currentSiteAudit.id,
+        ],
+      },
+    },
+  },
   legalAviso: {
     pageId: "legal-aviso",
     metadata: {

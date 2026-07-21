@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
+import { Button } from "@/components/ui/Button";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { TextLink } from "@/components/ui/TextLink";
 import {
@@ -13,9 +14,11 @@ import {
   getWhatsappHref,
   legalNavigation,
 } from "@/content";
+import { useConsent } from "@/features/consent";
 import { buildBookingIntentHref } from "@/lib/booking/buildBookingIntentHref";
 
 export function Footer() {
+  const { openPreferences } = useConsent();
   const footerBusiness = getFooterBusinessData();
   const instagram = businessContent.contact.socials.find(
     (social) => social.platform === "instagram",
@@ -82,6 +85,9 @@ export function Footer() {
             Reservar
           </LinkButton>
           <TextLink to="/contacto/">Canales alternativos</TextLink>
+          <Button onClick={openPreferences} type="button" variant="ghost">
+            Preferencias de cookies
+          </Button>
         </div>
       </div>
     </Container>

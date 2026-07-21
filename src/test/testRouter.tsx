@@ -12,6 +12,7 @@ import { DevAssetsPage } from "@/pages/DevAssetsPage";
 import { DevContentPage } from "@/pages/DevContentPage";
 import { DevDesignSystemPage } from "@/pages/DevDesignSystemPage";
 import { EspecialesPage } from "@/pages/EspecialesPage";
+import { FaqPage } from "@/pages/FaqPage";
 import { HomePage } from "@/pages/HomePage";
 import { LegalPage } from "@/pages/LegalPage";
 import { MenuPage } from "@/pages/MenuPage";
@@ -93,6 +94,13 @@ export function renderApp(initialEntries: string[]) {
             element: <ContactoPage />,
             handle: publicHandle("Contacto", {
               focusTargetId: "page-heading-contacto",
+            }),
+          },
+          {
+            path: "/faq/",
+            element: <FaqPage />,
+            handle: publicHandle("FAQ", {
+              focusTargetId: "page-heading-faq",
             }),
           },
           {

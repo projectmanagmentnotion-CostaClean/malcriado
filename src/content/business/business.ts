@@ -191,6 +191,23 @@ export function getGoogleMapsHref() {
     : null;
 }
 
+export function getGoogleMapsEmbedHref() {
+  const address = businessContent.location.publicAddress.value;
+  return address
+    ? `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`
+    : null;
+}
+
+export function getCanonicalSiteUrl() {
+  const canonicalUrl = businessContent.contact.canonicalUrl.value;
+
+  if (!canonicalUrl) {
+    throw new Error("Missing canonical URL in business content.");
+  }
+
+  return canonicalUrl.endsWith("/") ? canonicalUrl : `${canonicalUrl}/`;
+}
+
 export function getFooterBusinessData() {
   return {
     name: businessContent.identity.commercialName.value ?? "Malcriado",

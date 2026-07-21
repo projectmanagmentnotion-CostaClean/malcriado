@@ -48,6 +48,13 @@ test("menu and especiales routes render editorial content", async ({
       name: /estado editorial de ofertas y vigencia/i,
     }),
   ).toBeVisible();
+
+  await page.goto("/faq/");
+  await expect(
+    page.getByRole("heading", {
+      name: /preguntas frecuentes visibles y verificables/i,
+    }),
+  ).toBeVisible();
 });
 
 test("menu deep links land on the requested category chapter", async ({

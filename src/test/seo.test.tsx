@@ -6,6 +6,9 @@ interface StructuredDataEntry {
   readonly hasMenuSection?: Array<{
     readonly name: string;
   }>;
+  readonly mainEntity?: Array<{
+    readonly name: string;
+  }>;
 }
 
 function readStructuredData() {
@@ -24,7 +27,7 @@ describe("seo metadata", () => {
 
     expect(
       document.querySelector('link[rel="canonical"]')?.getAttribute("href"),
-    ).toBe("http://127.0.0.1:4317/menu/");
+    ).toBe("https://malcriadobcn.com/menu/");
   });
 
   it("publishes menu structured data with sections and items", async () => {
@@ -54,5 +57,24 @@ describe("seo metadata", () => {
 
     const entries = readStructuredData();
     expect(entries.some((entry) => entry["@type"] === "Offer")).toBe(false);
+  });
+
+  it("publishes faq structured data with visible questions", async () => {
+    renderApp(["/faq/"]);
+
+    await waitFor(() => {
+      expect(document.title).toBe("FAQ | Malcriado");
+    });
+
+    const entries = readStructuredData();
+    const faqEntry = entries.find((entry) => entry["@type"] === "FAQPage");
+
+    expect(faqEntry).toBeTruthy();
+    expect(faqEntry?.mainEntity?.length ?? 0).toBeGreaterThan(0);
+    expect(
+      faqEntry?.mainEntity?.some((item) =>
+        item.name?.includes("Que tipo de cocina presenta Malcriado"),
+      ) ?? false,
+    ).toBe(true);
   });
 });
