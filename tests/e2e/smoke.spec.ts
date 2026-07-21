@@ -158,6 +158,43 @@ test("booking context disambiguates identical dish names across categories", asy
   await expect(page.getByText(/margarita \/ cocteles/i)).toBeVisible();
 });
 
+test("home hero booking CTA survives navigation, reload and history", async ({
+  page,
+}) => {
+  await page.goto("/");
+
+  await page
+    .locator("#home-hero")
+    .getByRole("link", { name: "Reservar mesa" })
+    .click();
+
+  await expect(page).toHaveURL(/\/reservar\/\?context=home-hero$/);
+  await expect(
+    page.getByRole("heading", { level: 1, name: /solicitud de reserva/i }),
+  ).toBeVisible();
+
+  await page.reload();
+  await expect(page).toHaveURL(/\/reservar\/\?context=home-hero$/);
+  await expect(
+    page.getByRole("heading", { level: 1, name: /solicitud de reserva/i }),
+  ).toBeVisible();
+
+  await page.goBack();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(
+    page.getByRole("heading", {
+      level: 1,
+      name: /cocina fusion latinoamericana y mediterranea frente al mar/i,
+    }),
+  ).toBeVisible();
+
+  await page.goForward();
+  await expect(page).toHaveURL(/\/reservar\/\?context=home-hero$/);
+  await expect(
+    page.getByRole("heading", { level: 1, name: /solicitud de reserva/i }),
+  ).toBeVisible();
+});
+
 test("not found route returns 404 content", async ({ page }) => {
   await page.goto("/ruta-inexistente/");
   await expect(page.getByRole("heading", { name: "404" })).toBeVisible();
