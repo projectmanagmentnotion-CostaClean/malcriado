@@ -148,6 +148,16 @@ test("booking route surfaces contextual entry copy", async ({ page }) => {
   await expect(page.getByText(/solicitud iniciada desde carta/i)).toBeVisible();
 });
 
+test("booking context disambiguates identical dish names across categories", async ({
+  page,
+}) => {
+  await page.goto("/reservar/?dish=pizza-margarita");
+  await expect(page.getByText(/margarita \/ pizzas/i)).toBeVisible();
+
+  await page.goto("/reservar/?dish=margarita");
+  await expect(page.getByText(/margarita \/ cocteles/i)).toBeVisible();
+});
+
 test("not found route returns 404 content", async ({ page }) => {
   await page.goto("/ruta-inexistente/");
   await expect(page.getByRole("heading", { name: "404" })).toBeVisible();

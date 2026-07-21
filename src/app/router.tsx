@@ -7,17 +7,44 @@ import { legacyRedirects, legalPages } from "@/content";
 import { HomePage } from "@/pages/HomePage";
 import { LegalPage } from "@/pages/LegalPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
+const initialPath =
+  typeof window !== "undefined" ? window.location.pathname : "";
 
-const ContactoPage = lazy(() =>
-  import("@/pages/ContactoPage").then((module) => ({
-    default: module.ContactoPage,
-  })),
-);
-const DeclaracionAccesibilidadPage = lazy(() =>
-  import("@/pages/DeclaracionAccesibilidadPage").then((module) => ({
-    default: module.DeclaracionAccesibilidadPage,
-  })),
-);
+const preloadedContactoPage = initialPath.startsWith("/contacto/")
+  ? await import("@/pages/ContactoPage")
+  : null;
+const preloadedDeclaracionAccesibilidadPage = initialPath.startsWith(
+  "/declaracion-de-accesibilidad/",
+)
+  ? await import("@/pages/DeclaracionAccesibilidadPage")
+  : null;
+const preloadedEspecialesPage = initialPath.startsWith("/especiales/")
+  ? await import("@/pages/EspecialesPage")
+  : null;
+const preloadedMenuPage = initialPath.startsWith("/menu/")
+  ? await import("@/pages/MenuPage")
+  : null;
+const preloadedNosotrosPage = initialPath.startsWith("/nosotros/")
+  ? await import("@/pages/NosotrosPage")
+  : null;
+const preloadedReservarPage = initialPath.startsWith("/reservar/")
+  ? await import("@/pages/ReservarPage")
+  : null;
+
+const ContactoPage =
+  preloadedContactoPage?.ContactoPage ??
+  lazy(() =>
+    import("@/pages/ContactoPage").then((module) => ({
+      default: module.ContactoPage,
+    })),
+  );
+const DeclaracionAccesibilidadPage =
+  preloadedDeclaracionAccesibilidadPage?.DeclaracionAccesibilidadPage ??
+  lazy(() =>
+    import("@/pages/DeclaracionAccesibilidadPage").then((module) => ({
+      default: module.DeclaracionAccesibilidadPage,
+    })),
+  );
 const DevAssetsPage = lazy(() =>
   import("@/pages/DevAssetsPage").then((module) => ({
     default: module.DevAssetsPage,
@@ -33,26 +60,34 @@ const DevDesignSystemPage = lazy(() =>
     default: module.DevDesignSystemPage,
   })),
 );
-const EspecialesPage = lazy(() =>
-  import("@/pages/EspecialesPage").then((module) => ({
-    default: module.EspecialesPage,
-  })),
-);
-const MenuPage = lazy(() =>
-  import("@/pages/MenuPage").then((module) => ({
-    default: module.MenuPage,
-  })),
-);
-const NosotrosPage = lazy(() =>
-  import("@/pages/NosotrosPage").then((module) => ({
-    default: module.NosotrosPage,
-  })),
-);
-const ReservarPage = lazy(() =>
-  import("@/pages/ReservarPage").then((module) => ({
-    default: module.ReservarPage,
-  })),
-);
+const EspecialesPage =
+  preloadedEspecialesPage?.EspecialesPage ??
+  lazy(() =>
+    import("@/pages/EspecialesPage").then((module) => ({
+      default: module.EspecialesPage,
+    })),
+  );
+const MenuPage =
+  preloadedMenuPage?.MenuPage ??
+  lazy(() =>
+    import("@/pages/MenuPage").then((module) => ({
+      default: module.MenuPage,
+    })),
+  );
+const NosotrosPage =
+  preloadedNosotrosPage?.NosotrosPage ??
+  lazy(() =>
+    import("@/pages/NosotrosPage").then((module) => ({
+      default: module.NosotrosPage,
+    })),
+  );
+const ReservarPage =
+  preloadedReservarPage?.ReservarPage ??
+  lazy(() =>
+    import("@/pages/ReservarPage").then((module) => ({
+      default: module.ReservarPage,
+    })),
+  );
 
 const avisoLegalPage = legalPages[0]!;
 const privacidadPage = legalPages[1]!;

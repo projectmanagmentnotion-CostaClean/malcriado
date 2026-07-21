@@ -51,6 +51,11 @@ function getBookingContextSummary(searchParams: URLSearchParams) {
         (entry) => entry.slug === categorySlug || entry.id === categorySlug,
       )
     : null;
+  const itemCategory =
+    item && !category
+      ? (menuContent.categories.find((entry) => entry.id === item.categoryId) ??
+        null)
+      : null;
   const offer = offerSlug
     ? offers.find((entry) => entry.slug === offerSlug)
     : null;
@@ -63,7 +68,9 @@ function getBookingContextSummary(searchParams: URLSearchParams) {
   }
 
   if (item || category) {
-    const parts = [item?.name, category?.label].filter(Boolean);
+    const parts = [item?.name, category?.label ?? itemCategory?.label].filter(
+      Boolean,
+    );
 
     return {
       title: "Solicitud iniciada desde carta",
