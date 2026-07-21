@@ -50,6 +50,16 @@ describe("app shell", () => {
     ).toBeInTheDocument();
   });
 
+  it("renders the richer reservation fields and clear context action", () => {
+    renderApp(["/reservar/?context=home-hero&source=home"]);
+
+    expect(screen.getByLabelText(/telefono/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/correo electronico/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /limpiar contexto/i }),
+    ).toHaveAttribute("href", "/reservar/");
+  });
+
   it("opens and closes the mobile menu with escape and restores focus", async () => {
     window.innerWidth = 390;
     renderApp(["/"]);

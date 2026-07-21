@@ -117,14 +117,15 @@ test("persistent CTA stays off on reservar and returns on home navigation", asyn
 
 test("reservation form reports pending confirmation", async ({ page }) => {
   await page.goto("/reservar/");
-  await page.getByLabel("Fecha").fill("2026-07-20");
+  await page.getByLabel("Fecha").fill("2026-07-21");
   await page.getByLabel("Hora").fill("20:00");
-  await page.getByLabel("Comensales").fill("2");
+  await page.locator("#booking-guests").fill("2");
   await page.getByLabel("Nombre").fill("Ada Lovelace");
-  await page.getByLabel("Contacto").fill("ada@example.com");
+  await page.getByLabel("Telefono").fill("+34 600 000 000");
   await page
     .getByLabel(/He leido la informacion provisional de privacidad/i)
     .check();
+  await page.waitForTimeout(3100);
   await page.getByRole("button", { name: /enviar solicitud/i }).click();
   await expect(
     page.getByText(/no queda confirmada hasta respuesta del equipo/i),
@@ -152,10 +153,14 @@ test("booking context disambiguates identical dish names across categories", asy
   page,
 }) => {
   await page.goto("/reservar/?dish=pizza-margarita");
-  await expect(page.getByText(/margarita \/ pizzas/i)).toBeVisible();
+  await expect(
+    page.getByText("Margarita / Pizzas", { exact: true }),
+  ).toBeVisible();
 
   await page.goto("/reservar/?dish=margarita");
-  await expect(page.getByText(/margarita \/ cocteles/i)).toBeVisible();
+  await expect(
+    page.getByText("Margarita / Cocteles", { exact: true }),
+  ).toBeVisible();
 });
 
 test("home hero booking CTA survives navigation, reload and history", async ({
