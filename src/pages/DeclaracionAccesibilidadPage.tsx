@@ -1,6 +1,5 @@
 import { PageSeo } from "@/components/seo/PageSeo";
 import { Container } from "@/components/layout/Container";
-import { Frame } from "@/components/layout/Frame";
 import { seoPages } from "@/content";
 import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 
@@ -10,8 +9,8 @@ export function DeclaracionAccesibilidadPage() {
   return (
     <>
       <PageSeo {...buildPageSeoProps(seoPage)} />
-      <Container width="reading">
-        <section className="legal-page">
+      <Container width="wide">
+        <section className="legal-page legal-page--editorial">
           <header className="editorial-intro">
             <p className="eyebrow">Accesibilidad</p>
             <h1 data-route-heading id="page-heading-accesibilidad">
@@ -23,7 +22,7 @@ export function DeclaracionAccesibilidadPage() {
               cerrada.
             </p>
           </header>
-          <Frame>
+          <div className="legal-page__body">
             <p>
               La web se esta construyendo con objetivo minimo WCAG 2.2 AA,
               navegacion por teclado, foco visible, reflow a 200 %, reduced
@@ -38,7 +37,7 @@ export function DeclaracionAccesibilidadPage() {
               Si detectas una barrera de acceso, utiliza los canales publicados
               en la ruta de contacto para reportarla.
             </p>
-          </Frame>
+          </div>
         </section>
       </Container>
     </>

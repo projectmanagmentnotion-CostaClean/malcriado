@@ -183,13 +183,46 @@ Este documento es la columna vertebral del desarrollo. Cada fase se cierra con c
 
 ## Fase 7 - Carta y especiales
 
-- [ ] Carta HTML por categorias.
+- [x] Carta HTML por categorias.
 - [ ] Filtros accesibles.
 - [ ] Precios y alergenos validados.
-- [ ] Pagina de especiales con caducidad automatica por contenido.
-- [ ] Enlaces profundos y reserva precontextualizada.
+- [x] Pagina de especiales con caducidad automatica por contenido.
+- [x] Enlaces profundos y reserva precontextualizada.
 
 **Aceptacion:** carta indexable, usable sin animacion y sin promociones vencidas visibles.
+
+### Resultado de la Fase 7
+
+- Carta publica reconstruida en `src/pages/MenuPage.tsx` con hero editorial, rail por categorias, categorias con `h2`, platos HTML y CTA contextual.
+- Especiales reconstruida en `src/pages/EspecialesPage.tsx` con snapshot tipado `active/upcoming/expired/empty`.
+- `Vermut` permanece fuera de la publicacion publica hasta recuperar items validos.
+- Identidad publica del menu normalizada:
+  - pizza `Margarita` => slug `pizza-margarita`
+  - coctel `Margarita` => slug `margarita`
+- JSON-LD ampliado para `Menu`, `MenuSection`, `MenuItem` y `Offer` activo sin precios inventados.
+- QA local cerrada:
+  - `content:validate`: `0` errores, `130` warnings
+  - `test:run`: `42/42`
+  - `test:e2e`: `26` passed, `4` skipped
+  - `bundle:budget`: pass
+  - Axe en escenarios clave: `0` violaciones
+  - matriz responsive regenerada el `2026-07-21`: `0` overflows
+- Estado remoto del checkpoint previo a cierre final:
+  - branch publicada: `codex/phase-7-menu-and-specials`
+  - draft PR existente: `#8 Phase 7: accessible HTML menu and specials`
+  - CI remoto verificado en el checkpoint: run `#19` `completed / success`
+- Warning delta explicado en `docs/content/PHASE_7_WARNING_DELTA.md`.
+- Documentacion de fase creada en `docs/menu/` y `docs/qa/`.
+
+### Cierre de roadmap
+
+Fase 7 no debe marcarse como completamente publicada hasta tener:
+
+- head final del bloque empujado a remoto
+- PR `#8` actualizado con resultados reales del head final
+- CI remoto terminal verde sobre el head final
+- revision independiente completada
+- decision expresa sobre los `130` warnings pendientes de contenido y legales
 
 ## Fase 8 - Reserva
 

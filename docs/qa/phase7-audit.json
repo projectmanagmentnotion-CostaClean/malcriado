@@ -1,0 +1,938 @@
+{
+  "generatedAt": "2026-07-21T12:49:25.067Z",
+  "baseUrl": "http://127.0.0.1:4173",
+  "viewportResults": [
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 320,
+      "width": 320,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 320,
+      "width": 320,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 320,
+      "width": 320,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 320,
+      "width": 320,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 320,
+      "width": 320,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 360,
+      "width": 360,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 360,
+      "width": 360,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 360,
+      "width": 360,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 360,
+      "width": 360,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 360,
+      "width": 360,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "width": 390,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "width": 390,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "width": 390,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "width": 390,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "width": 390,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 430,
+      "width": 430,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 430,
+      "width": 430,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 430,
+      "width": 430,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 430,
+      "width": 430,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 430,
+      "width": 430,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 768,
+      "width": 768,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 768,
+      "width": 768,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 768,
+      "width": 768,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 768,
+      "width": 768,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 768,
+      "width": 768,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 820,
+      "width": 820,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 820,
+      "width": 820,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 820,
+      "width": 820,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 820,
+      "width": 820,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 820,
+      "width": 820,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1024,
+      "width": 1024,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1024,
+      "width": 1024,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1024,
+      "width": 1024,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1024,
+      "width": 1024,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1024,
+      "width": 1024,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1280,
+      "width": 1280,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1280,
+      "width": 1280,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1280,
+      "width": 1280,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1280,
+      "width": 1280,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1280,
+      "width": 1280,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1366,
+      "width": 1366,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1366,
+      "width": 1366,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1366,
+      "width": 1366,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1366,
+      "width": 1366,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1366,
+      "width": 1366,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1440,
+      "width": 1440,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1440,
+      "width": 1440,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1440,
+      "width": 1440,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1440,
+      "width": 1440,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1440,
+      "width": 1440,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 1728,
+        "height": 1117
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1728,
+      "width": 1728,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 1728,
+        "height": 1117
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1728,
+      "width": 1728,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 1728,
+        "height": 1117
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1728,
+      "width": 1728,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 1728,
+        "height": 1117
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1728,
+      "width": 1728,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 1728,
+        "height": 1117
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1728,
+      "width": 1728,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    },
+    {
+      "route": "/menu/",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1920,
+      "width": 1920,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Carta Malcriado"
+    },
+    {
+      "route": "/especiales/",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1920,
+      "width": 1920,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Estado editorial de ofertas y vigencia"
+    },
+    {
+      "route": "/nosotros/",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1920,
+      "width": 1920,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Historia y propuesta editorial"
+    },
+    {
+      "route": "/reservar/",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1920,
+      "width": 1920,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Solicitud de reserva"
+    },
+    {
+      "route": "/contacto/",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "overflow": false,
+      "scrollWidth": 1920,
+      "width": 1920,
+      "hasHeader": true,
+      "hasFooter": true,
+      "h1": "Direccion, canales y horario editorial"
+    }
+  ],
+  "axeResults": [
+    {
+      "id": "menu",
+      "url": "http://127.0.0.1:4173/menu/",
+      "violations": []
+    },
+    {
+      "id": "menu-hash",
+      "url": "http://127.0.0.1:4173/menu/#menu-category-pizzas",
+      "violations": []
+    },
+    {
+      "id": "offers-empty",
+      "url": "http://127.0.0.1:4173/especiales/",
+      "violations": []
+    },
+    {
+      "id": "booking-context",
+      "url": "http://127.0.0.1:4173/reservar/?context=featured-dish&dish=pulpo-al-chimichurri&category=cat-hot-dishes",
+      "violations": []
+    },
+    {
+      "id": "footer",
+      "url": "http://127.0.0.1:4173/contacto/",
+      "violations": []
+    },
+    {
+      "id": "mobile-menu-open",
+      "url": "http://127.0.0.1:4173/",
+      "violations": []
+    }
+  ]
+}

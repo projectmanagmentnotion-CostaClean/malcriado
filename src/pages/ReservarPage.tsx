@@ -8,8 +8,9 @@ import { FormSection } from "@/components/forms/FormSection";
 import { TextArea } from "@/components/forms/TextArea";
 import { TextInput } from "@/components/forms/TextInput";
 import { TimeInput } from "@/components/forms/TimeInput";
+import { Cluster } from "@/components/layout/Cluster";
 import { Container } from "@/components/layout/Container";
-import { Frame } from "@/components/layout/Frame";
+import { EditorialImage } from "@/components/media/EditorialImage";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { TextLink } from "@/components/ui/TextLink";
 import { PageSeo } from "@/components/seo/PageSeo";
@@ -18,6 +19,7 @@ import {
   bookingChannels,
   bookingPolicy,
   bookingRequestContext,
+  getAsset,
   menuContent,
   offers,
   seoPages,
@@ -37,7 +39,7 @@ function readFormValue(data: FormData, key: string) {
 
 function getBookingContextSummary(searchParams: URLSearchParams) {
   const context = searchParams.get("context");
-  const itemSlug = searchParams.get("item");
+  const itemSlug = searchParams.get("dish") ?? searchParams.get("item");
   const categorySlug = searchParams.get("category");
   const offerSlug = searchParams.get("offer");
 
@@ -49,6 +51,11 @@ function getBookingContextSummary(searchParams: URLSearchParams) {
         (entry) => entry.slug === categorySlug || entry.id === categorySlug,
       )
     : null;
+  const itemCategory =
+    item && !category
+      ? (menuContent.categories.find((entry) => entry.id === item.categoryId) ??
+        null)
+      : null;
   const offer = offerSlug
     ? offers.find((entry) => entry.slug === offerSlug)
     : null;
@@ -61,7 +68,9 @@ function getBookingContextSummary(searchParams: URLSearchParams) {
   }
 
   if (item || category) {
-    const parts = [item?.name, category?.label].filter(Boolean);
+    const parts = [item?.name, category?.label ?? itemCategory?.label].filter(
+      Boolean,
+    );
 
     return {
       title: "Solicitud iniciada desde carta",
@@ -90,6 +99,7 @@ export function ReservarPage() {
   const [result, setResult] = useState(initialResult);
   const [searchParams] = useSearchParams();
   const seoPage = seoPages.booking!;
+  const bookingHeroAsset = getAsset("asset-019");
   const bookingContextSummary = useMemo(
     () => getBookingContextSummary(searchParams),
     [searchParams],
@@ -117,27 +127,57 @@ export function ReservarPage() {
       <PageSeo {...buildPageSeoProps(seoPage)} />
       <Container width="wide">
         <section className="split split--content-first">
-          <header className="editorial-intro">
-            <p className="eyebrow">Reservar</p>
-            <h1 data-route-heading="true" id="page-heading-reservar">
-              Solicitud de reserva
-            </h1>
-            <p>{bookingPolicy.summary}</p>
-            {bookingContextSummary ? (
-              <div className="panel panel--soft">
-                <p className="eyebrow">{bookingContextSummary.title}</p>
-                <p>{bookingContextSummary.body}</p>
+          <header className="booking-hero">
+            <div className="booking-hero__media">
+              <EditorialImage
+                alt="Escena editorial de Malcriado para introducir la reserva."
+                asset={bookingHeroAsset}
+                crop="landscape"
+                eager
+                ratio="cinema"
+                sizes="(max-width: 900px) 100vw, 48vw"
+              />
+              <div className="booking-hero__overlay">
+                <p className="eyebrow">Reserva</p>
+                <h1 data-route-heading="true" id="page-heading-reservar">
+                  Solicitud de reserva
+                </h1>
+                <p>{bookingPolicy.summary}</p>
               </div>
-            ) : null}
-            <ul>
-              {bookingChannels.map((channel) => (
-                <li key={channel.id}>
-                  {channel.label}: {channel.href}
-                </li>
-              ))}
-            </ul>
+            </div>
+            <div className="booking-hero__copy">
+              {bookingContextSummary ? (
+                <div className="booking-context">
+                  <p className="eyebrow">{bookingContextSummary.title}</p>
+                  <p>{bookingContextSummary.body}</p>
+                </div>
+              ) : null}
+              <p>
+                La disponibilidad sigue siendo manual hasta la confirmacion
+                final del equipo. La web no comunica confirmacion automatica ni
+                plaza cerrada en tiempo real.
+              </p>
+              <Cluster className="booking-hero__channels" gap="sm">
+                {bookingChannels.map((channel) => (
+                  <span className="booking-hero__channel" key={channel.id}>
+                    {channel.label}
+                  </span>
+                ))}
+              </Cluster>
+              <ul className="booking-hero__list">
+                {bookingChannels.map((channel) => (
+                  <li key={channel.id}>
+                    {channel.label}: {channel.href}
+                  </li>
+                ))}
+              </ul>
+              <p className="booking-hero__note">
+                Si faltan datos de mesa, horario o contexto, contacta primero y
+                el equipo resolvera la solicitud manualmente.
+              </p>
+            </div>
           </header>
-          <Frame>
+          <section className="booking-form-shell">
             <form
               className="booking-form"
               onSubmit={(event) => {
@@ -222,7 +262,7 @@ export function ReservarPage() {
                 {result.message}
               </FormMessage>
             </form>
-          </Frame>
+          </section>
         </section>
       </Container>
     </>

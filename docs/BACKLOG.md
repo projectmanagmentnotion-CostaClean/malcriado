@@ -55,10 +55,16 @@
   Criterio de cierre: reemplazos auditados y derivados generados.
 
 - Normalizar taxonomia de cocteles, vinos y categorias ambiguas del menu.
-  Razon: el modelo actual conserva entradas ambiguas auditadas (`Margarita`, `Maracuya`, `Fresa`, `U.D`) para no inventar contenido.
+  Razon: Fase 7 resolvio el slug publico duplicado de `Margarita`, pero el modelo actual aun conserva entradas ambiguas auditadas (`Maracuya`, `Fresa`, `U.D`, vinos genericos) para no inventar contenido.
   Dependencia: validacion de carta.
   Fase: `Fase 3`.
   Criterio de cierre: modelo tipado sin ambiguedad.
+
+- Completar descripciones editoriales de 38 items del menu.
+  Razon: Fase 7 hizo visible la deuda editorial real y la incorporo al validador.
+  Dependencia: confirmacion del titular o fuente publica verificable.
+  Fase: `Fase 7` y posterior.
+  Criterio de cierre: `missingDescriptions = 0` o justificacion expresa de omision.
 
 - Revisar copy geografica y claims editoriales.
   Razon: aparece `Costa Brava` junto a `Pineda de Mar`; conviene validar precision comercial.
@@ -71,6 +77,12 @@
   Dependencia: sesion manual de accesibilidad.
   Fase: `Fase 11`.
   Criterio de cierre: incidencias documentadas y resueltas o aceptadas.
+
+- Contrastar el Lighthouse de `home` y `menu` en preview o produccion real.
+  Razon: el laboratorio local de Windows mantiene lecturas pobres de CLS/LCP aunque la QA funcional y la matriz responsive de Fase 7 esten verdes.
+  Dependencia: entorno de preview o produccion equivalente y repeticion de la medicion fuera del escritorio local.
+  Fase: `Fase 11`.
+  Criterio de cierre: discrepancia explicada o corregida con evidencia reproducible.
 
 ## P3
 

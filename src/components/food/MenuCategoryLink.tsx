@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { MenuCategory } from "@/types/content";
 import { cn } from "@/lib/cn";
+import { buildMenuCategoryId } from "@/lib/menu/menuPresentation";
 
 interface MenuCategoryLinkProps {
   readonly category: MenuCategory;
@@ -14,7 +15,10 @@ export function MenuCategoryLink({
   className,
 }: MenuCategoryLinkProps) {
   return (
-    <Link className={cn("menu-category-link", className)} to="/menu/">
+    <Link
+      className={cn("menu-category-link", className)}
+      to={`/menu/#${buildMenuCategoryId(category.slug)}`}
+    >
       <span className="menu-category-link__label">{category.label}</span>
       <span className="menu-category-link__meta">{count} items</span>
     </Link>

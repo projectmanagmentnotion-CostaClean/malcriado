@@ -1,6 +1,13 @@
 import { getAssetFallback } from "@/content/assets/assetSelectors";
 import { businessContent } from "@/content/business/business";
+import { menuContent } from "@/content/menu/menu";
+import { getActiveOffers } from "@/content/offers/offerSelectors";
+import { offers } from "@/content/offers/offers";
 import { env } from "@/lib/env";
+import {
+  buildMenuCategoryId,
+  buildMenuItemId,
+} from "@/lib/menu/menuPresentation";
 import type { LocalSeoPage } from "@/types/content";
 
 function getCanonicalUrl(path: string) {
@@ -96,6 +103,65 @@ function getBreadcrumbStructuredData(page: LocalSeoPage) {
   };
 }
 
+function getMenuStructuredData() {
+  const publicCategories = menuContent.categories.filter(
+    (category) =>
+      category.publicationStatus === "PUBLIC" &&
+      menuContent.items.some((item) => item.categoryId === category.id),
+  );
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    name: menuContent.title,
+    inLanguage: "es",
+    url: getCanonicalUrl("/menu/"),
+    hasMenuSection: publicCategories.map((category) => ({
+      "@type": "MenuSection",
+      name: category.label,
+      url: getCanonicalUrl(`/menu/#${buildMenuCategoryId(category.slug)}`),
+      hasMenuItem: menuContent.items
+        .filter((item) => item.categoryId === category.id)
+        .filter((item) => item.publicationStatus !== "UNAVAILABLE")
+        .map((item) => {
+          const image = item.media?.assetId
+            ? getSeoImageUrl(item.media.assetId)
+            : null;
+
+          return {
+            "@type": "MenuItem",
+            name: item.name,
+            description:
+              item.description ??
+              "Entrada auditada de la carta actual con precio o alergenos pendientes de validacion.",
+            url: getCanonicalUrl(`/menu/#${buildMenuItemId(item.id)}`),
+            ...(image ? { image } : {}),
+          };
+        }),
+    })),
+  };
+}
+
+function getOfferStructuredData(now = new Date()) {
+  return getActiveOffers(offers, now).map((offer) => {
+    const image = offer.assetId ? getSeoImageUrl(offer.assetId) : null;
+    return {
+      "@context": "https://schema.org",
+      "@type": "Offer",
+      name: offer.title,
+      description: offer.description ?? offer.fallbackContent ?? offer.title,
+      url: getCanonicalUrl("/especiales/"),
+      ...(offer.validity.startsAt
+        ? { availabilityStarts: offer.validity.startsAt }
+        : {}),
+      ...(offer.validity.endsAt
+        ? { availabilityEnds: offer.validity.endsAt }
+        : {}),
+      ...(image ? { image } : {}),
+    };
+  });
+}
+
 export function getStructuredDataForPage(page: LocalSeoPage) {
   const entries: object[] = [getPageStructuredData(page)];
 
@@ -115,6 +181,14 @@ export function getStructuredDataForPage(page: LocalSeoPage) {
 
   if (page.metadata.structuredData.includeBreadcrumbs !== false) {
     entries.push(getBreadcrumbStructuredData(page));
+  }
+
+  if (page.metadata.structuredData.includeMenu) {
+    entries.push(getMenuStructuredData());
+  }
+
+  if (page.metadata.structuredData.includeOffers) {
+    entries.push(...getOfferStructuredData());
   }
 
   return entries;

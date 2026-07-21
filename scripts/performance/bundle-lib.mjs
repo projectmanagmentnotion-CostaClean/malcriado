@@ -3,13 +3,18 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const DIST_ASSETS_DIR = path.join(process.cwd(), "dist", "assets");
+const DIST_INDEX_HTML = path.join(process.cwd(), "dist", "index.html");
 
 function roundKb(bytes) {
   return Number((bytes / 1024).toFixed(2));
 }
 
-function isInitialIndexChunk(fileName) {
-  return /^index-.*\.js$/.test(fileName);
+async function getEntryChunkFileName() {
+  const html = await fs.readFile(DIST_INDEX_HTML, "utf8");
+  const match = html.match(
+    /<script type="module" crossorigin src="\/assets\/([^"]+)"><\/script>/,
+  );
+  return match?.[1] ?? null;
 }
 
 export async function readBundleReport() {
@@ -37,8 +42,9 @@ export async function readBundleReport() {
   const cssAssets = assetFiles
     .filter((asset) => asset.kind === "css")
     .sort((left, right) => right.bytes - left.bytes);
+  const entryChunkFileName = await getEntryChunkFileName();
   const initialIndexChunk =
-    jsAssets.find((asset) => isInitialIndexChunk(asset.fileName)) ?? null;
+    jsAssets.find((asset) => asset.fileName === entryChunkFileName) ?? null;
   const gsapChunks = jsAssets.filter((asset) =>
     /ScrollTrigger|gsap/i.test(asset.fileName),
   );
@@ -51,6 +57,7 @@ export async function readBundleReport() {
   return {
     assetFiles,
     cssAssets,
+    entryChunkFileName,
     gsapChunks,
     initialIndexChunk,
     jsAssets,

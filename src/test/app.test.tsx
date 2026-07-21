@@ -26,9 +26,7 @@ describe("app shell", () => {
         name: /carta malcriado/i,
       }),
     ).toBeInTheDocument();
-    expect(
-      screen.getByText(/precios, alergenos y descripciones finales/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/carta html/i)).toBeInTheDocument();
   });
 
   it("renders accessibility statement route", () => {
@@ -60,14 +58,14 @@ describe("app shell", () => {
     fireEvent.click(button);
 
     expect(
-      screen.getByRole("navigation", { name: /principal movil/i }),
+      screen.getByRole("navigation", { name: /menu movil/i }),
     ).toBeInTheDocument();
 
     fireEvent.keyDown(window, { key: "Escape" });
 
     await waitFor(() =>
       expect(
-        screen.queryByRole("navigation", { name: /principal movil/i }),
+        screen.queryByRole("navigation", { name: /menu movil/i }),
       ).not.toBeInTheDocument(),
     );
     expect(button).toHaveFocus();

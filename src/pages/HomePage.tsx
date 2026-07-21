@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { Cluster } from "@/components/layout/Cluster";
 import { EditorialImage } from "@/components/media/EditorialImage";
+import { ResponsiveImage } from "@/components/media/ResponsiveImage";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { HomePreloader } from "@/components/home/HomePreloader";
@@ -83,6 +84,9 @@ export function HomePage() {
   const whatsappHref = getWhatsappHref();
   const phoneHref = getTelephoneHref();
   const socialLinks = businessContent.contact.socials.slice(0, 2);
+  const publicMenuCategoryCount = menuContent.categories.filter(
+    (category) => category.publicationStatus === "PUBLIC",
+  ).length;
 
   const availableAssetCount = assetManifest.assets.filter(
     (asset) => asset.state === "ACCEPTED",
@@ -126,6 +130,18 @@ export function HomePage() {
         data-motion="reveal"
         id="home-hero"
       >
+        <div className="home-hero__media" data-scene-media="true">
+          <ResponsiveImage
+            alt="Plato editorial protagonista de Malcriado."
+            asset={heroAsset}
+            className="home-hero__background"
+            crop="landscape"
+            decorative
+            eager
+            sizes="100vw"
+          />
+        </div>
+        <div className="home-hero__veil" aria-hidden="true" />
         <Container width="wide">
           <div className="home-hero__grid">
             <div className="home-hero__content">
@@ -191,21 +207,32 @@ export function HomePage() {
                 </div>
               </dl>
             </div>
-            <div className="home-hero__media" data-scene-media="true">
-              <EditorialImage
-                alt="Plato editorial protagonista de Malcriado."
-                asset={heroAsset}
-                caption="Asset auditado de alta prioridad para la apertura visual."
-                crop="landscape"
-                eager
-                ratio="cinema"
-                sizes="(max-width: 900px) 100vw, 52vw"
-              />
-              <div className="home-hero__overlay">
+            <aside className="home-hero__support" data-scene-reveal="true">
+              <div className="home-hero__support-card">
+                <p className="eyebrow">Apertura editorial</p>
                 <p>{businessContent.identity.shortDescription.value}</p>
-                <span>Escena base sin depender de video bloqueado.</span>
+                <span>
+                  Hero visual completo, sin depender de video bloqueado.
+                </span>
               </div>
-            </div>
+              <div className="home-hero__support-card">
+                <p className="eyebrow">Base real</p>
+                <dl className="home-hero__metrics">
+                  <div>
+                    <dt>Categorias</dt>
+                    <dd>{publicMenuCategoryCount} publicas</dd>
+                  </div>
+                  <div>
+                    <dt>Platos</dt>
+                    <dd>{menuContent.items.length} auditados</dd>
+                  </div>
+                  <div>
+                    <dt>Reserva</dt>
+                    <dd>Contexto manual verificado</dd>
+                  </div>
+                </dl>
+              </div>
+            </aside>
           </div>
         </Container>
       </section>
@@ -319,10 +346,14 @@ export function HomePage() {
               const dishAsset = dish.media?.assetId
                 ? getAsset(dish.media.assetId)
                 : null;
+              const categoryLabel =
+                menuContent.categories.find(
+                  (category) => category.id === dish.categoryId,
+                )?.label ?? dish.categoryId;
 
               return (
                 <article
-                  className="home-featured-card"
+                  className={`home-featured-card${index === 0 ? " home-featured-card--lead" : ""}`}
                   data-scene-reveal="true"
                   key={dish.id}
                 >
@@ -341,9 +372,7 @@ export function HomePage() {
                     </div>
                   ) : null}
                   <div className="home-featured-card__body">
-                    <p className="eyebrow">
-                      {dish.categoryId.replace("category-", "")}
-                    </p>
+                    <p className="eyebrow">{categoryLabel}</p>
                     <h3>{dish.name}</h3>
                     <p>
                       {dish.description ??

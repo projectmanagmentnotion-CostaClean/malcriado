@@ -1,6 +1,6 @@
 import { Container } from "@/components/layout/Container";
-import { Frame } from "@/components/layout/Frame";
 import { PageSeo } from "@/components/seo/PageSeo";
+import { LinkButton } from "@/components/ui/LinkButton";
 import { TextLink } from "@/components/ui/TextLink";
 import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 import {
@@ -19,23 +19,48 @@ export function ContactoPage() {
   return (
     <>
       <PageSeo {...buildPageSeoProps(seoPage)} />
-      <Container width="wide">
-        <section className="split split--content-first">
-          <header className="editorial-intro">
-            <p className="eyebrow">Contacto</p>
-            <h1 data-route-heading="true" id="page-heading-contacto">
-              Direccion, canales y horario editorial
-            </h1>
-            <p>
-              Esta ruta publica solo datos verificados. Horario diario y
-              coordenadas siguen bloqueados hasta validacion del titular.
-            </p>
-            <p>
-              El enlace de mapa usa la direccion postal auditada y evita fijar
-              coordenadas no confirmadas.
-            </p>
-          </header>
-          <Frame>
+      <div className="contact-page">
+        <section className="contact-hero">
+          <Container width="wide">
+            <div className="contact-hero__grid">
+              <header className="contact-hero__content">
+                <p className="eyebrow">Contacto</p>
+                <h1 data-route-heading="true" id="page-heading-contacto">
+                  Direccion, canales y horario editorial
+                </h1>
+                <p>
+                  Esta ruta publica solo datos verificados. Horario diario y
+                  coordenadas siguen bloqueados hasta validacion del titular.
+                </p>
+                <p>
+                  El enlace de mapa usa la direccion postal auditada y evita
+                  fijar coordenadas no confirmadas.
+                </p>
+                <div className="contact-hero__actions">
+                  <LinkButton to="/reservar/" variant="editorial">
+                    Ir a reserva
+                  </LinkButton>
+                  <LinkButton to="/menu/" variant="secondary">
+                    Ver carta HTML
+                  </LinkButton>
+                </div>
+              </header>
+              <div className="contact-hero__summary">
+                <p className="eyebrow">Canal directo</p>
+                <strong>
+                  {businessContent.contact.phone.value ?? "Pendiente"}
+                </strong>
+                <span>
+                  Telefono y WhatsApp siguen siendo la via operativa mas
+                  inmediata para cerrar la visita.
+                </span>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        <section className="contact-details">
+          <Container width="wide">
             <dl className="contact-grid">
               <div>
                 <dt>Direccion</dt>
@@ -95,9 +120,9 @@ export function ContactoPage() {
                 <dd>{businessContent.hours.summary.status}</dd>
               </div>
             </dl>
-          </Frame>
+          </Container>
         </section>
-      </Container>
+      </div>
     </>
   );
 }

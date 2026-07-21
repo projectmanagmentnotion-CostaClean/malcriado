@@ -33,17 +33,30 @@ test("keyboard starts on skip link before entering home content", async ({
   await expect(skipLink).toHaveAttribute("href", "#main-content");
 });
 
-test("menu and especiales routes render provisional content", async ({
+test("menu and especiales routes render editorial content", async ({
   page,
 }) => {
   await page.goto("/menu/");
   await expect(
     page.getByRole("heading", { name: /carta malcriado/i }),
   ).toBeVisible();
+  await expect(page.getByText(/carta html/i)).toBeVisible();
 
   await page.goto("/especiales/");
   await expect(
-    page.getByText(/no se han recuperado ofertas publicas vigentes/i),
+    page.getByRole("heading", {
+      name: /estado editorial de ofertas y vigencia/i,
+    }),
+  ).toBeVisible();
+});
+
+test("menu deep links land on the requested category chapter", async ({
+  page,
+}) => {
+  await page.goto("/menu/#menu-category-pizzas");
+  await expect(page).toHaveURL(/#menu-category-pizzas$/);
+  await expect(
+    page.getByRole("heading", { level: 2, name: /^pizzas$/i }),
   ).toBeVisible();
 });
 
@@ -57,11 +70,11 @@ test("mobile menu opens, closes and keyboard returns focus", async ({
   const menuButton = page.getByRole("button", { name: /abrir menu/i });
   await menuButton.click();
   await expect(
-    page.getByRole("navigation", { name: /principal movil/i }),
+    page.getByRole("navigation", { name: /menu movil/i }),
   ).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(
-    page.getByRole("navigation", { name: /principal movil/i }),
+    page.getByRole("navigation", { name: /menu movil/i }),
   ).toHaveCount(0);
   await expect(menuButton).toBeFocused();
 });
@@ -133,6 +146,16 @@ test("booking route surfaces contextual entry copy", async ({ page }) => {
     "/reservar/?context=featured-dish&item=pulpo-al-chimichurri&category=cat-hot-dishes",
   );
   await expect(page.getByText(/solicitud iniciada desde carta/i)).toBeVisible();
+});
+
+test("booking context disambiguates identical dish names across categories", async ({
+  page,
+}) => {
+  await page.goto("/reservar/?dish=pizza-margarita");
+  await expect(page.getByText(/margarita \/ pizzas/i)).toBeVisible();
+
+  await page.goto("/reservar/?dish=margarita");
+  await expect(page.getByText(/margarita \/ cocteles/i)).toBeVisible();
 });
 
 test("not found route returns 404 content", async ({ page }) => {
