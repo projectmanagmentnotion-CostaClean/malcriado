@@ -27,10 +27,29 @@ export interface ReservationConfig {
   >;
 }
 
+function formatDatePart(parts: Intl.DateTimeFormatPart[], type: string) {
+  return parts.find((part) => part.type === type)?.value ?? "";
+}
+
+export function getCurrentMadridDateIso(now: Date = new Date()) {
+  const formatter = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Madrid",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  const parts = formatter.formatToParts(now);
+  const year = formatDatePart(parts, "year");
+  const month = formatDatePart(parts, "month");
+  const day = formatDatePart(parts, "day");
+
+  return `${year}-${month}-${day}`;
+}
+
 export const reservationConfig: ReservationConfig = {
   timezone: "Europe/Madrid",
   minimumSubmissionSeconds: 3,
-  minDateIso: "2026-07-21",
+  minDateIso: getCurrentMadridDateIso(),
   guestLimits: {
     min: 1,
     max: null,

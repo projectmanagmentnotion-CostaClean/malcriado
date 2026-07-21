@@ -193,15 +193,6 @@ export function validateReservationFormValues(input: {
     });
   }
 
-  if (input.context.ignoredParams.length > 0) {
-    errors.push({
-      field: "form",
-      code: "invalid_context_param",
-      message:
-        "Se han ignorado parametros de contexto no validos. Puedes continuar o limpiar el contexto.",
-    });
-  }
-
   return { values, errors };
 }
 
