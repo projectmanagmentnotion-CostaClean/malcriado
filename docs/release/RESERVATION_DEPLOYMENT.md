@@ -35,7 +35,10 @@ Tabla `reservation_requests`: UUID primary key, idempotency key unique, estado c
 2. Configurar SMTP con SPF, DKIM y DMARC.
 3. Probar 201/202, 400, 403, 422, 429 y fallo SMTP.
 4. Probar idempotencia y expiracion de datos.
+   El mismo `Idempotency-Key` debe devolver la misma referencia y generar una sola notificacion.
 5. Verificar que los logs no contienen nombre, telefono, email, alergias ni comentarios.
 6. Ejecutar smoke desde staging con origen exacto.
 
 No activar `VITE_RESERVATION_API_URL` hasta completar estas comprobaciones.
+
+El adaptador en memoria es solo una referencia ejecutable para tests. Supabase debe implementar el resultado atomico `created/existing` mediante constraint unica; no debe enviar SMTP en conflicto idempotente.

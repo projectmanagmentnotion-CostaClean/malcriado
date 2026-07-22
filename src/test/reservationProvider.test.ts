@@ -38,6 +38,8 @@ describe("production reservation fallback", () => {
     expect(result.status).toBe("action_required");
     expect(result.code).toBe("channel_required");
     expect(result.actions?.whatsappHref).toContain("28fb86a1");
-    expect(result.actions?.whatsappHref).toContain("Frutos%20secos");
+    expect(result.actions?.whatsappHref).not.toContain("Ada");
+    expect(result.actions?.whatsappHref).not.toContain("Frutos%20secos");
+    expect(result.actions?.emailHref).not.toContain("%2B34600000000");
   });
 });

@@ -2,6 +2,14 @@ import { z } from "zod";
 import { isWithinProposedOpeningHours } from "@/content/business/openingHours";
 
 const cleanText = (max: number) => z.string().trim().max(max);
+const contextEntitySchema = z
+  .object({
+    kind: z.enum(["dish", "category", "offer", "context", "source"]),
+    slug: cleanText(120),
+    label: cleanText(160),
+    meta: cleanText(160).optional(),
+  })
+  .strict();
 
 export const reservationRequestSchema = z
   .object({
@@ -24,16 +32,34 @@ export const reservationRequestSchema = z
       message: cleanText(500),
     }),
     consent: z.object({ privacyAccepted: z.literal(true) }),
+    context: z
+      .object({
+        dish: contextEntitySchema.nullable(),
+        category: contextEntitySchema.nullable(),
+        offer: contextEntitySchema.nullable(),
+        context: contextEntitySchema.nullable(),
+        source: contextEntitySchema.nullable(),
+        summaryTitle: cleanText(160).nullable(),
+        summaryBody: cleanText(500).nullable(),
+        tags: z.array(contextEntitySchema).max(12),
+        ignoredParams: z.array(cleanText(80)).max(20),
+        hasContext: z.boolean(),
+      })
+      .strict(),
     metadata: z
       .object({
         requestId: z.uuid(),
+        startedAt: z.iso.datetime(),
         submittedAt: z.iso.datetime(),
         honeypot: z.literal(""),
+        fingerprint: z.string().min(12).max(160),
         idempotencyKey: z.string().min(12).max(160),
+        sessionId: z.string().min(8).max(160),
+        attempt: z.number().int().min(1).max(20),
       })
-      .passthrough(),
+      .strict(),
   })
-  .passthrough()
+  .strict()
   .superRefine((request, context) => {
     if (
       !isWithinProposedOpeningHours(

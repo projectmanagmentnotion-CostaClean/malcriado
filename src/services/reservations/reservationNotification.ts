@@ -5,15 +5,10 @@ import type { ReservationChannelActions } from "./reservationTypes";
 export function buildReservationChannelActions(
   request: ReservationRequest,
 ): ReservationChannelActions {
-  const allergies = request.preferences.allergies || "Ninguna indicada";
   const message = [
     "Solicitud de reserva Malcriado",
     `Referencia: ${request.metadata.requestId}`,
-    `Nombre: ${request.contact.name}`,
-    `Fecha: ${request.dateTime.date}`,
-    `Hora: ${request.dateTime.time}`,
-    `Personas: ${request.preferences.guests}`,
-    `Alergias/intolerancias: ${allergies}`,
+    "Quiero completar los datos de la solicitud por este canal.",
   ].join("\n");
   const whatsappBase =
     businessContent.contact.whatsapp.value ?? "https://wa.me/34672695670";

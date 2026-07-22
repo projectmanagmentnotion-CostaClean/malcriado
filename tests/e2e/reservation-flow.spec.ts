@@ -34,7 +34,7 @@ test("reservation flow prepares explicit fallback actions without false persiste
   ).not.toContainText("Reserva confirmada");
 });
 
-test("reservation flow includes allergies in the encoded WhatsApp action", async ({
+test("reservation fallback keeps sensitive details out of external URLs", async ({
   page,
 }) => {
   await page.goto("/reservar/");
@@ -45,7 +45,8 @@ test("reservation flow includes allergies in the encoded WhatsApp action", async
   const href = await page
     .getByRole("link", { name: /enviar por whatsapp/i })
     .getAttribute("href");
-  expect(href).toContain("Frutos%20secos");
+  expect(href).not.toContain("Frutos%20secos");
+  expect(href).not.toContain("Ada");
   expect(href).toContain("Referencia");
 });
 

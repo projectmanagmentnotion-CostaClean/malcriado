@@ -427,6 +427,8 @@ Fase 7 no debe marcarse como completamente publicada hasta tener:
 
 Decision actual: `NO-GO` para dominio principal; staging queda preparado pero no desplegado.
 
+Revision independiente de PR #13: P0-P2 tecnicos corregidos. CI queda dividido en checks `quality`, `e2e` y `lighthouse`; el paso a staging exige CI remoto verde. Produccion sigue bloqueada por validacion del titular, backend real, QA humano y CWV de staging.
+
 - [ ] Build de produccion reproducible.
 - [ ] Backup de web actual.
 - [ ] Plan de despliegue y rollback.

@@ -32,12 +32,21 @@ No se ha inferido ningun alergeno. Todos los platos conservan `allergenStatus: P
 
 ## QA local del cierre
 
-- unit/integration: `74/74`
+- unit/integration: `78/78`
 - E2E: `45 passed / 5 skipped`
 - content: `0 errores / 86 warnings` (alergenos, descripciones y legales documentados)
-- bundle inicial: `169,77 KiB`, presupuesto `500 KiB`
+- bundle inicial: `169,86 KiB`, presupuesto `500 KiB`
 - Lighthouse Home: `78 / 100 / 100 / 100`, LCP `4,4 s`, CLS `0,102`, TBT `80 ms`
 - Lighthouse Reserva: `84 / 100 / 100 / 100`, LCP `3,9 s`, CLS `0,003`, TBT `10 ms`
 - Lighthouse CI final: Home `79 / 100 / 100 / 100` (LCP `4,39 s`, CLS `0,046`) y Reserva `84 / 100 / 100 / 100` (LCP `3,93 s`, CLS `0,003`)
 
 La corrida fria de Lighthouse no alcanza el objetivo de rendimiento de lanzamiento. CI mantiene un suelo anti-regresion; el GO exige optimizacion adicional y medicion en staging/dispositivo real.
+
+## Revision independiente del PR #13
+
+- Ningun precio fuente se sobrescribe: la propuesta solo completa importes nulos.
+- Horarios, precios e identidad legal conservan una unica fuente tipada.
+- No se inventan alergenos ni datos juridicos; los pendientes siguen bloqueando produccion.
+- El fallback de reserva exige accion explicita y nunca comunica exito.
+- El servidor rechaza campos inesperados y reintentos con una clave idempotente distinta; un duplicado no vuelve a notificar.
+- Lighthouse local posterior: Home `82/100/100/100`, LCP `4,40 s`, CLS `0`; Reserva `85/100/100/100`, LCP `4,00 s`, CLS `0`.

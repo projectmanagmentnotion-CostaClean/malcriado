@@ -30,6 +30,8 @@
 
 ## Lanzamiento
 
+- [ ] confirmar CI remoto verde por separado: quality, E2E y Lighthouse
+- [ ] revisar artefactos Lighthouse y CWV de staging
 - [ ] aprobar staging y QA humano
 - [ ] validar NVDA/VoiceOver
 - [ ] validar iOS Safari, Android Chrome, Firefox y Edge

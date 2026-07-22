@@ -86,6 +86,12 @@
 
 ## P3
 
+- Confirmar LCP p75 en staging y valorar prerender del shell SPA.
+  Razon: Lighthouse local identifica la imagen hero como LCP y confirma descarga rapida/prioridad alta, pero el arranque de React bajo CPU simulado mantiene Home en ~4,40 s.
+  Dependencia: staging controlado y dispositivo real.
+  Fase: `Fase 12`.
+  Criterio de cierre: LCP p75 <= 2,5 s o plan de arquitectura aprobado antes de produccion.
+
 - Confirmar CWV en preview o produccion real con red y hardware menos favorables.
   Razon: la repeticion independiente de Lighthouse en local ya no reproduce la degradacion anterior, pero sigue siendo medicion de laboratorio.
   Dependencia: entorno de preview o produccion controlado.

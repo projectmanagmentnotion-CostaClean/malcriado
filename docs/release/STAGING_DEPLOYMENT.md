@@ -11,6 +11,7 @@ npm ci
 npm run qa
 npm run test:e2e
 npm run build
+npm run lighthouse:ci
 ```
 
 Construir con `VITE_PUBLIC_SITE_URL` de staging y `VITE_STAGING_NOINDEX=true`. Ademas del meta robots, configurar cabecera `X-Robots-Tag: noindex, nofollow` y bloquear robots en la raiz de staging. Mantener canonical hacia produccion.
@@ -41,3 +42,4 @@ Conservar el artefacto anterior y su hash. Para rollback, restaurar exclusivamen
 - WhatsApp requiere clic y contiene referencia
 - Axe, teclado, 320/390/768/1440 y reduced motion
 - comprobar Chrome/Edge/Firefox y al menos iOS Safari/Android Chrome reales
+- confirmar los tres checks remotos independientes: `quality`, `e2e` y `lighthouse`
