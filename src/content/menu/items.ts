@@ -1,5 +1,6 @@
 import type { MenuItem } from "../../types/content";
 import { contentSources } from "../shared/sources";
+import { getProposedPrice } from "./proposedPrices";
 
 function pendingPrice(note?: string) {
   return {
@@ -38,7 +39,7 @@ function menuItem(
   };
 }
 
-export const menuItems: readonly MenuItem[] = [
+const sourcedMenuItems: readonly MenuItem[] = [
   menuItem({
     id: "item-gambas-ajillo",
     slug: "gambas-al-ajillo",
@@ -850,3 +851,11 @@ export const menuItems: readonly MenuItem[] = [
     publicationStatus: "PUBLIC",
   }),
 ];
+
+export const menuItems: readonly MenuItem[] = sourcedMenuItems.map((item) => ({
+  ...item,
+  price:
+    item.price.amount !== null
+      ? item.price
+      : getProposedPrice(item.categoryId, item.editorialOrder),
+}));

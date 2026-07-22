@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
+import { OpeningHours } from "@/components/business/OpeningHours";
 import { Button } from "@/components/ui/Button";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { TextLink } from "@/components/ui/TextLink";
@@ -30,9 +31,9 @@ export function Footer() {
         <div>
           <p className="eyebrow">{footerBusiness.name}</p>
           <p>{getReadableAddress()}</p>
-          <p>{businessContent.hours.summary.value ?? "Horario a consultar"}</p>
+          <OpeningHours compact />
           <p className="site-footer__note">
-            Si vienes hoy, confirma horario y disponibilidad antes de salir.
+            Las solicitudes de mesa quedan sujetas a confirmacion del equipo.
           </p>
         </div>
         <div>
@@ -85,6 +86,7 @@ export function Footer() {
             Reservar
           </LinkButton>
           <TextLink to="/contacto/">Canales alternativos</TextLink>
+          <TextLink to="/menu/#informacion-alergenos">Alergenos</TextLink>
           <Button onClick={openPreferences} type="button" variant="ghost">
             Preferencias de cookies
           </Button>

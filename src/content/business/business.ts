@@ -1,9 +1,6 @@
-import type {
-  BusinessContent,
-  BusinessHoursDay,
-  VerificationField,
-} from "../../types/content";
+import type { BusinessContent, VerificationField } from "../../types/content";
 import { contentSources } from "../shared/sources";
+import { openingHoursSummary, proposedOpeningHours } from "./openingHours";
 
 function field<T>(
   value: T | null,
@@ -20,14 +17,6 @@ function field<T>(
     ...(expectedFrom ? { expectedFrom } : {}),
   };
 }
-
-const pendingDay = (day: BusinessHoursDay["day"]): BusinessHoursDay => ({
-  day,
-  opensAt: null,
-  closesAt: null,
-  status: "PENDING_VALIDATION",
-  note: "Current site only exposes one global schedule. Daily hours require owner confirmation.",
-});
 
 export const businessContent: BusinessContent = {
   identity: {
@@ -139,22 +128,14 @@ export const businessContent: BusinessContent = {
   },
   hours: {
     summary: field(
-      "Todos los dias 11.00am - 01.00am",
+      openingHoursSummary,
       "PENDING_VALIDATION",
       [contentSources.siteHome.id, contentSources.contentInventory.id],
-      "The audited schedule appears only on the home page and is flagged as possibly outdated.",
+      "Commercial schedule proposed for Phase 12A; owner validation remains required before launch.",
       contentSources.ownerAnderson.label,
     ),
     timezone: "Europe/Madrid",
-    byDay: [
-      pendingDay("monday"),
-      pendingDay("tuesday"),
-      pendingDay("wednesday"),
-      pendingDay("thursday"),
-      pendingDay("friday"),
-      pendingDay("saturday"),
-      pendingDay("sunday"),
-    ],
+    byDay: proposedOpeningHours,
   },
   references: {
     sourceIds: [

@@ -20,8 +20,15 @@ const businessHoursDaySchema = z.object({
     "saturday",
     "sunday",
   ]),
-  opensAt: z.string().nullable(),
-  closesAt: z.string().nullable(),
+  label: z.string().min(1),
+  intervals: z
+    .array(
+      z.object({
+        opensAt: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/),
+        closesAt: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/),
+      }),
+    )
+    .max(2),
   status: verificationStatusSchema,
   note: z.string().optional(),
 });

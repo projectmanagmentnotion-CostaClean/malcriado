@@ -31,6 +31,8 @@ export function ReservarPage() {
                 alt="Escena editorial de Malcriado para introducir la reserva."
                 asset={bookingHeroAsset}
                 crop="landscape"
+                eager
+                fetchPriority="high"
                 ratio="cinema"
                 sizes="(max-width: 900px) 100vw, 48vw"
               />

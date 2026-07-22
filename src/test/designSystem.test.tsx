@@ -48,10 +48,10 @@ describe("ui components", () => {
 });
 
 describe("food and forms", () => {
-  it("shows pending price state on a real menu item", () => {
+  it("shows an editorial price on a real menu item", () => {
     render(<DishCard item={getFeaturedMenuItems()[0]!} />);
 
-    expect(screen.getByText(/precio a consultar/i)).toBeInTheDocument();
+    expect(screen.getByText(/18,50/)).toBeInTheDocument();
   });
 
   it("associates form labels with inputs", () => {

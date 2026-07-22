@@ -2429,6 +2429,21 @@ body.has-consent-dialog {
   border-top: 1px solid rgba(242, 232, 218, 0.14);
 }
 
+.opening-hours {
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.opening-hours div {
+  display: grid;
+  grid-template-columns: minmax(6rem, 0.45fr) 1fr;
+  gap: var(--space-sm);
+}
+
+.opening-hours dd {
+  margin: 0;
+}
+
 .specials-page {
   display: grid;
   gap: 0;

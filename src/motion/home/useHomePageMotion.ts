@@ -167,18 +167,15 @@ export function useHomePageMotion({
             "(max-width: 22.5rem)",
           ).matches;
 
-          heroTimeline
-            .from(heroLead, { yPercent: 24, opacity: 0, stagger: 0.08 }, 0)
-            .from(
-              heroMedia,
-              {
-                scale: compactHeroViewport ? 1 : 1.08,
-                opacity: 0,
-                duration: 1.2,
-                ease: "power3.out",
-              },
-              0.08,
-            );
+          heroTimeline.from(heroLead, { yPercent: 24, stagger: 0.08 }, 0).from(
+            heroMedia,
+            {
+              scale: compactHeroViewport ? 1 : 1.08,
+              duration: 1.2,
+              ease: "power3.out",
+            },
+            0.08,
+          );
 
           mm?.add("(min-width: 901px)", () => {
             const featuredRail = root.querySelector(".home-featured__rail");
@@ -198,10 +195,12 @@ export function useHomePageMotion({
             }
           });
 
-          const revealScenes = gsap.utils.toArray<HTMLElement>(
-            ".home-scene[data-motion='reveal'], .home-scene[data-motion='layered'], .home-scene[data-motion='quiet-reading'], .home-scene[data-motion='booking-focus'], .home-scene[data-motion='horizontal-gallery']",
-            root,
-          );
+          const revealScenes = gsap.utils
+            .toArray<HTMLElement>(
+              ".home-scene[data-motion='reveal'], .home-scene[data-motion='layered'], .home-scene[data-motion='quiet-reading'], .home-scene[data-motion='booking-focus'], .home-scene[data-motion='horizontal-gallery']",
+              root,
+            )
+            .filter((scene) => scene.id !== "home-hero");
 
           revealScenes.forEach((scene) => {
             const revealTargets = scene.querySelectorAll("[data-scene-reveal]");
@@ -264,8 +263,8 @@ export function useHomePageMotion({
               preloaderTimeline
                 .fromTo(
                   preloaderText,
-                  { y: 28, opacity: 0 },
-                  { y: 0, opacity: 1, duration: 0.55, stagger: 0.08 },
+                  { y: 28 },
+                  { y: 0, duration: 0.55, stagger: 0.08 },
                 )
                 .to(preloaderInner, { yPercent: -8, duration: 0.45 }, "+=0.15")
                 .to(

@@ -25,6 +25,24 @@ export function ReservationStatusPanel({
         <h3 className="reservation-status-panel__title">{submission.title}</h3>
       ) : null}
       <p>{submission.message}</p>
+      {submission.result?.actions ? (
+        <div className="reservation-status-panel__actions">
+          <a
+            className="ui-button ui-button--editorial ui-button--sm"
+            href={submission.result.actions.whatsappHref}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Enviar por WhatsApp
+          </a>
+          <a
+            className="ui-button ui-button--secondary ui-button--sm"
+            href={submission.result.actions.emailHref}
+          >
+            Enviar por correo
+          </a>
+        </div>
+      ) : null}
       {submission.result?.retryAfterSeconds ? (
         <p className="reservation-inline-note">
           Reintenta en aproximadamente {submission.result.retryAfterSeconds}{" "}

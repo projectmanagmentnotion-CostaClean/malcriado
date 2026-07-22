@@ -1,4 +1,5 @@
 import { PageSeo } from "@/components/seo/PageSeo";
+import { OpeningHours } from "@/components/business/OpeningHours";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { TextLink } from "@/components/ui/TextLink";
 import { ConsentManagedMap } from "@/features/consent";
@@ -108,9 +109,11 @@ export function ContactoPage() {
                   )}
                 </dd>
               </div>
-              <div>
+              <div className="contact-grid__hours">
                 <dt>Horario visible</dt>
-                <dd>{businessContent.hours.summary.value ?? "Consultar"}</dd>
+                <dd>
+                  <OpeningHours />
+                </dd>
               </div>
             </dl>
           </div>
@@ -161,12 +164,11 @@ export function ContactoPage() {
             <div className="contact-editorial-note__grid">
               <div>
                 <p className="eyebrow">Antes de venir</p>
-                <h2>El horario diario se esta terminando de confirmar</h2>
+                <h2>Consulta nuestros horarios antes de venir</h2>
               </div>
               <p>
-                Publicamos el horario general ya visible y mantenemos abiertos
-                telefono, email y WhatsApp para confirmar dudas antes de tu
-                visita.
+                Elige fecha y hora en la solicitud. El equipo revisara la
+                disponibilidad y respondera por el canal que prefieras.
               </p>
             </div>
           </div>

@@ -52,7 +52,12 @@ export function HomePage() {
       return false;
     }
 
-    return window.sessionStorage.getItem(PRELOADER_SESSION_KEY) !== "true";
+    return (
+      window.matchMedia(
+        "(min-width: 901px) and (prefers-reduced-motion: no-preference)",
+      ).matches &&
+      window.sessionStorage.getItem(PRELOADER_SESSION_KEY) !== "true"
+    );
   });
 
   const heroScene = getScene("hero");
@@ -133,6 +138,7 @@ export function HomePage() {
             crop="landscape"
             decorative
             eager
+            fetchPriority="high"
             sizes="100vw"
           />
         </div>

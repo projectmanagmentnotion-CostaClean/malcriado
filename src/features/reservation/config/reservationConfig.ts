@@ -27,6 +27,11 @@ export interface ReservationConfig {
   >;
 }
 
+import {
+  getServiceHoursByWeekday,
+  proposedOpeningHours,
+} from "@/content/business/openingHours";
+
 function formatDatePart(parts: Intl.DateTimeFormatPart[], type: string) {
   return parts.find((part) => part.type === type)?.value ?? "";
 }
@@ -66,13 +71,15 @@ export const reservationConfig: ReservationConfig = {
   },
   closedWeekdays: {
     status: "PENDING_VALIDATION",
-    value: null,
-    note: "No existe calendario de cierre confirmado para bloquear fechas.",
+    value: proposedOpeningHours.flatMap((day, index) =>
+      day.intervals.length === 0 ? [index] : [],
+    ),
+    note: "Configuracion comercial propuesta; requiere validacion del titular antes del lanzamiento.",
   },
   serviceHours: {
     status: "PENDING_VALIDATION",
-    value: null,
-    note: "Los horarios por servicio siguen sujetos a confirmacion manual.",
+    value: getServiceHoursByWeekday(),
+    note: "Configuracion comercial propuesta; cada solicitud sigue sujeta a revision manual.",
   },
   exceptions: {
     status: "PENDING_VALIDATION",

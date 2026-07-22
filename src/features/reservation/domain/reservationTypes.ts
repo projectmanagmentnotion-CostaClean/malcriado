@@ -35,6 +35,9 @@ export interface ReservationDateTime {
 
 export interface ReservationPreferences {
   readonly guests: number;
+  readonly zone: "sin-preferencia" | "interior" | "terraza";
+  readonly occasion: string;
+  readonly allergies: string;
   readonly message: string;
 }
 
@@ -49,6 +52,7 @@ export interface ReservationRequest {
   readonly consent: ReservationConsent;
   readonly context: ReservationContext;
   readonly metadata: {
+    readonly requestId: string;
     readonly startedAt: string;
     readonly submittedAt: string;
     readonly honeypot: string;
@@ -65,10 +69,11 @@ export type ReservationResultCode =
   | "offline"
   | "timeout"
   | "rate_limited"
-  | "provider_error";
+  | "provider_error"
+  | "channel_required";
 
 export interface ReservationResult {
-  readonly status: "success" | "error";
+  readonly status: "success" | "error" | "action_required";
   readonly code: ReservationResultCode;
   readonly title: string;
   readonly message: string;
@@ -76,6 +81,10 @@ export interface ReservationResult {
   readonly reference?: string | null;
   readonly retryAfterSeconds?: number | null;
   readonly idempotencyKey: string;
+  readonly actions?: {
+    readonly whatsappHref: string;
+    readonly emailHref: string;
+  };
 }
 
 export interface ReservationError {
@@ -87,6 +96,9 @@ export interface ReservationError {
     | "time"
     | "guests"
     | "message"
+    | "zone"
+    | "occasion"
+    | "allergies"
     | "preferredChannel"
     | "privacyAccepted"
     | "honeypot"
@@ -103,7 +115,8 @@ export interface ReservationSubmission {
     | "error"
     | "offline"
     | "timeout"
-    | "rate_limited";
+    | "rate_limited"
+    | "action_required";
   readonly title?: string;
   readonly message: string;
   readonly result?: ReservationResult;
@@ -121,6 +134,9 @@ export interface ReservationFormValues {
   readonly time: string;
   readonly guests: string;
   readonly message: string;
+  readonly zone: "sin-preferencia" | "interior" | "terraza";
+  readonly occasion: string;
+  readonly allergies: string;
   readonly preferredChannel: ReservationPreferredChannel;
   readonly privacyAccepted: boolean;
   readonly website: string;

@@ -2,7 +2,11 @@ import { Container } from "@/components/layout/Container";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { Button } from "@/components/ui/Button";
 import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
-import { getLegalPageByPath, getSeoPageByPath } from "@/content";
+import {
+  getLegalPageByPath,
+  getPublicLegalIdentity,
+  getSeoPageByPath,
+} from "@/content";
 import { useConsent } from "@/features/consent";
 
 interface LegalPageProps {
@@ -11,18 +15,11 @@ interface LegalPageProps {
   readonly body: string;
 }
 
-function getLegalReviewNote(status?: string) {
-  if (status === "PENDING_VALIDATION") {
-    return "Texto informativo pendiente de revision final con el titular.";
-  }
-
-  return "Texto legal informativo.";
-}
-
 export function LegalPage({ title, path, body }: LegalPageProps) {
   const seoPage = getSeoPageByPath(path);
   const legalPage = getLegalPageByPath(path);
   const { openPreferences } = useConsent();
+  const identity = getPublicLegalIdentity();
 
   return (
     <>
@@ -46,9 +43,13 @@ export function LegalPage({ title, path, body }: LegalPageProps) {
           </header>
           <div className="legal-page__body">
             <p>{body}</p>
-            <p className="legal-page__status">
-              {getLegalReviewNote(legalPage?.status)}
-            </p>
+            <p>Nombre comercial: {identity.tradeName}</p>
+            {identity.contactEmail ? (
+              <p>Contacto: {identity.contactEmail}</p>
+            ) : null}
+            {identity.contactPhone ? (
+              <p>Telefono: {identity.contactPhone}</p>
+            ) : null}
           </div>
           {legalPage?.sections?.map((section) => (
             <section className="legal-page__section" key={section.id}>

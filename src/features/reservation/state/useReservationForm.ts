@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { reservationAdapter } from "@/features/reservation/adapters/MockReservationAdapter";
+import { reservationProvider } from "@/services/reservations/reservationProvider";
 import { trackReservationSubmission } from "@/features/reservation/analytics/reservationAnalytics";
 import {
   buildReservationRequest,
@@ -22,6 +22,9 @@ const initialValues: ReservationFormValues = {
   time: "",
   guests: "2",
   message: "",
+  zone: "sin-preferencia",
+  occasion: "",
+  allergies: "",
   preferredChannel: "phone",
   privacyAccepted: false,
   website: "",
@@ -190,14 +193,18 @@ export function useReservationForm(context: ReservationContext) {
     });
     trackReservationSubmission(request);
 
-    const result = await reservationAdapter.submit(request);
+    const result = await reservationProvider.submit(request);
     if (result.status === "success") {
       lastResolvedFingerprintRef.current = request.metadata.fingerprint;
     }
 
     setSubmission({
       status:
-        result.status === "success" ? "success" : mapResultStatus(result.code),
+        result.status === "success"
+          ? "success"
+          : result.status === "action_required"
+            ? "action_required"
+            : mapResultStatus(result.code),
       title: result.title,
       message: result.message,
       result,
