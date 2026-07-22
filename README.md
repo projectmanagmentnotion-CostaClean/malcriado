@@ -4,7 +4,7 @@ Reconstrucción profesional de Malcriado, restaurante de cocina fusión latinoam
 
 ## Estado
 
-Fases 0–11 y 12A cerradas. Fase 12B prepara el candidato de producción en `codex/phase-12b-production-launch`:
+Fases 0–12B cerradas. La web está publicada en [malcriadobcn.com](https://malcriadobcn.com/) desde el 2026-07-22 y la Fase 12C registra la verificación post-lanzamiento:
 
 - reserva operativa por WhatsApp y correo, sin backend ni persistencia;
 - Zod, UUID, honeypot y consentimiento específico para alergias;
@@ -12,6 +12,8 @@ Fases 0–11 y 12A cerradas. Fase 12B prepara el candidato de producción en `co
 - build SiteGround reproducible, ZIP y checksums;
 - rutas internas excluidas del build de producción;
 - runbooks de backup, despliegue, rollback, smoke y monitorización.
+
+El smoke remoto cerró con 45 E2E aprobadas, Axe sin violaciones en las superficies auditadas, canonical/SSL/redirecciones correctos y sin requests externas inesperadas. El backup anterior y el rollback permanecen disponibles durante la estabilización.
 
 No existe Supabase, base de datos, SMTP, webhook o función serverless. `api` es arquitectura futura inactiva. Preparar una solicitud no afirma que se haya enviado, almacenado o confirmado.
 

@@ -1,28 +1,34 @@
 # Backup previo a producción
 
-No se puede marcar este documento como ejecutado sin acceso operativo al hosting. El 2026-07-22 se comprobó la sesión disponible y `my.siteground.com` redirigió al formulario de inicio de sesión; no se introdujeron credenciales ni se modificó el hosting.
+## Registro ejecutado
 
-## Registro obligatorio
+| Campo | Valor |
+| --- | --- |
+| Estado | `VERIFIED_RESTORABLE` |
+| Fecha y hora Europe/Madrid | 2026-07-22 15:28–15:34 CEST |
+| Dominio | `malcriadobcn.com` |
+| Document root | `malcriadobcn.com/public_html` |
+| Web anterior | WordPress (`index.php`, `.htaccess`, `wp-content/`) |
+| Backup de SiteGround | `production-before-launch-20260722-1528` |
+| Backup local | `backups/production-before-launch-20260722-1528.zip` |
+| SHA-256 local | `479fe7dbe6c8d04d1337f6206289e9c184531c9fd6ed3016a140d26ca4beac` |
+| Tamaño local | 491.740.260 bytes |
+| Copia extraída | `backups/production-before-launch-20260722-1528/` |
+| Copia fuera del document root | `/malcriadobcn.com/production-before-launch-20260722-1528.zip` |
 
-| Campo                             | Valor                          |
-| --------------------------------- | ------------------------------ |
-| Estado                            | `BLOCKED_NO_AUTHENTICATED_SESSION` |
-| Fecha y hora Europe/Madrid        | 2026-07-22; hora exacta no registrada |
-| Dominio                           | `malcriadobcn.com`             |
-| Document root verificado          | pendiente                      |
-| Método                            | SiteGround File Manager o SFTP |
-| Archivo de backup                 | pendiente                      |
-| SHA-256                           | pendiente                      |
-| Ubicación fuera del document root | pendiente                      |
-| Operador                          | pendiente                      |
+El ZIP local se abrió y listó correctamente: 24.731 entradas. La copia extraída contiene 21.208 archivos y 758.023.461 bytes. Se comprobaron expresamente `public_html/index.php`, `public_html/.htaccess` y `public_html/wp-content/`.
 
-## Procedimiento
+SiteGround confirmó que el backup manual permite restaurar todos los archivos y bases de datos, solo archivos, solo bases de datos o e-mail. No se ejecutó una restauración destructiva; se verificaron el backup, sus controles de restauración y la ruta operativa.
 
-1. Identificar el document root en Site Tools y registrarlo.
-2. Comprimir todos los archivos actuales, incluidos dotfiles como `.htaccess`.
-3. Descargar el archivo fuera del hosting y calcular SHA-256.
-4. Si existe base de datos de la web anterior, exportarla desde Site Tools aunque la nueva web no use base de datos.
-5. Conservar backup y exportación durante el despliegue y la ventana de estabilización.
-6. Probar que el ZIP se puede listar/abrir antes de reemplazar archivos.
+## Rollback preparado
 
-Sin los campos anteriores completos no se autoriza una acción destructiva en producción.
+Durante el intercambio, las 24 entradas de la web anterior se movieron a `/malcriadobcn.com/public_html_before_launch_20260722_1528/`. La carpeta conserva `index.php`, `.htaccess`, `wp-content/` y el resto de WordPress.
+
+Rollback inmediato:
+
+1. Vaciar `malcriadobcn.com/public_html` moviendo fuera las siete entradas del build estático.
+2. Mover las 24 entradas de `public_html_before_launch_20260722_1528/` de vuelta a `public_html/`.
+3. Purgar la caché dinámica y comprobar Home, SSL y rutas internas.
+4. Si el rollback por archivos no es suficiente, restaurar el backup manual desde Site Tools → Seguridad → Backups.
+
+Los backups deben conservarse durante la ventana de estabilización y no contienen nuevas solicitudes de reserva: el modo publicado no persiste datos.

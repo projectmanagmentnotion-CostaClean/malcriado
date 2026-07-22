@@ -437,11 +437,11 @@ Fase 12A quedó integrada en `main` mediante squash (`31f7765e467e53ed96544f3b0a
 - [x] Plan de backup, despliegue SiteGround y rollback.
 - [x] Runbook de smoke y monitorización.
 - [x] Revisión independiente, Axe de producción y verificación automatizada del ZIP.
-- [ ] Backup real de la web actual, condicionado a acceso SiteGround.
-- [ ] Despliegue real, purga de caché y smoke remoto.
+- [x] Backup real de la web anterior en SiteGround y copia local verificada.
+- [x] Despliegue real, purga de caché y smoke remoto.
 - [ ] Search Console y revisión post-lanzamiento 24 h / 7 días.
 
-Decisión técnica del candidato: `GO` para revisión independiente y CI. Decisión de publicación: `NO-GO` mientras el backup real no esté registrado o no exista acceso operativo al hosting.
+Producción publicada el 2026-07-22 a las 16:12 CEST desde `main` `8d16c4fc99c8be03bfd69a0f726ddac39fa472e9`. Backup y rollback verificados, 45 E2E remotas aprobadas, Axe limpio y Lighthouse remoto registrado. Decisión final: `GO`; no quedaron P0/P1 tras purgar la caché dinámica heredada.
 
 **Aceptacion:** produccion estable, reservas verificadas y rollback disponible.
 

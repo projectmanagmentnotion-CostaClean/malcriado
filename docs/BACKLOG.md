@@ -1,12 +1,13 @@
 # Backlog
 
-## Estado Fase 12B
+## Estado Fase 12C
 
 - `CERRADO`: modo de contacto sin persistencia, con UUID, Zod y acciones explícitas.
 - `CERRADO`: rutas dev fuera del build de producción y 404 en `/dev/*`.
 - `CERRADO`: paquete reproducible SiteGround con checksums.
-- `P0 OPERATIVO`: ejecutar y verificar backup real antes de publicar; depende de acceso SiteGround.
-- `P0 OPERATIVO`: smoke remoto tras despliegue; no puede sustituirse por preview local.
+- `CERRADO`: backup real de SiteGround y copia local restaurable verificados antes de publicar.
+- `CERRADO`: despliegue, purga de caché y smoke remoto completados el 2026-07-22.
+- `P3 OPERATIVO`: control post-lanzamiento a 24 horas y 7 días, incluido Search Console cuando esté disponible.
 - `P1`: validación final de horarios/precios y datos jurídicos por el titular.
 - `P2`: activar proveedor API futuro solo tras revisión legal, seguridad, staging y rollback a `contact`.
 - `P2`: pasada humana con NVDA/VoiceOver y dispositivos Safari/iOS/Android reales.
@@ -97,14 +98,14 @@
 
 ## P3
 
-- Confirmar LCP p75 en staging y valorar prerender del shell SPA.
-  Razon: Lighthouse local identifica la imagen hero como LCP y confirma descarga rapida/prioridad alta, pero el arranque de React bajo CPU simulado mantiene Home en ~4,40 s.
-  Dependencia: staging controlado y dispositivo real.
+- Confirmar LCP p75 de campo y valorar prerender del shell SPA.
+  Razon: Lighthouse remoto identifica `asset-019` como LCP; Home móvil midió 3,42 s y Reserva móvil 3,28 s, con prioridad alta, CLS 0 y puntuaciones 91/92. No existen aún datos p75 reales.
+  Dependencia: tráfico de producción y dispositivo real.
   Fase: `Fase 12`.
   Criterio de cierre: LCP p75 <= 2,5 s o plan de arquitectura aprobado antes de produccion.
 
-- Confirmar CWV en preview o produccion real con red y hardware menos favorables.
-  Razon: la repeticion independiente de Lighthouse en local ya no reproduce la degradacion anterior, pero sigue siendo medicion de laboratorio.
-  Dependencia: entorno de preview o produccion controlado.
+- Confirmar CWV de campo con red y hardware menos favorables.
+  Razon: producción ya dispone de línea base Lighthouse, pero sigue siendo una medición de laboratorio.
+  Dependencia: datos reales suficientes en producción.
   Fase: `Fase 11` y `Fase 12`.
   Criterio de cierre: metrica real registrada y dentro de presupuesto aceptado.
