@@ -43,6 +43,12 @@ jobs:
         run: npm run build
       - name: Bundle budget
         run: npm run bundle:budget
+      - name: Build production release
+        run: npm run release:build
+      - name: Verify production release
+        env:
+          EXPECTED_RELEASE_SHA256: b43ef4ff6d395b820067641a15883a174256dfba9b7e16f061e6c87004ae997a
+        run: npm run release:verify
       - name: Dependency audit
         run: npm audit --audit-level=high
 
@@ -64,6 +70,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: E2E
         run: npm run test:e2e
+      - name: Production Axe audit
+        run: npm run accessibility:axe
       - name: Upload E2E diagnostics
         if: failure()
         uses: actions/upload-artifact@v4

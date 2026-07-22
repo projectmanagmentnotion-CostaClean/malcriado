@@ -1,78 +1,70 @@
-# Malcriado BCN - Website Rebuild
+# Malcriado BCN — web oficial
 
-Nueva web oficial de Malcriado, restaurante de cocina fusion latinoamericana y mediterranea frente al mar en Pineda de Mar.
-
-Este repositorio se trata como un proyecto nuevo. La web existente se usa unicamente como fuente auditada de marca, logos, fotografias, videos, carta, datos comerciales y contenido editorial. No se reutiliza ninguna base de datos ni arquitectura heredada.
-
-## Objetivo
-
-Construir una experiencia web inmersiva, rapida, accesible y orientada a conversion que:
-
-- convierta visitas en reservas mediante un formulario claro;
-- permita destacar platos, menus y ofertas por dia, semana o temporada;
-- posicione Malcriado en busquedas locales de Pineda de Mar, Maresme y costa de Barcelona;
-- reutilice y optimice todos los assets validos de la web actual;
-- use GSAP y ScrollTrigger como sistema de movimiento, sin sacrificar rendimiento, accesibilidad ni navegacion;
-- funcione de forma robusta en movil, tablet, escritorio y dispositivos con capacidades reducidas.
-
-## Documentacion de gobierno
-
-La ejecucion se rige por `AGENTS.md` y por los documentos de `/docs`. El orden obligatorio de lectura para Codex es:
-
-1. `AGENTS.md`
-2. `docs/PRODUCT_STRATEGY.md`
-3. `docs/INFORMATION_ARCHITECTURE.md`
-4. `docs/DESIGN_SYSTEM.md`
-5. `docs/MOTION_GSAP.md`
-6. `docs/RESPONSIVE_PRODUCTION.md`
-7. `docs/ACCESSIBILITY_EU_LEGAL.md`
-8. `docs/SEO_LOCAL.md`
-9. `docs/ASSET_MIGRATION.md`
-10. `docs/ROADMAP.md`
-11. `docs/QUALITY_GATES.md`
+Reconstrucción profesional de Malcriado, restaurante de cocina fusión latinoamericana y mediterránea frente al mar en Pineda de Mar. Es un proyecto nuevo en Vite, React y TypeScript; la web anterior solo se usa como fuente auditada de contenido y assets.
 
 ## Estado
 
-Fase 0, Fase 1, Fase 2, Fase 3, Fase 4, Fase 5, Fase 6, Fase 7, Fase 8, Fase 9 y Fase 10 cerradas.
+Fases 0–11 y 12A cerradas. Fase 12B prepara el candidato de producción en `codex/phase-12b-production-launch`:
 
-Fase 11 queda cerrada tecnicamente a nivel local sobre la rama `codex/phase-11-integral-qa`:
+- reserva operativa por WhatsApp y correo, sin backend ni persistencia;
+- Zod, UUID, honeypot y consentimiento específico para alergias;
+- proveedor estable con modos `contact`, `api` y `disabled`;
+- build SiteGround reproducible, ZIP y checksums;
+- rutas internas excluidas del build de producción;
+- runbooks de backup, despliegue, rollback, smoke y monitorización.
 
-- QA integral completada sobre todas las rutas publicas
-- copy publico naturalizado y sin lenguaje interno de auditoria
-- routes, SEO, redirects, consent y reserva revalidados
-- `68/68` tests unitarios/integracion
-- `47 passed / 5 skipped` en E2E
-- Axe manual automatizado sin violaciones serias o criticas en las rutas auditadas
-- bundle budget en `pass`
-- Lighthouse local:
-  - `/`: `99 / 100 / 100 / 100`
-  - `/menu/`: `99 / 100 / 100 / 100`
-- build de produccion reproducible y preview validada
-- lanzamiento todavia bloqueado por datos del titular y deuda comercial/legal pendiente
+No existe Supabase, base de datos, SMTP, webhook o función serverless. `api` es arquitectura futura inactiva. Preparar una solicitud no afirma que se haya enviado, almacenado o confirmado.
 
-## Hitos implementados
+## Desarrollo
 
-- Vite + React + TypeScript estricto en la raiz del repositorio.
-- Routing accesible con shell publico y shell interno `/dev/`.
-- SEO base, canonical, sitemap, redirects y JSON-LD extensible.
-- Abstraccion de reservas sustituible.
-- Base GSAP segura para React y reduced motion.
-- Tests con Vitest, Testing Library, Axe y Playwright.
-- Home inmersiva final organizada por escenas.
-- Pipeline de assets con auditoria, manifiesto enriquecido, derivados responsive y ruta interna `/dev/assets/`.
-- Modelo editorial tipado con validacion Zod, scripts de auditoria y ruta interna `/dev/content/`.
-- Sistema de diseno con tokens, tipografia autocontenida y catalogo `/dev/design-system/`.
-- Carta HTML, especiales honestos, reserva accesible, legales, consentimiento, motion polish y documentacion de QA integral en `docs/`.
+Requisitos: Node `>=20.19.0`, npm y Chromium para Playwright.
 
-## Calidad conocida
+```bash
+npm ci
+copy .env.example .env
+npm run dev -- --host 127.0.0.1
+```
 
-- `content:validate`: `0` errores, `130` warnings
-- `test:run`: `68/68`
-- `test:e2e`: `47 passed / 5 skipped`
-- `bundle:budget`: `pass`
-- Axe en rutas publicas auditadas: `0` violaciones serias o criticas
-- responsive: matriz validada en Fase 11 con una sola deuda menor de emulacion en Home `320x568` sin scroll horizontal real
+Variables no secretas:
 
-## Siguiente bloque
+```dotenv
+VITE_PUBLIC_SITE_URL=http://127.0.0.1:5173
+VITE_RESERVATION_MODE=contact
+VITE_RESERVATION_API_URL=
+VITE_ENABLE_DEV_ROUTES=true
+VITE_ENABLE_ANALYTICS=false
+VITE_STAGING_NOINDEX=false
+```
 
-El siguiente bloque exacto del roadmap, sin iniciarlo en este repo todavia, es `Fase 12 - Lanzamiento`.
+## QA
+
+```bash
+npm run qa
+npm run test:e2e
+npm run bundle:budget
+npm run lighthouse:ci
+npm audit
+git diff --check
+```
+
+`qa` incluye formato, lint, TypeScript, contenido, rutas, SEO, assets, tests y build.
+
+## Producción
+
+```bash
+npm ci
+npm run qa
+npm run release:build
+```
+
+Salidas locales ignoradas por Git:
+
+- `release/malcriado-production/`
+- `release/malcriado-production.zip`
+- `release/malcriado-production.sha256`
+
+El build fuerza `https://malcriadobcn.com`, reservas `contact`, dev routes/analytics desactivados e indexación de producción. Consulta [PRODUCTION_BUILD.md](docs/release/PRODUCTION_BUILD.md) y [PRODUCTION_DEPLOYMENT.md](docs/release/PRODUCTION_DEPLOYMENT.md).
+
+## Gobierno
+
+La ejecución se rige por `AGENTS.md`, `docs/ROADMAP.md`, los ADR y el resto de `/docs`. No se inventan precios, horarios, alérgenos, ingredientes, promociones o identidad jurídica. Los datos legales ausentes se omiten y requieren revisión final del titular/profesional competente.

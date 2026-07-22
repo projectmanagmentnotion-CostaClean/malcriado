@@ -77,8 +77,8 @@ export function ReservationForm({ context }: ReservationFormProps) {
         }}
       >
         <FormSection
-          body="El resultado final siempre es solicitud enviada, nunca reserva confirmada. Fecha, hora y capacidad siguen sujetas a validacion manual del equipo."
-          title="Datos de la solicitud"
+          body="Completa los datos y continúa por WhatsApp o correo. El equipo revisará la disponibilidad y te confirmará personalmente la reserva."
+          title="Solicita tu mesa"
         >
           <ReservationStatusPanel
             onRetry={() => {
@@ -333,7 +333,7 @@ export function ReservationForm({ context }: ReservationFormProps) {
             </FormField>
           </div>
           <FormField
-            description="El equipo revisara esta informacion antes de responder. Consulta siempre antes de realizar tu pedido."
+            description="Solo se añadirá al mensaje si marcas el consentimiento específico que aparece a continuación."
             error={errorMap.get("allergies")}
             htmlFor="booking-allergies"
             label="Alergias o intolerancias"
@@ -352,6 +352,14 @@ export function ReservationForm({ context }: ReservationFormProps) {
               value={values.allergies}
             />
           </FormField>
+          <Checkbox
+            checked={values.includeAllergiesInMessage}
+            label="Incluir en el mensaje la información sobre alergias o intolerancias que he indicado."
+            name="includeAllergiesInMessage"
+            onChange={(event) =>
+              setFieldValue("includeAllergiesInMessage", event.target.checked)
+            }
+          />
           <p className="reservation-inline-note">
             ¿Tienes alguna alergia o intolerancia? Consulta con nuestro equipo
             antes de realizar tu pedido.{" "}
@@ -361,7 +369,7 @@ export function ReservationForm({ context }: ReservationFormProps) {
             .
           </p>
           <FormField
-            description="Acceso, carrito o cualquier otro detalle relevante."
+            description="Añade solo comentarios necesarios y no sensibles, como acceso, carrito u otra preferencia."
             error={errorMap.get("message")}
             htmlFor="booking-message"
             label="Mensaje"
@@ -427,7 +435,7 @@ export function ReservationForm({ context }: ReservationFormProps) {
               Ver canales alternativos
             </LinkButton>
             <TextLink to="/contacto/">
-              Tambien puedes confirmar por telefono o WhatsApp
+              Tambien puedes solicitar por telefono o WhatsApp
             </TextLink>
           </div>
         </FormSection>
@@ -437,8 +445,8 @@ export function ReservationForm({ context }: ReservationFormProps) {
           type="submit"
         >
           {submission.status === "submitting"
-            ? "Enviando solicitud..."
-            : "Enviar solicitud"}
+            ? "Preparando solicitud..."
+            : "Preparar solicitud"}
         </button>
         <ul className="booking-hero__list">
           {bookingChannels.map((channel) => (

@@ -25,6 +25,7 @@ describe("reservation analytics payload", () => {
       },
       consent: {
         privacyAccepted: true,
+        includeAllergiesInMessage: false,
       },
       context: parseReservationContext(
         new URLSearchParams("dish=pizza-margarita&context=home-hero"),

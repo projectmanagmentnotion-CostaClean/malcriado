@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
 
-function getFutureDateIso(daysAhead: number) {
+function getFutureServiceDateIso() {
   const date = new Date();
-  date.setDate(date.getDate() + daysAhead);
+  do {
+    date.setDate(date.getDate() + 1);
+  } while (date.getDay() === 1);
   return date.toISOString().slice(0, 10);
 }
 
@@ -134,17 +136,15 @@ test("reservation form requires an explicit delivery channel", async ({
   page,
 }) => {
   await page.goto("/reservar/");
-  await page.getByLabel("Fecha").fill(getFutureDateIso(2));
+  await page.getByLabel("Fecha").fill(getFutureServiceDateIso());
   await page.getByLabel("Hora").fill("20:00");
   await page.locator("#booking-guests").fill("2");
   await page.getByLabel("Nombre").fill("Ada Lovelace");
   await page.getByLabel("Telefono").fill("+34 600 000 000");
   await page.getByLabel(/He leido la informacion de privacidad/i).check();
   await page.waitForTimeout(3100);
-  await page.getByRole("button", { name: /enviar solicitud/i }).click();
-  await expect(
-    page.getByText(/la web no marcará la solicitud como recibida/i),
-  ).toBeVisible();
+  await page.getByRole("button", { name: /preparar solicitud/i }).click();
+  await expect(page.getByText(/tu solicitud está lista/i)).toBeVisible();
   await expect(
     page.getByRole("link", { name: /enviar por whatsapp/i }),
   ).toBeVisible();
@@ -193,13 +193,13 @@ test("home hero booking CTA survives navigation, reload and history", async ({
 
   await expect(page).toHaveURL(/\/reservar\/\?context=home-hero$/);
   await expect(
-    page.getByRole("heading", { level: 1, name: /solicitud de reserva/i }),
+    page.getByRole("heading", { level: 1, name: /solicita tu mesa/i }),
   ).toBeVisible();
 
   await page.reload();
   await expect(page).toHaveURL(/\/reservar\/\?context=home-hero$/);
   await expect(
-    page.getByRole("heading", { level: 1, name: /solicitud de reserva/i }),
+    page.getByRole("heading", { level: 1, name: /solicita tu mesa/i }),
   ).toBeVisible();
 
   await page.goBack();
@@ -214,7 +214,7 @@ test("home hero booking CTA survives navigation, reload and history", async ({
   await page.goForward();
   await expect(page).toHaveURL(/\/reservar\/\?context=home-hero$/);
   await expect(
-    page.getByRole("heading", { level: 1, name: /solicitud de reserva/i }),
+    page.getByRole("heading", { level: 1, name: /solicita tu mesa/i }),
   ).toBeVisible();
 });
 
@@ -247,7 +247,7 @@ test("rapid route navigation keeps shell stable without console errors", async (
 
   await page.goto("/reservar/", { waitUntil: "domcontentloaded" });
   await expect(
-    page.getByRole("heading", { level: 1, name: /solicitud de reserva/i }),
+    page.getByRole("heading", { level: 1, name: /solicita tu mesa/i }),
   ).toBeVisible();
 
   await page.goBack({ waitUntil: "domcontentloaded" });
@@ -283,40 +283,17 @@ test("accessibility statement route renders public compliance copy", async ({
   ).toBeVisible();
 });
 
-test("dev assets route exposes the internal asset catalog", async ({
+test("production build blocks all internal development routes", async ({
   page,
 }) => {
-  await page.goto("/dev/assets/");
-  await expect(
-    page.getByRole("heading", { name: /catalogo de assets/i }),
-  ).toBeVisible();
-  await expect(page.getByText(/Dev only/i)).toBeVisible();
-});
-
-test("dev content route exposes the editorial audit panel", async ({
-  page,
-}) => {
-  await page.goto("/dev/content/");
-  await expect(
-    page.getByRole("heading", { name: /auditoria editorial/i }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: /estados pendientes/i }),
-  ).toBeVisible();
-});
-
-test("dev design system route exposes the internal component catalog", async ({
-  page,
-}) => {
-  await page.goto("/dev/design-system/");
-  await expect(
-    page.getByRole("heading", {
-      name: /catalogo interno del sistema de diseno/i,
-    }),
-  ).toBeVisible();
-
-  const overflow = await page.evaluate(
-    () => document.documentElement.scrollWidth > window.innerWidth,
-  );
-  expect(overflow).toBeFalsy();
+  for (const path of [
+    "/dev/assets/",
+    "/dev/content/",
+    "/dev/design-system/",
+    "/dev/reservations/",
+  ]) {
+    await page.goto(path);
+    await expect(page.getByRole("heading", { name: "404" })).toBeVisible();
+    await expect(page.getByText(/recorrido publico/i)).toBeVisible();
+  }
 });

@@ -425,17 +425,23 @@ Fase 7 no debe marcarse como completamente publicada hasta tener:
 - [ ] Publicar staging y completar QA en dispositivos reales.
 - [ ] Validacion comercial, juridica y de alergenos por el titular.
 
-Decision actual: `NO-GO` para dominio principal; staging queda preparado pero no desplegado.
+Fase 12A quedó integrada en `main` mediante squash (`31f7765e467e53ed96544f3b0a91da613caf97c1`). El backend propuesto no se activa para el lanzamiento: Fase 12B adopta el modo de contacto sin persistencia.
 
-Revision independiente de PR #13: P0-P2 tecnicos corregidos. CI queda dividido en checks `quality`, `e2e` y `lighthouse`; el paso a staging exige CI remoto verde. Produccion sigue bloqueada por validacion del titular, backend real, QA humano y CWV de staging.
+### Fase 12B - candidato de producción por contacto
 
-- [ ] Build de produccion reproducible.
-- [ ] Backup de web actual.
-- [ ] Plan de despliegue y rollback.
-- [ ] Verificacion DNS/SSL/cache.
-- [ ] Smoke test de produccion.
-- [ ] Search Console, analitica consentida y monitorizacion.
-- [ ] Revision post-lanzamiento 24 h / 7 dias.
+- [x] Proveedor `contact` sin fetch, persistencia o falso éxito.
+- [x] WhatsApp/correo explícitos con vista previa y consentimiento de alergias.
+- [x] Modos `contact`, `api` y `disabled` tras una interfaz estable.
+- [x] Dev routes bloqueadas y excluidas del build de producción.
+- [x] Build reproducible, ZIP y checksums.
+- [x] Plan de backup, despliegue SiteGround y rollback.
+- [x] Runbook de smoke y monitorización.
+- [x] Revisión independiente, Axe de producción y verificación automatizada del ZIP.
+- [ ] Backup real de la web actual, condicionado a acceso SiteGround.
+- [ ] Despliegue real, purga de caché y smoke remoto.
+- [ ] Search Console y revisión post-lanzamiento 24 h / 7 días.
+
+Decisión técnica del candidato: `GO` para revisión independiente y CI. Decisión de publicación: `NO-GO` mientras el backup real no esté registrado o no exista acceso operativo al hosting.
 
 **Aceptacion:** produccion estable, reservas verificadas y rollback disponible.
 

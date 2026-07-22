@@ -28,6 +28,7 @@ describe("reservation validation", () => {
         message: "",
         preferredChannel: "email",
         privacyAccepted: true,
+        includeAllergiesInMessage: false,
         website: "",
       },
     });
@@ -60,6 +61,7 @@ describe("reservation validation", () => {
         message: "Mesa tranquila, por favor",
         preferredChannel: "whatsapp",
         privacyAccepted: true,
+        includeAllergiesInMessage: false,
         website: "",
       },
     });
@@ -90,6 +92,7 @@ describe("reservation validation", () => {
         message: "",
         preferredChannel: "phone",
         privacyAccepted: true,
+        includeAllergiesInMessage: false,
         website: "",
       },
     });

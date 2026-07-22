@@ -1,5 +1,16 @@
 # Backlog
 
+## Estado Fase 12B
+
+- `CERRADO`: modo de contacto sin persistencia, con UUID, Zod y acciones explícitas.
+- `CERRADO`: rutas dev fuera del build de producción y 404 en `/dev/*`.
+- `CERRADO`: paquete reproducible SiteGround con checksums.
+- `P0 OPERATIVO`: ejecutar y verificar backup real antes de publicar; depende de acceso SiteGround.
+- `P0 OPERATIVO`: smoke remoto tras despliegue; no puede sustituirse por preview local.
+- `P1`: validación final de horarios/precios y datos jurídicos por el titular.
+- `P2`: activar proveedor API futuro solo tras revisión legal, seguridad, staging y rollback a `contact`.
+- `P2`: pasada humana con NVDA/VoiceOver y dispositivos Safari/iOS/Android reales.
+
 ## P0
 
 - Despublicar o bloquear `sample-page`.

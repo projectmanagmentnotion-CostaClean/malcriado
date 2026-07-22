@@ -24,7 +24,7 @@ export const bookingChannels: readonly BookingChannel[] = [
 
 export const bookingPolicy: BookingPolicy = {
   summary:
-    "La web solo puede comunicar solicitud enviada. La disponibilidad sigue siendo manual hasta confirmar proveedor real.",
+    "Completa los datos y continúa por WhatsApp o correo. El equipo revisará la disponibilidad y te confirmará personalmente la reserva.",
   privacyStatus: "PENDING_VALIDATION",
   confirmationStatus: "MANUAL_CONFIRMATION",
   cancellationPolicy: null,

@@ -31,7 +31,9 @@ function hashString(value: string) {
     hash = Math.imul(hash, 16777619);
   }
 
-  return Math.abs(hash >>> 0).toString(36);
+  return Math.abs(hash >>> 0)
+    .toString(36)
+    .padStart(12, "0");
 }
 
 export function sanitizeReservationFormValues(
@@ -247,6 +249,7 @@ export function buildReservationFingerprint(input: {
     allergies: values.allergies,
     preferredChannel: values.preferredChannel,
     privacyAccepted: values.privacyAccepted,
+    includeAllergiesInMessage: values.includeAllergiesInMessage,
     context: input.context.tags.map((tag) => `${tag.kind}:${tag.slug}`),
   });
 
@@ -313,6 +316,7 @@ export function buildReservationRequest(input: {
     },
     consent: {
       privacyAccepted: values.privacyAccepted,
+      includeAllergiesInMessage: values.includeAllergiesInMessage,
     },
     context: input.context,
     metadata: {

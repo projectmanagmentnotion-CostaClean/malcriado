@@ -1,9 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { reservationProvider } from "@/services/reservations/reservationProvider";
 import { trackReservationSubmission } from "@/features/reservation/analytics/reservationAnalytics";
 import {
   buildReservationRequest,
-  buildReservationFingerprint,
   sanitizeReservationFormValues,
   validateReservationFormValues,
 } from "@/features/reservation/validation/reservationValidation";
@@ -27,13 +26,15 @@ const initialValues: ReservationFormValues = {
   allergies: "",
   preferredChannel: "phone",
   privacyAccepted: false,
+  includeAllergiesInMessage: false,
   website: "",
 };
 
 const initialSubmission: ReservationSubmission = {
   status: "idle",
-  title: "Solicitud de reserva",
-  message: "Completa el formulario para enviar una solicitud de reserva.",
+  title: "Solicita tu mesa",
+  message:
+    "Completa los datos y continúa por WhatsApp o correo. El equipo revisará la disponibilidad y te confirmará personalmente la reserva.",
 };
 
 export function useReservationForm(context: ReservationContext) {
@@ -44,7 +45,6 @@ export function useReservationForm(context: ReservationContext) {
       ? crypto.randomUUID().slice(0, 8)
       : `session-${Math.random().toString(36).slice(2, 10)}`,
   );
-  const lastResolvedFingerprintRef = useRef<string | null>(null);
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState<readonly ReservationError[]>([]);
   const [submission, setSubmission] =
@@ -70,38 +70,6 @@ export function useReservationForm(context: ReservationContext) {
       setSubmission(initialSubmission);
     }
   }
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    const handleOnline = () => {
-      setSubmission((current) =>
-        current.status === "offline" ? initialSubmission : current,
-      );
-    };
-    const handleOffline = () => {
-      setSubmission((current) =>
-        current.status === "success"
-          ? current
-          : {
-              status: "offline",
-              title: "Sin conexion",
-              message:
-                "No hay conexion disponible. Puedes completar el formulario y enviarlo cuando vuelva la red.",
-            },
-      );
-    };
-
-    window.addEventListener("online", handleOnline);
-    window.addEventListener("offline", handleOffline);
-
-    return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
-    };
-  }, []);
 
   function mapResultStatus(code: string) {
     switch (code) {
@@ -147,40 +115,11 @@ export function useReservationForm(context: ReservationContext) {
       };
     }
 
-    const fingerprint = buildReservationFingerprint({
-      values: validation.values,
-      context,
-    });
-
-    if (lastResolvedFingerprintRef.current === fingerprint) {
-      setSubmission({
-        status: "success",
-        title: "Solicitud ya enviada",
-        message:
-          "Ya hemos recibido esta solicitud y evitamos un segundo envio duplicado. Espera la confirmacion manual del equipo.",
-        result: {
-          status: "success",
-          code: "duplicate_ignored",
-          title: "Solicitud ya enviada",
-          message:
-            "Ya hemos recibido esta solicitud y evitamos un segundo envio duplicado. Espera la confirmacion manual del equipo.",
-          retryable: false,
-          reference: null,
-          retryAfterSeconds: null,
-          idempotencyKey: `duplicate-${fingerprint}`,
-        },
-      });
-      return {
-        ok: true as const,
-        prevented: "duplicate_completed" as const,
-      };
-    }
-
     setErrors([]);
     setSubmission({
       status: "submitting",
-      title: "Enviando solicitud",
-      message: "Enviando solicitud...",
+      title: "Preparando solicitud",
+      message: "Validando los datos en este dispositivo...",
     });
 
     attemptRef.current += 1;
@@ -193,18 +132,17 @@ export function useReservationForm(context: ReservationContext) {
     });
     trackReservationSubmission(request);
 
-    const result = await reservationProvider.submit(request);
-    if (result.status === "success") {
-      lastResolvedFingerprintRef.current = request.metadata.fingerprint;
-    }
+    const result = await reservationProvider.submit(request, context);
 
     setSubmission({
       status:
         result.status === "success"
           ? "success"
-          : result.status === "action_required"
-            ? "action_required"
-            : mapResultStatus(result.code),
+          : result.status === "prepared_for_contact"
+            ? "prepared_for_contact"
+            : result.status === "action_required"
+              ? "action_required"
+              : mapResultStatus(result.code),
       title: result.title,
       message: result.message,
       result,
