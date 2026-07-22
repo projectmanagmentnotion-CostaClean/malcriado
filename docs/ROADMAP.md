@@ -302,13 +302,37 @@ Fase 7 no debe marcarse como completamente publicada hasta tener:
 
 ## Fase 10 - Motion polish
 
-- [ ] Auditar cada escena GSAP.
-- [ ] Reducir triggers y coste de pintura.
-- [ ] Afinar timings y continuidad.
-- [ ] Probar orientation changes, back/forward y navegacion rapida.
-- [ ] Validar reduced motion.
+- [x] Auditar cada escena GSAP.
+- [x] Reducir triggers y coste de pintura.
+- [x] Afinar timings y continuidad.
+- [x] Probar orientation changes, back/forward y navegacion rapida.
+- [x] Validar reduced motion.
 
 **Aceptacion:** ninguna animacion genera overflow, perdida de foco, contenido inaccesible o caida significativa de interaccion.
+
+### Resultado de la Fase 10
+
+- Auditoria documentada en `docs/motion/PHASE_10_MOTION_AUDIT.md`.
+- QA consolidada en `docs/qa/PHASE_10_MOTION_QA.md`.
+- Home deja de crear triggers de header en reduced motion; el contenido sigue completo sin escenas activas.
+- Carta elimina listeners manuales de hover/focus y reduce trabajo innecesario a reveal/parallax utiles.
+- Nuevo helper `src/motion/utilities/scrollTriggerLifecycle.ts` para `resize`, `orientationchange` y `pageshow` persistido.
+- Triggers dependientes de viewport con `invalidateOnRefresh`.
+- Navegacion rapida cubierta por smoke E2E sin errores de consola relevantes.
+- Bundle:
+  - presupuesto: `500 kB`
+  - chunk inicial final: `169.26 kB`
+- Lighthouse desktop sobre preview de produccion:
+  - `/`: `97 / 100 / 100 / 100`
+  - `/menu/`: `99 / 100 / 100 / 100`
+- QA local cerrada:
+  - `npm run qa`
+  - `npm run test:e2e`
+  - `npm run bundle:budget`
+  - `git diff --check`
+- Deuda abierta:
+  - pasada humana con lector de pantalla real
+  - warnings editoriales y legales heredados fuera del alcance de motion polish
 
 ## Fase 11 - QA integral
 

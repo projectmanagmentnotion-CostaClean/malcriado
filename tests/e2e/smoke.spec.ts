@@ -213,6 +213,55 @@ test("home hero booking CTA survives navigation, reload and history", async ({
   ).toBeVisible();
 });
 
+test("rapid route navigation keeps shell stable without console errors", async ({
+  page,
+}) => {
+  const severeConsoleErrors: string[] = [];
+
+  page.on("console", (message) => {
+    if (
+      message.type() === "error" &&
+      !message.text().includes("Failed to load resource")
+    ) {
+      severeConsoleErrors.push(message.text());
+    }
+  });
+
+  await page.goto("/");
+  await page.goto("/menu/", { waitUntil: "domcontentloaded" });
+  await expect(
+    page.getByRole("heading", { name: /carta malcriado/i }),
+  ).toBeVisible();
+
+  await page.goto("/contacto/", { waitUntil: "domcontentloaded" });
+  await expect(
+    page.getByRole("heading", { name: /contacto, ubicacion y llegada/i }),
+  ).toBeVisible();
+
+  await page.goto("/reservar/", { waitUntil: "domcontentloaded" });
+  await expect(
+    page.getByRole("heading", { level: 1, name: /solicitud de reserva/i }),
+  ).toBeVisible();
+
+  await page.goBack({ waitUntil: "domcontentloaded" });
+  await expect(page).toHaveURL(/\/contacto\/$/);
+
+  await page.goBack({ waitUntil: "domcontentloaded" });
+  await expect(page).toHaveURL(/\/menu\/$/);
+
+  await page.goForward({ waitUntil: "domcontentloaded" });
+  await expect(page).toHaveURL(/\/contacto\/$/);
+
+  await page.goto("/faq/", { waitUntil: "domcontentloaded" });
+
+  await expect(
+    page.getByRole("heading", {
+      name: /preguntas frecuentes visibles y verificables/i,
+    }),
+  ).toBeVisible();
+  expect(severeConsoleErrors).toEqual([]);
+});
+
 test("not found route returns 404 content", async ({ page }) => {
   await page.goto("/ruta-inexistente/");
   await expect(page.getByRole("heading", { name: "404" })).toBeVisible();
