@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { mkdir, readFile } from "node:fs/promises";
+import { mkdir, readFile, rm } from "node:fs/promises";
 import { spawn } from "node:child_process";
 import { resolve } from "node:path";
 
@@ -24,9 +24,43 @@ function run(command, args) {
           `${command} exited with ${code}; validating the generated report.`,
         );
       }
-      resolveRun();
+      resolveRun(code);
     });
   });
+}
+
+async function runLighthouse(name, route) {
+  const outputPath = resolve(outputDir, `${name}.json`);
+
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    await rm(outputPath, { force: true });
+    await run(npx, [
+      "--yes",
+      "lighthouse@13.4.1",
+      `${baseUrl}${route}`,
+      "--quiet",
+      "--chrome-flags=--headless --no-sandbox --disable-dev-shm-usage --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-renderer-backgrounding",
+      "--max-wait-for-load=45000",
+      "--output=json",
+      `--output-path=${outputPath}`,
+    ]);
+
+    const report = JSON.parse(await readFile(outputPath, "utf8"));
+    if (!report.runtimeError) {
+      assertReport(route, report);
+      return;
+    }
+
+    if (attempt === 2) {
+      throw new Error(
+        `Lighthouse runtime failed for ${route}: ${JSON.stringify(report.runtimeError)}`,
+      );
+    }
+
+    console.warn(
+      `Lighthouse runtime failed for ${route} (${report.runtimeError.code}); retrying once.`,
+    );
+  }
 }
 
 async function waitForPreview() {
@@ -80,17 +114,7 @@ try {
     ["home", "/"],
     ["reservar", "/reservar/"],
   ]) {
-    const outputPath = resolve(outputDir, `${name}.json`);
-    await run(npx, [
-      "--yes",
-      "lighthouse@13.4.1",
-      `${baseUrl}${route}`,
-      "--quiet",
-      "--chrome-flags=--headless --no-sandbox",
-      "--output=json",
-      `--output-path=${outputPath}`,
-    ]);
-    assertReport(route, JSON.parse(await readFile(outputPath, "utf8")));
+    await runLighthouse(name, route);
   }
 } finally {
   preview.kill();
