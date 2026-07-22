@@ -24,6 +24,7 @@ describe("booking provider", () => {
       },
       consent: {
         privacyAccepted: true,
+        includeAllergiesInMessage: false,
       },
       context: parseReservationContext(
         new URLSearchParams("context=home-hero"),

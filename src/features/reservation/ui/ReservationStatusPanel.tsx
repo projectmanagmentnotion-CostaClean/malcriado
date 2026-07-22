@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import type { ReservationSubmission } from "@/features/reservation/domain/reservationTypes";
+import { copyReservationMessage } from "@/services/reservations/reservationFallback";
 
 interface ReservationStatusPanelProps {
   readonly submission: ReservationSubmission;
@@ -9,6 +11,13 @@ export function ReservationStatusPanel({
   submission,
   onRetry,
 }: ReservationStatusPanelProps) {
+  const [channelFeedback, setChannelFeedback] = useState("");
+  const actions = submission.result?.actions;
+
+  useEffect(() => {
+    setChannelFeedback("");
+  }, [actions?.message]);
+
   if (submission.status === "idle") {
     return null;
   }
@@ -25,23 +34,60 @@ export function ReservationStatusPanel({
         <h3 className="reservation-status-panel__title">{submission.title}</h3>
       ) : null}
       <p>{submission.message}</p>
-      {submission.result?.actions ? (
-        <div className="reservation-status-panel__actions">
-          <a
-            className="ui-button ui-button--editorial ui-button--sm"
-            href={submission.result.actions.whatsappHref}
-            rel="noreferrer"
-            target="_blank"
+      {actions ? (
+        <>
+          <div className="reservation-message-preview">
+            <h4>Revisa el mensaje antes de continuar</h4>
+            <pre>{actions.message}</pre>
+          </div>
+          <div className="reservation-status-panel__actions">
+            <a
+              className="ui-button ui-button--editorial ui-button--sm"
+              href={actions.whatsappHref}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Enviar por WhatsApp
+            </a>
+            <a
+              className="ui-button ui-button--secondary ui-button--sm"
+              href={actions.emailHref}
+              onClick={() => {
+                setChannelFeedback(
+                  "Se ha abierto tu aplicación de correo. Revisa el mensaje y pulsa Enviar.",
+                );
+              }}
+            >
+              Enviar por correo
+            </a>
+          </div>
+          <div
+            aria-label="Alternativas de contacto"
+            className="reservation-status-panel__fallbacks"
           >
-            Enviar por WhatsApp
-          </a>
-          <a
-            className="ui-button ui-button--secondary ui-button--sm"
-            href={submission.result.actions.emailHref}
-          >
-            Enviar por correo
-          </a>
-        </div>
+            <button
+              className="ui-button ui-button--ghost ui-button--sm"
+              onClick={() => {
+                void copyReservationMessage(actions.message).then((copied) => {
+                  setChannelFeedback(
+                    copied
+                      ? "Mensaje copiado. Puedes pegarlo en el canal que prefieras."
+                      : "No se ha podido copiar automáticamente. Selecciona el texto de la vista previa.",
+                  );
+                });
+              }}
+              type="button"
+            >
+              Copiar mensaje
+            </button>
+            <a href={actions.telephoneHref}>Llamar al restaurante</a>
+          </div>
+          {channelFeedback ? (
+            <p aria-live="polite" className="reservation-inline-note">
+              {channelFeedback}
+            </p>
+          ) : null}
+        </>
       ) : null}
       {submission.result?.retryAfterSeconds ? (
         <p className="reservation-inline-note">
@@ -56,7 +102,7 @@ export function ReservationStatusPanel({
             onClick={onRetry}
             type="button"
           >
-            Reintentar envio
+            Reintentar
           </button>
         </div>
       ) : null}

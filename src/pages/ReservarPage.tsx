@@ -39,16 +39,16 @@ export function ReservarPage() {
               <div className="booking-hero__overlay">
                 <p className="eyebrow">Reserva</p>
                 <h1 data-route-heading="true" id="page-heading-reservar">
-                  Solicitud de reserva
+                  Solicita tu mesa
                 </h1>
                 <p>{bookingPolicy.summary}</p>
               </div>
             </div>
             <div className="booking-hero__copy">
               <p>
-                El formulario sirve para enviar una solicitud clara. La
-                confirmacion llega despues, cuando el equipo revisa fecha, hora
-                y disponibilidad real.
+                Completa los datos y continúa por WhatsApp o correo. El equipo
+                revisará la disponibilidad y te confirmará personalmente la
+                reserva.
               </p>
               <Cluster className="booking-hero__channels" gap="sm">
                 {bookingChannels.map((channel) => (

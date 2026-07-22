@@ -9,7 +9,7 @@ const validPayload = {
     email: "",
     preferredChannel: "phone",
   },
-  dateTime: { date: "2026-07-28", time: "20:30", timezone: "Europe/Madrid" },
+  dateTime: { date: "2099-08-04", time: "20:30", timezone: "Europe/Madrid" },
   preferences: {
     guests: 2,
     zone: "sin-preferencia",
@@ -17,7 +17,10 @@ const validPayload = {
     allergies: "",
     message: "",
   },
-  consent: { privacyAccepted: true },
+  consent: {
+    privacyAccepted: true,
+    includeAllergiesInMessage: false,
+  },
   context: {
     dish: null,
     category: null,
@@ -46,7 +49,15 @@ describe("reservation server contract", () => {
   it("rejects a request outside configured opening hours", () => {
     const result = reservationRequestSchema.safeParse({
       ...validPayload,
-      dateTime: { ...validPayload.dateTime, date: "2026-07-27" },
+      dateTime: { ...validPayload.dateTime, date: "2099-08-03" },
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it("rejects a past date even when it matches opening hours", () => {
+    const result = reservationRequestSchema.safeParse({
+      ...validPayload,
+      dateTime: { ...validPayload.dateTime, date: "2000-08-01" },
     });
     expect(result.success).toBe(false);
   });

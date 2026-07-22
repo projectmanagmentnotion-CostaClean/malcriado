@@ -13,3 +13,4 @@ artifacts/phase-8-baseline/
 .tmp-phase8-lighthouse.json
 .tmp-lighthouse-profile/
 .tmp-lighthouse/
+/release/

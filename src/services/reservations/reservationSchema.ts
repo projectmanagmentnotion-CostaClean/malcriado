@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { isWithinProposedOpeningHours } from "@/content/business/openingHours";
+import { getCurrentMadridDateIso } from "@/features/reservation/config/reservationConfig";
 
 const cleanText = (max: number) => z.string().trim().max(max);
 const contextEntitySchema = z
@@ -31,7 +32,10 @@ export const reservationRequestSchema = z
       allergies: cleanText(500),
       message: cleanText(500),
     }),
-    consent: z.object({ privacyAccepted: z.literal(true) }),
+    consent: z.object({
+      privacyAccepted: z.literal(true),
+      includeAllergiesInMessage: z.boolean(),
+    }),
     context: z
       .object({
         dish: contextEntitySchema.nullable(),
@@ -61,6 +65,14 @@ export const reservationRequestSchema = z
   })
   .strict()
   .superRefine((request, context) => {
+    if (request.dateTime.date < getCurrentMadridDateIso()) {
+      context.addIssue({
+        code: "custom",
+        path: ["dateTime", "date"],
+        message: "past_date",
+      });
+    }
+
     if (
       !isWithinProposedOpeningHours(
         request.dateTime.date,

@@ -1,0 +1,23 @@
+{
+  "name": "Malcriado",
+  "short_name": "Malcriado",
+  "description": "Restaurante de cocina fusión latinoamericana y mediterránea frente al mar en Pineda de Mar.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#17120f",
+  "theme_color": "#17120f",
+  "icons": [
+    {
+      "src": "/assets/optimized/asset-001/square-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/optimized/asset-001/original-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

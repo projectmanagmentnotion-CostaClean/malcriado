@@ -2368,7 +2368,8 @@ body.has-consent-dialog {
   border-color: rgba(186, 78, 70, 0.36);
 }
 
-.reservation-status-panel[data-status="success"] {
+.reservation-status-panel[data-status="success"],
+.reservation-status-panel[data-status="prepared_for_contact"] {
   border-color: rgba(75, 140, 99, 0.4);
   background: rgba(75, 140, 99, 0.1);
 }
@@ -2394,6 +2395,31 @@ body.has-consent-dialog {
 .reservation-status-panel__actions {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.reservation-message-preview {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.reservation-message-preview pre {
+  max-width: 100%;
+  margin: 0;
+  padding: var(--space-sm);
+  overflow-x: auto;
+  border: 1px solid rgba(242, 232, 218, 0.14);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--color-fg-base);
+  background: rgba(10, 10, 10, 0.28);
+  font: inherit;
+}
+
+.reservation-status-panel__fallbacks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-sm);
 }
 

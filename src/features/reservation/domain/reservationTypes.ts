@@ -43,6 +43,7 @@ export interface ReservationPreferences {
 
 export interface ReservationConsent {
   readonly privacyAccepted: boolean;
+  readonly includeAllergiesInMessage: boolean;
 }
 
 export interface ReservationRequest {
@@ -64,6 +65,7 @@ export interface ReservationRequest {
 }
 
 export type ReservationResultCode =
+  | "prepared_for_contact"
   | "pending_confirmation"
   | "duplicate_ignored"
   | "offline"
@@ -73,7 +75,8 @@ export type ReservationResultCode =
   | "channel_required";
 
 export interface ReservationResult {
-  readonly status: "success" | "error" | "action_required";
+  readonly status:
+    "success" | "error" | "action_required" | "prepared_for_contact";
   readonly code: ReservationResultCode;
   readonly title: string;
   readonly message: string;
@@ -84,6 +87,10 @@ export interface ReservationResult {
   readonly actions?: {
     readonly whatsappHref: string;
     readonly emailHref: string;
+    readonly telephoneHref: string;
+    readonly message: string;
+    readonly emailSubject: string;
+    readonly shortReference: string;
   };
 }
 
@@ -101,6 +108,7 @@ export interface ReservationError {
     | "allergies"
     | "preferredChannel"
     | "privacyAccepted"
+    | "includeAllergiesInMessage"
     | "honeypot"
     | "form";
   readonly code: string;
@@ -116,7 +124,8 @@ export interface ReservationSubmission {
     | "offline"
     | "timeout"
     | "rate_limited"
-    | "action_required";
+    | "action_required"
+    | "prepared_for_contact";
   readonly title?: string;
   readonly message: string;
   readonly result?: ReservationResult;
@@ -139,5 +148,6 @@ export interface ReservationFormValues {
   readonly allergies: string;
   readonly preferredChannel: ReservationPreferredChannel;
   readonly privacyAccepted: boolean;
+  readonly includeAllergiesInMessage: boolean;
   readonly website: string;
 }

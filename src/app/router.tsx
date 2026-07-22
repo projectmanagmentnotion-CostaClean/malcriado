@@ -1,12 +1,12 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { DevLayout } from "@/app/layout/DevLayout";
 import { PublicLayout } from "@/app/layout/PublicLayout";
 import type { ShellRouteHandle } from "@/app/shell/routeHandles";
 import { legacyRedirects, legalPages } from "@/content";
 import { HomePage } from "@/pages/HomePage";
 import { LegalPage } from "@/pages/LegalPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
+import { env } from "@/lib/env";
 const initialPath =
   typeof window !== "undefined" ? window.location.pathname : "";
 
@@ -48,21 +48,6 @@ const DeclaracionAccesibilidadPage =
       default: module.DeclaracionAccesibilidadPage,
     })),
   );
-const DevAssetsPage = lazy(() =>
-  import("@/pages/DevAssetsPage").then((module) => ({
-    default: module.DevAssetsPage,
-  })),
-);
-const DevContentPage = lazy(() =>
-  import("@/pages/DevContentPage").then((module) => ({
-    default: module.DevContentPage,
-  })),
-);
-const DevDesignSystemPage = lazy(() =>
-  import("@/pages/DevDesignSystemPage").then((module) => ({
-    default: module.DevDesignSystemPage,
-  })),
-);
 const EspecialesPage =
   preloadedEspecialesPage?.EspecialesPage ??
   lazy(() =>
@@ -119,18 +104,6 @@ function publicHandle(
   };
 }
 
-function devHandle(pageTitle: string): ShellRouteHandle {
-  return {
-    shell: "dev",
-    pageTitle,
-    headerTheme: "light",
-    headerDensity: "compact",
-    showPersistentBookingCta: false,
-    hideHeaderBookingCta: true,
-    focusTargetId: "main-content",
-  };
-}
-
 function withSuspense(element: React.ReactNode) {
   return (
     <Suspense
@@ -144,6 +117,11 @@ function withSuspense(element: React.ReactNode) {
     </Suspense>
   );
 }
+
+const devRoute =
+  import.meta.env.DEV && env.VITE_ENABLE_DEV_ROUTES === "true"
+    ? (await import("@/app/devRoute")).devRoute
+    : { path: "/dev/*", element: <NotFoundPage /> };
 
 export const router = createBrowserRouter([
   {
@@ -265,26 +243,5 @@ export const router = createBrowserRouter([
       { path: "*", element: <NotFoundPage /> },
     ],
   },
-  {
-    path: "/dev/",
-    element: <DevLayout />,
-    errorElement: <NotFoundPage />,
-    children: [
-      {
-        path: "assets/",
-        element: withSuspense(<DevAssetsPage />),
-        handle: devHandle("Dev assets"),
-      },
-      {
-        path: "content/",
-        element: withSuspense(<DevContentPage />),
-        handle: devHandle("Dev content"),
-      },
-      {
-        path: "design-system/",
-        element: withSuspense(<DevDesignSystemPage />),
-        handle: devHandle("Dev design system"),
-      },
-    ],
-  },
+  devRoute,
 ]);

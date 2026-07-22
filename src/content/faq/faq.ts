@@ -17,7 +17,7 @@ export const faqEntries: readonly FaqEntry[] = [
     id: "faq-reserva",
     question: "La reserva queda confirmada al enviar el formulario?",
     answer:
-      "No. La web solo comunica solicitud enviada. La disponibilidad y la confirmacion siguen siendo manuales hasta que el equipo responda por sus canales operativos.",
+      "No. El formulario prepara el mensaje en tu navegador. La solicitud solo llega al equipo cuando eliges WhatsApp o correo y completas el envío; la reserva queda pendiente de confirmación personal.",
     category: "booking",
     status: "VERIFIED",
     references: {
@@ -31,7 +31,7 @@ export const faqEntries: readonly FaqEntry[] = [
     id: "faq-canal-reserva",
     question: "Que canales de reserva publica Malcriado hoy?",
     answer:
-      "El proyecto publica formulario web y WhatsApp como vias visibles de solicitud. No se comunica ningun motor externo de disponibilidad en tiempo real.",
+      "Puedes preparar la solicitud en el formulario y continuar de forma explícita por WhatsApp o correo. También puedes llamar al teléfono público del restaurante. No se comunica disponibilidad en tiempo real.",
     category: "booking",
     status: "VERIFIED",
     references: {
@@ -39,6 +39,17 @@ export const faqEntries: readonly FaqEntry[] = [
         contentSources.siteContacto.id,
         contentSources.currentSiteAudit.id,
       ],
+    },
+  },
+  {
+    id: "faq-alergenos",
+    question: "Donde puedo consultar la informacion sobre alergenos?",
+    answer:
+      "La carta muestra los 14 grupos de alergenos como informacion general, sin asignarlos a platos concretos. ¿Tienes alguna alergia o intolerancia? Consulta con nuestro equipo antes de realizar tu pedido.",
+    category: "menu",
+    status: "VERIFIED",
+    references: {
+      sourceIds: [contentSources.siteMenu.id, contentSources.ownerChecklist.id],
     },
   },
   {
@@ -70,7 +81,7 @@ export const faqEntries: readonly FaqEntry[] = [
     id: "faq-horario",
     question: "El horario diario esta confirmado?",
     answer:
-      "Todavia no. Ahora mismo se muestra un horario general y el detalle por dia se esta terminando de confirmar con el equipo.",
+      "Consulta el horario publicado en la web. Las fechas especiales pueden variar, así que el equipo revisará la franja solicitada antes de confirmar la reserva.",
     category: "location",
     status: "PENDING_VALIDATION",
     references: {

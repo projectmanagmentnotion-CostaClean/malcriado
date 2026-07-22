@@ -86,7 +86,7 @@ export function Footer() {
             Reservar
           </LinkButton>
           <TextLink to="/contacto/">Canales alternativos</TextLink>
-          <TextLink to="/menu/#informacion-alergenos">Alergenos</TextLink>
+          <TextLink to="/menu/#informacion-alergenos">Alérgenos</TextLink>
           <Button onClick={openPreferences} type="button" variant="ghost">
             Preferencias de cookies
           </Button>

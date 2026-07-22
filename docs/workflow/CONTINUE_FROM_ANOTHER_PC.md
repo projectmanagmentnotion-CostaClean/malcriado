@@ -1,93 +1,49 @@
 # Continuar desde otra PC
 
-## Estado exacto para retomar
+## Checkpoint
 
-- Fase: `Fase 12A - contenido comercial y reservas propias`
-- Rama activa: `codex/phase-12a-content-and-own-reservations`
-- Head: comprobar con `git rev-parse HEAD` tras el pull de la rama
-- Pull Request: `#13` sobre `main`
-- Estado local del checkpoint: revision independiente aplicada; consultar los checks remotos del head antes de continuar
-- Gates verdes:
-  - `npm run format:check`
-  - `npm run lint`
-  - `npm run typecheck`
-  - `npm run content:validate` con `0` errores y `130` warnings editoriales pendientes
-  - `npm run content:report`
-  - `npm run assets:verify`
-  - `npm run routes:validate`
-  - `npm run seo:validate`
-  - `npm run test:run`
-  - `npm run build`
-  - `npm run bundle:budget`
-  - `npm run lighthouse:ci`
-  - `npm run test:e2e`
-  - `npm run qa`
-  - `npm audit`
-  - `git diff --check`
-- Gates pendientes si el PR no esta cerrado tecnicamente:
-  - `quality`, `e2e` y `lighthouse` remotos en verde sobre el mismo head
-  - marcar PR ready for review, sin merge
-- Bugs conocidos:
-  - No hay bugs funcionales P0/P1/P2 nuevos abiertos en este checkpoint local
-  - La categoria `Vermut` sigue vacia y oculta al publico
-  - Home en `320x568` mantiene una medicion menor de ancho documental sin scroll horizontal real
-- Siguiente tarea concreta:
-  - revisar CI remoto del PR #13; no desplegar ni iniciar el lanzamiento final
+- Fase: `12B — candidato de producción por contacto`.
+- Rama: `codex/phase-12b-production-launch`.
+- Base inicial: merge de Fase 12A `31f7765e467e53ed96544f3b0a91da613caf97c1`.
+- PR: abrir como draft con título `Phase 12B: production launch with contact reservation mode` tras commit/push.
+- No hacer merge ni desplegar sin revisión independiente, CI verde, paquete verificado y backup real.
 
-## Requisitos
-
-- Node `20.19.0` o superior
-- npm `10+`
-- Git
-- Navegador Chromium actual para Playwright
-
-## Variables de entorno
-
-El proyecto solo requiere una variable local no secreta:
-
-```bash
-VITE_PUBLIC_SITE_URL=http://127.0.0.1:5173
-```
-
-- Archivo de ejemplo: `.env.example`
-- Archivo local: `.env`
-- No se sube ningun secreto en Git
-
-## Clonar y retomar
+## Retomar
 
 ```bash
 git clone https://github.com/projectmanagmentnotion-CostaClean/malcriado.git
 cd malcriado
 git fetch --all --prune
-git switch codex/phase-12a-content-and-own-reservations
+git switch codex/phase-12b-production-launch
 npm ci
 copy .env.example .env
+npm run qa
 ```
 
-Actualiza `.env` para desarrollo local:
+## Producción reproducible
 
 ```bash
-VITE_PUBLIC_SITE_URL=http://127.0.0.1:5173
+npm run release:build
 ```
 
-Arranque habitual:
+Genera `release/malcriado-production/`, `.zip` y `.sha256`; `release/` no se versiona. El build fuerza canonical de producción, reservas `contact`, API vacía, analytics/dev routes desactivados e indexación activa.
 
-```bash
-npm run dev -- --host
-```
+## Arquitectura vigente
 
-URL habitual de desarrollo:
+- `ContactReservationProvider`: valida y prepara canales; no hace fetch o persistencia.
+- `ApiReservationProvider`: futuro, inactivo sin URL y sin credenciales.
+- `VITE_RESERVATION_MODE`: `contact`, `api` o `disabled`; producción usa `contact`.
+- No existe Supabase, base de datos, SMTP, webhook o serverless.
 
-- `http://127.0.0.1:5173/`
+## Operación pendiente
 
-Preview de produccion local:
+1. Confirmar CI remoto del head exacto.
+2. Revisión independiente del draft PR.
+3. Acceder a SiteGround y completar `docs/release/PRODUCTION_BACKUP.md`.
+4. Solo con backup verificado, subir el contenido del ZIP y purgar caché.
+5. Ejecutar `docs/release/PRODUCTION_SMOKE_TEST.md` y registrar URL/hora/evidencia.
 
-```bash
-npm run build
-npm run preview -- --host 127.0.0.1 --port 4173
-```
-
-## Comandos de QA
+## Gates
 
 ```bash
 npm run format:check
@@ -98,49 +54,13 @@ npm run content:report
 npm run assets:verify
 npm run routes:validate
 npm run seo:validate
+npm run bundle:budget
 npm run test:run
 npm run build
-npm run bundle:budget
-npm run lighthouse:ci
 npm run test:e2e
 npm run qa
 npm audit
 git diff --check
 ```
 
-## Que no se sube por seguridad o portabilidad
-
-- `node_modules/`
-- `dist/`
-- `test-results/`
-- `.vite/`
-- `*.log`
-- `*.pid`
-- `*.tsbuildinfo`
-- `.env`
-
-## Como comprobar que el repo esta sincronizado
-
-```bash
-git status
-git branch -vv
-git rev-parse HEAD
-git rev-parse origin/codex/phase-12a-content-and-own-reservations
-```
-
-Condicion correcta:
-
-- `git status` limpio
-- SHA local igual al SHA remoto
-
-## Trabajo pendiente exacto de Fase 12A
-
-- Confirmar que los checks `quality`, `e2e` y `lighthouse` siguen verdes sobre cualquier head posterior a la revision
-- Mantener el PR `#13` sin merge hasta decision humana
-- Mantener la deuda documentada:
-  - 44 precios pendientes
-  - 44 alergenos pendientes
-  - 38 descripciones pendientes
-  - 3 legales pendientes
-  - 1 categoria vacia oculta (`Vermut`)
-- No desplegar produccion ni iniciar el lanzamiento final en este bloque
+Deuda residual: validación jurídica/comercial del titular, dispositivos reales/lector de pantalla, CWV de campo y API futura opcional.

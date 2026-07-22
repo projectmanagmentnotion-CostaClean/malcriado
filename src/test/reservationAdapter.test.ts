@@ -29,6 +29,7 @@ function createRequest(
     },
     consent: {
       privacyAccepted: true,
+      includeAllergiesInMessage: false,
     },
     context: parseReservationContext(new URLSearchParams("context=home-hero")),
     metadata: {
