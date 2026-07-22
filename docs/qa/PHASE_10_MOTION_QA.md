@@ -90,9 +90,22 @@ Revisado en `http://127.0.0.1:5173/` con navegador limpio:
 - P0: ninguno
 - P1: ninguno
 - P2: ninguno
+- P3: deuda visual no bloqueante en vivo
+  - `/contacto/` mantiene `border-left` y padding editorial en `.contact-hero__summary`, lo que reduce la sensacion de amplitud frente a Home.
+  - No se observan cajas opacas, sombras pesadas ni overflow horizontal nuevos en Home, Nosotros, FAQ o las rutas legales auditadas.
+  - La deuda visual se documenta, pero no bloquea la Fase 10 porque el objetivo de este PR es lifecycle y estabilidad GSAP, no rehacer direccion artistica.
 
 ## Deuda aceptada
 
 - no hay pasada humana con lector de pantalla real en esta fase
 - no se ha generado evidencia visual por cada combinacion de orientacion de la matriz completa
 - los warnings editoriales y legales pendientes permanecen sin cambio
+- no fue posible marcar el PR como ready for review desde este entorno porque `gh` no esta autenticado y la sesion del navegador en GitHub estaba anonima; el estado remoto verificado sigue siendo `Draft`
+
+## Estado remoto verificado
+
+- PR `#11`: `open / draft / mergeable`
+- head remoto: `34be06536402b1cc69b15e54a3ad51ab9ded877b`
+- ultimo workflow remoto: `ci`
+- run id: `29902894763`
+- conclusion: `success`
