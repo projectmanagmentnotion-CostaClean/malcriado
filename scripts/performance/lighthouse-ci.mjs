@@ -9,8 +9,9 @@ const outputDir = resolve(".tmp-lighthouse");
 const viteBin = resolve("node_modules/vite/bin/vite.js");
 const npx = process.platform === "win32" ? "npx.cmd" : "npx";
 const chromeFlags = [
-  ...(process.env.CI ? [] : ["--headless"]),
+  "--headless",
   "--no-sandbox",
+  "--disable-gpu",
   "--disable-dev-shm-usage",
   "--disable-background-timer-throttling",
   "--disable-backgrounding-occluded-windows",
