@@ -1,6 +1,6 @@
 # Fase 9 Secondary Pages Audit
 
-Fecha: 2026-07-21
+Fecha: 2026-07-22
 Branch: `codex/phase-9-secondary-legal-pages`
 Base auditada:
 
@@ -25,6 +25,20 @@ Base auditada:
 - Las paginas legales siguen en `PENDING_VALIDATION`, pero ahora exponen alcance real, limites y checklist pendiente del titular en vez de placeholders vacios.
 - La declaracion de accesibilidad ya comunica capacidades, limites conocidos y canal de reporte.
 - Canonical y `og:url` quedaron estabilizados contra `https://malcriadobcn.com/` tambien en preview de produccion.
+
+## Revision independiente 2026-07-22
+
+- Se detecto una regresion de CI en E2E: el smoke de `/reservar/` dependia de una fecha fija ya pasada (`2026-07-21`).
+- Se corrigio el smoke usando fecha futura relativa para evitar falsos negativos ligados al calendario.
+- Se detecto una brecha de accesibilidad en el gestor de consentimiento: el dialogo gestionaba foco al abrir y cerrar, pero no atrapaba la tabulacion dentro del modal.
+- Se corrigio el dialogo con ciclo de foco hacia delante y hacia atras, y se cubrio con test unitario de regresion.
+- Resultado local tras la correccion:
+  - `npm run qa`: verde
+  - unitarios: `66 passed`
+  - E2E: `45 passed / 5 skipped`
+  - Lighthouse preview de produccion:
+    - `/contacto/`: `86 / 100 / 100 / 100`
+    - `/faq/`: `86 / 100 / 100 / 100`
 
 ## Hallazgos cerrados durante la fase
 
@@ -59,3 +73,4 @@ Verificacion automatizada en preview de produccion:
 - Los textos legales siguen pendientes de validacion juridica final.
 - La identidad juridica, NIF/CIF, domicilio legal, correo juridico, proveedores definitivos y plazos de conservacion siguen sin confirmacion del titular.
 - La puntuacion Lighthouse de rendimiento en las rutas auditadas es aceptable pero no excelente: `86`.
+- Los JSON de Lighthouse ya versionados pesan aproximadamente `0.71` a `0.75 MB` por ruta; se aceptan como deuda `P3` documental y no se anaden nuevos artefactos JSON en esta revision.

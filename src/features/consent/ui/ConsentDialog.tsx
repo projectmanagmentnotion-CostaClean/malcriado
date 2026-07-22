@@ -3,6 +3,14 @@ import { Button } from "@/components/ui/Button";
 import type { ConsentPreferences } from "../domain/consentTypes";
 import { useConsent } from "../context/useConsent";
 
+function getFocusableElements(container: HTMLElement) {
+  return Array.from(
+    container.querySelectorAll<HTMLElement>(
+      'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    ),
+  ).filter((element) => !element.hasAttribute("hidden"));
+}
+
 export function ConsentDialog() {
   const {
     categories,
@@ -33,6 +41,34 @@ export function ConsentDialog() {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         closePreferences();
+        return;
+      }
+
+      if (event.key !== "Tab" || !panelRef.current) {
+        return;
+      }
+
+      const focusable = getFocusableElements(panelRef.current);
+      if (focusable.length === 0) {
+        event.preventDefault();
+        panelRef.current.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const activeElement = document.activeElement as HTMLElement | null;
+
+      if (!first || !last) {
+        return;
+      }
+
+      if (event.shiftKey && activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     };
 

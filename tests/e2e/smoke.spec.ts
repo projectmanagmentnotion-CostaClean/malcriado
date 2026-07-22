@@ -1,5 +1,11 @@
 import { expect, test } from "@playwright/test";
 
+function getFutureDateIso(daysAhead: number) {
+  const date = new Date();
+  date.setDate(date.getDate() + daysAhead);
+  return date.toISOString().slice(0, 10);
+}
+
 test("home renders without overflow and keeps booking CTA visible", async ({
   page,
 }) => {
@@ -124,7 +130,7 @@ test("persistent CTA stays off on reservar and returns on home navigation", asyn
 
 test("reservation form reports pending confirmation", async ({ page }) => {
   await page.goto("/reservar/");
-  await page.getByLabel("Fecha").fill("2026-07-21");
+  await page.getByLabel("Fecha").fill(getFutureDateIso(2));
   await page.getByLabel("Hora").fill("20:00");
   await page.locator("#booking-guests").fill("2");
   await page.getByLabel("Nombre").fill("Ada Lovelace");

@@ -117,6 +117,32 @@ describe("app shell", () => {
     ).not.toBeInTheDocument();
   });
 
+  it("traps focus inside the consent dialog while it is open", async () => {
+    window.localStorage.clear();
+    window.sessionStorage.clear();
+    renderApp(["/"]);
+
+    fireEvent.click(screen.getByRole("button", { name: /personalizar/i }));
+
+    const dialog = screen.getByRole("dialog");
+    const focusable = dialog.querySelectorAll<HTMLElement>(
+      "button:not([disabled]), input:not([disabled])",
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    expect(first).toBeTruthy();
+    expect(last).toBeTruthy();
+
+    last?.focus();
+    fireEvent.keyDown(window, { key: "Tab" });
+    await waitFor(() => expect(first).toHaveFocus());
+
+    first?.focus();
+    fireEvent.keyDown(window, { key: "Tab", shiftKey: true });
+    await waitFor(() => expect(last).toHaveFocus());
+  });
+
   it("renders 404 fallback", () => {
     renderApp(["/inexistente/"]);
 
