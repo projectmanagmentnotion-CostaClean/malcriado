@@ -8,6 +8,15 @@ const baseUrl = `http://127.0.0.1:${port}`;
 const outputDir = resolve(".tmp-lighthouse");
 const viteBin = resolve("node_modules/vite/bin/vite.js");
 const npx = process.platform === "win32" ? "npx.cmd" : "npx";
+const chromeFlags = [
+  ...(process.env.CI ? [] : ["--headless"]),
+  "--no-sandbox",
+  "--disable-dev-shm-usage",
+  "--disable-background-timer-throttling",
+  "--disable-backgrounding-occluded-windows",
+  "--disable-renderer-backgrounding",
+  "--window-size=1350,940",
+].join(" ");
 
 function run(command, args) {
   return new Promise((resolveRun, reject) => {
@@ -39,7 +48,7 @@ async function runLighthouse(name, route) {
       "lighthouse@13.4.1",
       `${baseUrl}${route}`,
       "--quiet",
-      "--chrome-flags=--headless --no-sandbox --disable-dev-shm-usage --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-renderer-backgrounding",
+      `--chrome-flags=${chromeFlags}`,
       "--max-wait-for-load=45000",
       "--output=json",
       `--output-path=${outputPath}`,
