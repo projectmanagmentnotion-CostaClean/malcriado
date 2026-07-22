@@ -47,7 +47,9 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Configure Chromium for Lighthouse
         shell: bash
-        run: echo "CHROME_PATH=$(node -e \"const { chromium } = require('@playwright/test'); process.stdout.write(chromium.executablePath())\")" >> "$GITHUB_ENV"
+        run: |
+          chromium_path="$(node -e 'const { chromium } = require("@playwright/test"); process.stdout.write(chromium.executablePath())')"
+          echo "CHROME_PATH=$chromium_path" >> "$GITHUB_ENV"
       - name: Lighthouse CI
         run: npm run lighthouse:ci
       - name: E2E
