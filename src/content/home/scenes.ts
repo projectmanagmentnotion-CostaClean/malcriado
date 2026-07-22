@@ -9,7 +9,7 @@ export const homeScenes: readonly HomeScene[] = [
     content: {
       eyebrow: "Identidad",
       heading: "Malcriado",
-      copy: "La experiencia arranca desde la marca y no desde un loader ficticio.",
+      copy: "La experiencia empieza en la marca, el producto y la reserva.",
     },
     media: [],
     ctas: [],
@@ -31,7 +31,7 @@ export const homeScenes: readonly HomeScene[] = [
     content: {
       eyebrow: "Pineda de Mar · Frente al mar",
       heading: "Cocina fusion latinoamericana y mediterranea frente al mar.",
-      copy: "Propuesta verificada desde la home y la carta auditadas en Fase 0.",
+      copy: "Sabores latinos y mediterraneos, cocteles y una ubicacion frente al mar para comer, cenar o reservar con tiempo.",
     },
     media: [{ assetId: "asset-019", crop: "landscape", status: "VERIFIED" }],
     ctas: [{ label: "Reservar", href: "/reservar/", status: "VERIFIED" }],
@@ -41,7 +41,7 @@ export const homeScenes: readonly HomeScene[] = [
     mobileVariant: {
       eyebrow: "Pineda de Mar",
       heading: "Fusion frente al mar.",
-      copy: "Version movil resumida del mensaje principal.",
+      copy: "Sabores, mar y una reserva facil desde el primer gesto.",
     },
     references: {
       sourceIds: [
@@ -58,7 +58,7 @@ export const homeScenes: readonly HomeScene[] = [
     content: {
       eyebrow: "Especial activo",
       heading: null,
-      copy: "No se ha recuperado una oferta vigente verificable; la escena debe renderizar estado pendiente.",
+      copy: "Si hoy no hay una promocion activa publicada, la carta y la reserva siguen siendo el centro de la experiencia.",
     },
     media: [],
     ctas: [
@@ -80,9 +80,9 @@ export const homeScenes: readonly HomeScene[] = [
     slug: "declaracion-de-fusion",
     purpose: "Explicar la propuesta culinaria en clave editorial.",
     content: {
-      eyebrow: "Fusión",
+      eyebrow: "Fusion",
       heading: "Latinoamerica y Mediterraneo en la misma experiencia.",
-      copy: "La fusión culinaria es el claim central repetido en home, menu y nosotros.",
+      copy: "Una carta que mezcla platos latinos, mediterraneos y una forma de comer pensada para compartir junto al mar.",
     },
     media: [{ assetId: "asset-026", crop: "portrait", status: "VERIFIED" }],
     ctas: [],
@@ -104,8 +104,8 @@ export const homeScenes: readonly HomeScene[] = [
     purpose: "Destacar platos y activos visuales ya auditados.",
     content: {
       eyebrow: "Platos insignia",
-      heading: "Pulpo, nachos, pizza y atun como primera seleccion editorial.",
-      copy: "La seleccion actual usa solo platos con traza publica y assets aceptados.",
+      heading: "Pulpo, nachos, pizzas y atun entre los platos mas buscados.",
+      copy: "Una seleccion pensada para abrir boca, pasar a la carta y terminar en reserva.",
     },
     media: [
       { assetId: "asset-017", crop: "portrait", status: "VERIFIED" },
@@ -128,7 +128,7 @@ export const homeScenes: readonly HomeScene[] = [
     content: {
       eyebrow: "Costa",
       heading: "Mesa, mar y Pineda de Mar como parte del relato.",
-      copy: "La experiencia frente al mar esta verificada como posicionamiento y contexto local.",
+      copy: "Comer junto al mar forma parte de la experiencia y del ritmo con el que se vive Malcriado en Pineda de Mar.",
     },
     media: [{ assetId: "asset-019", crop: "landscape", status: "VERIFIED" }],
     ctas: [],
@@ -147,7 +147,7 @@ export const homeScenes: readonly HomeScene[] = [
     content: {
       eyebrow: "Cocteles y noche",
       heading: "Mojitos, margaritas y energia nocturna.",
-      copy: "La carta recuperada y el manifiesto de assets permiten construir esta escena sin blur ficticio ni ofertas inventadas.",
+      copy: "Cocteles, sobremesa larga y una carta pensada para seguir la noche frente al mar.",
     },
     media: [{ assetId: "asset-013", crop: "portrait", status: "VERIFIED" }],
     ctas: [{ label: "Ver bebidas", href: "/menu/", status: "VERIFIED" }],
@@ -167,8 +167,8 @@ export const homeScenes: readonly HomeScene[] = [
     content: {
       eyebrow: "Historia",
       heading:
-        "Malcriado se presenta como una fusion de culturas con autoria de Héctor.",
-      copy: "La biografia ampliada y el nombre completo del chef siguen pendientes de confirmacion.",
+        "Malcriado mezcla culturas y presenta a Hector al frente de la cocina visible.",
+      copy: "La propuesta combina identidad propia, cocina de fusion y una experiencia pensada para reservar y volver.",
     },
     media: [],
     ctas: [{ label: "Conocer mas", href: "/nosotros/", status: "VERIFIED" }],
@@ -190,8 +190,8 @@ export const homeScenes: readonly HomeScene[] = [
     content: {
       eyebrow: "Carta",
       heading:
-        "Categorias reales ya recuperadas: calientes, frios, pizzas, cocteles, vinos y postres.",
-      copy: "La navegacion futura debe salir del modelo tipado, no de tarjetas hardcodeadas.",
+        "Platos, bebidas y postres para entrar por la carta y salir con una reserva.",
+      copy: "Recorre la carta por categorias y llega al formulario con el plato, la categoria o el plan que te interesa.",
     },
     media: [{ assetId: "asset-024", crop: "square", status: "VERIFIED" }],
     ctas: [{ label: "Explorar carta", href: "/menu/", status: "VERIFIED" }],
@@ -242,7 +242,7 @@ export const homeScenes: readonly HomeScene[] = [
     content: {
       eyebrow: "Ubicacion",
       heading: "Passeig Maritim, 14, Pineda de Mar.",
-      copy: "El horario por dia y las coordenadas siguen pendientes de validacion del titular.",
+      copy: "Direccion, telefono y WhatsApp ya estan listos para ayudarte a reservar. El horario por dia se esta terminando de confirmar.",
     },
     media: [],
     ctas: [{ label: "Ver contacto", href: "/contacto/", status: "VERIFIED" }],

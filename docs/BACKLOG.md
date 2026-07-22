@@ -78,16 +78,16 @@
   Fase: `Fase 11`.
   Criterio de cierre: incidencias documentadas y resueltas o aceptadas.
 
-- Contrastar el Lighthouse de `home` y `menu` en preview o produccion real.
-  Razon: el laboratorio local de Windows mantiene lecturas pobres de CLS/LCP aunque la QA funcional y la matriz responsive de Fase 7 esten verdes.
-  Dependencia: entorno de preview o produccion equivalente y repeticion de la medicion fuera del escritorio local.
+- Revisar el desfase no desplazable de `scrollWidth` en Home a `320x568`.
+  Razon: la matriz de Fase 11 no detecta scroll horizontal real, pero la emulacion reporta `326px` de ancho documental frente a `320px` de viewport.
+  Dependencia: repeticion en dispositivo real o emulacion adicional.
   Fase: `Fase 11`.
-  Criterio de cierre: discrepancia explicada o corregida con evidencia reproducible.
+  Criterio de cierre: medicion descartada como artefacto o corregida en layout base.
 
 ## P3
 
-- Medir LCP e INP en preview o produccion real con red y hardware menos favorables.
-  Razon: el Lighthouse local de Fase 6 es excelente, pero sigue siendo una medicion de laboratorio local.
+- Confirmar CWV en preview o produccion real con red y hardware menos favorables.
+  Razon: la repeticion independiente de Lighthouse en local ya no reproduce la degradacion anterior, pero sigue siendo medicion de laboratorio.
   Dependencia: entorno de preview o produccion controlado.
   Fase: `Fase 11` y `Fase 12`.
   Criterio de cierre: metrica real registrada y dentro de presupuesto aceptado.

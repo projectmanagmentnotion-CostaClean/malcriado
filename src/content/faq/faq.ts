@@ -6,7 +6,7 @@ export const faqEntries: readonly FaqEntry[] = [
     id: "faq-cocina",
     question: "Que tipo de cocina presenta Malcriado?",
     answer:
-      "La propuesta publica auditada presenta a Malcriado como restaurante de cocina fusion latinoamericana y mediterranea frente al mar en Pineda de Mar.",
+      "Malcriado se presenta como restaurante de cocina fusion latinoamericana y mediterranea frente al mar en Pineda de Mar.",
     category: "general",
     status: "VERIFIED",
     references: {
@@ -45,7 +45,7 @@ export const faqEntries: readonly FaqEntry[] = [
     id: "faq-menu-html",
     question: "La carta existe en HTML indexable?",
     answer:
-      "Si. La carta publica del proyecto se reconstruye en HTML semantico para mantener indexabilidad y accesibilidad sin depender solo de PDF o imagen.",
+      "Si. La carta esta publicada en HTML para que puedas consultarla con facilidad desde movil, buscadores y lectores de pantalla.",
     category: "menu",
     status: "VERIFIED",
     references: {
@@ -59,7 +59,7 @@ export const faqEntries: readonly FaqEntry[] = [
     id: "faq-ubicacion",
     question: "Donde esta Malcriado?",
     answer:
-      "La direccion publica auditada es Passeig Maritim, 14, 08397 Pineda de Mar, Barcelona. El mapa interactivo solo se activa tras consentimiento valido para contenido externo.",
+      "La direccion publica es Passeig Maritim, 14, 08397 Pineda de Mar, Barcelona. El mapa interactivo solo se activa si aceptas contenido externo.",
     category: "location",
     status: "VERIFIED",
     references: {
@@ -70,7 +70,7 @@ export const faqEntries: readonly FaqEntry[] = [
     id: "faq-horario",
     question: "El horario diario esta confirmado?",
     answer:
-      "No todavia. El sitio auditado solo expone un resumen global y el detalle diario sigue en estado PENDING_VALIDATION hasta confirmacion del titular.",
+      "Todavia no. Ahora mismo se muestra un horario general y el detalle por dia se esta terminando de confirmar con el equipo.",
     category: "location",
     status: "PENDING_VALIDATION",
     references: {
@@ -81,7 +81,7 @@ export const faqEntries: readonly FaqEntry[] = [
     id: "faq-cookies",
     question: "Se cargan mapas, analitica o terceros antes del consentimiento?",
     answer:
-      "No. La implementacion de Fase 9 bloquea contenido externo no esencial antes del consentimiento y permite aceptar, rechazar o personalizar preferencias de forma reversible.",
+      "No. El contenido externo no esencial permanece bloqueado hasta que aceptas, rechazas o personalizas tus preferencias.",
     category: "legal",
     status: "VERIFIED",
     references: {

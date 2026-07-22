@@ -27,17 +27,15 @@ export function ContactoPage() {
               <header className="contact-hero__content">
                 <p className="eyebrow">Contacto</p>
                 <h1 data-route-heading="true" id="page-heading-contacto">
-                  Contacto, ubicacion y llegada
+                  Contacto y como llegar a Malcriado en Pineda de Mar
                 </h1>
                 <p>
-                  Esta ruta publica solo datos verificados y mantiene visibles
-                  las deudas reales: horario diario, coordenadas exactas y
-                  cualquier detalle operativo que todavia necesite validacion
-                  del titular.
+                  Reserva por formulario, telefono o WhatsApp y encuentra la
+                  direccion para llegar frente al mar sin perder tiempo.
                 </p>
                 <div className="contact-hero__actions">
                   <LinkButton to="/reservar/" variant="editorial">
-                    Ir a reserva
+                    Reservar ahora
                   </LinkButton>
                   <LinkButton to="/faq/" variant="secondary">
                     Ver FAQ
@@ -47,12 +45,11 @@ export function ContactoPage() {
               <div className="contact-hero__summary">
                 <p className="eyebrow">Canal directo</p>
                 <strong>
-                  {businessContent.contact.phone.value ?? "Pendiente"}
+                  {businessContent.contact.phone.value ?? "Llamanos"}
                 </strong>
                 <span>
-                  Telefono y WhatsApp siguen siendo la via mas inmediata para
-                  cerrar una visita mientras la confirmacion de reservas sigue
-                  siendo manual.
+                  Telefono y WhatsApp siguen siendo la via mas rapida para una
+                  reserva del dia o una consulta rapida.
                 </span>
               </div>
             </div>
@@ -70,7 +67,7 @@ export function ContactoPage() {
                 <dt>Telefono</dt>
                 <dd>
                   <a href={getTelephoneHref() ?? "#"}>
-                    {businessContent.contact.phone.value ?? "Pendiente"}
+                    {businessContent.contact.phone.value ?? "Llamanos"}
                   </a>
                 </dd>
               </div>
@@ -78,7 +75,7 @@ export function ContactoPage() {
                 <dt>Email</dt>
                 <dd>
                   <a href={getEmailHref() ?? "#"}>
-                    {businessContent.contact.email.value ?? "Pendiente"}
+                    {businessContent.contact.email.value ?? "Escribenos"}
                   </a>
                 </dd>
               </div>
@@ -90,7 +87,7 @@ export function ContactoPage() {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    Solicitar mesa
+                    Abrir WhatsApp
                   </a>
                 </dd>
               </div>
@@ -104,20 +101,16 @@ export function ContactoPage() {
                       rel="noreferrer"
                       target="_blank"
                     >
-                      Abrir ubicacion verificada
+                      Abrir ubicacion en Google Maps
                     </TextLink>
                   ) : (
-                    "Pendiente"
+                    "Disponible en breve"
                   )}
                 </dd>
               </div>
               <div>
                 <dt>Horario visible</dt>
-                <dd>{businessContent.hours.summary.value ?? "Pendiente"}</dd>
-              </div>
-              <div>
-                <dt>Estado del horario</dt>
-                <dd>{businessContent.hours.summary.status}</dd>
+                <dd>{businessContent.hours.summary.value ?? "Consultar"}</dd>
               </div>
             </dl>
           </div>
@@ -128,18 +121,18 @@ export function ContactoPage() {
             <div className="contact-directions__grid">
               <div className="contact-directions__copy">
                 <p className="eyebrow">Como llegar</p>
-                <h2>Ubicacion publica con mapa bajo consentimiento</h2>
+                <h2>Llega desde el paseo maritimo o abre la ruta en el mapa</h2>
                 <p>
-                  La direccion postal si esta verificada. En cambio, las
-                  coordenadas exactas y cualquier proveedor embebido siguen
-                  sujetos a validacion y consentimiento.
+                  La direccion publica ya esta disponible. Si prefieres ver la
+                  ruta en Google Maps, puedes abrirla directamente o activar el
+                  mapa interactivo cuando aceptes contenido externo.
                 </p>
                 <ul className="contact-directions__list">
                   <li>Direccion visible: {getReadableAddress()}</li>
-                  <li>Coordenadas exactas: PENDING_VALIDATION.</li>
+                  <li>Ruta externa disponible en Google Maps.</li>
                   <li>
-                    Mapa interactivo: bloqueado hasta consentimiento para
-                    contenido externo.
+                    El mapa interactivo solo se carga si aceptas contenido
+                    externo.
                   </li>
                 </ul>
                 <div className="contact-directions__actions">
@@ -154,7 +147,7 @@ export function ContactoPage() {
                     </LinkButton>
                   ) : null}
                   <LinkButton to="/cookies/" variant="ghost">
-                    Ver cookies
+                    Ver preferencias de cookies
                   </LinkButton>
                 </div>
               </div>
@@ -167,14 +160,13 @@ export function ContactoPage() {
           <div className="container container--wide">
             <div className="contact-editorial-note__grid">
               <div>
-                <p className="eyebrow">Dato pendiente</p>
-                <h2>Horario diario y accesos finos siguen fuera de cierre</h2>
+                <p className="eyebrow">Antes de venir</p>
+                <h2>El horario diario se esta terminando de confirmar</h2>
               </div>
               <p>
-                Mientras el titular no confirme horario por dia, accesibilidad
-                fisica del local y otros detalles operativos, esta web no los
-                presenta como hechos cerrados. La ruta mantiene la llamada a la
-                accion sin ocultar esa deuda.
+                Publicamos el horario general ya visible y mantenemos abiertos
+                telefono, email y WhatsApp para confirmar dudas antes de tu
+                visita.
               </p>
             </div>
           </div>

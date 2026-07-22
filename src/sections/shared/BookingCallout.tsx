@@ -9,7 +9,7 @@ export function BookingCallout() {
     <Section spacing="spacious" tone="warm">
       <div className="booking-callout">
         <p className="eyebrow">Reserva</p>
-        <h2>Solicitud clara, sin prometer disponibilidad no verificada.</h2>
+        <h2>Reserva con informacion clara y confirmacion manual del equipo.</h2>
         <p>
           La reserva sigue siendo una solicitud pendiente de confirmacion manual
           del equipo de Malcriado.

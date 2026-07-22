@@ -40,5 +40,5 @@ export const bookingPolicy: BookingPolicy = {
 export const bookingRequestContext: BookingRequestContext = {
   defaultPartySize: 2,
   supportsNotes: true,
-  privacyCopy: "He leido la informacion provisional de privacidad.",
+  privacyCopy: "He leido la informacion de privacidad.",
 };

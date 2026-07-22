@@ -336,16 +336,79 @@ Fase 7 no debe marcarse como completamente publicada hasta tener:
 
 ## Fase 11 - QA integral
 
-- [ ] Unit, integration y E2E.
-- [ ] QA visual por viewport.
-- [ ] Axe y auditoria manual WCAG.
-- [ ] Navegadores y dispositivos.
-- [ ] Lighthouse y WebPageTest.
-- [ ] SEO schema/canonical/indexacion.
-- [ ] Formularios, consentimiento y seguridad.
-- [ ] Enlaces, 404 y redirecciones.
+- [x] Unit, integration y E2E.
+- [x] QA visual por viewport.
+- [x] Axe y auditoria manual WCAG.
+- [x] Matriz automatizada en Chromium desktop y mobile emulado.
+- [ ] Firefox, Safari, Edge e iOS/Android reales.
+- [x] Lighthouse.
+- [ ] WebPageTest.
+- [x] SEO schema/canonical/indexacion.
+- [x] Formularios, consentimiento y seguridad.
+- [x] Enlaces, 404 y redirecciones.
 
 **Aceptacion:** quality gates completos y deuda residual documentada con prioridad.
+
+### Resultado de la Fase 11
+
+- Rutas publicas auditadas:
+  - `/`
+  - `/menu/`
+  - `/especiales/`
+  - `/nosotros/`
+  - `/contacto/`
+  - `/faq/`
+  - `/reservar/`
+  - `/aviso-legal/`
+  - `/privacidad/`
+  - `/cookies/`
+  - `/declaracion-de-accesibilidad/`
+  - `404`
+- Copy publico limpiado:
+  - se elimina copy de estructura y lenguaje interno de auditoria en produccion
+  - se mantiene honestidad comercial sin inventar datos del titular
+- Quality gates verdes:
+  - `npm run qa`
+  - `npm run test:e2e`
+  - `npm run bundle:budget`
+  - `git diff --check`
+- Resultados:
+  - unitarios/integracion: `68/68`
+  - E2E: `47 passed / 5 skipped`
+  - Axe serio/critico: `0` violaciones en las rutas publicas auditadas
+  - bundle budget: `pass`
+  - Lighthouse repetido en la revision independiente:
+    - `/`: `99 / 100 / 100 / 100`
+    - `/menu/`: `99 / 100 / 100 / 100`
+- SEO tecnico:
+  - canonical estable por ruta
+  - `FAQPage` solo visible en `/faq/`
+  - `_redirects`, `robots.txt` y sitemap regenerados y validados
+- Cobertura real de navegador/dispositivo en esta fase:
+  - Chromium desktop: verde
+  - Chromium mobile emulado: verde
+  - Firefox, Safari, Edge e iOS/Android reales: pendientes antes del lanzamiento
+- Seguridad y privacidad:
+  - sin secretos en cliente
+  - sin PII en URL publica
+  - terceros no esenciales bloqueados antes del consentimiento
+  - reserva sigue comunicandose como solicitud, nunca como confirmacion
+- Documentacion creada:
+  - `docs/qa/PHASE_11_INTEGRAL_QA.md`
+  - `docs/qa/PHASE_11_VISUAL_MATRIX.md`
+  - `docs/qa/PHASE_11_ACCESSIBILITY_AUDIT.md`
+  - `docs/qa/PHASE_11_BROWSER_DEVICE_MATRIX.md`
+  - `docs/qa/PHASE_11_PERFORMANCE_REPORT.md`
+  - `docs/qa/PHASE_11_SEO_INDEXATION_AUDIT.md`
+  - `docs/qa/PHASE_11_SECURITY_PRIVACY_AUDIT.md`
+  - `docs/qa/PHASE_11_RELEASE_READINESS.md`
+- Deuda aceptada:
+  - validacion comercial y legal del titular
+  - precios, alergenos y horarios por dia pendientes
+  - proveedor real de reservas pendiente
+  - pasada humana con lector de pantalla real pendiente
+  - WebPageTest no ejecutado en esta fase por no disponer de integracion operativa en el entorno local
+  - confirmacion final de CWV en entorno desplegado antes del lanzamiento
 
 ## Fase 12 - Lanzamiento
 

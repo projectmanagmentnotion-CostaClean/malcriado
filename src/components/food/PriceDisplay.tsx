@@ -10,12 +10,12 @@ export function PriceDisplay({ price }: PriceDisplayProps) {
     return (
       <StatusMessage
         className="inline-status menu-item-status"
-        title="Precio pendiente de actualizacion"
+        title="Precio a consultar"
         tone="pending"
       >
         <p>
           {price.note ??
-            "Consulta el precio actual antes de reservar o contactar."}
+            "Consulta el precio actual con el equipo antes de reservar o hacer tu pedido."}
         </p>
       </StatusMessage>
     );

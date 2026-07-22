@@ -11,6 +11,14 @@ interface LegalPageProps {
   readonly body: string;
 }
 
+function getLegalReviewNote(status?: string) {
+  if (status === "PENDING_VALIDATION") {
+    return "Texto informativo pendiente de revision final con el titular.";
+  }
+
+  return "Texto legal informativo.";
+}
+
 export function LegalPage({ title, path, body }: LegalPageProps) {
   const seoPage = getSeoPageByPath(path);
   const legalPage = getLegalPageByPath(path);
@@ -23,7 +31,7 @@ export function LegalPage({ title, path, body }: LegalPageProps) {
           ? buildPageSeoProps(seoPage)
           : {
               title: `${title} | Malcriado`,
-              description: `${title} provisional en espera de validacion juridica final.`,
+              description: `${title} informativo de Malcriado.`,
               path,
             })}
       />
@@ -39,7 +47,7 @@ export function LegalPage({ title, path, body }: LegalPageProps) {
           <div className="legal-page__body">
             <p>{body}</p>
             <p className="legal-page__status">
-              Estado editorial: {legalPage?.status ?? "PENDING_VALIDATION"}
+              {getLegalReviewNote(legalPage?.status)}
             </p>
           </div>
           {legalPage?.sections?.map((section) => (

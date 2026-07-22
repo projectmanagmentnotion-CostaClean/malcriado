@@ -33,7 +33,7 @@ export function DishFeature({ item }: DishFeatureProps) {
           <h2>{item.name}</h2>
           <p>
             {item.description ??
-              "Descripcion pendiente de ampliacion editorial."}
+              "Disponible en la carta de Malcriado. Consulta al equipo por ingredientes, precio y disponibilidad del momento."}
           </p>
         </div>
         <Cluster gap="md">

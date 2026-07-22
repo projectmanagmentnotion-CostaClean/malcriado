@@ -53,7 +53,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       path: "/menu/",
       title: "Carta | Malcriado",
       description:
-        "Carta HTML de Malcriado con categorias reales auditadas y estados explicitos para precios y alergenos pendientes.",
+        "Carta en HTML de Malcriado con platos, bebidas y postres para consultar antes de reservar en Pineda de Mar.",
       canonicalPath: "/menu/",
       robots: "index, follow",
       language: "es",
@@ -63,7 +63,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       openGraph: {
         title: "Carta | Malcriado",
         description:
-          "Carta HTML de Malcriado con categorias reales auditadas y estados explicitos para precios y alergenos pendientes.",
+          "Carta en HTML de Malcriado con platos, bebidas y postres para consultar antes de reservar en Pineda de Mar.",
         type: "website",
         imageAssetId: "asset-024",
       },
@@ -71,7 +71,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         card: "summary_large_image",
         title: "Carta | Malcriado",
         description:
-          "Carta HTML de Malcriado con categorias reales auditadas y estados explicitos para precios y alergenos pendientes.",
+          "Carta en HTML de Malcriado con platos, bebidas y postres para consultar antes de reservar en Pineda de Mar.",
         imageAssetId: "asset-024",
       },
       structuredData: {
@@ -96,7 +96,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       path: "/especiales/",
       title: "Especiales | Malcriado",
       description:
-        "Estado editorial de especiales y ofertas. No se publican promociones sin vigencia verificada.",
+        "Especiales y promociones de Malcriado. Solo se muestran ofertas activas con fechas claras.",
       canonicalPath: "/especiales/",
       robots: "index, follow",
       language: "es",
@@ -106,7 +106,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       openGraph: {
         title: "Especiales | Malcriado",
         description:
-          "Estado editorial de especiales y ofertas. No se publican promociones sin vigencia verificada.",
+          "Especiales y promociones de Malcriado. Solo se muestran ofertas activas con fechas claras.",
         type: "website",
         imageAssetId: "asset-013",
       },
@@ -114,7 +114,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         card: "summary_large_image",
         title: "Especiales | Malcriado",
         description:
-          "Estado editorial de especiales y ofertas. No se publican promociones sin vigencia verificada.",
+          "Especiales y promociones de Malcriado. Solo se muestran ofertas activas con fechas claras.",
         imageAssetId: "asset-013",
       },
       structuredData: {
@@ -139,7 +139,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       path: "/nosotros/",
       title: "Nosotros | Malcriado",
       description:
-        "Historia, propuesta culinaria y relato editorial de Malcriado a partir del contenido publico auditado.",
+        "Historia, cocina de fusion y propuesta de Malcriado frente al mar en Pineda de Mar.",
       canonicalPath: "/nosotros/",
       robots: "index, follow",
       language: "es",
@@ -149,7 +149,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       openGraph: {
         title: "Nosotros | Malcriado",
         description:
-          "Historia, propuesta culinaria y relato editorial de Malcriado a partir del contenido publico auditado.",
+          "Historia, cocina de fusion y propuesta de Malcriado frente al mar en Pineda de Mar.",
         type: "website",
         imageAssetId: "asset-026",
       },
@@ -157,7 +157,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         card: "summary_large_image",
         title: "Nosotros | Malcriado",
         description:
-          "Historia, propuesta culinaria y relato editorial de Malcriado a partir del contenido publico auditado.",
+          "Historia, cocina de fusion y propuesta de Malcriado frente al mar en Pineda de Mar.",
         imageAssetId: "asset-026",
       },
       structuredData: {
@@ -182,7 +182,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       path: "/reservar/",
       title: "Reservar | Malcriado",
       description:
-        "Solicitud de reserva de Malcriado con confirmacion manual y canales alternativos verificados.",
+        "Solicitud de reserva en Malcriado con confirmacion manual, telefono y WhatsApp como apoyo.",
       canonicalPath: "/reservar/",
       robots: "index, follow",
       language: "es",
@@ -192,7 +192,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       openGraph: {
         title: "Reservar | Malcriado",
         description:
-          "Solicitud de reserva de Malcriado con confirmacion manual y canales alternativos verificados.",
+          "Solicitud de reserva en Malcriado con confirmacion manual, telefono y WhatsApp como apoyo.",
         type: "website",
         imageAssetId: "asset-019",
       },
@@ -200,7 +200,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
         card: "summary_large_image",
         title: "Reservar | Malcriado",
         description:
-          "Solicitud de reserva de Malcriado con confirmacion manual y canales alternativos verificados.",
+          "Solicitud de reserva en Malcriado con confirmacion manual, telefono y WhatsApp como apoyo.",
         imageAssetId: "asset-019",
       },
       structuredData: {
@@ -313,7 +313,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       path: "/aviso-legal/",
       title: "Aviso legal | Malcriado",
       description:
-        "Aviso legal de Malcriado en estado pendiente de validacion juridica.",
+        "Aviso legal informativo de Malcriado mientras se completa la revision final con el titular.",
       canonicalPath: "/aviso-legal/",
       robots: "noindex, follow",
       language: "es",
@@ -323,7 +323,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       openGraph: {
         title: "Aviso legal | Malcriado",
         description:
-          "Aviso legal de Malcriado en estado pendiente de validacion juridica.",
+          "Aviso legal informativo de Malcriado mientras se completa la revision final con el titular.",
         type: "website",
         imageAssetId: null,
       },
@@ -344,7 +344,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       path: "/privacidad/",
       title: "Privacidad | Malcriado",
       description:
-        "Politica de privacidad de Malcriado en estado pendiente de validacion.",
+        "Politica de privacidad informativa de Malcriado sobre el funcionamiento actual de la web.",
       canonicalPath: "/privacidad/",
       robots: "noindex, follow",
       language: "es",
@@ -354,7 +354,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       openGraph: {
         title: "Privacidad | Malcriado",
         description:
-          "Politica de privacidad de Malcriado en estado pendiente de validacion.",
+          "Politica de privacidad informativa de Malcriado sobre el funcionamiento actual de la web.",
         type: "website",
         imageAssetId: null,
       },
@@ -406,7 +406,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       path: "/declaracion-de-accesibilidad/",
       title: "Declaracion de accesibilidad | Malcriado",
       description:
-        "Estado tecnico provisional de accesibilidad y limitaciones conocidas del proyecto de Malcriado.",
+        "Declaracion de accesibilidad de Malcriado con el estado tecnico actual y las mejoras en curso.",
       canonicalPath: "/declaracion-de-accesibilidad/",
       robots: "noindex, follow",
       language: "es",
@@ -416,7 +416,7 @@ export const seoPages: Record<string, LocalSeoPage> = {
       openGraph: {
         title: "Declaracion de accesibilidad | Malcriado",
         description:
-          "Estado tecnico provisional de accesibilidad y limitaciones conocidas del proyecto de Malcriado.",
+          "Declaracion de accesibilidad de Malcriado con el estado tecnico actual y las mejoras en curso.",
         type: "website",
         imageAssetId: null,
       },

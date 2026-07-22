@@ -28,20 +28,19 @@ export function AllergenStatus({ allergens, status }: AllergenStatusProps) {
     return (
       <StatusMessage
         className="inline-status"
-        title="Alergenos pendientes"
+        title="Consulta alergias e intolerancias"
         tone="pending"
       >
-        <p>La validacion operativa de alergenos sigue pendiente.</p>
+        <p>
+          Si tienes alergias o intolerancias, confirma los alergenos
+          directamente con el equipo antes de pedir.
+        </p>
       </StatusMessage>
     );
   }
 
   if (allergens.length === 0) {
-    return (
-      <p className="allergen-list">
-        Sin alergenos declarados en la fuente verificada.
-      </p>
-    );
+    return <p className="allergen-list">Sin alergenos declarados.</p>;
   }
 
   return (

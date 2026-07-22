@@ -33,19 +33,22 @@ La ejecucion se rige por `AGENTS.md` y por los documentos de `/docs`. El orden o
 
 ## Estado
 
-Fase 0, Fase 1, Fase 2, Fase 3, Fase 4, Fase 5 y Fase 6 cerradas.
+Fase 0, Fase 1, Fase 2, Fase 3, Fase 4, Fase 5, Fase 6, Fase 7, Fase 8, Fase 9 y Fase 10 cerradas.
 
-Fase 7 queda en cierre tecnico y lista para revision independiente sobre la rama `codex/phase-7-menu-and-specials`:
+Fase 11 queda cerrada tecnicamente a nivel local sobre la rama `codex/phase-11-integral-qa`:
 
-- PR remoto existente: `#8 Phase 7: accessible HTML menu and specials`
-- estado remoto verificado del checkpoint previo: draft abierto sobre `main` con CI `#19` en `completed / success`
-- carta HTML editorial por categorias reales
-- especiales con estado `active`, `upcoming`, `expired` y `empty`
-- deep links de categoria y anchors de plato
-- slug `margarita` resuelto con identidad publica unica
-- shell visual abierto consolidado en rutas publicas secundarias
-- JSON-LD ampliado para `Menu`, `MenuSection`, `MenuItem` y `Offer`
-- QA local actualizada el `2026-07-21` con responsive, Axe, tests, build, SEO y bundle
+- QA integral completada sobre todas las rutas publicas
+- copy publico naturalizado y sin lenguaje interno de auditoria
+- routes, SEO, redirects, consent y reserva revalidados
+- `68/68` tests unitarios/integracion
+- `47 passed / 5 skipped` en E2E
+- Axe manual automatizado sin violaciones serias o criticas en las rutas auditadas
+- bundle budget en `pass`
+- Lighthouse local:
+  - `/`: `99 / 100 / 100 / 100`
+  - `/menu/`: `99 / 100 / 100 / 100`
+- build de produccion reproducible y preview validada
+- lanzamiento todavia bloqueado por datos del titular y deuda comercial/legal pendiente
 
 ## Hitos implementados
 
@@ -59,17 +62,17 @@ Fase 7 queda en cierre tecnico y lista para revision independiente sobre la rama
 - Pipeline de assets con auditoria, manifiesto enriquecido, derivados responsive y ruta interna `/dev/assets/`.
 - Modelo editorial tipado con validacion Zod, scripts de auditoria y ruta interna `/dev/content/`.
 - Sistema de diseno con tokens, tipografia autocontenida y catalogo `/dev/design-system/`.
-- Carta HTML, especiales honestos y documentacion especifica de Fase 7 en `docs/menu/` y `docs/qa/`.
+- Carta HTML, especiales honestos, reserva accesible, legales, consentimiento, motion polish y documentacion de QA integral en `docs/`.
 
 ## Calidad conocida
 
 - `content:validate`: `0` errores, `130` warnings
-- `test:run`: `42/42`
-- `test:e2e`: `26` passed, `4` skipped
-- `bundle:budget`: pass
-- Axe: `0` violaciones en escenarios de Fase 7 auditados en preview el `2026-07-21`
-- responsive de Fase 7: `0` overflows en la matriz documentada tras corregir el hero de `/menu/` y el landmark del menu movil
+- `test:run`: `68/68`
+- `test:e2e`: `47 passed / 5 skipped`
+- `bundle:budget`: `pass`
+- Axe en rutas publicas auditadas: `0` violaciones serias o criticas
+- responsive: matriz validada en Fase 11 con una sola deuda menor de emulacion en Home `320x568` sin scroll horizontal real
 
 ## Siguiente bloque
 
-El siguiente bloque funcional del roadmap, una vez publicada la Fase 7, es `Fase 8 - Reserva`.
+El siguiente bloque exacto del roadmap, sin iniciarlo en este repo todavia, es `Fase 12 - Lanzamiento`.

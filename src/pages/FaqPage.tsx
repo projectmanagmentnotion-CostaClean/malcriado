@@ -43,12 +43,11 @@ export function FaqPage() {
               <header className="faq-hero__content">
                 <p className="eyebrow">FAQ</p>
                 <h1 data-route-heading="true" id="page-heading-faq">
-                  Preguntas frecuentes visibles y verificables
+                  Preguntas frecuentes antes de reservar
                 </h1>
                 <p className="faq-hero__lede">
-                  Esta pagina resume dudas recurrentes sin inventar horarios,
-                  disponibilidad, politicas comerciales ni datos legales que
-                  siguen pendientes del titular.
+                  Aqui resolvemos lo mas importante antes de reservar, consultar
+                  la carta o llegar a Malcriado.
                 </p>
               </header>
               <div className="faq-hero__actions">
@@ -111,9 +110,6 @@ export function FaqPage() {
                           role="region"
                         >
                           <p>{entry.answer}</p>
-                          <p className="faq-item__status">
-                            Estado: {entry.status}
-                          </p>
                         </div>
                       </article>
                     );

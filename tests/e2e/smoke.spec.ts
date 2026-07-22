@@ -46,19 +46,21 @@ test("menu and especiales routes render editorial content", async ({
   await expect(
     page.getByRole("heading", { name: /carta malcriado/i }),
   ).toBeVisible();
-  await expect(page.getByText(/carta html/i)).toBeVisible();
+  await expect(
+    page.getByText(/carta en html con platos, bebidas y postres/i),
+  ).toBeVisible();
 
   await page.goto("/especiales/");
   await expect(
     page.getByRole("heading", {
-      name: /estado editorial de ofertas y vigencia/i,
+      name: /especiales y promociones de malcriado/i,
     }),
   ).toBeVisible();
 
   await page.goto("/faq/");
   await expect(
     page.getByRole("heading", {
-      name: /preguntas frecuentes visibles y verificables/i,
+      name: /preguntas frecuentes antes de reservar/i,
     }),
   ).toBeVisible();
 });
@@ -135,9 +137,7 @@ test("reservation form reports pending confirmation", async ({ page }) => {
   await page.locator("#booking-guests").fill("2");
   await page.getByLabel("Nombre").fill("Ada Lovelace");
   await page.getByLabel("Telefono").fill("+34 600 000 000");
-  await page
-    .getByLabel(/He leido la informacion provisional de privacidad/i)
-    .check();
+  await page.getByLabel(/He leido la informacion de privacidad/i).check();
   await page.waitForTimeout(3100);
   await page.getByRole("button", { name: /enviar solicitud/i }).click();
   await expect(
@@ -235,7 +235,9 @@ test("rapid route navigation keeps shell stable without console errors", async (
 
   await page.goto("/contacto/", { waitUntil: "domcontentloaded" });
   await expect(
-    page.getByRole("heading", { name: /contacto, ubicacion y llegada/i }),
+    page.getByRole("heading", {
+      name: /contacto y como llegar a malcriado en pineda de mar/i,
+    }),
   ).toBeVisible();
 
   await page.goto("/reservar/", { waitUntil: "domcontentloaded" });
@@ -256,7 +258,7 @@ test("rapid route navigation keeps shell stable without console errors", async (
 
   await expect(
     page.getByRole("heading", {
-      name: /preguntas frecuentes visibles y verificables/i,
+      name: /preguntas frecuentes antes de reservar/i,
     }),
   ).toBeVisible();
   expect(severeConsoleErrors).toEqual([]);
