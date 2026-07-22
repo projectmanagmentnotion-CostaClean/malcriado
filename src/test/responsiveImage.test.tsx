@@ -94,11 +94,19 @@ describe("ResponsiveImage", () => {
     expect(container.querySelector("img")).toHaveAttribute("alt", "");
   });
 
-  it("supports eager loading and object position", () => {
-    render(<ResponsiveImage asset={asset} sizes="100vw" eager />);
+  it("supports eager priority loading and object position", () => {
+    render(
+      <ResponsiveImage
+        asset={asset}
+        sizes="100vw"
+        eager
+        fetchPriority="high"
+      />,
+    );
 
     const image = screen.getByRole("img", { name: "Asset test" });
     expect(image).toHaveAttribute("loading", "eager");
+    expect(image).toHaveAttribute("fetchpriority", "high");
     expect(image).toHaveStyle({ objectPosition: "50% 40%" });
     expect(image).toHaveAttribute("width", "768");
   });

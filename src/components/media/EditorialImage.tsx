@@ -11,6 +11,7 @@ interface EditorialImageProps {
   readonly credit?: string;
   readonly alt?: string;
   readonly eager?: boolean;
+  readonly fetchPriority?: "high" | "low" | "auto";
 }
 
 export function EditorialImage({
@@ -22,6 +23,7 @@ export function EditorialImage({
   credit,
   alt,
   eager = false,
+  fetchPriority,
 }: EditorialImageProps) {
   const frameProps = {
     ratio,
@@ -34,6 +36,7 @@ export function EditorialImage({
     crop,
     sizes,
     eager,
+    ...(fetchPriority ? { fetchPriority } : {}),
     ...(alt ? { alt } : {}),
   };
 

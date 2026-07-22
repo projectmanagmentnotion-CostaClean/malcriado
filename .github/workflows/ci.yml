@@ -43,7 +43,52 @@ jobs:
         run: npm run build
       - name: Bundle budget
         run: npm run bundle:budget
-      - name: Install Playwright Browsers
+      - name: Dependency audit
+        run: npm audit --audit-level=high
+
+  e2e:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Build production application
+        run: npm run build
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: E2E
+        run: npm run test:e2e
+      - name: Upload E2E diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-diagnostics
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+
+  lighthouse:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Build production application
+        run: npm run build
+      - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
       - name: Configure Chromium for Lighthouse
         shell: bash
@@ -52,5 +97,11 @@ jobs:
           echo "CHROME_PATH=$chromium_path" >> "$GITHUB_ENV"
       - name: Lighthouse CI
         run: npm run lighthouse:ci
-      - name: E2E
-        run: npm run test:e2e
+      - name: Upload Lighthouse diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-diagnostics
+          path: .tmp-lighthouse/
+          if-no-files-found: error
+          retention-days: 14

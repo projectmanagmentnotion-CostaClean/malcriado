@@ -8,6 +8,7 @@ interface ResponsiveImageProps {
   readonly decorative?: boolean;
   readonly className?: string;
   readonly eager?: boolean;
+  readonly fetchPriority?: "high" | "low" | "auto";
   readonly aspectRatio?: string;
 }
 
@@ -29,6 +30,7 @@ export function ResponsiveImage({
   decorative = false,
   className,
   eager = false,
+  fetchPriority,
   aspectRatio,
 }: ResponsiveImageProps) {
   const variants = getVariants(asset, crop);
@@ -71,6 +73,7 @@ export function ResponsiveImage({
         height={fallback.height}
         alt={decorative ? "" : resolvedAlt}
         loading={eager ? "eager" : "lazy"}
+        {...(fetchPriority ? { fetchpriority: fetchPriority } : {})}
         decoding="async"
         aria-hidden={decorative || undefined}
         style={{ objectPosition: asset.recommendedObjectPosition }}
