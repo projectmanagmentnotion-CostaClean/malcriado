@@ -32,7 +32,7 @@ No se ha inferido ningun alergeno. Todos los platos conservan `allergenStatus: P
 
 ## QA local del cierre
 
-- unit/integration: `78/78`
+- unit/integration: `80/80`
 - E2E: `45 passed / 5 skipped`
 - content: `0 errores / 86 warnings` (alergenos, descripciones y legales documentados)
 - bundle inicial: `169,86 KiB`, presupuesto `500 KiB`

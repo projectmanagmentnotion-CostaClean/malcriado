@@ -21,7 +21,7 @@ Estado: `local preview activo para Fase 6`
 
 ## Motivo de esta variable
 
-`src/lib/env.ts` exige `VITE_PUBLIC_SITE_URL` fuera del modo de test. Sin ella, la app no renderiza correctamente en desarrollo.
+`src/lib/env.ts` usa el canonical verificado `https://malcriadobcn.com` cuando la variable no existe, de modo que CI puede construir y renderizar sin un `.env` privado. Preview, staging y produccion deben seguir definiendo `VITE_PUBLIC_SITE_URL` de forma explicita para representar el entorno correcto.
 
 ## Observacion operativa
 
