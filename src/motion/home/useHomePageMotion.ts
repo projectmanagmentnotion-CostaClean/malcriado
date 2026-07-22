@@ -1,5 +1,6 @@
 import { RefObject, useEffect } from "react";
 import { loadGsapRuntime } from "@/motion/config/gsap";
+import { createScrollTriggerLifecycle } from "@/motion/utilities/scrollTriggerLifecycle";
 
 interface UseHomePageMotionOptions {
   readonly rootRef: RefObject<HTMLElement>;
@@ -57,6 +58,7 @@ export function useHomePageMotion({
     let cancelled = false;
     let mm: GsapMatchMediaController | null = null;
     let ctx: { revert: () => void } | null = null;
+    let disposeScrollLifecycle: (() => void) | null = null;
 
     void loadGsapRuntime()
       .then(({ gsap, ScrollTrigger }) => {
@@ -65,6 +67,9 @@ export function useHomePageMotion({
         }
 
         mm = gsap.matchMedia();
+        disposeScrollLifecycle = reducedMotion
+          ? null
+          : createScrollTriggerLifecycle(ScrollTrigger);
         ctx = gsap.context(() => {
           const debugTimelines: Array<{ isActive: () => boolean }> = [];
           const setHeaderTheme = (theme: string) => {
@@ -132,6 +137,7 @@ export function useHomePageMotion({
                 trigger: scene,
                 start: "top 48%",
                 end: "bottom 48%",
+                invalidateOnRefresh: true,
                 onEnter: () => setHeaderTheme(theme),
                 onEnterBack: () => setHeaderTheme(theme),
               });
@@ -140,7 +146,6 @@ export function useHomePageMotion({
 
           if (reducedMotion) {
             setHeaderTheme(defaultHeaderTheme);
-            createHeaderTriggers();
 
             if (showPreloader) {
               onPreloaderComplete();
@@ -178,6 +183,7 @@ export function useHomePageMotion({
                   trigger: featuredRail,
                   start: "top bottom",
                   end: "bottom top",
+                  invalidateOnRefresh: true,
                   scrub: 0.8,
                 },
               });
@@ -203,6 +209,7 @@ export function useHomePageMotion({
                   trigger: scene,
                   start: "top 76%",
                   once: true,
+                  invalidateOnRefresh: true,
                 },
               });
             }
@@ -221,6 +228,7 @@ export function useHomePageMotion({
                     trigger: scene,
                     start: "top bottom",
                     end: "bottom top",
+                    invalidateOnRefresh: true,
                     scrub: 0.7,
                   },
                 },
@@ -278,6 +286,7 @@ export function useHomePageMotion({
     return () => {
       cancelled = true;
       header?.setAttribute("data-theme", defaultHeaderTheme);
+      disposeScrollLifecycle?.();
       mm?.revert();
       ctx?.revert();
 
