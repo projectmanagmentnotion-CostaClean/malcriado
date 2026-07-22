@@ -5,6 +5,7 @@ export function buildReservationAnalyticsPayload(request: ReservationRequest) {
     preferredChannel: request.contact.preferredChannel,
     guests: request.preferences.guests,
     hasMessage: request.preferences.message.length > 0,
+    hasAllergies: (request.preferences.allergies ?? "").length > 0,
     contextTags: request.context.tags.map((tag) => `${tag.kind}:${tag.slug}`),
   };
 }

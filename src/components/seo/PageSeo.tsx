@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { getCanonicalSiteUrl } from "@/content";
+import { env } from "@/lib/env";
 
 interface PageSeoProps {
   readonly title: string;
@@ -33,6 +34,8 @@ export function PageSeo({
   structuredData,
 }: PageSeoProps) {
   const canonicalUrl = new URL(path, getCanonicalSiteUrl()).toString();
+  const effectiveRobots =
+    env.VITE_STAGING_NOINDEX === "true" ? "noindex, nofollow" : robots;
   const jsonLdEntries = structuredData
     ? Array.isArray(structuredData)
       ? structuredData
@@ -68,7 +71,9 @@ export function PageSeo({
       {twitter?.image ? (
         <meta name="twitter:image" content={twitter.image} />
       ) : null}
-      {robots ? <meta name="robots" content={robots} /> : null}
+      {effectiveRobots ? (
+        <meta name="robots" content={effectiveRobots} />
+      ) : null}
       {jsonLdEntries.map((entry, index) => (
         <script key={`${canonicalUrl}-${index}`} type="application/ld+json">
           {JSON.stringify(entry)}

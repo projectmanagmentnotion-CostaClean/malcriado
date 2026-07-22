@@ -66,8 +66,8 @@ export function MenuPage() {
                 </h1>
                 <p className="menu-hero__lede" data-menu-reveal="true">
                   Carta en HTML con platos, bebidas y postres para consultar
-                  antes de reservar. Precios y alergias se confirman
-                  directamente con el equipo.
+                  antes de reservar. Los importes mostrados incluyen IVA cuando
+                  corresponda.
                 </p>
                 <div className="menu-hero__actions" data-menu-reveal="true">
                   <LinkButton
@@ -257,24 +257,33 @@ export function MenuPage() {
           })}
         </div>
 
-        <section className="menu-notes" data-menu-motion="notes">
+        <section
+          className="menu-notes"
+          data-menu-motion="notes"
+          id="informacion-alergenos"
+        >
           <div className="container container--wide">
             <div className="menu-notes__grid">
               <div className="menu-note" data-menu-reveal="true">
                 <p className="eyebrow">Precios</p>
-                <h2>Precio a consultar con el equipo</h2>
+                <h2>Precios claros en la carta</h2>
                 <p>
-                  Para evitar errores, la web no publica importes sin confirmar.
-                  Si vienes hoy o quieres reservar, puedes consultarlos antes
-                  por telefono, WhatsApp o formulario.
+                  Los importes se muestran en euros e incluyen IVA cuando
+                  corresponda. Consulta al equipo ante cualquier duda.
                 </p>
               </div>
               <div className="menu-note" data-menu-reveal="true">
                 <p className="eyebrow">Alergenos</p>
-                <h2>Consulta operativa antes de confirmar</h2>
+                <h2>Informacion sobre alergenos</h2>
                 <p>
-                  Si tienes alergias o intolerancias, confirma siempre con el
-                  equipo antes de cerrar la visita o pedir un plato concreto.
+                  ¿Tienes alguna alergia o intolerancia? Consulta con nuestro
+                  equipo antes de realizar tu pedido.
+                </p>
+                <p>
+                  Los 14 grupos son: gluten, crustaceos, huevos, pescado,
+                  cacahuetes, soja, leche, frutos de cascara, apio, mostaza,
+                  sesamo, sulfitos, altramuces y moluscos. No mostramos iconos
+                  por plato hasta que la matriz haya sido validada.
                 </p>
               </div>
             </div>

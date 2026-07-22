@@ -130,7 +130,9 @@ test("persistent CTA stays off on reservar and returns on home navigation", asyn
   await expect(cta).toHaveAttribute("data-hidden", "false");
 });
 
-test("reservation form reports pending confirmation", async ({ page }) => {
+test("reservation form requires an explicit delivery channel", async ({
+  page,
+}) => {
   await page.goto("/reservar/");
   await page.getByLabel("Fecha").fill(getFutureDateIso(2));
   await page.getByLabel("Hora").fill("20:00");
@@ -141,7 +143,10 @@ test("reservation form reports pending confirmation", async ({ page }) => {
   await page.waitForTimeout(3100);
   await page.getByRole("button", { name: /enviar solicitud/i }).click();
   await expect(
-    page.getByText(/no queda confirmada hasta respuesta del equipo/i),
+    page.getByText(/la web no marcará la solicitud como recibida/i),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /enviar por whatsapp/i }),
   ).toBeVisible();
 });
 

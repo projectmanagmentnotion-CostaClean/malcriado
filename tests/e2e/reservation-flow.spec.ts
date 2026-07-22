@@ -16,7 +16,7 @@ async function fillReservationForm(page: import("@playwright/test").Page) {
   await page.waitForTimeout(3100);
 }
 
-test("reservation flow shows duplicate protection after a successful send", async ({
+test("reservation flow prepares explicit fallback actions without false persistence", async ({
   page,
 }) => {
   await page.goto("/reservar/");
@@ -24,50 +24,45 @@ test("reservation flow shows duplicate protection after a successful send", asyn
 
   await page.getByRole("button", { name: /enviar solicitud/i }).click();
   await expect(
-    page.getByRole("heading", { name: "Solicitud enviada" }),
+    page.getByRole("heading", { name: "Elige cómo enviar la solicitud" }),
   ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /enviar por whatsapp/i }),
+  ).toBeVisible();
+  await expect(
+    page.locator('[data-status="action_required"]'),
+  ).not.toContainText("Reserva confirmada");
+});
+
+test("reservation flow includes allergies in the encoded WhatsApp action", async ({
+  page,
+}) => {
+  await page.goto("/reservar/");
+  await fillReservationForm(page);
+  await page.getByLabel("Alergias o intolerancias").fill("Frutos secos");
+
+  await page.getByRole("button", { name: /enviar solicitud/i }).click();
+  const href = await page
+    .getByRole("link", { name: /enviar por whatsapp/i })
+    .getAttribute("href");
+  expect(href).toContain("Frutos%20secos");
+  expect(href).toContain("Referencia");
+});
+
+test("reservation honeypot does not produce channel actions", async ({
+  page,
+}) => {
+  await page.goto("/reservar/");
+  await fillReservationForm(page);
+  await page.locator("#booking-website").fill("bot.example");
 
   await page.getByRole("button", { name: /enviar solicitud/i }).click();
   await expect(
-    page.getByText(/evitamos un segundo envio duplicado/i),
+    page.getByText(/no se ha podido validar el envio/i),
   ).toBeVisible();
-});
-
-test("reservation flow surfaces timeout and allows retry", async ({ page }) => {
-  await page.addInitScript(() => {
-    window.sessionStorage.setItem("malcriado:reservation:mock-mode", "timeout");
-  });
-  await page.goto("/reservar/");
-  await fillReservationForm(page);
-
-  await page.getByRole("button", { name: /enviar solicitud/i }).click();
-  await expect(page.getByText(/ha tardado demasiado/i)).toBeVisible();
   await expect(
-    page.getByRole("button", { name: /reintentar envio/i }),
-  ).toBeVisible();
-});
-
-test("reservation flow surfaces rate limit state", async ({ page }) => {
-  await page.addInitScript(() => {
-    window.sessionStorage.setItem(
-      "malcriado:reservation:mock-mode",
-      "rate_limited",
-    );
-  });
-  await page.goto("/reservar/");
-  await fillReservationForm(page);
-
-  await page.getByRole("button", { name: /enviar solicitud/i }).click();
-  await expect(page.getByText(/demasiados intentos/i)).toBeVisible();
-});
-
-test("reservation flow surfaces offline state", async ({ page }) => {
-  await page.goto("/reservar/");
-  await fillReservationForm(page);
-  await page.context().setOffline(true);
-
-  await page.getByRole("button", { name: /enviar solicitud/i }).click();
-  await expect(page.getByText(/sin conexion/i)).toBeVisible();
+    page.getByRole("link", { name: /enviar por whatsapp/i }),
+  ).toHaveCount(0);
 });
 
 test("reservation route remains readable with reduced motion", async ({

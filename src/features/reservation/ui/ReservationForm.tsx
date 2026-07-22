@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 import { Checkbox } from "@/components/forms/Checkbox";
+import { OpeningHours } from "@/components/business/OpeningHours";
 import { DateInput } from "@/components/forms/DateInput";
 import { FormField } from "@/components/forms/FormField";
 import { FormSection } from "@/components/forms/FormSection";
+import { Select } from "@/components/forms/Select";
 import { TextArea } from "@/components/forms/TextArea";
 import { TextInput } from "@/components/forms/TextInput";
 import { TimeInput } from "@/components/forms/TimeInput";
@@ -94,6 +96,7 @@ export function ReservationForm({ context }: ReservationFormProps) {
             queda sujeta a confirmacion manual del equipo. Si necesitas una mesa
             muy concreta, te recomendamos anadirlo en el mensaje o usar
             WhatsApp.
+            <OpeningHours />
           </div>
           <div className="reservation-form__grid">
             <FormField
@@ -286,8 +289,79 @@ export function ReservationForm({ context }: ReservationFormProps) {
               ))}
             </div>
           </fieldset>
+          <div className="reservation-form__grid">
+            <FormField
+              description="Indica una preferencia; no garantiza asignacion."
+              error={errorMap.get("zone")}
+              htmlFor="booking-zone"
+              label="Zona preferida"
+            >
+              <Select
+                id="booking-zone"
+                name="zone"
+                onChange={(event) =>
+                  setFieldValue(
+                    "zone",
+                    event.target.value as typeof values.zone,
+                  )
+                }
+                value={values.zone}
+              >
+                <option value="sin-preferencia">Sin preferencia</option>
+                <option value="interior">Interior</option>
+                <option value="terraza">Terraza</option>
+              </Select>
+            </FormField>
+            <FormField
+              description="Cumpleanos, aniversario u otra ocasion."
+              error={errorMap.get("occasion")}
+              htmlFor="booking-occasion"
+              label="Ocasion"
+            >
+              <TextInput
+                aria-invalid={errorMap.has("occasion")}
+                id="booking-occasion"
+                name="occasion"
+                onChange={(event) =>
+                  setFieldValue("occasion", event.target.value)
+                }
+                ref={(element) => {
+                  fieldRefs.current.occasion = element ?? undefined;
+                }}
+                value={values.occasion}
+              />
+            </FormField>
+          </div>
           <FormField
-            description="Alergias, celebraciones, acceso, carrito o cualquier detalle relevante."
+            description="El equipo revisara esta informacion antes de responder. Consulta siempre antes de realizar tu pedido."
+            error={errorMap.get("allergies")}
+            htmlFor="booking-allergies"
+            label="Alergias o intolerancias"
+          >
+            <TextArea
+              aria-invalid={errorMap.has("allergies")}
+              id="booking-allergies"
+              name="allergies"
+              onChange={(event) =>
+                setFieldValue("allergies", event.target.value)
+              }
+              ref={(element) => {
+                fieldRefs.current.allergies = element ?? undefined;
+              }}
+              rows={3}
+              value={values.allergies}
+            />
+          </FormField>
+          <p className="reservation-inline-note">
+            ¿Tienes alguna alergia o intolerancia? Consulta con nuestro equipo
+            antes de realizar tu pedido.{" "}
+            <TextLink to="/menu/#informacion-alergenos">
+              Ver los 14 grupos de alergenos
+            </TextLink>
+            .
+          </p>
+          <FormField
+            description="Acceso, carrito o cualquier otro detalle relevante."
             error={errorMap.get("message")}
             htmlFor="booking-message"
             label="Mensaje"

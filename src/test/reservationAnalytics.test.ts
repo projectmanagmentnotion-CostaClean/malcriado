@@ -18,6 +18,9 @@ describe("reservation analytics payload", () => {
       },
       preferences: {
         guests: 4,
+        zone: "interior",
+        occasion: "",
+        allergies: "",
         message: "Mesa tranquila y acceso con carrito",
       },
       consent: {
@@ -27,6 +30,7 @@ describe("reservation analytics payload", () => {
         new URLSearchParams("dish=pizza-margarita&context=home-hero"),
       ),
       metadata: {
+        requestId: "28fb86a1-4d6d-4f70-8dd5-e66fc9120522",
         startedAt: "2026-07-21T17:00:00.000Z",
         submittedAt: "2026-07-21T17:00:05.000Z",
         honeypot: "",
@@ -43,6 +47,7 @@ describe("reservation analytics payload", () => {
       preferredChannel: "email",
       guests: 4,
       hasMessage: true,
+      hasAllergies: false,
       contextTags: [
         "dish:pizza-margarita",
         "category:pizzas",

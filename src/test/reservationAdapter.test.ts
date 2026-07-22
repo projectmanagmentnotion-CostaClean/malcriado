@@ -22,6 +22,9 @@ function createRequest(
     },
     preferences: {
       guests: 2,
+      zone: "sin-preferencia",
+      occasion: "",
+      allergies: "",
       message: "Mesa tranquila",
     },
     consent: {
@@ -29,6 +32,7 @@ function createRequest(
     },
     context: parseReservationContext(new URLSearchParams("context=home-hero")),
     metadata: {
+      requestId: "28fb86a1-4d6d-4f70-8dd5-e66fc9120522",
       startedAt: "2026-07-21T17:00:00.000Z",
       submittedAt: "2026-07-21T17:00:05.000Z",
       honeypot: "",

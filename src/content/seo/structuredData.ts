@@ -10,6 +10,7 @@ import {
 } from "@/lib/menu/menuPresentation";
 import type { LocalSeoPage } from "@/types/content";
 import { getCanonicalSiteUrl } from "../business/business";
+import { getOpeningHoursSpecification } from "../business/openingHours";
 
 function getCanonicalUrl(path: string) {
   return new URL(path, getCanonicalSiteUrl()).toString();
@@ -42,6 +43,7 @@ function getOrganizationBase() {
     },
     telephone: businessContent.contact.phone.value,
     email: businessContent.contact.email.value,
+    openingHoursSpecification: getOpeningHoursSpecification(),
     sameAs: businessContent.contact.socials
       .map((link) => link.href.value)
       .filter((href): href is string => Boolean(href)),
@@ -137,6 +139,15 @@ function getMenuStructuredData() {
               "Disponible en la carta publica de Malcriado. Consulta al equipo por precio, ingredientes y alergenos.",
             url: getCanonicalUrl(`/menu/#${buildMenuItemId(item.id)}`),
             ...(image ? { image } : {}),
+            ...(item.price.amount !== null
+              ? {
+                  offers: {
+                    "@type": "Offer",
+                    price: item.price.amount.toFixed(2),
+                    priceCurrency: item.price.currency,
+                  },
+                }
+              : {}),
           };
         }),
     })),

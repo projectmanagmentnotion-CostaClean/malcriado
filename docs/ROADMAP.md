@@ -412,6 +412,21 @@ Fase 7 no debe marcarse como completamente publicada hasta tener:
 
 ## Fase 12 - Lanzamiento
 
+### Fase 12A - contenido comercial y reservas propias
+
+- [x] Horarios comerciales propuestos desde una unica fuente tipada.
+- [x] Precios editoriales centralizados para items sin importe recuperado.
+- [x] Tratamiento seguro de alergenos y matriz de validacion.
+- [x] Configuracion legal unica con omision publica de campos ausentes.
+- [x] Proveedor de reservas con endpoint configurable y fallback sin falso exito.
+- [x] UUID, Zod, honeypot, rate-limit contract e idempotencia.
+- [x] Staging noindex y runbook SiteGround/rollback.
+- [ ] Provisionar Supabase/SMTP y desplegar endpoint real.
+- [ ] Publicar staging y completar QA en dispositivos reales.
+- [ ] Validacion comercial, juridica y de alergenos por el titular.
+
+Decision actual: `NO-GO` para dominio principal; staging queda preparado pero no desplegado.
+
 - [ ] Build de produccion reproducible.
 - [ ] Backup de web actual.
 - [ ] Plan de despliegue y rollback.

@@ -51,8 +51,11 @@ export interface BusinessHoursDay {
     | "friday"
     | "saturday"
     | "sunday";
-  readonly opensAt: string | null;
-  readonly closesAt: string | null;
+  readonly label: string;
+  readonly intervals: readonly {
+    readonly opensAt: string;
+    readonly closesAt: string;
+  }[];
   readonly status: VerificationStatus;
   readonly note?: string;
 }

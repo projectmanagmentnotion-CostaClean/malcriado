@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { reservationConfig } from "@/features/reservation/config/reservationConfig";
+import { isWithinProposedOpeningHours } from "@/content/business/openingHours";
 import type {
   ReservationContext,
   ReservationError,
@@ -45,6 +46,9 @@ export function sanitizeReservationFormValues(
     time: values.time.trim(),
     guests: values.guests.trim(),
     message: normalizeSpace(values.message),
+    zone: values.zone ?? "sin-preferencia",
+    occasion: normalizeSpace(values.occasion ?? ""),
+    allergies: normalizeSpace(values.allergies ?? ""),
     website: values.website.trim(),
   };
 }
@@ -157,6 +161,18 @@ export function validateReservationFormValues(input: {
     });
   }
 
+  if (
+    values.date &&
+    values.time &&
+    !isWithinProposedOpeningHours(values.date, values.time)
+  ) {
+    errors.push({
+      field: "time",
+      code: "outside_service_hours",
+      message: "Selecciona una hora dentro del horario comercial indicado.",
+    });
+  }
+
   const guests = Number(values.guests);
   if (!Number.isInteger(guests) || guests < reservationConfig.guestLimits.min) {
     errors.push({
@@ -185,6 +201,23 @@ export function validateReservationFormValues(input: {
     });
   }
 
+  if (values.occasion.length > 80) {
+    errors.push({
+      field: "occasion",
+      code: "occasion_too_long",
+      message: "La ocasion no puede superar los 80 caracteres.",
+    });
+  }
+
+  if (values.allergies.length > 500) {
+    errors.push({
+      field: "allergies",
+      code: "allergies_too_long",
+      message:
+        "La informacion de alergias no puede superar los 500 caracteres.",
+    });
+  }
+
   if (!values.privacyAccepted) {
     errors.push({
       field: "privacyAccepted",
@@ -209,6 +242,9 @@ export function buildReservationFingerprint(input: {
     time: values.time,
     guests: values.guests,
     message: values.message,
+    zone: values.zone,
+    occasion: values.occasion,
+    allergies: values.allergies,
     preferredChannel: values.preferredChannel,
     privacyAccepted: values.privacyAccepted,
     context: input.context.tags.map((tag) => `${tag.kind}:${tag.slug}`),
@@ -222,6 +258,20 @@ export function buildReservationIdempotencyKey(input: {
   readonly fingerprint: string;
 }) {
   return `reservation-${input.sessionId}-${input.fingerprint}`;
+}
+
+function createReservationRequestId() {
+  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
+    return crypto.randomUUID();
+  }
+
+  const randomHex = Array.from({ length: 32 }, () =>
+    Math.floor(Math.random() * 16).toString(16),
+  );
+  randomHex[12] = "4";
+  randomHex[16] = ["8", "9", "a", "b"][Math.floor(Math.random() * 4)]!;
+  const hex = randomHex.join("");
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
 }
 
 export function buildReservationRequest(input: {
@@ -256,6 +306,9 @@ export function buildReservationRequest(input: {
     },
     preferences: {
       guests: Number(values.guests),
+      zone: values.zone,
+      occasion: values.occasion,
+      allergies: values.allergies,
       message: values.message,
     },
     consent: {
@@ -263,6 +316,7 @@ export function buildReservationRequest(input: {
     },
     context: input.context,
     metadata: {
+      requestId: createReservationRequestId(),
       startedAt: new Date(input.startedAtMs).toISOString(),
       submittedAt: new Date().toISOString(),
       honeypot: values.website,

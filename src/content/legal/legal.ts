@@ -64,7 +64,7 @@ export const legalPages: readonly LegalPageContent[] = [
         id: "legal-privacidad-datos",
         title: "Datos tratados hoy por la web",
         paragraphs: [
-          "La funcionalidad visible de reserva solicita nombre, telefono, correo electronico cuando procede, fecha, hora, numero de comensales, notas y consentimiento de privacidad.",
+          "La funcionalidad visible de reserva solicita nombre, telefono, correo electronico cuando procede, fecha, hora, numero de comensales, zona preferida, ocasion, alergias o intolerancias, notas y consentimiento de privacidad.",
           "La finalidad visible es gestionar solicitudes de reserva y responder por los canales operativos publicados.",
         ],
       },

@@ -41,6 +41,10 @@ jobs:
         run: npm run test:run
       - name: Build
         run: npm run build
+      - name: Bundle budget
+        run: npm run bundle:budget
+      - name: Lighthouse CI
+        run: npm run lighthouse:ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
       - name: E2E

@@ -8,6 +8,7 @@ export * from "./faq/faq";
 export * from "./home/scenes";
 export * from "./home/story";
 export * from "./legal/legal";
+export * from "./legal/legalIdentity";
 export * from "./menu/allergens";
 export * from "./menu/categories";
 export * from "./menu/items";

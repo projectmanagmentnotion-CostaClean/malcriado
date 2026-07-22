@@ -17,6 +17,9 @@ describe("booking provider", () => {
       },
       preferences: {
         guests: 2,
+        zone: "sin-preferencia",
+        occasion: "",
+        allergies: "",
         message: "",
       },
       consent: {
@@ -26,6 +29,7 @@ describe("booking provider", () => {
         new URLSearchParams("context=home-hero"),
       ),
       metadata: {
+        requestId: "28fb86a1-4d6d-4f70-8dd5-e66fc9120522",
         startedAt: new Date("2026-07-21T18:00:00.000Z").toISOString(),
         submittedAt: new Date("2026-07-21T18:00:05.000Z").toISOString(),
         honeypot: "",

@@ -32,8 +32,8 @@ export function AllergenStatus({ allergens, status }: AllergenStatusProps) {
         tone="pending"
       >
         <p>
-          Si tienes alergias o intolerancias, confirma los alergenos
-          directamente con el equipo antes de pedir.
+          ¿Tienes alguna alergia o intolerancia? Consulta con nuestro equipo
+          antes de realizar tu pedido.
         </p>
       </StatusMessage>
     );
