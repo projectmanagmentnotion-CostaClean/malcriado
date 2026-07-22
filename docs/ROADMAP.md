@@ -436,6 +436,7 @@ Fase 12A quedó integrada en `main` mediante squash (`31f7765e467e53ed96544f3b0a
 - [x] Build reproducible, ZIP y checksums.
 - [x] Plan de backup, despliegue SiteGround y rollback.
 - [x] Runbook de smoke y monitorización.
+- [x] Revisión independiente, Axe de producción y verificación automatizada del ZIP.
 - [ ] Backup real de la web actual, condicionado a acceso SiteGround.
 - [ ] Despliegue real, purga de caché y smoke remoto.
 - [ ] Search Console y revisión post-lanzamiento 24 h / 7 días.

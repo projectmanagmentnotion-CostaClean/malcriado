@@ -8,6 +8,7 @@ Node 20.19 o superior y lockfile limpio.
 npm ci
 npm run qa
 npm run release:build
+npm run release:verify
 ```
 
 `release:build` fuerza el dominio canónico, modo `contact`, API vacía, dev routes desactivadas, analítica desactivada y `noindex` desactivado. Después copia `dist/` y genera un ZIP ordenado, con fecha fija, permisos fijos y compresión nivel 9.
@@ -23,8 +24,8 @@ npm run release:build
 ## Verificación
 
 ```powershell
-Get-FileHash release/malcriado-production.zip -Algorithm SHA256
-Get-Content release/malcriado-production.sha256
+$env:EXPECTED_RELEASE_SHA256="b43ef4ff6d395b820067641a15883a174256dfba9b7e16f061e6c87004ae997a"
+npm run release:verify
 ```
 
 Dos ejecuciones consecutivas deben producir el mismo hash si el árbol fuente y las dependencias bloqueadas no cambian.
@@ -32,7 +33,7 @@ Dos ejecuciones consecutivas deben producir el mismo hash si el árbol fuente y 
 ## Artefacto de cierre — 2026-07-22
 
 - Archivos publicables: 384.
-- Tamaño ZIP: 25.340.272 bytes.
-- SHA-256 ZIP: `7bca0b1c1dc13d01ec84fecd6d3a5aa272ed6e2252f20b9153c425b8a925568e`.
+- Tamaño ZIP: 25.340.269 bytes.
+- SHA-256 ZIP: `b43ef4ff6d395b820067641a15883a174256dfba9b7e16f061e6c87004ae997a`.
 - Source maps: 0.
 - Marcadores `/dev/` o `__MALCRIADO_MOCK` en el artefacto: 0.

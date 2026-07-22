@@ -5,8 +5,8 @@
 - Fase: `12B — candidato de producción por contacto`.
 - Rama: `codex/phase-12b-production-launch`.
 - Base inicial: merge de Fase 12A `31f7765e467e53ed96544f3b0a91da613caf97c1`.
-- PR: abrir como draft con título `Phase 12B: production launch with contact reservation mode` tras commit/push.
-- No hacer merge ni desplegar sin revisión independiente, CI verde, paquete verificado y backup real.
+- PR: `#14 Phase 12B: production launch with contact reservation mode`.
+- Revisión independiente local: completada; no hacer merge hasta CI verde del head final y no desplegar sin backup real.
 
 ## Retomar
 
@@ -24,6 +24,7 @@ npm run qa
 
 ```bash
 npm run release:build
+npm run release:verify
 ```
 
 Genera `release/malcriado-production/`, `.zip` y `.sha256`; `release/` no se versiona. El build fuerza canonical de producción, reservas `contact`, API vacía, analytics/dev routes desactivados e indexación activa.
@@ -38,7 +39,7 @@ Genera `release/malcriado-production/`, `.zip` y `.sha256`; `release/` no se ver
 ## Operación pendiente
 
 1. Confirmar CI remoto del head exacto.
-2. Revisión independiente del draft PR.
+2. Confirmar que PR #14 está `ready for review` sin hacer merge.
 3. Acceder a SiteGround y completar `docs/release/PRODUCTION_BACKUP.md`.
 4. Solo con backup verificado, subir el contenido del ZIP y purgar caché.
 5. Ejecutar `docs/release/PRODUCTION_SMOKE_TEST.md` y registrar URL/hora/evidencia.
@@ -55,10 +56,12 @@ npm run assets:verify
 npm run routes:validate
 npm run seo:validate
 npm run bundle:budget
+npm run accessibility:axe
 npm run test:run
 npm run build
 npm run test:e2e
 npm run qa
+npm run release:verify
 npm audit
 git diff --check
 ```

@@ -6,7 +6,9 @@
 - URL real: `NOT_DEPLOYED` hasta que exista evidencia de publicación.
 - Smoke remoto: `BLOCKED_NO_AUTHENTICATED_HOSTING_SESSION`.
 
-El recorrido automatizado local terminó con 43 pruebas aprobadas y 5 omitidas previstas. Incluyó rutas directas y 404, flujo de contacto, UUID abreviado, consentimiento específico de alergias, honeypot, reduced motion, zoom, ausencia de overflow y rutas `/dev/*` no disponibles.
+El recorrido automatizado local terminó con 45 pruebas aprobadas y 5 omitidas previstas. Incluyó rutas directas y 404, flujo de contacto, UUID abreviado, consentimiento específico de alergias, honeypot, reduced motion, zoom, ausencia de overflow, copia al portapapeles, fallbacks y rutas `/dev/*` no disponibles.
+
+`npm run accessibility:axe` verifica además Home/Reserva en desktop, móvil y reduced motion, canonical, consola y ausencia de requests externos inesperados antes de una acción explícita.
 
 ## Rutas
 

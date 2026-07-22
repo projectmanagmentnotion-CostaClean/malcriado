@@ -435,7 +435,7 @@ export function ReservationForm({ context }: ReservationFormProps) {
               Ver canales alternativos
             </LinkButton>
             <TextLink to="/contacto/">
-              Tambien puedes confirmar por telefono o WhatsApp
+              Tambien puedes solicitar por telefono o WhatsApp
             </TextLink>
           </div>
         </FormSection>

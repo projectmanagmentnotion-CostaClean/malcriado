@@ -19,8 +19,10 @@ async function fillReservationForm(page: import("@playwright/test").Page) {
 }
 
 test("reservation flow prepares explicit fallback actions without false persistence", async ({
+  context,
   page,
 }) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
   await page.goto("/reservar/");
   await fillReservationForm(page);
 
@@ -35,6 +37,53 @@ test("reservation flow prepares explicit fallback actions without false persiste
     page.locator('[data-status="prepared_for_contact"]'),
   ).not.toContainText("Reserva confirmada");
   await expect(page.getByText(/revisa el mensaje antes/i)).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /enviar por correo/i }),
+  ).toHaveAttribute("href", /^mailto:info@malcriadobcn\.com/);
+  await expect(
+    page.getByRole("link", { name: /llamar al restaurante/i }),
+  ).toHaveAttribute("href", "tel:+34672695670");
+  await expect(
+    page.getByRole("link", { name: /solicitar por telefono o whatsapp/i }),
+  ).toHaveAttribute("href", "/contacto/");
+  await expect(page.getByText(/reserva confirmada/i)).toHaveCount(0);
+
+  await page.getByRole("button", { name: /copiar mensaje/i }).click();
+  await expect(page.getByText(/mensaje copiado/i)).toBeVisible();
+  const clipboardText = await page.evaluate(() =>
+    navigator.clipboard.readText(),
+  );
+  expect(clipboardText).toContain("Solicitud de reserva · Malcriado");
+  expect(clipboardText).not.toContain("ada@example.com");
+  expect(clipboardText).not.toContain("600 000 000");
+
+  expect(page.url()).toBe(`${test.info().project.use.baseURL}/reservar/`);
+});
+
+test("reservation preparation makes no backend or unexpected external request", async ({
+  page,
+}) => {
+  const unexpectedRequests: string[] = [];
+  page.on("request", (request) => {
+    const url = request.url();
+    if (
+      /^https?:/i.test(url) &&
+      !url.startsWith(test.info().project.use.baseURL!)
+    ) {
+      unexpectedRequests.push(url);
+    }
+  });
+
+  await page.goto("/reservar/");
+  await fillReservationForm(page);
+  await page.getByRole("button", { name: /preparar solicitud/i }).click();
+  await expect(
+    page.getByRole("heading", { name: "Solicitud preparada" }),
+  ).toBeVisible();
+
+  expect(unexpectedRequests).toEqual([]);
+  expect(page.url()).not.toContain("Ada");
+  expect(page.url()).not.toContain("600");
 });
 
 test("reservation contact URLs contain only approved message fields", async ({

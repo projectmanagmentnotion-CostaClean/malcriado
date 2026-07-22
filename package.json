@@ -10,6 +10,7 @@
     "assets:audit": "node scripts/assets/audit.mjs",
     "assets:build": "node scripts/assets/build.mjs",
     "assets:verify": "node scripts/assets/verify.mjs",
+    "accessibility:axe": "node scripts/accessibility/phase12b-production-axe.mjs",
     "bundle:analyze": "node scripts/performance/bundle-analyze.mjs",
     "bundle:budget": "node scripts/performance/bundle-budget.mjs",
     "lighthouse:ci": "node scripts/performance/lighthouse-ci.mjs",
@@ -23,6 +24,7 @@
     "preview": "vite preview",
     "release:package": "node scripts/release/package-production.mjs",
     "release:build": "node scripts/release/build-production.mjs",
+    "release:verify": "node scripts/release/verify-production.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
@@ -74,6 +76,7 @@
     "typescript-eslint": "^8.41.0",
     "vite": "^7.1.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "yauzl": "^3.4.0"
   }
 }
