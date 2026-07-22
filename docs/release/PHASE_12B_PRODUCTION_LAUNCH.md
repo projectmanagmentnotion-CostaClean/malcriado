@@ -44,3 +44,11 @@ La revisión independiente se registra en `docs/qa/PHASE_12B_INDEPENDENT_REVIEW.
 - Pruebas humanas en Safari/iOS, Android y lector de pantalla real.
 - Métricas p75 de campo, disponibles únicamente después de recibir tráfico real.
 - Sustitución de datos jurídicos ausentes tras revisión del titular; no se inventan ni se muestran huecos.
+
+## Verificación de producción — Fase 12C
+
+El candidato se publicó en `https://malcriadobcn.com/` el 2026-07-22 a las 16:12 CEST desde `main` `8d16c4fc99c8be03bfd69a0f726ddac39fa472e9`. El backup local y el backup manual de SiteGround se verificaron antes de modificar `malcriadobcn.com/public_html`.
+
+El smoke remoto cerró con 45 pruebas Playwright aprobadas, 5 omitidas previstas, Axe sin violaciones, canonical y redirecciones correctos, sin errores de consola ni requests externos inesperados. La caché dinámica mostró HTML antiguo en dos rutas justo después del intercambio; se purgó con confirmación de SiteGround y la repetición completa quedó verde.
+
+Decisión operativa: `GO`, sin rollback. La integración `api` continúa inactiva; producción permanece en `contact` sin persistencia.
