@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#17120f" />
     <link rel="manifest" href="/site.webmanifest" />
+    <script>
+      if (["/", "/reservar/"].includes(window.location.pathname)) {
+        const heroPreload = document.createElement("link");
+        heroPreload.rel = "preload";
+        heroPreload.as = "image";
+        heroPreload.type = "image/avif";
+        heroPreload.href = "/assets/optimized/asset-019/landscape-960.avif";
+        heroPreload.setAttribute(
+          "imagesrcset",
+          "/assets/optimized/asset-019/landscape-960.avif 960w, /assets/optimized/asset-019/landscape-1440.avif 1440w, /assets/optimized/asset-019/landscape-1920.avif 1920w",
+        );
+        heroPreload.setAttribute("imagesizes", "100vw");
+        heroPreload.fetchPriority = "high";
+        document.head.append(heroPreload);
+      }
+    </script>
     <link
       rel="preload"
       href="/node_modules/@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-wght-normal.woff2"

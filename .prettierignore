@@ -4,6 +4,8 @@ node_modules/
 playwright-report/
 test-results/
 coverage/
+backups/
+external-assets/
 public/assets/source/
 public/assets/optimized/
 src/content/assets/asset-manifest.json

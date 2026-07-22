@@ -25,7 +25,7 @@ export function NosotrosPage() {
           <div className="story-hero__media">
             <EditorialImage
               alt="Escena gastronomica de Malcriado como apertura narrativa."
-              asset={getAsset("asset-026")}
+              asset={getAsset("asset-017")}
               crop="portrait"
               eager
               ratio="cinema"
@@ -132,6 +132,43 @@ export function NosotrosPage() {
                     "El mar, el paseo y la ubicacion forman parte de la experiencia desde que llegas hasta que reservas."}
                 </p>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section
+          aria-labelledby="story-gallery-title"
+          className="story-gallery"
+        >
+          <div className="container container--wide">
+            <header className="story-gallery__intro">
+              <p className="eyebrow">Mesa, producto y costa</p>
+              <h2 id="story-gallery-title">
+                La historia tambien se cuenta con lo que servimos
+              </h2>
+            </header>
+            <div className="story-gallery__grid">
+              <EditorialImage
+                alt="Plato de Malcriado servido como parte de la experiencia gastronomica."
+                asset={getAsset("asset-017")}
+                crop="portrait"
+                ratio="portrait"
+                sizes="(max-width: 700px) 100vw, 32vw"
+              />
+              <EditorialImage
+                alt="Detalle de un plato de la carta de Malcriado."
+                asset={getAsset("asset-018")}
+                crop="portrait"
+                ratio="portrait"
+                sizes="(max-width: 700px) 100vw, 32vw"
+              />
+              <EditorialImage
+                alt="Escena gastronomica del universo visual de Malcriado."
+                asset={getAsset("asset-024")}
+                crop="portrait"
+                ratio="portrait"
+                sizes="(max-width: 700px) 100vw, 32vw"
+              />
             </div>
           </div>
         </section>

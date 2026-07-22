@@ -78,7 +78,7 @@ export function ReservationForm({ context }: ReservationFormProps) {
       >
         <FormSection
           body="Completa los datos y continúa por WhatsApp o correo. El equipo revisará la disponibilidad y te confirmará personalmente la reserva."
-          title="Solicita tu mesa"
+          title="Datos de la solicitud"
         >
           <ReservationStatusPanel
             onRetry={() => {

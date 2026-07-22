@@ -74,7 +74,7 @@ export function ResponsiveImage({
         alt={decorative ? "" : resolvedAlt}
         loading={eager ? "eager" : "lazy"}
         {...(fetchPriority ? { fetchpriority: fetchPriority } : {})}
-        decoding="async"
+        decoding={eager ? "sync" : "async"}
         aria-hidden={decorative || undefined}
         style={{ objectPosition: asset.recommendedObjectPosition }}
       />

@@ -88,10 +88,6 @@ export function HomePage() {
   const whatsappHref = getWhatsappHref();
   const phoneHref = getTelephoneHref();
   const socialLinks = businessContent.contact.socials.slice(0, 2);
-  const publicMenuCategoryCount = menuContent.categories.filter(
-    (category) => category.publicationStatus === "PUBLIC",
-  ).length;
-
   const handlePreloaderComplete = useCallback(() => {
     if (typeof window !== "undefined") {
       window.sessionStorage.setItem(PRELOADER_SESSION_KEY, "true");
@@ -193,47 +189,10 @@ export function HomePage() {
                   WhatsApp
                 </LinkButton>
               </Cluster>
-              <dl className="home-hero__details" data-scene-reveal="true">
-                <div>
-                  <dt>Direccion</dt>
-                  <dd>{businessContent.location.publicAddress.value}</dd>
-                </div>
-                <div>
-                  <dt>Horario</dt>
-                  <dd>{businessContent.hours.summary.value}</dd>
-                </div>
-                <div>
-                  <dt>Reserva</dt>
-                  <dd>Solicitud manual con confirmacion del equipo.</dd>
-                </div>
-              </dl>
+              <p className="home-hero__note">
+                Solicitud manual con confirmacion del equipo.
+              </p>
             </div>
-            <aside className="home-hero__support" data-scene-reveal="true">
-              <div className="home-hero__support-card">
-                <p className="eyebrow">Primera impresion</p>
-                <p>{businessContent.identity.shortDescription.value}</p>
-                <span>
-                  Una llegada visual amplia, directa y centrada en reservar.
-                </span>
-              </div>
-              <div className="home-hero__support-card">
-                <p className="eyebrow">Lo que puedes encontrar</p>
-                <dl className="home-hero__metrics">
-                  <div>
-                    <dt>Categorias</dt>
-                    <dd>{publicMenuCategoryCount} publicas</dd>
-                  </div>
-                  <div>
-                    <dt>Platos</dt>
-                    <dd>{menuContent.items.length} en carta</dd>
-                  </div>
-                  <div>
-                    <dt>Reserva</dt>
-                    <dd>Solicitud con confirmacion manual</dd>
-                  </div>
-                </dl>
-              </div>
-            </aside>
           </div>
         </Container>
       </section>
@@ -282,7 +241,7 @@ export function HomePage() {
               <EditorialImage
                 alt="Plato destacado para escena de especial activo."
                 asset={specialAsset}
-                crop="portrait"
+                crop="editorial"
                 ratio="portrait"
                 sizes="(max-width: 900px) 100vw, 36vw"
               />
@@ -316,7 +275,7 @@ export function HomePage() {
               <EditorialImage
                 alt="Plato de fusion como apoyo a la declaracion editorial."
                 asset={fusionAsset}
-                crop="portrait"
+                crop="editorial"
                 ratio="portrait"
                 sizes="(max-width: 900px) 100vw, 34vw"
               />
@@ -487,6 +446,15 @@ export function HomePage() {
       >
         <Container width="wide">
           <div className="home-story">
+            <div className="home-story__media" data-scene-media="true">
+              <EditorialImage
+                alt="Detalle de un plato de Malcriado que acompana la historia del proyecto."
+                asset={getAsset("asset-018")}
+                crop="portrait"
+                ratio="portrait"
+                sizes="(max-width: 900px) 100vw, 38vw"
+              />
+            </div>
             <div className="home-story__lead">
               <p className="eyebrow" data-scene-reveal="true">
                 {storyScene.content.eyebrow}
