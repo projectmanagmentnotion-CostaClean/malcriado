@@ -5,8 +5,8 @@
 - Fase: `Fase 11 - QA integral`
 - Rama activa: `codex/phase-11-integral-qa`
 - Head: comprobar con `git rev-parse HEAD` tras el pull de la rama
-- Pull Request: pendiente de abrir o actualizar en este bloque
-- Estado local del checkpoint: quality gates verdes y documentacion de QA integral creada
+- Pull Request: `#12` draft abierto sobre `main`
+- Estado local del checkpoint: quality gates verdes, documentacion de QA integral creada y CI remoto ya verificado en verde sobre el head auditado
 - Gates verdes:
   - `npm run format:check`
   - `npm run lint`
@@ -22,9 +22,8 @@
   - `npm run qa`
   - `git diff --check`
 - Gates pendientes:
-  - push de la rama
-  - apertura de draft PR de Fase 11
-  - verificacion del CI remoto tras el push
+  - revision independiente final del PR
+  - decision de sacar el PR de draft o mantenerlo abierto
 - Warnings actuales: `130`
 - Bugs conocidos:
   - No hay bugs funcionales P0/P1/P2 nuevos abiertos en este checkpoint local
@@ -131,9 +130,9 @@ Condicion correcta:
 
 ## Trabajo pendiente exacto de Fase 11
 
-- Hacer push de `codex/phase-11-integral-qa`
-- Abrir el draft PR de Fase 11
-- Confirmar que el CI remoto sobre el head final se inicia y queda verde
+- Completar la revision independiente del PR `#12`
+- Mantener o actualizar la documentacion segun el veredicto final
+- Confirmar que el CI remoto sigue verde sobre cualquier head posterior a la revision
 - Mantener la deuda documentada:
   - 44 precios pendientes
   - 44 alergenos pendientes

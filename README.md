@@ -45,8 +45,8 @@ Fase 11 queda cerrada tecnicamente a nivel local sobre la rama `codex/phase-11-i
 - Axe manual automatizado sin violaciones serias o criticas en las rutas auditadas
 - bundle budget en `pass`
 - Lighthouse local:
-  - `/`: `78 / 100 / 100 / 100`
-  - `/menu/`: `81 / 100 / 100 / 100`
+  - `/`: `99 / 100 / 100 / 100`
+  - `/menu/`: `99 / 100 / 100 / 100`
 - build de produccion reproducible y preview validada
 - lanzamiento todavia bloqueado por datos del titular y deuda comercial/legal pendiente
 

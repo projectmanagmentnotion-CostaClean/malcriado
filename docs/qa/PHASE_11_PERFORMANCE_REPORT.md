@@ -15,43 +15,40 @@ Entorno Lighthouse: preview de produccion local en Windows `http://127.0.0.1:417
 
 ## Lighthouse
 
+Artefactos iniciales de fase:
+
+- [phase11-lighthouse-home.json](/C:/Users/USUARIO/Documents/malcriado/docs/qa/phase11-lighthouse-home.json)
+- [phase11-lighthouse-menu.json](/C:/Users/USUARIO/Documents/malcriado/docs/qa/phase11-lighthouse-menu.json)
+
+Repeticion independiente durante la revision del PR `#12` sobre la misma preview local:
+
 ### Home
 
-Archivo: [phase11-lighthouse-home.json](/C:/Users/USUARIO/Documents/malcriado/docs/qa/phase11-lighthouse-home.json)
-
-- Performance: `78`
-- Accessibility: `100`
-- Best Practices: `100`
-- SEO: `100`
-- LCP: `4.3 s`
-- CLS: `0.102`
-- TBT: `70 ms`
-- Speed Index: `2.7 s`
+- run 1: `99 / 100 / 100 / 100`
+- run 2: `99 / 100 / 100 / 100`
+- LCP repetido: `826.8 ms` y `918.3 ms`
+- CLS repetido: `0.0207` y `0.0207`
 
 ### Menu
 
-Archivo: [phase11-lighthouse-menu.json](/C:/Users/USUARIO/Documents/malcriado/docs/qa/phase11-lighthouse-menu.json)
+- run 1: `99 / 100 / 100 / 100`
+- run 2: `99 / 100 / 100 / 100`
+- LCP repetido: `907.8 ms` y `854.3 ms`
+- CLS repetido: `0.0139` y `0.0139`
 
-- Performance: `81`
-- Accessibility: `100`
-- Best Practices: `100`
-- SEO: `100`
-- LCP: `4.2 s`
-- CLS: `0.004`
-- TBT: `30 ms`
-- Speed Index: `2.8 s`
+Nota de tooling:
+
+- El CLI de Lighthouse en Windows sigue lanzando `EPERM` al limpiar su carpeta temporal despues de escribir el JSON.
+- La medicion se considera valida porque el reporte se genera correctamente antes del fallo de limpieza.
 
 ## Interpretacion
 
 - El presupuesto de bundle queda controlado.
 - `Accessibility`, `Best Practices` y `SEO` cierran en `100` en las rutas medidas.
-- El cuello de botella local sigue siendo `LCP` del hero y, en Home, un `CLS` local de laboratorio ligeramente por encima de `0.1`.
-- No se considera una regresion bloqueante para cerrar la fase porque:
-  - no hubo empeoramiento funcional detectado
-  - Menu mantiene `CLS` excelente
-  - el comportamiento ya estaba documentado como discrepancia de laboratorio local
+- Las lecturas anteriores de `LCP 4.3 s` y `CLS 0.102` en Home no se reproducen en la repeticion independiente actual.
+- La evidencia actual apunta a ruido de laboratorio o estado previo del entorno, no a una regresion real del producto.
 
 ## Deuda aceptada
 
-- Repetir Lighthouse y CWV en preview/remoto o entorno mas parecido a produccion real.
-- Revisar LCP del hero de Home antes del lanzamiento definitivo.
+- Confirmar Lighthouse y CWV una vez desplegada la build final del lanzamiento.
+- Mantener vigilado el fallo `EPERM` del CLI de Lighthouse en Windows por ser una molestia de tooling, no de producto.

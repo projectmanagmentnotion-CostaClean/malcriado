@@ -339,8 +339,10 @@ Fase 7 no debe marcarse como completamente publicada hasta tener:
 - [x] Unit, integration y E2E.
 - [x] QA visual por viewport.
 - [x] Axe y auditoria manual WCAG.
-- [x] Navegadores y dispositivos.
-- [x] Lighthouse y WebPageTest.
+- [x] Matriz automatizada en Chromium desktop y mobile emulado.
+- [ ] Firefox, Safari, Edge e iOS/Android reales.
+- [x] Lighthouse.
+- [ ] WebPageTest.
 - [x] SEO schema/canonical/indexacion.
 - [x] Formularios, consentimiento y seguridad.
 - [x] Enlaces, 404 y redirecciones.
@@ -375,13 +377,17 @@ Fase 7 no debe marcarse como completamente publicada hasta tener:
   - E2E: `47 passed / 5 skipped`
   - Axe serio/critico: `0` violaciones en las rutas publicas auditadas
   - bundle budget: `pass`
-  - Lighthouse local:
-    - `/`: `78 / 100 / 100 / 100`
-    - `/menu/`: `81 / 100 / 100 / 100`
+  - Lighthouse repetido en la revision independiente:
+    - `/`: `99 / 100 / 100 / 100`
+    - `/menu/`: `99 / 100 / 100 / 100`
 - SEO tecnico:
   - canonical estable por ruta
   - `FAQPage` solo visible en `/faq/`
   - `_redirects`, `robots.txt` y sitemap regenerados y validados
+- Cobertura real de navegador/dispositivo en esta fase:
+  - Chromium desktop: verde
+  - Chromium mobile emulado: verde
+  - Firefox, Safari, Edge e iOS/Android reales: pendientes antes del lanzamiento
 - Seguridad y privacidad:
   - sin secretos en cliente
   - sin PII en URL publica
@@ -401,7 +407,8 @@ Fase 7 no debe marcarse como completamente publicada hasta tener:
   - precios, alergenos y horarios por dia pendientes
   - proveedor real de reservas pendiente
   - pasada humana con lector de pantalla real pendiente
-  - Lighthouse local de Home y Menu aun por contrastar en entorno mas cercano a produccion real
+  - WebPageTest no ejecutado en esta fase por no disponer de integracion operativa en el entorno local
+  - confirmacion final de CWV en entorno desplegado antes del lanzamiento
 
 ## Fase 12 - Lanzamiento
 

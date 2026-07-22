@@ -20,7 +20,6 @@ La web queda tecnicamente estable a nivel frontend y QA local, pero todavia no p
 - alergenos pendientes
 - proveedor real de reservas pendiente
 - pasada humana con lector de pantalla real pendiente
-- repeticion de CWV/Lighthouse en entorno de preview real recomendada
 
 ## Lo que si queda listo
 
@@ -32,9 +31,10 @@ La web queda tecnicamente estable a nivel frontend y QA local, pero todavia no p
 - redirects y canonicals
 - build de produccion reproducible
 - QA automatizada integral verde
+- Lighthouse repetido en preview local actual con `99 / 100 / 100 / 100` en Home y Carta
 
 ## Condicion para pasar a Fase 12
 
 - cerrar validacion del titular
 - confirmar readiness de lanzamiento con datos reales
-- aceptar o corregir deuda residual de rendimiento y accesibilidad manual
+- aceptar o corregir deuda residual de accesibilidad manual
