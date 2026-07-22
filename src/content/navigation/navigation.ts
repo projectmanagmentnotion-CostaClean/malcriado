@@ -64,6 +64,15 @@ export const footerNavigation: readonly NavigationLink[] = [
     behavior: "internal",
     status: "VERIFIED",
   },
+  {
+    id: "nav-faq",
+    label: "FAQ",
+    path: "/faq/",
+    priority: 7,
+    context: "footer",
+    behavior: "internal",
+    status: "VERIFIED",
+  },
 ];
 
 export const legalNavigation: readonly NavigationLink[] = [

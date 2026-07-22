@@ -21,6 +21,9 @@ const preloadedDeclaracionAccesibilidadPage = initialPath.startsWith(
 const preloadedEspecialesPage = initialPath.startsWith("/especiales/")
   ? await import("@/pages/EspecialesPage")
   : null;
+const preloadedFaqPage = initialPath.startsWith("/faq/")
+  ? await import("@/pages/FaqPage")
+  : null;
 const preloadedMenuPage = initialPath.startsWith("/menu/")
   ? await import("@/pages/MenuPage")
   : null;
@@ -65,6 +68,13 @@ const EspecialesPage =
   lazy(() =>
     import("@/pages/EspecialesPage").then((module) => ({
       default: module.EspecialesPage,
+    })),
+  );
+const FaqPage =
+  preloadedFaqPage?.FaqPage ??
+  lazy(() =>
+    import("@/pages/FaqPage").then((module) => ({
+      default: module.FaqPage,
     })),
   );
 const MenuPage =
@@ -176,6 +186,13 @@ export const router = createBrowserRouter([
         element: withSuspense(<ContactoPage />),
         handle: publicHandle("Contacto", {
           focusTargetId: "page-heading-contacto",
+        }),
+      },
+      {
+        path: "/faq/",
+        element: withSuspense(<FaqPage />),
+        handle: publicHandle("FAQ", {
+          focusTargetId: "page-heading-faq",
         }),
       },
       {

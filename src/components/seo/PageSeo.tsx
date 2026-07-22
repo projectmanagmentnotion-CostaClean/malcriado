@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { env } from "@/lib/env";
+import { getCanonicalSiteUrl } from "@/content";
 
 interface PageSeoProps {
   readonly title: string;
@@ -32,7 +32,7 @@ export function PageSeo({
   twitter,
   structuredData,
 }: PageSeoProps) {
-  const canonicalUrl = new URL(path, env.VITE_PUBLIC_SITE_URL).toString();
+  const canonicalUrl = new URL(path, getCanonicalSiteUrl()).toString();
   const jsonLdEntries = structuredData
     ? Array.isArray(structuredData)
       ? structuredData

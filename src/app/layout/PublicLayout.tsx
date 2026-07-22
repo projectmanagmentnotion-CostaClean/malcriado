@@ -5,12 +5,13 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { PersistentBookingCta } from "@/components/layout/PersistentBookingCta";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { ConsentBanner, ConsentProvider } from "@/features/consent";
 
 export function PublicLayout() {
   const activeHandle = useActiveShellHandle();
 
   return (
-    <>
+    <ConsentProvider>
       <SkipLink />
       <ShellRouteEffects />
       <Header
@@ -25,6 +26,7 @@ export function PublicLayout() {
       {activeHandle.showPersistentBookingCta !== false ? (
         <PersistentBookingCta />
       ) : null}
-    </>
+      <ConsentBanner />
+    </ConsentProvider>
   );
 }

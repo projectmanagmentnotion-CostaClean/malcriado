@@ -1,5 +1,6 @@
 export * from "./booking";
 export * from "./business";
+export * from "./faq";
 export * from "./home";
 export * from "./legal";
 export * from "./menu";

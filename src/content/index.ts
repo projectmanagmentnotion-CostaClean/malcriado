@@ -4,6 +4,7 @@ export * from "./assets/assetManifest";
 export * from "./assets/getAsset";
 export * from "./booking/booking";
 export * from "./business/business";
+export * from "./faq/faq";
 export * from "./home/scenes";
 export * from "./home/story";
 export * from "./legal/legal";

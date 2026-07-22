@@ -238,14 +238,67 @@ Fase 7 no debe marcarse como completamente publicada hasta tener:
 
 ## Fase 9 - Paginas secundarias y legales
 
-- [ ] Nosotros.
-- [ ] Contacto y como llegar.
-- [ ] FAQ.
-- [ ] Aviso legal, privacidad y cookies.
-- [ ] Declaracion de accesibilidad.
-- [ ] Gestor de consentimiento real.
+- [x] Nosotros.
+- [x] Contacto y como llegar.
+- [x] FAQ.
+- [x] Aviso legal, privacidad y cookies.
+- [x] Declaracion de accesibilidad.
+- [x] Gestor de consentimiento real.
 
 **Aceptacion:** textos revisados, preferencias reversibles y terceros bloqueados antes de consentimiento cuando corresponda.
+
+### Resultado de la Fase 9
+
+- `/nosotros/` reconstruida con hero amplio, relato editorial verificado y deuda biografica visible.
+- `/contacto/` completada con bloque `Como llegar`, mapa embebido condicionado por consentimiento y CTA a reserva/FAQ/cookies.
+- `/faq/` creada como ruta HTML indexable con acordeones accesibles y `FAQPage` en JSON-LD visible.
+- `/aviso-legal/`, `/privacidad/` y `/cookies/` completadas como textos provisionales estructurados, con alcance real y disclaimers explicitos.
+- `/declaracion-de-accesibilidad/` completada con capacidades actuales, limites conocidos y canal de reporte provisional.
+- Gestor de consentimiento real implementado en `src/features/consent/`:
+  - aceptar
+  - rechazar
+  - personalizar
+  - cambiar preferencias mas tarde
+  - persistencia versionada
+  - sin casillas premarcadas
+  - terceros no esenciales bloqueados antes del consentimiento
+- Tercero real controlado en esta fase: `Google Maps embed` bajo categoria `external_media`.
+- Canonicals y `og:url` unificados contra `https://malcriadobcn.com/` tambien en preview y desarrollo, evitando dependencias del host local.
+- QA local cerrada:
+  - `npm run format:check`
+  - `npm run lint`
+  - `npm run typecheck`
+  - `npm run content:validate`
+  - `npm run content:report`
+  - `npm run assets:verify`
+  - `npm run routes:validate`
+  - `npm run seo:validate`
+  - `npm run bundle:budget`
+  - `npm run test:run`
+  - `npm run build`
+  - `npm run test:e2e`
+  - `npm run qa`
+  - `git diff --check`
+- Resultados:
+  - unitarios: `63/63`
+  - E2E: `45 passed / 5 skipped`
+  - Axe serio o critico: `0` en rutas cubiertas
+  - bundle budget: pass, chunk inicial `164.59 kB`
+  - Lighthouse produccion en `/contacto/` y `/faq/`: `86 / 100 / 100 / 100`
+- Documentacion de fase:
+  - `docs/qa/PHASE_9_SECONDARY_PAGES_AUDIT.md`
+  - `docs/legal/PHASE_9_LEGAL_PENDING_MATRIX.md`
+  - `docs/consent/CONSENT_ARCHITECTURE.md`
+  - `docs/consent/THIRD_PARTY_INVENTORY.md`
+  - `docs/consent/STORAGE_POLICY.md`
+  - `docs/accessibility/PHASE_9_ACCESSIBILITY_AUDIT.md`
+  - `docs/qa/PHASE_9_VISUAL_QA.md`
+  - `docs/legal/PHASE_9_OWNER_VALIDATION_CHECKLIST.md`
+- Deuda abierta:
+  - validacion juridica final del titular
+  - proveedor real de analitica si llega a activarse
+  - proveedor real de marketing si llega a activarse
+  - pasada humana con lector de pantalla real
 
 ## Fase 10 - Motion polish
 

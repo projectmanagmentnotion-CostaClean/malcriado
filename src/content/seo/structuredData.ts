@@ -1,17 +1,18 @@
 import { getAssetFallback } from "@/content/assets/assetSelectors";
 import { businessContent } from "@/content/business/business";
+import { faqEntries } from "@/content/faq/faq";
 import { menuContent } from "@/content/menu/menu";
 import { getActiveOffers } from "@/content/offers/offerSelectors";
 import { offers } from "@/content/offers/offers";
-import { env } from "@/lib/env";
 import {
   buildMenuCategoryId,
   buildMenuItemId,
 } from "@/lib/menu/menuPresentation";
 import type { LocalSeoPage } from "@/types/content";
+import { getCanonicalSiteUrl } from "../business/business";
 
 function getCanonicalUrl(path: string) {
-  return new URL(path, env.VITE_PUBLIC_SITE_URL).toString();
+  return new URL(path, getCanonicalSiteUrl()).toString();
 }
 
 export function getSeoImageUrl(assetId: string | null) {
@@ -24,7 +25,7 @@ export function getSeoImageUrl(assetId: string | null) {
     return null;
   }
 
-  return new URL(fallback.path, env.VITE_PUBLIC_SITE_URL).toString();
+  return new URL(fallback.path, getCanonicalSiteUrl()).toString();
 }
 
 function getOrganizationBase() {
@@ -162,6 +163,21 @@ function getOfferStructuredData(now = new Date()) {
   });
 }
 
+function getFaqStructuredData() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqEntries.map((entry) => ({
+      "@type": "Question",
+      name: entry.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: entry.answer,
+      },
+    })),
+  };
+}
+
 export function getStructuredDataForPage(page: LocalSeoPage) {
   const entries: object[] = [getPageStructuredData(page)];
 
@@ -189,6 +205,10 @@ export function getStructuredDataForPage(page: LocalSeoPage) {
 
   if (page.metadata.structuredData.includeOffers) {
     entries.push(...getOfferStructuredData());
+  }
+
+  if (page.metadata.structuredData.includeFaq) {
+    entries.push(getFaqStructuredData());
   }
 
   return entries;

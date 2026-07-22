@@ -16,9 +16,15 @@ export interface TwitterCardData {
 
 export interface StructuredDataContext {
   readonly type:
-    "Restaurant" | "WebSite" | "WebPage" | "ContactPage" | "AboutPage";
+    | "Restaurant"
+    | "WebSite"
+    | "WebPage"
+    | "ContactPage"
+    | "AboutPage"
+    | "FAQPage";
   readonly includeMenu: boolean;
   readonly includeOffers: boolean;
+  readonly includeFaq?: boolean;
   readonly includeBreadcrumbs?: boolean;
 }
 

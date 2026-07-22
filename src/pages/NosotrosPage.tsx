@@ -24,7 +24,7 @@ export function NosotrosPage() {
         <section className="story-hero">
           <div className="story-hero__media">
             <EditorialImage
-              alt="Escena gastronómica de Malcriado como apertura narrativa."
+              alt="Escena gastronomica de Malcriado como apertura narrativa."
               asset={getAsset("asset-026")}
               crop="portrait"
               eager
@@ -38,12 +38,12 @@ export function NosotrosPage() {
               <header className="story-hero__content">
                 <p className="eyebrow">Nosotros</p>
                 <h1 data-route-heading="true" id="page-heading-nosotros">
-                  Historia y propuesta editorial
+                  Historia, autoria y contexto del proyecto
                 </h1>
                 <p className="story-hero__lede">
-                  La narrativa pública de Malcriado se apoya en origen, fusión
-                  culinaria, costa y autoría visible, sin inventar biografías,
-                  citas ni un relato más allá de la fuente auditada.
+                  La narrativa publica de Malcriado se apoya en origen, fusion
+                  culinaria, costa y autoria visible, sin inventar biografias,
+                  citas ni credenciales que no aparezcan en la fuente auditada.
                 </p>
               </header>
               <div className="story-hero__aside">
@@ -55,11 +55,11 @@ export function NosotrosPage() {
                   </div>
                 ) : null}
                 <div>
-                  <p className="eyebrow">Reserva</p>
-                  <strong>De historia a visita real</strong>
+                  <p className="eyebrow">Edicion responsable</p>
+                  <strong>Del relato publico a la visita real</strong>
                   <span>
                     La experiencia debe terminar en una solicitud clara, no en
-                    un manifiesto abstracto.
+                    un manifiesto abstracto ni en promesas sin base operativa.
                   </span>
                 </div>
               </div>
@@ -74,18 +74,23 @@ export function NosotrosPage() {
                 <p className="eyebrow">{originBlock?.eyebrow ?? "Origen"}</p>
                 <h2>
                   {originBlock?.heading ??
-                    "Malcriado nace de una pasión por la gastronomía y la fusión de culturas."}
+                    "Malcriado nace de una pasion por la gastronomia y la fusion de culturas."}
                 </h2>
               </div>
               <div className="story-statement__copy">
                 <p>
                   {conceptBlock?.body ??
                     conceptBlock?.heading ??
-                    "La autoría visible y la definición ampliada del proyecto siguen pendientes de confirmación directa del titular."}
+                    "La autoria visible y la definicion ampliada del proyecto siguen pendientes de confirmacion directa del titular."}
                 </p>
-                <LinkButton to="/menu/" variant="secondary">
-                  Ver carta
-                </LinkButton>
+                <div className="story-statement__actions">
+                  <LinkButton to="/menu/" variant="secondary">
+                    Ver carta
+                  </LinkButton>
+                  <LinkButton to="/reservar/" variant="ghost">
+                    Ir a reserva
+                  </LinkButton>
+                </div>
               </div>
             </div>
           </div>
@@ -98,16 +103,16 @@ export function NosotrosPage() {
                 <p className="eyebrow">{conceptBlock?.eyebrow ?? "Concepto"}</p>
                 <h2>
                   {conceptBlock?.heading ??
-                    "Fusión culinaria como lenguaje central."}
+                    "Fusion culinaria como lenguaje central."}
                 </h2>
                 <p>
                   {conceptBlock?.body ??
-                    "La capa editorial mantiene explícito que aún faltan validaciones del titular sobre recorrido ampliado y matices biográficos."}
+                    "La capa editorial mantiene explicito que aun faltan validaciones del titular sobre recorrido ampliado y matices biograficos."}
                 </p>
               </article>
               <article className="story-column story-column--media">
                 <EditorialImage
-                  alt="Escena costera y gastronómica asociada al universo de Malcriado."
+                  alt="Escena costera y gastronomica asociada al universo de Malcriado."
                   asset={getAsset("asset-019")}
                   crop="landscape"
                   ratio="cinema"
@@ -122,7 +127,31 @@ export function NosotrosPage() {
                 </h2>
                 <p>
                   {coastBlock?.body ??
-                    "El contexto frente al mar aparece de forma consistente en el sitio auditado y forma parte de la identidad pública verificable."}
+                    "El contexto frente al mar aparece de forma consistente en el sitio auditado y forma parte de la identidad publica verificable."}
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="story-proof">
+          <div className="container container--wide">
+            <div className="story-proof__grid">
+              <article className="story-proof__card">
+                <p className="eyebrow">Lo verificado</p>
+                <h2>Origen, fusion y costa se sostienen en la auditoria</h2>
+                <p>
+                  La capa editorial puede ser cinematografica sin perder rigor:
+                  el proyecto se presenta como cocina fusion, frente al mar y
+                  con autoria visible en multiples rutas publicas auditadas.
+                </p>
+              </article>
+              <article className="story-proof__card">
+                <p className="eyebrow">Lo pendiente</p>
+                <h2>La biografia ampliada del chef sigue en validacion</h2>
+                <p>
+                  No se publican premios, cargos ampliados, citas ni trayectoria
+                  detallada mientras no exista confirmacion directa del titular.
                 </p>
               </article>
             </div>
@@ -131,7 +160,7 @@ export function NosotrosPage() {
 
         <section className="story-timeline">
           <div className="container container--wide">
-            <p className="eyebrow">Línea editorial</p>
+            <p className="eyebrow">Linea editorial</p>
             <h2>Claims verificados</h2>
             <div className="story-timeline__list">
               {timelineItems.map((item) => (
@@ -140,6 +169,14 @@ export function NosotrosPage() {
                   <p>{item.description}</p>
                 </article>
               ))}
+            </div>
+            <div className="story-timeline__actions">
+              <LinkButton to="/contacto/" variant="secondary">
+                Ver contacto
+              </LinkButton>
+              <LinkButton to="/faq/" variant="ghost">
+                Resolver dudas frecuentes
+              </LinkButton>
             </div>
           </div>
         </section>

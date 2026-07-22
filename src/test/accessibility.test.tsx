@@ -27,6 +27,27 @@ describe("accessibility smoke", () => {
     expect(violations).toHaveLength(0);
   });
 
+  it("has no serious or critical axe violations on contacto", async () => {
+    renderApp(["/contacto/"]);
+
+    const violations = await runAxe();
+    expect(violations).toHaveLength(0);
+  });
+
+  it("has no serious or critical axe violations on nosotros", async () => {
+    renderApp(["/nosotros/"]);
+
+    const violations = await runAxe();
+    expect(violations).toHaveLength(0);
+  });
+
+  it("has no serious or critical axe violations on faq", async () => {
+    renderApp(["/faq/"]);
+
+    const violations = await runAxe();
+    expect(violations).toHaveLength(0);
+  });
+
   it("has no serious or critical axe violations on dev design system", async () => {
     renderApp(["/dev/design-system/"]);
 

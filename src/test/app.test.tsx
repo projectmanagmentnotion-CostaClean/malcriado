@@ -40,6 +40,22 @@ describe("app shell", () => {
     ).toBeInTheDocument();
   });
 
+  it("renders faq route and first answer content", () => {
+    renderApp(["/faq/"]);
+
+    expect(
+      screen.getByRole("heading", {
+        level: 1,
+        name: /preguntas frecuentes visibles y verificables/i,
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", {
+        name: /que tipo de cocina presenta malcriado/i,
+      }),
+    ).toHaveAttribute("aria-expanded", "true");
+  });
+
   it("renders booking context copy when arriving with intent params", () => {
     renderApp([
       "/reservar/?context=featured-dish&item=pulpo-al-chimichurri&category=cat-hot-dishes",
@@ -79,6 +95,52 @@ describe("app shell", () => {
       ).not.toBeInTheDocument(),
     );
     expect(button).toHaveFocus();
+  });
+
+  it("shows consent banner by default and hides it after reject", () => {
+    renderApp(["/"]);
+
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: /sin contenido externo no esencial hasta que decidas/i,
+      }),
+    ).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: /rechazar/i }));
+
+    expect(
+      screen.queryByRole("heading", {
+        level: 2,
+        name: /sin contenido externo no esencial hasta que decidas/i,
+      }),
+    ).not.toBeInTheDocument();
+  });
+
+  it("traps focus inside the consent dialog while it is open", async () => {
+    window.localStorage.clear();
+    window.sessionStorage.clear();
+    renderApp(["/"]);
+
+    fireEvent.click(screen.getByRole("button", { name: /personalizar/i }));
+
+    const dialog = screen.getByRole("dialog");
+    const focusable = dialog.querySelectorAll<HTMLElement>(
+      "button:not([disabled]), input:not([disabled])",
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    expect(first).toBeTruthy();
+    expect(last).toBeTruthy();
+
+    last?.focus();
+    fireEvent.keyDown(window, { key: "Tab" });
+    await waitFor(() => expect(first).toHaveFocus());
+
+    first?.focus();
+    fireEvent.keyDown(window, { key: "Tab", shiftKey: true });
+    await waitFor(() => expect(last).toHaveFocus());
   });
 
   it("renders 404 fallback", () => {
