@@ -9,10 +9,10 @@ import { contentSources } from "@/content/shared/sources";
 export const peopleProfiles: readonly PersonProfile[] = [
   {
     id: "person-hector",
-    name: "Héctor",
+    name: "Hector",
     role: "Chef venezolano",
     biography:
-      "Malcriado presenta a Héctor como chef venezolano y lider creativo del proyecto.",
+      "Malcriado presenta a Hector como chef venezolano y cara visible de la propuesta culinaria.",
     status: "VERIFIED",
     mediaAssetId: null,
     references: {
@@ -28,9 +28,8 @@ export const storyBlocks: readonly StoryBlock[] = [
   {
     id: "story-origin",
     eyebrow: "Origen",
-    heading:
-      "Malcriado nace de una pasion por la gastronomia y la fusion de culturas.",
-    body: null,
+    heading: "Malcriado une cocina fusion, producto para compartir y mar.",
+    body: "La propuesta combina sabores latinoamericanos y mediterraneos en un formato pensado para comer, cenar y reservar frente al mar.",
     status: "VERIFIED",
     references: {
       sourceIds: [
@@ -42,8 +41,8 @@ export const storyBlocks: readonly StoryBlock[] = [
   {
     id: "story-chef",
     eyebrow: "Chef",
-    heading: "Héctor aparece como la autoria culinaria visible del proyecto.",
-    body: "La trayectoria ampliada y el cargo exacto siguen pendientes de confirmacion directa del titular.",
+    heading: "Hector lidera la cocina visible de Malcriado.",
+    body: "La web presenta a Hector como chef visible del proyecto. La biografia ampliada y el recorrido completo se estan terminando de confirmar con el equipo.",
     status: "PENDING_VALIDATION",
     references: {
       sourceIds: [
@@ -57,8 +56,9 @@ export const storyBlocks: readonly StoryBlock[] = [
 export const timelineItems: readonly TimelineItem[] = [
   {
     id: "timeline-fusion",
-    label: "Fusión latinoamericana y mediterránea",
-    description: "Claim central verificado en home, menu y nosotros.",
+    label: "Fusion latinoamericana y mediterranea",
+    description:
+      "Sabores, platos y cocteles con una mezcla reconocible en toda la experiencia.",
     status: "VERIFIED",
     references: {
       sourceIds: [

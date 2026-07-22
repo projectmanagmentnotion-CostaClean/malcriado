@@ -134,7 +134,7 @@ function getMenuStructuredData() {
             name: item.name,
             description:
               item.description ??
-              "Entrada auditada de la carta actual con precio o alergenos pendientes de validacion.",
+              "Disponible en la carta publica de Malcriado. Consulta al equipo por precio, ingredientes y alergenos.",
             url: getCanonicalUrl(`/menu/#${buildMenuItemId(item.id)}`),
             ...(image ? { image } : {}),
           };

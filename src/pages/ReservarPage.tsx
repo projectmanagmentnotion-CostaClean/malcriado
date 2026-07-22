@@ -44,9 +44,9 @@ export function ReservarPage() {
             </div>
             <div className="booking-hero__copy">
               <p>
-                La disponibilidad sigue siendo manual hasta la confirmacion
-                final del equipo. La web no comunica confirmacion automatica ni
-                plaza cerrada en tiempo real.
+                El formulario sirve para enviar una solicitud clara. La
+                confirmacion llega despues, cuando el equipo revisa fecha, hora
+                y disponibilidad real.
               </p>
               <Cluster className="booking-hero__channels" gap="sm">
                 {bookingChannels.map((channel) => (
@@ -58,13 +58,16 @@ export function ReservarPage() {
               <ul className="booking-hero__list">
                 {bookingChannels.map((channel) => (
                   <li key={channel.id}>
-                    {channel.label}: {channel.href}
+                    {channel.label}:{" "}
+                    {channel.label === "Formulario"
+                      ? "Disponible en esta pagina"
+                      : channel.href}
                   </li>
                 ))}
               </ul>
               <p className="booking-hero__note">
-                Si faltan datos de mesa, horario o contexto, contacta primero y
-                el equipo resolvera la solicitud manualmente.
+                Si necesitas una mesa para hoy o tienes una peticion especial,
+                WhatsApp y telefono siguen siendo la via mas rapida.
               </p>
             </div>
           </header>

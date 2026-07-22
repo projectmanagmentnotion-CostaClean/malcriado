@@ -27,7 +27,8 @@ export function DishCard({ item }: DishCardProps) {
         <p className="eyebrow">Carta</p>
         <h3>{item.name}</h3>
         <p>
-          {item.description ?? "Descripcion pendiente de ampliacion editorial."}
+          {item.description ??
+            "Disponible en la carta de Malcriado. Consulta al equipo por ingredientes, precio y disponibilidad del momento."}
         </p>
         <PriceDisplay price={item.price} />
         <DietaryTags tags={item.dietaryTags} />

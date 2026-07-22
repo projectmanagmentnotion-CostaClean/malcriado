@@ -2,11 +2,11 @@
 
 ## Estado exacto para retomar
 
-- Fase: `Fase 7 - Carta HTML y especiales`
-- Rama activa: `codex/phase-7-menu-and-specials`
-- Head de checkpoint conocido: `19a899e7177135806eb3c50ee91d0dad5dec309d`
-- Pull Request: `#8 Phase 7: accessible HTML menu and specials`
-- Estado remoto del checkpoint: draft abierto sobre `main` con CI `#19` `completed / success`
+- Fase: `Fase 11 - QA integral`
+- Rama activa: `codex/phase-11-integral-qa`
+- Head: comprobar con `git rev-parse HEAD` tras el pull de la rama
+- Pull Request: pendiente de abrir o actualizar en este bloque
+- Estado local del checkpoint: quality gates verdes y documentacion de QA integral creada
 - Gates verdes:
   - `npm run format:check`
   - `npm run lint`
@@ -22,14 +22,16 @@
   - `npm run qa`
   - `git diff --check`
 - Gates pendientes:
-  - Actualizacion del PR `#8` con el head final del bloque
-  - Verificacion del CI remoto tras el siguiente push
+  - push de la rama
+  - apertura de draft PR de Fase 11
+  - verificacion del CI remoto tras el push
 - Warnings actuales: `130`
 - Bugs conocidos:
-  - No hay bugs funcionales P0/P1 abiertos en este checkpoint local
+  - No hay bugs funcionales P0/P1/P2 nuevos abiertos en este checkpoint local
   - La categoria `Vermut` sigue vacia y oculta al publico
+  - Home en `320x568` mantiene una medicion menor de ancho documental sin scroll horizontal real
 - Siguiente tarea concreta:
-  - Empujar el head final del bloque, actualizar el PR `#8` y esperar el CI remoto terminal
+  - empujar el head final del bloque, abrir el draft PR de Fase 11 y esperar el CI remoto terminal
 
 ## Requisitos
 
@@ -56,7 +58,7 @@ VITE_PUBLIC_SITE_URL=http://127.0.0.1:5173
 git clone https://github.com/projectmanagmentnotion-CostaClean/malcriado.git
 cd malcriado
 git fetch --all --prune
-git switch codex/phase-7-menu-and-specials
+git switch codex/phase-11-integral-qa
 npm ci
 copy .env.example .env
 ```
@@ -119,7 +121,7 @@ git diff --check
 git status
 git branch -vv
 git rev-parse HEAD
-git rev-parse origin/codex/phase-7-menu-and-specials
+git rev-parse origin/codex/phase-11-integral-qa
 ```
 
 Condicion correcta:
@@ -127,14 +129,15 @@ Condicion correcta:
 - `git status` limpio
 - SHA local igual al SHA remoto
 
-## Trabajo pendiente exacto de Fase 7
+## Trabajo pendiente exacto de Fase 11
 
-- Verificar el draft PR remoto ya existente y actualizarlo con resultados reales
+- Hacer push de `codex/phase-11-integral-qa`
+- Abrir el draft PR de Fase 11
 - Confirmar que el CI remoto sobre el head final se inicia y queda verde
-- Mantener la deuda editorial documentada:
+- Mantener la deuda documentada:
   - 44 precios pendientes
   - 44 alergenos pendientes
   - 38 descripciones pendientes
   - 3 legales pendientes
   - 1 categoria vacia oculta (`Vermut`)
-- No iniciar todavia la Fase 8 en el mismo bloque
+- No iniciar todavia la Fase 12 en el mismo bloque

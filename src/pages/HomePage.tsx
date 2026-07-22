@@ -11,7 +11,6 @@ import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 import { useReducedMotion } from "@/motion/hooks/useReducedMotion";
 import { useHomePageMotion } from "@/motion/home/useHomePageMotion";
 import {
-  assetManifest,
   businessContent,
   getAsset,
   getFeaturedMenuItems,
@@ -86,10 +85,6 @@ export function HomePage() {
   const socialLinks = businessContent.contact.socials.slice(0, 2);
   const publicMenuCategoryCount = menuContent.categories.filter(
     (category) => category.publicationStatus === "PUBLIC",
-  ).length;
-
-  const availableAssetCount = assetManifest.assets.filter(
-    (asset) => asset.state === "ACCEPTED",
   ).length;
 
   const handlePreloaderComplete = useCallback(() => {
@@ -209,14 +204,14 @@ export function HomePage() {
             </div>
             <aside className="home-hero__support" data-scene-reveal="true">
               <div className="home-hero__support-card">
-                <p className="eyebrow">Apertura editorial</p>
+                <p className="eyebrow">Primera impresion</p>
                 <p>{businessContent.identity.shortDescription.value}</p>
                 <span>
-                  Hero visual completo, sin depender de video bloqueado.
+                  Una llegada visual amplia, directa y centrada en reservar.
                 </span>
               </div>
               <div className="home-hero__support-card">
-                <p className="eyebrow">Base real</p>
+                <p className="eyebrow">Lo que puedes encontrar</p>
                 <dl className="home-hero__metrics">
                   <div>
                     <dt>Categorias</dt>
@@ -224,11 +219,11 @@ export function HomePage() {
                   </div>
                   <div>
                     <dt>Platos</dt>
-                    <dd>{menuContent.items.length} auditados</dd>
+                    <dd>{menuContent.items.length} en carta</dd>
                   </div>
                   <div>
                     <dt>Reserva</dt>
-                    <dd>Contexto manual verificado</dd>
+                    <dd>Solicitud con confirmacion manual</dd>
                   </div>
                 </dl>
               </div>
@@ -259,9 +254,7 @@ export function HomePage() {
                   offerEditorialState.message}
               </p>
               <div className="home-status-pill" data-scene-reveal="true">
-                {primaryOffer
-                  ? "Oferta verificada"
-                  : "Estado editorial pendiente"}
+                {primaryOffer ? "Oferta activa" : "Sin promocion activa"}
               </div>
               <Cluster gap="sm" data-scene-reveal="true">
                 <LinkButton
@@ -309,9 +302,8 @@ export function HomePage() {
             </div>
             <div className="home-fusion__statement" data-scene-reveal="true">
               <p>
-                La home ya no puede comportarse como un grid de tarjetas. Tiene
-                que abrir con deseo, sostener producto real y cerrar en reserva
-                sin perder legibilidad.
+                Una cocina para compartir, mirar el mar y pasar de la primera
+                impresion a la reserva sin rodeos.
               </p>
             </div>
             <div className="home-fusion__media" data-scene-media="true">
@@ -376,7 +368,7 @@ export function HomePage() {
                     <h3>{dish.name}</h3>
                     <p>
                       {dish.description ??
-                        "Descripcion editorial pendiente de ampliacion."}
+                        "Disponible en la carta de Malcriado. Consulta al equipo por ingredientes, precio y disponibilidad del momento."}
                     </p>
                     <Cluster gap="sm">
                       <LinkButton to="/menu/" variant="ghost">
@@ -400,8 +392,8 @@ export function HomePage() {
           </div>
           {leadDish ? (
             <p className="home-featured__note" data-scene-reveal="true">
-              Plato de apertura seleccionado: {leadDish.name}. Total de assets
-              aceptados reutilizables en la home: {availableAssetCount}.
+              Empieza por {leadDish.name}, sigue por la carta y reserva cuando
+              tengas claro el plan.
             </p>
           ) : null}
         </Container>
@@ -513,7 +505,7 @@ export function HomePage() {
                   <h3>{block.heading}</h3>
                   <p>
                     {block.body ??
-                      "Estado editorial verificado sin cuerpo ampliado."}
+                      "Una historia breve y clara para entender la propuesta antes de reservar."}
                   </p>
                 </article>
               ))}
@@ -648,8 +640,8 @@ export function HomePage() {
                   {socialLinks.map((link) => link.label).join(" y ")}
                 </strong>
                 <p>
-                  Persisten como vias de apoyo, no sustituyen la reserva
-                  verificada.
+                  Siguen disponibles como apoyo rapido para resolver dudas o
+                  cerrar una visita.
                 </p>
               </article>
             </div>

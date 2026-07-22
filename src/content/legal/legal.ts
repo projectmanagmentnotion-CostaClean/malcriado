@@ -7,8 +7,8 @@ export const legalPages: readonly LegalPageContent[] = [
     title: "Aviso legal",
     path: "/aviso-legal/",
     summary:
-      "Base legal pendiente de completar con razon social, NIF/CIF y domicilio legal.",
-    body: "Informacion legal publicada en estado provisional y pendiente de validacion final por el titular.",
+      "Informacion legal informativa mientras se completa la revision final con el titular.",
+    body: "Este aviso resume la informacion legal visible hoy en la web y se completara cuando el titular confirme los datos societarios y registrales.",
     intro:
       "Esta pagina ordena la informacion legal visible del proyecto sin inventar datos societarios, fiscales o registrales que no hayan sido confirmados por el titular.",
     sections: [
@@ -17,7 +17,7 @@ export const legalPages: readonly LegalPageContent[] = [
         title: "Alcance actual",
         paragraphs: [
           "Malcriado se presenta publicamente como nombre comercial visible del proyecto y restaurante en Pineda de Mar.",
-          "La titularidad juridica completa, el NIF o CIF, el domicilio legal y cualquier dato registral siguen pendientes de validacion directa.",
+          "La titularidad juridica completa, el NIF o CIF, el domicilio legal y cualquier dato registral siguen pendientes de confirmacion directa.",
         ],
       },
       {
@@ -25,7 +25,7 @@ export const legalPages: readonly LegalPageContent[] = [
         title: "Uso de la web",
         paragraphs: [
           "La web tiene una finalidad informativa y comercial para carta, contacto, especiales y solicitudes de reserva.",
-          "El contenido puede actualizarse cuando se confirmen datos editoriales, operativos o legales del titular.",
+          "El contenido puede actualizarse cuando se confirmen los datos operativos y legales pendientes.",
         ],
         items: [
           "No se garantiza disponibilidad inmediata de mesas desde la propia web.",
@@ -35,14 +35,14 @@ export const legalPages: readonly LegalPageContent[] = [
       },
       {
         id: "legal-aviso-contacto",
-        title: "Datos pendientes del titular",
+        title: "Datos que faltan por confirmar",
         paragraphs: [
           "Antes de produccion deben completarse razon social o nombre del titular, NIF o CIF, domicilio legal, correo juridico y cualquier dato registral aplicable.",
         ],
       },
     ],
     disclaimer:
-      "Estado: PENDING_VALIDATION. No publicar como version juridica definitiva sin checklist del titular cerrado.",
+      "Revision final pendiente con el titular. No tomar este texto como version juridica definitiva.",
     status: "PENDING_VALIDATION",
     references: {
       sourceIds: [
@@ -55,9 +55,8 @@ export const legalPages: readonly LegalPageContent[] = [
     id: "legal-privacidad",
     title: "Privacidad",
     path: "/privacidad/",
-    summary:
-      "La politica actual es generica y debe rehacerse sobre tratamientos reales.",
-    body: "Politica de privacidad provisional basada en tratamientos visibles y en deudas documentadas del proyecto.",
+    summary: "Politica informativa sobre los datos que trata hoy la web.",
+    body: "Esta politica explica el funcionamiento actual de la web mientras se completa la revision final de responsables, plazos y encargados reales.",
     intro:
       "La web minimiza datos y evita exponer informacion personal en URLs o analytics de cliente, pero esta politica requiere validacion final del titular y del proveedor real de gestion.",
     sections: [
@@ -73,7 +72,7 @@ export const legalPages: readonly LegalPageContent[] = [
         id: "legal-privacidad-limitaciones",
         title: "Limitaciones actuales",
         paragraphs: [
-          "La integracion definitiva de reserva, el responsable juridico exacto del tratamiento, los plazos de conservacion y los encargados reales siguen pendientes de validacion.",
+          "La integracion definitiva de reserva, el responsable juridico exacto del tratamiento, los plazos de conservacion y los encargados reales siguen pendientes de confirmacion.",
           "La web no activa analitica ni terceros no esenciales antes del consentimiento correspondiente.",
         ],
       },
@@ -84,14 +83,14 @@ export const legalPages: readonly LegalPageContent[] = [
           "El texto definitivo debe incluir derechos, base juridica, destinatarios, transferencias y canal formal de ejercicio una vez el titular confirme esos datos.",
         ],
         items: [
-          "Responsable juridico pendiente de confirmar.",
-          "Correo especifico de privacidad pendiente de confirmar.",
-          "Plazo de conservacion pendiente de confirmar.",
+          "Responsable juridico todavia por confirmar.",
+          "Correo especifico de privacidad todavia por confirmar.",
+          "Plazo de conservacion todavia por confirmar.",
         ],
       },
     ],
     disclaimer:
-      "Estado: PENDING_VALIDATION. El contenido orienta sobre el flujo tecnico actual, no sobre la redaccion juridica definitiva.",
+      "Revision final pendiente con el titular. Este texto explica el flujo tecnico actual, no la redaccion juridica definitiva.",
     status: "PENDING_VALIDATION",
     references: {
       sourceIds: [
@@ -105,8 +104,8 @@ export const legalPages: readonly LegalPageContent[] = [
     title: "Cookies",
     path: "/cookies/",
     summary:
-      "No existe inventario final de cookies ni de terceros verificados.",
-    body: "Politica de cookies y almacenamiento local en estado provisional, ajustada al comportamiento tecnico actual de la web.",
+      "Politica informativa sobre cookies, almacenamiento local y contenido externo.",
+    body: "Esta politica describe el comportamiento tecnico actual de la web mientras se completa el inventario final de terceros y duraciones.",
     intro:
       "La implementacion actual prioriza bloqueo preventivo de terceros no esenciales y registro versionado de preferencias de consentimiento sin casillas premarcadas.",
     sections: [
@@ -128,19 +127,19 @@ export const legalPages: readonly LegalPageContent[] = [
       },
       {
         id: "legal-cookies-pendientes",
-        title: "Inventario pendiente",
+        title: "Inventario en revision",
         paragraphs: [
           "Antes de produccion debe cerrarse un inventario real de cookies, storage, terceros, duracion y bases de consentimiento aplicables.",
         ],
         items: [
-          "Proveedor final de analitica: PENDING_VALIDATION.",
-          "Proveedor final de mapa o medios embebidos: PENDING_VALIDATION.",
-          "Duraciones legales definitivas: PENDING_VALIDATION.",
+          "Proveedor final de analitica todavia sin confirmar.",
+          "Proveedor final de mapa o medios embebidos todavia sin confirmar.",
+          "Duraciones legales definitivas todavia en revision.",
         ],
       },
     ],
     disclaimer:
-      "Estado: PENDING_VALIDATION. Esta politica refleja la implementacion tecnica actual y debe revisarse con inventario real de terceros.",
+      "Revision final pendiente con el titular. Esta politica refleja la implementacion tecnica actual y debe cerrarse con el inventario real de terceros.",
     status: "PENDING_VALIDATION",
     references: {
       sourceIds: [

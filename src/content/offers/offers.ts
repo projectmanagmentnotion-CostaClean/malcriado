@@ -6,7 +6,7 @@ export const offers: readonly Offer[] = [];
 export const offerEditorialState = {
   status: "PENDING_CONTENT" as const,
   message:
-    "No se han recuperado ofertas publicas vigentes con fechas verificables. La ruta de especiales debe permanecer sin promociones ficticias.",
+    "Ahora mismo no hay promociones activas publicadas. Puedes seguir consultando la carta y reservar igualmente.",
   references: {
     sourceIds: [
       contentSources.currentSiteAudit.id,

@@ -164,6 +164,12 @@ export const legacyRedirects: readonly LegacyRedirect[] = [
     statusCode: 301,
   },
   {
+    id: "redirect-accessibility-short",
+    from: "/declaracion-accesibilidad/",
+    to: "/declaracion-de-accesibilidad/",
+    statusCode: 301,
+  },
+  {
     id: "redirect-sample-page",
     from: "/sample-page/",
     to: "/404",

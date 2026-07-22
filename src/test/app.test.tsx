@@ -26,7 +26,9 @@ describe("app shell", () => {
         name: /carta malcriado/i,
       }),
     ).toBeInTheDocument();
-    expect(screen.getByText(/carta html/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/carta en html con platos, bebidas y postres/i),
+    ).toBeInTheDocument();
   });
 
   it("renders accessibility statement route", () => {
@@ -46,7 +48,7 @@ describe("app shell", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: /preguntas frecuentes visibles y verificables/i,
+        name: /preguntas frecuentes antes de reservar/i,
       }),
     ).toBeInTheDocument();
     expect(

@@ -38,12 +38,12 @@ export function NosotrosPage() {
               <header className="story-hero__content">
                 <p className="eyebrow">Nosotros</p>
                 <h1 data-route-heading="true" id="page-heading-nosotros">
-                  Historia, autoria y contexto del proyecto
+                  Cocina de fusion, mar y una propuesta con sello propio
                 </h1>
                 <p className="story-hero__lede">
-                  La narrativa publica de Malcriado se apoya en origen, fusion
-                  culinaria, costa y autoria visible, sin inventar biografias,
-                  citas ni credenciales que no aparezcan en la fuente auditada.
+                  Malcriado reune cocina fusion latinoamericana y mediterranea,
+                  una ubicacion frente al mar y una propuesta pensada para
+                  compartir, reservar y volver.
                 </p>
               </header>
               <div className="story-hero__aside">
@@ -55,11 +55,13 @@ export function NosotrosPage() {
                   </div>
                 ) : null}
                 <div>
-                  <p className="eyebrow">Edicion responsable</p>
-                  <strong>Del relato publico a la visita real</strong>
+                  <p className="eyebrow">La propuesta</p>
+                  <strong>
+                    Una experiencia para comer, brindar y reservar
+                  </strong>
                   <span>
-                    La experiencia debe terminar en una solicitud clara, no en
-                    un manifiesto abstracto ni en promesas sin base operativa.
+                    La experiencia tiene que sentirse cercana y apetecible, con
+                    una salida clara hacia la carta, el contacto o la reserva.
                   </span>
                 </div>
               </div>
@@ -81,7 +83,7 @@ export function NosotrosPage() {
                 <p>
                   {conceptBlock?.body ??
                     conceptBlock?.heading ??
-                    "La autoria visible y la definicion ampliada del proyecto siguen pendientes de confirmacion directa del titular."}
+                    "La propuesta publica ya deja clara la cocina visible del proyecto y seguira ampliandose cuando el equipo cierre la version final."}
                 </p>
                 <div className="story-statement__actions">
                   <LinkButton to="/menu/" variant="secondary">
@@ -107,7 +109,7 @@ export function NosotrosPage() {
                 </h2>
                 <p>
                   {conceptBlock?.body ??
-                    "La capa editorial mantiene explicito que aun faltan validaciones del titular sobre recorrido ampliado y matices biograficos."}
+                    "La historia publica ya presenta la cocina, la mezcla de sabores y la personalidad del proyecto sin prometer datos que aun no esten cerrados."}
                 </p>
               </article>
               <article className="story-column story-column--media">
@@ -127,7 +129,7 @@ export function NosotrosPage() {
                 </h2>
                 <p>
                   {coastBlock?.body ??
-                    "El contexto frente al mar aparece de forma consistente en el sitio auditado y forma parte de la identidad publica verificable."}
+                    "El mar, el paseo y la ubicacion forman parte de la experiencia desde que llegas hasta que reservas."}
                 </p>
               </article>
             </div>
@@ -138,17 +140,17 @@ export function NosotrosPage() {
           <div className="container container--wide">
             <div className="story-proof__grid">
               <article className="story-proof__card">
-                <p className="eyebrow">Lo verificado</p>
-                <h2>Origen, fusion y costa se sostienen en la auditoria</h2>
+                <p className="eyebrow">Lo que define a Malcriado</p>
+                <h2>Fusion, costa y una cocina con identidad propia</h2>
                 <p>
-                  La capa editorial puede ser cinematografica sin perder rigor:
-                  el proyecto se presenta como cocina fusion, frente al mar y
-                  con autoria visible en multiples rutas publicas auditadas.
+                  La marca se reconoce por su mezcla de sabores, la ubicacion
+                  frente al mar y una propuesta pensada para reservar con
+                  facilidad.
                 </p>
               </article>
               <article className="story-proof__card">
-                <p className="eyebrow">Lo pendiente</p>
-                <h2>La biografia ampliada del chef sigue en validacion</h2>
+                <p className="eyebrow">En desarrollo</p>
+                <h2>La biografia ampliada del chef sigue en revision</h2>
                 <p>
                   No se publican premios, cargos ampliados, citas ni trayectoria
                   detallada mientras no exista confirmacion directa del titular.
@@ -160,8 +162,8 @@ export function NosotrosPage() {
 
         <section className="story-timeline">
           <div className="container container--wide">
-            <p className="eyebrow">Linea editorial</p>
-            <h2>Claims verificados</h2>
+            <p className="eyebrow">Senales de marca</p>
+            <h2>Lo que hoy ya forma parte de la experiencia</h2>
             <div className="story-timeline__list">
               {timelineItems.map((item) => (
                 <article className="story-timeline__item" key={item.id}>

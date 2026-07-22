@@ -30,9 +30,9 @@ export function Footer() {
         <div>
           <p className="eyebrow">{footerBusiness.name}</p>
           <p>{getReadableAddress()}</p>
-          <p>{businessContent.hours.summary.value ?? "Horario pendiente"}</p>
+          <p>{businessContent.hours.summary.value ?? "Horario a consultar"}</p>
           <p className="site-footer__note">
-            Horario y acceso exacto pendientes de validacion final.
+            Si vienes hoy, confirma horario y disponibilidad antes de salir.
           </p>
         </div>
         <div>

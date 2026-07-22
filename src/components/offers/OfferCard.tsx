@@ -14,10 +14,10 @@ export function OfferCard({ offer, pendingMessage }: OfferCardProps) {
   if (!offer) {
     return (
       <EmptyState
-        title="Especial pendiente"
+        title="Sin especial activo ahora mismo"
         body={
           pendingMessage ??
-          "No se publican promociones sin fechas verificables ni contenido inventado."
+          "Cuando haya una promocion activa con fechas claras, aparecera aqui."
         }
       />
     );
@@ -30,7 +30,7 @@ export function OfferCard({ offer, pendingMessage }: OfferCardProps) {
       <p>
         {offer.description ??
           offer.fallbackContent ??
-          "Oferta sin copy ampliado."}
+          "Consulta este especial y reserva si te encaja el plan."}
       </p>
       <OfferValidity offer={offer} />
       {offer.cta ? (

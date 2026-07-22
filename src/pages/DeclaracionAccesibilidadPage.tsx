@@ -18,21 +18,19 @@ export function DeclaracionAccesibilidadPage() {
               Declaracion de accesibilidad
             </h1>
             <p>
-              Esta declaracion describe el objetivo tecnico actual del proyecto,
-              sus limitaciones conocidas y los puntos que siguen pendientes
-              antes de una validacion manual final.
+              Esta declaracion resume el estado tecnico actual de la web y las
+              mejoras que siguen en curso antes de la revision manual final.
             </p>
           </header>
           <div className="legal-page__body">
             <p>
-              La web se construye con objetivo tecnico minimo WCAG 2.2 AA,
-              navegacion por teclado, foco visible, reflow a 200 %, reduced
-              motion y HTML indexable sin depender de escenas inmersivas.
+              La web se construye con objetivo minimo WCAG 2.2 AA, navegacion
+              por teclado, foco visible, reflow a 200 %, reduced motion y HTML
+              indexable.
             </p>
             <p>
-              Siguen pendientes la validacion final de contenidos legales,
-              horarios, datos del titular y una revision manual definitiva
-              previa a produccion.
+              Seguimos revisando algunos contenidos legales y una pasada manual
+              final con lector de pantalla para cerrar la validacion completa.
             </p>
           </div>
           <section className="legal-page__section">
@@ -48,21 +46,18 @@ export function DeclaracionAccesibilidadPage() {
                 reserva.
               </li>
               <li>
-                Respeto de reduced motion y reflow a 200 % en la matriz de QA
-                del proyecto.
+                Reduced motion y reflow a 200 % dentro de la matriz de QA.
               </li>
             </ul>
           </section>
           <section className="legal-page__section">
             <h2>Limitaciones conocidas</h2>
             <ul>
-              <li>Revision manual con lector de pantalla real pendiente.</li>
+              <li>Revision manual con lector de pantalla real en curso.</li>
+              <li>Algunos datos legales y horarios siguen en validacion.</li>
               <li>
-                Datos legales y horarios definitivos pendientes del titular.
-              </li>
-              <li>
-                Contenido externo como mapas embebidos sujeto a consentimiento y
-                validacion.
+                El mapa embebido depende del consentimiento para contenido
+                externo.
               </li>
             </ul>
           </section>

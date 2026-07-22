@@ -90,10 +90,10 @@ export function ReservationForm({ context }: ReservationFormProps) {
             context={context}
           />
           <div className="reservation-inline-note">
-            <strong>Horario y disponibilidad:</strong> el frontend usa
-            configuracion tipada en estado <code>PENDING_VALIDATION</code> para
-            antelacion, servicios, cierres y excepciones. La solicitud siempre
-            queda pendiente de confirmacion manual.
+            <strong>Horario y disponibilidad:</strong> la solicitud siempre
+            queda sujeta a confirmacion manual del equipo. Si necesitas una mesa
+            muy concreta, te recomendamos anadirlo en el mensaje o usar
+            WhatsApp.
           </div>
           <div className="reservation-form__grid">
             <FormField
@@ -369,7 +369,7 @@ export function ReservationForm({ context }: ReservationFormProps) {
         <ul className="booking-hero__list">
           {bookingChannels.map((channel) => (
             <li key={channel.id}>
-              {channel.label}: {channel.href}
+              {channel.label}: disponible para solicitar mesa
             </li>
           ))}
         </ul>

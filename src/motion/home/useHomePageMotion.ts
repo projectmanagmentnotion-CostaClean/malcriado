@@ -163,12 +163,20 @@ export function useHomePageMotion({
             ".home-hero__eyebrow, .home-hero__title-line, .home-hero__lede, .home-hero__actions, .home-hero__details",
           );
           const heroMedia = root.querySelector(".home-hero__media");
+          const compactHeroViewport = window.matchMedia(
+            "(max-width: 22.5rem)",
+          ).matches;
 
           heroTimeline
             .from(heroLead, { yPercent: 24, opacity: 0, stagger: 0.08 }, 0)
             .from(
               heroMedia,
-              { scale: 1.08, opacity: 0, duration: 1.2, ease: "power3.out" },
+              {
+                scale: compactHeroViewport ? 1 : 1.08,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power3.out",
+              },
               0.08,
             );
 

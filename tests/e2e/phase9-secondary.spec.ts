@@ -8,7 +8,7 @@ test("faq route is indexable and exposes accordion answers", async ({
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: /preguntas frecuentes visibles y verificables/i,
+      name: /preguntas frecuentes antes de reservar/i,
     }),
   ).toBeVisible();
 

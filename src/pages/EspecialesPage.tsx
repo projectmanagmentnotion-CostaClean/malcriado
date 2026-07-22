@@ -20,9 +20,9 @@ function getSpecialsCopy() {
       eyebrow: "Especial activo",
       title: offer.title,
       body: offer.description ?? offer.fallbackContent ?? offer.title,
-      noteTitle: "Promocion vigente",
+      noteTitle: "Promocion activa",
       noteBody:
-        "La oferta esta activa en Europe/Madrid y mantiene prioridad editorial frente a otras promociones verificadas.",
+        "La promocion esta publicada y mantiene sus fechas activas en Europe/Madrid.",
     };
   }
 
@@ -30,35 +30,34 @@ function getSpecialsCopy() {
     return {
       eyebrow: "Especial programado",
       title: `Proximo especial: ${offer.title}`,
-      body: `Existe una oferta futura con vigencia tipada, pero aun no esta activa en Europe/Madrid. ${
+      body: `Existe una promocion preparada, pero todavia no ha llegado su fecha de inicio. ${
         offer.description ?? offer.fallbackContent ?? ""
       }`.trim(),
-      noteTitle: "Aun no publicada como activa",
-      noteBody:
-        "La ruta no debe adelantar una promocion como vigente antes de su fecha exacta de inicio.",
+      noteTitle: "Todavia no disponible",
+      noteBody: "La web no adelanta una promocion como activa antes de tiempo.",
     };
   }
 
   if (snapshot.kind === "expired" && offer) {
     return {
-      eyebrow: "Especial expirado",
-      title: `Ultimo especial expirado: ${offer.title}`,
-      body: `La ultima oferta tipada ya no esta vigente y no debe seguir publicandose como activa. ${
+      eyebrow: "Especial finalizado",
+      title: `${offer.title} ya no esta activo`,
+      body: `La ultima promocion tipada ya ha terminado. ${
         offer.description ?? offer.fallbackContent ?? ""
       }`.trim(),
-      noteTitle: "No se re-publica por caducidad",
+      noteTitle: "Promocion cerrada",
       noteBody:
-        "Las promociones vencidas quedan fuera de la capa activa y solo se conservan para trazabilidad editorial y testing.",
+        "Cuando una promocion termina, deja de mostrarse como activa para evitar confusiones.",
     };
   }
 
   return {
-    eyebrow: "Especial activo",
-    title: "Ahora mismo no hay una promocion vigente con fechas verificables.",
+    eyebrow: "Especiales",
+    title: "Ahora mismo no hay promociones activas publicadas.",
     body: offerEditorialState.message,
-    noteTitle: "Sin promociones ficticias",
+    noteTitle: "Sin urgencia artificial",
     noteBody:
-      "Especiales expirados no aparecen como activos y la ausencia de campanas se trata como estado editorial disenado, no como error.",
+      "Si hoy no hay una promocion publicada, puedes reservar igualmente desde la carta o por WhatsApp.",
   };
 }
 
@@ -87,12 +86,11 @@ export function EspecialesPage() {
               <header className="specials-hero__content">
                 <p className="eyebrow">Especiales</p>
                 <h1 data-route-heading="true" id="page-heading-especiales">
-                  Estado editorial de ofertas y vigencia
+                  Especiales y promociones de Malcriado
                 </h1>
                 <p className="specials-hero__lede">
-                  Solo se publican promociones activas con fechas verificables.
-                  Cuando no existen, la ruta se mantiene util sin inventar una
-                  oferta ni forzar urgencia falsa.
+                  Aqui solo aparecen promociones con fechas claras. Si hoy no
+                  hay una publicada, puedes reservar igualmente desde la carta.
                 </p>
               </header>
               <div className="specials-hero__status">
@@ -123,7 +121,7 @@ export function EspecialesPage() {
                     to={buildBookingIntentHref({ context: "specials" })}
                     variant="secondary"
                   >
-                    Reservar sin esperar oferta
+                    Reservar mesa
                   </LinkButton>
                 </div>
               </div>

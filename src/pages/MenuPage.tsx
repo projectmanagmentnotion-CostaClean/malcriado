@@ -20,6 +20,9 @@ import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 import { useReducedMotion } from "@/motion/hooks/useReducedMotion";
 import { useMenuPageMotion } from "@/motion/menu/useMenuPageMotion";
 
+const menuFallbackDescription =
+  "Disponible en la carta de Malcriado. Consulta al equipo por ingredientes, precio y disponibilidad del momento.";
+
 export function MenuPage() {
   const seoPage = seoPages.menu!;
   const rootRef = useRef<HTMLDivElement>(null);
@@ -52,7 +55,7 @@ export function MenuPage() {
             <div className="menu-hero__grid">
               <header className="menu-hero__content">
                 <p className="eyebrow" data-menu-reveal="true">
-                  Carta HTML
+                  Carta
                 </p>
                 <h1
                   data-menu-reveal="true"
@@ -62,8 +65,9 @@ export function MenuPage() {
                   Carta Malcriado
                 </h1>
                 <p className="menu-hero__lede" data-menu-reveal="true">
-                  Capítulos reales, navegación directa y estados honestos para
-                  precios y alérgenos aún pendientes de validación.
+                  Carta en HTML con platos, bebidas y postres para consultar
+                  antes de reservar. Precios y alergias se confirman
+                  directamente con el equipo.
                 </p>
                 <div className="menu-hero__actions" data-menu-reveal="true">
                   <LinkButton
@@ -71,10 +75,10 @@ export function MenuPage() {
                     to="#menu-navigation"
                     variant="editorial"
                   >
-                    Explorar categorías
+                    Explorar categorias
                   </LinkButton>
                   <LinkButton to="/contacto/" variant="secondary">
-                    Consultar datos pendientes
+                    Consultar antes de venir
                   </LinkButton>
                 </div>
               </header>
@@ -82,17 +86,17 @@ export function MenuPage() {
                 <div>
                   <p className="eyebrow">Platos</p>
                   <strong>{totalItems}</strong>
-                  <span>entradas HTML auditadas</span>
+                  <span>platos en la carta publica</span>
                 </div>
                 <div>
-                  <p className="eyebrow">Categorías</p>
+                  <p className="eyebrow">Categorias</p>
                   <strong>{categories.length}</strong>
-                  <span>capítulos públicos activos</span>
+                  <span>secciones para recorrer</span>
                 </div>
                 <div>
                   <p className="eyebrow">Visual</p>
                   <strong>{visualItems}</strong>
-                  <span>platos con apoyo fotográfico</span>
+                  <span>platos con apoyo fotografico</span>
                 </div>
               </div>
             </div>
@@ -106,14 +110,14 @@ export function MenuPage() {
         >
           <div className="container container--wide">
             <div className="menu-navigation__header" data-menu-reveal="true">
-              <p className="eyebrow">Navegación rápida</p>
+              <p className="eyebrow">Navegacion rapida</p>
               <p>
-                `Vermut` queda fuera de la navegación pública porque hoy no
-                tiene ítems recuperados con contenido utilizable.
+                La categoria Vermut volvera a mostrarse cuando tenga contenido
+                util confirmado para la carta publica.
               </p>
             </div>
             <nav
-              aria-label="Categorías de la carta"
+              aria-label="Categorias de la carta"
               className="menu-navigation__rail"
             >
               {categories.map((category) => (
@@ -155,12 +159,12 @@ export function MenuPage() {
                     data-menu-reveal="true"
                   >
                     <p className="eyebrow">
-                      Capítulo {String(index + 1).padStart(2, "0")}
+                      Capitulo {String(index + 1).padStart(2, "0")}
                     </p>
                     <h2>{category.label}</h2>
                     <p>
                       {category.description ??
-                        "Selección pública auditada desde la carta actual, sin inventar precios, alérgenos ni copy comercial no verificado."}
+                        "Platos y bebidas disponibles en la carta publica de Malcriado para consultar antes de reservar."}
                     </p>
                     <div className="menu-category__actions">
                       <LinkButton
@@ -204,7 +208,7 @@ export function MenuPage() {
                           <h3>{featuredItem.name}</h3>
                           <p>
                             {featuredItem.description ??
-                              "Descripción editorial pendiente de ampliación. El plato se mantiene visible porque sí existe en la fuente auditada."}
+                              menuFallbackDescription}
                           </p>
                           <div className="menu-category__feature-meta">
                             <PriceDisplay price={featuredItem.price} />
@@ -234,10 +238,7 @@ export function MenuPage() {
                               <span>{item.subcategory}</span>
                             ) : null}
                           </div>
-                          <p>
-                            {item.description ??
-                              "Contenido pendiente de ampliación editorial. Se mantiene visible como entrada real de la carta auditada."}
-                          </p>
+                          <p>{item.description ?? menuFallbackDescription}</p>
                           <div className="menu-list-item__meta">
                             <PriceDisplay price={item.price} />
                             <DietaryTags tags={item.dietaryTags} />
@@ -261,20 +262,19 @@ export function MenuPage() {
             <div className="menu-notes__grid">
               <div className="menu-note" data-menu-reveal="true">
                 <p className="eyebrow">Precios</p>
-                <h2>Precio pendiente de actualización</h2>
+                <h2>Precio a consultar con el equipo</h2>
                 <p>
-                  La carta no publica importes estimados ni rangos inventados.
-                  Cuando el precio no está verificado, se comunica de forma
-                  explícita y se deriva a contacto o reserva contextual.
+                  Para evitar errores, la web no publica importes sin confirmar.
+                  Si vienes hoy o quieres reservar, puedes consultarlos antes
+                  por telefono, WhatsApp o formulario.
                 </p>
               </div>
               <div className="menu-note" data-menu-reveal="true">
-                <p className="eyebrow">Alérgenos</p>
+                <p className="eyebrow">Alergenos</p>
                 <h2>Consulta operativa antes de confirmar</h2>
                 <p>
-                  Los alérgenos solo aparecen cuando hay validación expresa. En
-                  el resto de casos se muestra la pendencia y se recomienda
-                  consultar al equipo antes de cerrar la visita.
+                  Si tienes alergias o intolerancias, confirma siempre con el
+                  equipo antes de cerrar la visita o pedir un plato concreto.
                 </p>
               </div>
             </div>

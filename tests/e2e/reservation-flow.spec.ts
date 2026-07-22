@@ -1,14 +1,18 @@
 import { expect, test } from "@playwright/test";
 
+function getFutureDateIso(daysAhead: number) {
+  const date = new Date();
+  date.setDate(date.getDate() + daysAhead);
+  return date.toISOString().slice(0, 10);
+}
+
 async function fillReservationForm(page: import("@playwright/test").Page) {
-  await page.getByLabel("Fecha").fill("2026-07-22");
+  await page.getByLabel("Fecha").fill(getFutureDateIso(2));
   await page.getByLabel("Hora").fill("20:30");
   await page.locator("#booking-guests").fill("2");
   await page.getByLabel("Nombre").fill("Ada Lovelace");
   await page.getByLabel("Telefono").fill("+34 600 000 000");
-  await page
-    .getByLabel(/He leido la informacion provisional de privacidad/i)
-    .check();
+  await page.getByLabel(/He leido la informacion de privacidad/i).check();
   await page.waitForTimeout(3100);
 }
 
