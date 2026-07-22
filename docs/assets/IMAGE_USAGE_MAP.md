@@ -13,3 +13,5 @@
 | Carta            | Assets tipados por item | Capitulo/producto      | lazy salvo hero |
 
 La repeticion de `asset-019` queda limitada a aperturas de alta conversion; una futura sesion real de local/equipo es preferible a usar food truck fuera de contexto.
+
+La revision independiente confirma que `asset-019` es el LCP exacto de Home y Reserva y mantiene preload por ruta, AVIF responsive, fallback WebP, `fetchpriority="high"`, dimensiones y `sizes="100vw"`. No se usa en la galeria de Nosotros ni se añaden originales Drive o contact sheets al build.

@@ -4,7 +4,7 @@ Fecha: 2026-07-22. Rama: `codex/pure-visual-design-qa`. Base: `15696c88e1071fdb3
 
 ## Veredicto
 
-La base era funcional y reconocible, pero Carta, Nosotros y Reserva acumulaban densidad, patrones de panel y encuadres vacios que reducian la calidad percibida. La revision elimina los P0/P1/P2 visuales detectados sin cambiar reserva, datos, SEO o backend. Resultado estimado: **88/100**, frente a **68/100** antes de la intervencion.
+La base era funcional y reconocible, pero Carta, Nosotros y Reserva acumulaban densidad, patrones de panel y encuadres vacios que reducian la calidad percibida. La revision y su auditoria independiente eliminan los P0/P1/P2 visuales detectados sin cambiar reserva, datos, SEO o backend. Resultado final: **88/100**, frente a **68/100** antes de la intervencion.
 
 ## Produccion auditada
 
@@ -27,6 +27,8 @@ La base era funcional y reconocible, pero Carta, Nosotros y Reserva acumulaban d
 | P2        | Navegacion de Carta no acompanaba una pagina larga                 | Indice sticky, desplazable y accesible                                             | Salto inmediato entre nueve categorias          |
 | P2        | Banner de consentimiento dominaba la pantalla                      | Panel compacto y limitado en desktop/movil                                         | Mantiene decision informada sin tapar la pagina |
 | P2        | React descubria y decodificaba tarde el LCP de Home y Reserva      | Preload AVIF responsive por ruta y decode sincronico solo para imagenes eager      | Descubrimiento y pintura criticos mas tempranos |
+| P1        | CTA claros de Carta y eyebrow de Nosotros no alcanzaban 4.5:1      | Color contextual oscuro en Carta y blanco en la galeria naranja                    | Axe limpio en las 12 rutas, movil y desktop     |
+| P1        | El salto de Carta no indicaba categoria activa y rozaba el sticky  | `aria-current`, seguimiento de scroll, rail centrado y margen de anclaje de 10 rem | Categoria y encabezado visibles tras el salto   |
 
 ## Puntuacion por ruta
 
@@ -50,7 +52,7 @@ La base era funcional y reconocible, pero Carta, Nosotros y Reserva acumulaban d
 
 ## Accesibilidad y rendimiento
 
-- Axe: cero violaciones en Home y Reserva, escritorio, movil y `prefers-reduced-motion`; cero errores de consola y cero requests externos inesperados antes del consentimiento.
+- Axe independiente: cero violaciones en las 12 rutas relevantes, escritorio y movil (24 auditorias); cero errores de consola, `pageerror`, PII o requests externos inesperados antes del consentimiento.
 - Lighthouse movil, Home: `85/100/100/100`, LCP `4.136 s`, CLS `0`.
 - Lighthouse movil, Reserva: `87/100/100/100`, LCP `3.692 s`, CLS `0`.
 - Lighthouse escritorio, Home: `99/100/100/100`, LCP `0.896 s`, CLS `0`.
@@ -60,10 +62,10 @@ La base era funcional y reconocible, pero Carta, Nosotros y Reserva acumulaban d
 
 ## Candidato de release
 
-- ZIP reproducible local: SHA-256 `2af70b562330575a42443191e4a8a3cd99804c65f37a4133bd727437b5984e67`.
+- ZIP reproducible local tras la revision independiente: SHA-256 `801eda53fc0bec3dd3b16224b4c2fd1b7f4dd1397843fe3c9df2d3099f7cecc6`.
 - Verificacion: `384` archivos, `384` entradas, cero source maps, rutas prohibidas o marcadores internos.
 - El checksum historico documentado para la version actualmente publicada no se modifica. Este candidato visual no se ha desplegado.
 
 ## Limites
 
-La matriz es Chromium emulado. NVDA/VoiceOver y los dispositivos iOS/Android fisicos quedan como P3 humano. La fuente Drive se inventario sin atribuir escenas del food truck al restaurante.
+La matriz es Chromium emulado. NVDA/VoiceOver y los dispositivos iOS/Android fisicos quedan como P3 humano. La fuente Drive se inventario sin atribuir escenas del food truck al restaurante. El detalle reproducible de cierre esta en `PURE_VISUAL_DESIGN_INDEPENDENT_REVIEW.md` y `pure-visual-independent-results.json`.

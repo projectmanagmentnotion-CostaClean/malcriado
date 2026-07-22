@@ -9,3 +9,9 @@
 - No se alteraron textos legales ni contenido gastronomico.
 
 Deuda P3: revisar viudas concretas con Safari/iOS real y validar subsetting de fuentes con datos de campo.
+
+## Revision independiente
+
+- Axe detecto contraste 1.24:1 en dos CTA claros de Carta y 2.31:1 en el eyebrow de la galeria de Nosotros.
+- Se aplicaron colores contextuales sin cambiar familia, escala ni jerarquia. La repeticion final de Axe queda en cero violaciones, 12 rutas por movil y desktop.
+- Zoom emulado 125/150/200 conserva un `h1` por ruta, reflow y lectura sin desborde.

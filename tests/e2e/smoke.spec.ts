@@ -72,9 +72,19 @@ test("menu deep links land on the requested category chapter", async ({
 }) => {
   await page.goto("/menu/#menu-category-pizzas");
   await expect(page).toHaveURL(/#menu-category-pizzas$/);
-  await expect(
-    page.getByRole("heading", { level: 2, name: /^pizzas$/i }),
-  ).toBeVisible();
+  const heading = page.getByRole("heading", { level: 2, name: /^pizzas$/i });
+  const categoryLink = page.getByRole("link", { name: /^pizzas$/i });
+
+  await expect(heading).toBeVisible();
+  await expect(categoryLink).toHaveAttribute("aria-current", "location");
+
+  const stickyNavigationBottom = await page
+    .locator(".menu-navigation")
+    .evaluate((element) => element.getBoundingClientRect().bottom);
+  const headingTop = await heading.evaluate(
+    (element) => element.getBoundingClientRect().top,
+  );
+  expect(headingTop).toBeGreaterThan(stickyNavigationBottom);
 });
 
 test("mobile menu opens, closes and keyboard returns focus", async ({

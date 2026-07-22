@@ -1,4 +1,4 @@
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { BookingCta } from "@/components/common/BookingCta";
 import { AllergenStatus } from "@/components/food/AllergenStatus";
 import { DietaryTags } from "@/components/food/DietaryTags";
@@ -26,14 +26,90 @@ const menuFallbackDescription =
 export function MenuPage() {
   const seoPage = seoPages.menu!;
   const rootRef = useRef<HTMLDivElement>(null);
+  const navigationRailRef = useRef<HTMLElement>(null);
   const reducedMotion = useReducedMotion();
   const categories = useMemo(() => getPublicMenuCategories(), []);
+  const [activeCategorySlug, setActiveCategorySlug] = useState(() => {
+    const hash = typeof window === "undefined" ? "" : window.location.hash;
+    return (
+      categories.find(
+        (category) => `#${buildMenuCategoryId(category.slug)}` === hash,
+      )?.slug ??
+      categories[0]?.slug ??
+      null
+    );
+  });
   const totalItems = menuContent.items.length;
   const visualItems = menuContent.items.filter(
     (item) => item.media?.assetId,
   ).length;
 
   useMenuPageMotion({ reducedMotion, rootRef });
+
+  useEffect(() => {
+    const sections = categories
+      .map((category) => ({
+        element: document.getElementById(buildMenuCategoryId(category.slug)),
+        slug: category.slug,
+      }))
+      .filter(
+        (
+          section,
+        ): section is {
+          element: HTMLElement;
+          slug: (typeof categories)[number]["slug"];
+        } => Boolean(section.element),
+      );
+    let frame = 0;
+    let initialFrame = 0;
+
+    const updateActiveCategory = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const navigation =
+          document.querySelector<HTMLElement>(".menu-navigation");
+        const activationLine =
+          (navigation?.getBoundingClientRect().bottom ?? 0) + 64;
+        let active = sections[0];
+
+        for (const section of sections) {
+          if (section.element.getBoundingClientRect().top <= activationLine) {
+            active = section;
+          } else {
+            break;
+          }
+        }
+
+        if (active) setActiveCategorySlug(active.slug);
+      });
+    };
+
+    initialFrame = requestAnimationFrame(updateActiveCategory);
+    window.addEventListener("scroll", updateActiveCategory, { passive: true });
+    window.addEventListener("resize", updateActiveCategory);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      cancelAnimationFrame(initialFrame);
+      window.removeEventListener("scroll", updateActiveCategory);
+      window.removeEventListener("resize", updateActiveCategory);
+    };
+  }, [categories]);
+
+  useEffect(() => {
+    const rail = navigationRailRef.current;
+    const activeChip = rail?.querySelector<HTMLElement>(
+      '[aria-current="location"]',
+    );
+
+    if (!rail || !activeChip || typeof rail.scrollTo !== "function") return;
+
+    rail.scrollTo({
+      behavior: reducedMotion ? "auto" : "smooth",
+      left:
+        activeChip.offsetLeft - (rail.clientWidth - activeChip.clientWidth) / 2,
+    });
+  }, [activeCategorySlug, reducedMotion]);
 
   return (
     <>
@@ -119,13 +195,20 @@ export function MenuPage() {
             <nav
               aria-label="Categorias de la carta"
               className="menu-navigation__rail"
+              ref={navigationRailRef}
             >
               {categories.map((category) => (
                 <a
+                  aria-current={
+                    activeCategorySlug === category.slug
+                      ? "location"
+                      : undefined
+                  }
                   className="menu-navigation__chip"
                   data-menu-reveal="true"
                   href={`#${buildMenuCategoryId(category.slug)}`}
                   key={category.id}
+                  onClick={() => setActiveCategorySlug(category.slug)}
                 >
                   <span>{category.label}</span>
                   <small>

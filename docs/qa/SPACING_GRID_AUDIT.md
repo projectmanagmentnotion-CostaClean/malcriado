@@ -11,3 +11,9 @@ La correccion usa los tokens existentes y una capa final coherente, no ajustes p
 - Contencion `max-width: 100vw` elimina el desborde circular causado por el rail de Carta.
 
 Resultado: alineaciones compartidas, mas aire y menos apariencia de dashboard.
+
+## Revision independiente
+
+- El anclaje de Carta aumento de `8rem` a `10rem` para compensar header y rail sticky tambien con viewport bajo y zoom.
+- El estado activo centra el chip dentro del rail sin desplazar el documento ni secuestrar el scroll.
+- Las 180 comprobaciones base y 28 escenarios extendidos terminaron sin overflow horizontal.
