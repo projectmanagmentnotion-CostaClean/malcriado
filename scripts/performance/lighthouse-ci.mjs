@@ -188,10 +188,16 @@ async function captureBrowserDiagnostics() {
         waitUntil: "networkidle",
         timeout: 30_000,
       });
-      await page.locator("[data-route-heading='true']").waitFor({
-        state: "visible",
-        timeout: 10_000,
-      });
+      const heading = page.locator("[data-route-heading='true']");
+      let headingVisible = false;
+      try {
+        await heading.waitFor({ state: "visible", timeout: 10_000 });
+        headingVisible = true;
+      } catch (error) {
+        pageMessages.push(
+          `diagnostic:heading-not-visible:${error instanceof Error ? error.message : "unknown error"}`,
+        );
+      }
       await page.screenshot({
         path: resolve(outputDir, `${name}-render.png`),
         fullPage: false,
@@ -205,9 +211,7 @@ async function captureBrowserDiagnostics() {
         route,
         status: response?.status() ?? null,
         title: await page.title(),
-        headingVisible: await page
-          .locator("[data-route-heading='true']")
-          .isVisible(),
+        headingVisible,
         messages: pageMessages,
       });
       await page.close();

@@ -103,5 +103,6 @@ jobs:
         with:
           name: lighthouse-diagnostics
           path: .tmp-lighthouse/
+          include-hidden-files: true
           if-no-files-found: error
           retention-days: 14

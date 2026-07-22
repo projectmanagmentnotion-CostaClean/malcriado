@@ -16,7 +16,8 @@ La causa se considera una carrera de primera pintura del cliente, agravada por d
 - E2E y Lighthouse construyen y sirven `dist/`, no el dev server.
 - El preview Lighthouse fija `127.0.0.1:4174`, `--strictPort` y comprueba que el puerto esté libre antes de arrancar.
 - El health check exige HTTP 200, `text/html` y el marcador `#root` tanto en `/` como en `/reservar/`.
-- Playwright confirma después hidratación y heading visible antes de auditar.
+- Playwright intenta confirmar después hidratación y heading visible antes de auditar.
+- Si esa comprobación diagnóstica no ve el heading, lo registra junto con HTML, captura y consola sin impedir que Lighthouse ejecute su propio gate.
 - El hero queda pintable antes de GSAP; movimiento y `prefers-reduced-motion` se conservan.
 - El preloader solo opera en escritorio con movimiento permitido y nunca oculta la primera pintura móvil.
 - Ambos LCP cargan `eager` y `fetchpriority="high"`.
@@ -32,6 +33,8 @@ El artefacto `lighthouse-diagnostics` se sube con `if: always()` y retención de
 - consola/errores de página y versión de Chromium;
 - log de Chromium;
 - log CLI y reportes Lighthouse JSON/HTML por ruta.
+
+Como el directorio empieza por punto, el upload declara `include-hidden-files: true`; sin esa opción GitHub Actions v4 omite el contenido aunque exista.
 
 ## Matriz de hipótesis
 
