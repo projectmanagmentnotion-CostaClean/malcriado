@@ -1,5 +1,22 @@
 :root {
   --layout-gutter: clamp(1rem, 2vw, 1.5rem);
+  --mobile-page-gutter: clamp(1rem, 4.8vw, 1.35rem);
+  --tablet-page-gutter: clamp(1.75rem, 4vw, 3rem);
+  --mobile-header-height: 4.25rem;
+  --tablet-header-height: 4.75rem;
+  --touch-target-min: 2.875rem;
+  --mobile-section-gap: clamp(3rem, 12vw, 4.5rem);
+  --tablet-section-gap: clamp(4.5rem, 8vw, 6.5rem);
+  --mobile-card-padding: clamp(1rem, 4vw, 1.25rem);
+  --tablet-card-padding: clamp(1.25rem, 2.8vw, 1.75rem);
+  --mobile-hero-min-height: min(
+    42rem,
+    calc(100svh - var(--mobile-header-height))
+  );
+  --tablet-hero-min-height: min(
+    48rem,
+    calc(100svh - var(--tablet-header-height))
+  );
   --layout-safe-inline: max(var(--layout-gutter), env(safe-area-inset-left));
   --layout-safe-inline-end: max(
     var(--layout-gutter),

@@ -67,3 +67,27 @@ npm ci
 npm run qa
 npm run qa:visual:independent
 ```
+
+## Checkpoint Fase 14 - móvil e iPad v2
+
+- Rama: `codex/mobile-ipad-art-direction-v2`.
+- Base: `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116`.
+- PR draft: `#18`, `Malcriado mobile and iPad art direction v2`.
+- Preview local: `http://127.0.0.1:4174/` mientras continúe el proceso de esta sesión.
+- Producción no se ha modificado.
+- Matriz: producción `216/264`; candidato `264/264`.
+- Tests específicos responsive: `3/3`.
+- Estado: `AWAITING_OWNER_VISUAL_APPROVAL`.
+
+Para retomar:
+
+```bash
+git fetch --all --prune
+git switch codex/mobile-ipad-art-direction-v2
+npm ci
+npm run qa
+npm run test:e2e
+npm run qa:mobile-ipad
+```
+
+No hacer merge ni despliegue hasta aprobación explícita del propietario.

@@ -475,3 +475,21 @@ Rediseño publicado el 2026-07-23 desde `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77
 - [x] Mantener cierre por backdrop, `Escape`, enlaces y restauracion de foco.
 - [x] Verificar formato, lint, tipos, 82 tests y build de produccion.
 - [ ] Confirmar visualmente el hotfix en produccion despues de su despliegue.
+
+## Fase 14 - dirección de arte móvil e iPad v2
+
+- [x] Partir del head estable `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116`.
+- [x] Abrir rama `codex/mobile-ipad-art-direction-v2` y PR draft `#18`.
+- [x] Auditar producción en móvil, tablet portrait, tablet landscape y desktop.
+- [x] Corregir el overlay móvil mediante portal y añadir X accesible.
+- [x] Definir tokens específicos de móvil y tablet.
+- [x] Mantener drawer hasta 1199 px y desktop desde 1200 px.
+- [x] Rearticular Home, Carta, Especiales, Nosotros, Reserva, Contacto, FAQ y footer.
+- [x] Ajustar focal points responsive sin cambiar el pipeline de imágenes.
+- [x] Validar 12 rutas en 22 viewports: candidato `264/264`.
+- [x] Comparar producción/candidato y proteger desktop.
+- [x] Añadir E2E de 320 px, breakpoint y menú a viewport completo.
+- [ ] Validar Safari iOS, Chrome Android, lector de pantalla y teclado virtual reales.
+- [ ] Obtener aprobación visual explícita del propietario.
+
+Estado: `AWAITING_OWNER_VISUAL_APPROVAL`. No merge y no deploy.

@@ -110,6 +110,18 @@
   Razon: la matriz `180/180` es Chromium emulado.
   Criterio de cierre: evidencia humana sin P0/P1/P2 o incidencias corregidas.
 
+- Validar el candidato móvil/iPad v2 en hardware real.
+  Razon: la matriz Chromium pasa `264/264`, pero no sustituye Safari iOS, Chrome Android, teclado virtual, barra del navegador ni lector de pantalla reales.
+  Dependencia: dispositivos y revisión del propietario.
+  Fase: `Fase 14`.
+  Criterio de cierre: evidencia humana registrada y aprobación visual explícita.
+
+- Revisar Home tablet landscape con el propietario.
+  Razon: a 1024 × 768 la composición editorial crece 587 px frente al desktop comprimido de producción; mejora legibilidad, pero requiere juicio visual del titular.
+  Dependencia: preview viva.
+  Fase: `Fase 14`.
+  Criterio de cierre: aceptación o ajuste documentado.
+
 - Confirmar LCP p75 de campo y valorar prerender del shell SPA.
   Razon: Lighthouse remoto identifica `asset-019` como LCP; Home móvil midió 3,42 s y Reserva móvil 3,28 s, con prioridad alta, CLS 0 y puntuaciones 91/92. No existen aún datos p75 reales.
   Dependencia: tráfico de producción y dispositivo real.
