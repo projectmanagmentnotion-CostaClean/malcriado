@@ -88,6 +88,9 @@ describe("app shell", () => {
     expect(
       screen.getByRole("navigation", { name: /menu movil/i }),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /cerrar menu movil/i }),
+    ).toBeInTheDocument();
 
     fireEvent.keyDown(window, { key: "Escape" });
 

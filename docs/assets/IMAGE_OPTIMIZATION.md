@@ -1,15 +1,15 @@
 # Image Optimization
 
-Generated on 2026-07-16T15:51:13.039Z.
+Generated on 2026-07-23T12:52:21.144Z.
 
 ## Pipeline
 
 - Source directory: public/assets/source
 - Output directory: public/assets/optimized
 - Manifest: src/content/assets/asset-manifest.json
-- Derivatives generated: 322
-- Primary production bytes: 912025
-- Generated derivative bytes: 17676932
+- Derivatives generated: 490
+- Primary production bytes: 1181691
+- Generated derivative bytes: 26315626
 
 ## Profiles
 
@@ -50,3 +50,11 @@ Generated on 2026-07-16T15:51:13.039Z.
 | tacos-malcriados-2.webp                          | menu-support  | 12       | /assets/optimized/asset-025/original-640.avif |
 | tartar-de-atun.webp                              | hero          | 22       | /assets/optimized/asset-026/original-960.avif |
 | Mjoitos-fresa-y-maracuya-malcriado.webp          | excluded      | 0        | -                                             |
+| cocteles-malcriado-owner-supplied.jpg            | cocktail      | 18       | /assets/optimized/asset-028/original-720.avif |
+| refresco-limon-owner-supplied.jpg                | featured-dish | 22       | /assets/optimized/asset-029/original-720.avif |
+| sangria-malcriado-owner-supplied.jpg             | cocktail      | 18       | /assets/optimized/asset-030/original-720.avif |
+| vino-botella-uvas-owner-supplied.jpg             | featured-dish | 22       | /assets/optimized/asset-031/original-720.avif |
+| zz-postre-tarta-queso-owner-supplied.webp        | featured-dish | 22       | /assets/optimized/asset-032/original-720.avif |
+| zzz-nosotros-hero-owner-supplied.webp            | featured-dish | 22       | /assets/optimized/asset-033/original-720.avif |
+| zzzz-especial-chicharron-owner-supplied.webp     | featured-dish | 22       | /assets/optimized/asset-034/original-720.avif |
+| zzzzz-hector-owner-supplied.webp                 | featured-dish | 22       | /assets/optimized/asset-035/original-720.avif |

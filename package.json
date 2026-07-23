@@ -15,6 +15,7 @@
     "bundle:budget": "node scripts/performance/bundle-budget.mjs",
     "lighthouse:ci": "node scripts/performance/lighthouse-ci.mjs",
     "qa:visual:independent": "node scripts/qa/pure-visual-independent-review.mjs",
+    "qa:mobile-ipad": "node scripts/qa/mobile-ipad-matrix.mjs",
     "content:validate": "tsx scripts/content/validate.ts",
     "content:report": "tsx scripts/content/report.ts",
     "routes:validate": "tsx scripts/routes/validate.ts",

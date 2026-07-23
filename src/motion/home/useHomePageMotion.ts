@@ -208,18 +208,25 @@ export function useHomePageMotion({
                 scene.querySelector<HTMLElement>("[data-scene-media]");
 
               if (media) {
+                const image = media.querySelector("img") ?? media;
+
                 gsap.fromTo(
-                  media,
-                  { yPercent: -4 },
+                  image,
                   {
-                    yPercent: 4,
+                    yPercent: -3.5,
+                    scale: 1.065,
+                    transformOrigin: "50% 50%",
+                  },
+                  {
+                    yPercent: 3.5,
+                    scale: 1.015,
                     ease: "none",
                     scrollTrigger: {
                       trigger: scene,
                       start: "top bottom",
                       end: "bottom top",
                       invalidateOnRefresh: true,
-                      scrub: 0.7,
+                      scrub: 0.35,
                     },
                   },
                 );

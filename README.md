@@ -51,6 +51,14 @@ git diff --check
 
 `qa` incluye formato, lint, TypeScript, contenido, rutas, SEO, assets, tests y build.
 
+La auditoría móvil/iPad dispone además de:
+
+```bash
+npm run qa:mobile-ipad
+```
+
+Por defecto revisa la preview local en `http://127.0.0.1:4174`. Se puede definir `VISUAL_BASE_URL` y `VISUAL_LABEL` para comparar otro origen. La matriz cubre 12 rutas, 8 viewports móviles, 10 tablet/iPad y 4 desktop, y guarda métricas y capturas en `docs/qa/`.
+
 ## Producción
 
 ```bash

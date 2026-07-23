@@ -25,7 +25,7 @@ export function NosotrosPage() {
           <div className="story-hero__media">
             <EditorialImage
               alt="Escena gastronomica de Malcriado como apertura narrativa."
-              asset={getAsset("asset-017")}
+              asset={getAsset("asset-033")}
               crop="portrait"
               eager
               ratio="cinema"
@@ -48,10 +48,23 @@ export function NosotrosPage() {
               </header>
               <div className="story-hero__aside">
                 {person ? (
-                  <div>
-                    <p className="eyebrow">{person.role}</p>
-                    <strong>{person.name}</strong>
-                    <span>{person.biography}</span>
+                  <div className="story-hero__person">
+                    {person.mediaAssetId ? (
+                      <div className="story-hero__person-media">
+                        <EditorialImage
+                          alt={`${person.name}, ${person.role ?? "equipo de Malcriado"}.`}
+                          asset={getAsset(person.mediaAssetId)}
+                          crop="portrait"
+                          ratio="portrait"
+                          sizes="(max-width: 900px) 24vw, 8rem"
+                        />
+                      </div>
+                    ) : null}
+                    <div className="story-hero__person-copy">
+                      <p className="eyebrow">{person.role}</p>
+                      <strong>{person.name}</strong>
+                      <span>{person.biography}</span>
+                    </div>
                   </div>
                 ) : null}
                 <div>

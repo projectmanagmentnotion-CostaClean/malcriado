@@ -14,7 +14,7 @@ export const peopleProfiles: readonly PersonProfile[] = [
     biography:
       "Malcriado presenta a Hector como chef venezolano y cara visible de la propuesta culinaria.",
     status: "VERIFIED",
-    mediaAssetId: null,
+    mediaAssetId: "asset-035",
     references: {
       sourceIds: [
         contentSources.siteNosotros.id,

@@ -33,8 +33,7 @@ const initialValues: ReservationFormValues = {
 const initialSubmission: ReservationSubmission = {
   status: "idle",
   title: "Solicita tu mesa",
-  message:
-    "Completa los datos y continúa por WhatsApp o correo. El equipo revisará la disponibilidad y te confirmará personalmente la reserva.",
+  message: "Solicitud sujeta a confirmación del equipo.",
 };
 
 export function useReservationForm(context: ReservationContext) {

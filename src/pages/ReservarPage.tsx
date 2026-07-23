@@ -56,11 +56,7 @@ export function ReservarPage() {
                 </div>
               </div>
               <div className="booking-hero__copy">
-                <p>
-                  Completa los datos y continúa por WhatsApp o correo. El equipo
-                  revisará la disponibilidad y te confirmará personalmente la
-                  reserva.
-                </p>
+                <p>Te confirmaremos disponibilidad por WhatsApp o correo.</p>
                 <Cluster className="booking-hero__channels" gap="sm">
                   {bookingChannels.map((channel) => (
                     <span className="booking-hero__channel" key={channel.id}>
@@ -68,20 +64,6 @@ export function ReservarPage() {
                     </span>
                   ))}
                 </Cluster>
-                <ul className="booking-hero__list">
-                  {bookingChannels.map((channel) => (
-                    <li key={channel.id}>
-                      {channel.label}:{" "}
-                      {channel.label === "Formulario"
-                        ? "Disponible en esta pagina"
-                        : channel.href}
-                    </li>
-                  ))}
-                </ul>
-                <p className="booking-hero__note">
-                  Si necesitas una mesa para hoy o tienes una peticion especial,
-                  WhatsApp y telefono siguen siendo la via mas rapida.
-                </p>
               </div>
             </header>
             <ReservationForm context={reservationContext} />

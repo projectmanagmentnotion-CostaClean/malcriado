@@ -465,4 +465,40 @@ Producción publicada el 2026-07-22 a las 16:12 CEST desde `main` `8d16c4fc99c8b
 - [x] Inventariar la biblioteca oficial Drive y generar hojas de contacto.
 - [ ] Completar prueba humana en Safari/iOS, Android y lector de pantalla.
 
-No se desplego produccion. La fase se entrega en draft PR para revision visual humana.
+Rediseño publicado el 2026-07-23 desde `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116`. El smoke remoto cerro `GO`: 45 E2E, 24 Axe y 28 escenarios visuales sin fallos; no hubo P0/P1 ni rollback.
+
+## Correccion postlanzamiento - navegacion movil
+
+- [x] Reproducir el overlay limitado al alto del header en viewport movil.
+- [x] Sacar overlay y panel del contexto de `backdrop-filter` mediante portal al `body`.
+- [x] Incorporar una X visible y accesible dentro del propio panel.
+- [x] Mantener cierre por backdrop, `Escape`, enlaces y restauracion de foco.
+- [x] Verificar formato, lint, tipos, 82 tests y build de produccion.
+- [ ] Confirmar visualmente el hotfix en produccion despues de su despliegue.
+
+## Fase 14 - dirección de arte móvil e iPad v2
+
+- [x] Partir del head estable `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116`.
+- [x] Abrir rama `codex/mobile-ipad-art-direction-v2` y PR draft `#18`.
+- [x] Auditar producción en móvil, tablet portrait, tablet landscape y desktop.
+- [x] Corregir el overlay móvil mediante portal y añadir X accesible.
+- [x] Definir tokens específicos de móvil y tablet.
+- [x] Mantener drawer hasta 1199 px y desktop desde 1200 px.
+- [x] Rearticular Home, Carta, Especiales, Nosotros, Reserva, Contacto, FAQ y footer.
+- [x] Ajustar focal points responsive sin cambiar el pipeline de imágenes.
+- [x] Validar 12 rutas en 22 viewports: candidato `264/264`.
+- [x] Comparar producción/candidato y proteger desktop.
+- [x] Añadir E2E de 320 px, breakpoint y menú a viewport completo.
+- [x] Llevar la fotografía editorial móvil a full-bleed y retirar marcos visibles.
+- [x] Incorporar y mapear originales de cócteles, refrescos, sangría y vinos.
+- [x] Convertir a WebP y asignar la fotografía entregada para Tarta de Queso en Postres.
+- [x] Convertir a WebP y asignar las fotografías entregadas al hero de Nosotros y al especial de chicharrón.
+- [x] Convertir a WebP y asociar el retrato entregado al perfil verificado de Héctor en Home y Nosotros.
+- [x] Simplificar el formulario de Reserva, el horario móvil del footer y el contraste de la escena fusión.
+- [x] Eliminar solapamientos de chips y apilar las acciones comerciales del drawer.
+- [x] Hacer reversible el movimiento de imágenes ligado al scroll, sin mover el layout.
+- [x] Revalidar `264/264`, 85 tests, 52 E2E, 24 Axe y 28 escenarios visuales.
+- [ ] Validar Safari iOS, Chrome Android, lector de pantalla y teclado virtual reales.
+- [ ] Obtener aprobación visual explícita del propietario.
+
+Estado: `AWAITING_OWNER_VISUAL_APPROVAL`. No merge y no deploy.

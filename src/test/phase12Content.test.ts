@@ -1,4 +1,9 @@
-import { businessContent, menuContent } from "@/content";
+import {
+  businessContent,
+  menuContent,
+  offers,
+  peopleProfiles,
+} from "@/content";
 import { getOpeningHoursSpecification } from "@/content/business/openingHours";
 
 describe("Phase 12A commercial content", () => {
@@ -34,5 +39,45 @@ describe("Phase 12A commercial content", () => {
           item.allergens.length === 0,
       ),
     ).toBe(true);
+  });
+
+  it("maps the owner-supplied beverage photography to its intended categories", () => {
+    const expectedAssetByCategory = {
+      "cat-cocktails": "asset-028",
+      "cat-soft-drinks": "asset-029",
+      "cat-sangrias": "asset-030",
+      "cat-wines": "asset-031",
+      "cat-desserts": "asset-032",
+    };
+
+    for (const [categoryId, assetId] of Object.entries(
+      expectedAssetByCategory,
+    )) {
+      expect(
+        menuContent.items.find(
+          (item) =>
+            item.categoryId === categoryId && item.media?.assetId === assetId,
+        ),
+      ).toBeDefined();
+    }
+  });
+
+  it("keeps the chicharron special visible without inventing commercial details", () => {
+    const offer = offers.find(
+      (candidate) => candidate.id === "offer-chicharron",
+    );
+
+    expect(offer?.assetId).toBe("asset-034");
+    expect(offer?.editorialStatus).toBe("PENDING_CONTENT");
+    expect(offer?.validity.startsAt).toBeNull();
+    expect(offer?.validity.endsAt).toBeNull();
+  });
+
+  it("identifies Hector with the owner-supplied portrait", () => {
+    const hector = peopleProfiles.find(
+      (candidate) => candidate.id === "person-hector",
+    );
+
+    expect(hector?.mediaAssetId).toBe("asset-035");
   });
 });
