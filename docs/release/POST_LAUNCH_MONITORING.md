@@ -24,3 +24,9 @@ La línea base Lighthouse remota es Home móvil 91/LCP 3,42 s, Reserva móvil 92
 ## Alertas y privacidad
 
 La monitorización técnica no debe capturar nombres, teléfonos, correos, comentarios, alergias ni URLs `wa.me`/`mailto:` completas. Registrar únicamente métricas agregadas y errores sin PII. Documentar propietario, frecuencia y umbral antes de activar cualquier proveedor.
+
+## Nueva linea base visual — 2026-07-23
+
+El rediseño se publico a las 10:21 CEST y quedo verificado a partir de las 10:33 CEST. Mantener como punto de rollback `production-before-visual-redesign-20260723-0948.zip` y la carpeta `public_html_before_visual_redesign_20260723_0948/`.
+
+Linea base Lighthouse: Home movil 93/LCP 3,05 s, Reserva movil 92/LCP 3,27 s, Home escritorio 99/LCP 0,70 s y Reserva escritorio 100/LCP 0,70 s; accesibilidad, buenas practicas y SEO 100, CLS 0. Vigilar especialmente LCP movil como P3 de campo y confirmar que Dynamic Cache no reintroduce el build anterior.

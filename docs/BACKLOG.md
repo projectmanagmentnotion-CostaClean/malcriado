@@ -111,10 +111,10 @@
   Criterio de cierre: evidencia humana sin P0/P1/P2 o incidencias corregidas.
 
 - Confirmar LCP p75 de campo y valorar prerender del shell SPA.
-  Razon: Lighthouse remoto identifica `asset-019` como LCP; Home móvil midió 3,42 s y Reserva móvil 3,28 s, con prioridad alta, CLS 0 y puntuaciones 91/92. No existen aún datos p75 reales.
+  Razon: Lighthouse del rediseño en produccion identifica `asset-019` como LCP; Home móvil midió 3,05 s y Reserva móvil 3,27 s, con prioridad alta, CLS 0 y puntuaciones 93/92. No existen aún datos p75 reales.
   Dependencia: tráfico de producción y dispositivo real.
   Fase: `Fase 12`.
-  Criterio de cierre: LCP p75 <= 2,5 s o plan de arquitectura aprobado antes de produccion.
+  Criterio de cierre: LCP p75 <= 2,5 s o plan de arquitectura aprobado para una iteracion posterior.
 
 - Confirmar CWV de campo con red y hardware menos favorables.
   Razon: producción ya dispone de línea base Lighthouse, pero sigue siendo una medición de laboratorio.

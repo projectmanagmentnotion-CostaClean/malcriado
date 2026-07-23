@@ -464,5 +464,8 @@ Producción publicada el 2026-07-22 a las 16:12 CEST desde `main` `8d16c4fc99c8b
 - [x] Reducir densidad, paneles y radios en Home, Carta y Reserva.
 - [x] Inventariar la biblioteca oficial Drive y generar hojas de contacto.
 - [ ] Completar prueba humana en Safari/iOS, Android y lector de pantalla.
+- [x] Crear backup especifico previo al rediseño y verificar sus 414 entradas.
+- [x] Desplegar el ZIP visual aprobado en SiteGround sin cambiar DNS ni reservas.
+- [x] Purgar Dynamic Cache y repetir smoke, Axe, E2E y Lighthouse contra produccion.
 
-No se desplego produccion. La fase se entrega en draft PR para revision visual humana.
+Rediseño publicado el 2026-07-23 desde `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116`. El smoke remoto cerro `GO`: 45 E2E, 24 Axe y 28 escenarios visuales sin fallos; no hubo P0/P1 ni rollback.

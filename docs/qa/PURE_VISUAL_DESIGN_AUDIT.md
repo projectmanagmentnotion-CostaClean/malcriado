@@ -64,7 +64,18 @@ La base era funcional y reconocible, pero Carta, Nosotros y Reserva acumulaban d
 
 - ZIP reproducible local tras la revision independiente: SHA-256 `801eda53fc0bec3dd3b16224b4c2fd1b7f4dd1397843fe3c9df2d3099f7cecc6`.
 - Verificacion: `384` archivos, `384` entradas, cero source maps, rutas prohibidas o marcadores internos.
-- El checksum historico documentado para la version actualmente publicada no se modifica. Este candidato visual no se ha desplegado.
+- El checksum historico documentado para la version anterior se conserva. El candidato visual fue desplegado de forma controlada el 2026-07-23 desde `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116`.
+
+## Verificacion final en produccion
+
+- Artefacto: `release/malcriado-production.zip`, SHA-256 `801eda53fc0bec3dd3b16224b4c2fd1b7f4dd1397843fe3c9df2d3099f7cecc6`.
+- Destino: `malcriadobcn.com/public_html`; 384 entradas verificadas antes del intercambio.
+- Backup previo: `production-before-visual-redesign-20260723-0948.zip`; copia local homonima con SHA-256 `02f1943aa2fe23af9ba1cf518d077aac6aac5f9fd4a76b1159edabd3c036eac2`.
+- QA visual remoto: 28/28 escenarios extendidos y 24/24 auditorias Axe, sin fallos.
+- E2E remoto: 45 aprobadas, 5 omitidas por no aplicar al dispositivo y 0 fallos.
+- Lighthouse: Home movil 93, Reserva movil 92, Home escritorio 99 y Reserva escritorio 100; accesibilidad, buenas practicas y SEO 100 en las cuatro superficies.
+- Dynamic Cache purgada con confirmacion de SiteGround; comprobacion adicional desde un fetch externo y contextos de navegador limpios.
+- Decision: `GO`; cero P0/P1 operativos y sin rollback.
 
 ## Limites
 

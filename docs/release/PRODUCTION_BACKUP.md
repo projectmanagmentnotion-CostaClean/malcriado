@@ -32,3 +32,20 @@ Rollback inmediato:
 4. Si el rollback por archivos no es suficiente, restaurar el backup manual desde Site Tools → Seguridad → Backups.
 
 Los backups deben conservarse durante la ventana de estabilización y no contienen nuevas solicitudes de reserva: el modo publicado no persiste datos.
+
+## Backup previo al rediseño visual — 2026-07-23
+
+No se reutilizo ni sobrescribio el backup inicial. Antes del intercambio visual se creo y verifico un segundo punto de restauracion:
+
+| Campo | Valor |
+| --- | --- |
+| Estado | `VERIFIED_RESTORABLE` |
+| Fecha y hora Europe/Madrid | 2026-07-23 09:48 CEST |
+| Document root | `malcriadobcn.com/public_html` |
+| Backup remoto | `production-before-visual-redesign-20260723-0948.zip` |
+| Backup local | `backups/production-before-visual-redesign-20260723-0948.zip` |
+| SHA-256 local | `02f1943aa2fe23af9ba1cf518d077aac6aac5f9fd4a76b1159edabd3c036eac2` |
+| Entradas verificadas | 414, incluidas `index.html` y `.htaccess` |
+| Version anterior preservada | `/malcriadobcn.com/public_html_before_visual_redesign_20260723_0948/` |
+
+El backup, la copia local y la carpeta anterior permanecieron intactos durante el despliegue. El rollback no fue necesario.

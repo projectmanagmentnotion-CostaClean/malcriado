@@ -6,6 +6,8 @@ Fecha: 2026-07-22. PR: `#16`. Rama revisada: `codex/pure-visual-design-qa`. Head
 
 **GO técnico para merge, condicionado a CI remoto verde y PR listo para revisión. NO-GO operativo para producción:** este trabajo no autoriza despliegue. La puntuación visual final es **88/100** frente a 68/100 antes del rediseño.
 
+> Actualizacion operativa 2026-07-23: tras el merge autorizado y un backup nuevo verificado, el mismo candidato fue publicado desde `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116`. La verificacion remota cerro `GO`, sin P0/P1 y sin rollback. Esta actualizacion no altera el veredicto independiente emitido antes del despliegue.
+
 El 88 está justificado porque el sistema dejó de parecer un dashboard o ecommerce: usa capítulos de fondo completo, reglas editoriales, fotografía con intención, pocas cajas y radios contenidos. Home, Carta, Nosotros y Reserva tienen composiciones distintas pero comparten Bodoni Moda, Manrope, paleta cálida, logo, grid, CTA y lenguaje fotográfico. No se eleva la nota por encima de 88 mientras falten prueba física iOS/Android, NVDA/VoiceOver, CWV p75 y una sesión real de sala/equipo.
 
 ## Hallazgos
@@ -77,6 +79,19 @@ Bodoni Moda sostiene titulares; Manrope, lectura y controles. El grid usa gutter
 - Consola/page errors: cero.
 - Requests externos inesperados antes del consentimiento: cero.
 - Teclado, foco, menú móvil, formularios, 404 y legales: conformes en automatización.
+
+## Repeticion sobre produccion
+
+La matriz independiente se repitio contra `https://malcriadobcn.com` en contextos limpios:
+
+- 28 comprobaciones extendidas y 24 auditorias Axe: `PASS`, cero violaciones;
+- Carta sticky: categoria Pizzas activa mediante `aria-current`, rail horizontal `auto` y encabezado libre del sticky;
+- mapa: cero Google/iframe antes de consentir, un iframe tras aceptar y desmontaje completo al revocar;
+- consola, `pageerror`, PII y requests externos inesperados: cero;
+- E2E funcional: 45 passed, 5 skipped previstos;
+- Lighthouse rendimiento: 93/92 movil y 99/100 escritorio; las otras tres categorias, 100.
+
+El unico incidente tecnico fue `EPERM` al limpiar carpetas temporales de Chrome en Windows despues de que Lighthouse escribiera informes validos. Es P3 de tooling y no afecto la navegacion ni las puntuaciones.
 
 ## Rendimiento, bundle y release
 
