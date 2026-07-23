@@ -145,7 +145,7 @@
       "violations": []
     }
   ],
-  "baseUrl": "http://127.0.0.1:5173",
+  "baseUrl": "https://malcriadobcn.com",
   "extendedMatrix": [
     {
       "id": "mobile-landscape",
@@ -702,7 +702,7 @@
       "googleRequests": [
         "https://www.google.com/maps?q=Passeig%20Maritim%2C%2014%2C%2008397%20Pineda%20de%20Mar%2C%20Barcelona&output=embed",
         "https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sPasseig+Maritim,+14,+08397+Pineda+de+Mar,+Barcelona",
-        "https://maps.gstatic.com/maps-api-v3/embed/js/65/6a/init_embed.js"
+        "https://maps.gstatic.com/maps-api-v3/embed/js/65/10a/init_embed.js"
       ],
       "iframes": 1
     },

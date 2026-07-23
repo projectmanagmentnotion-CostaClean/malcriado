@@ -51,3 +51,24 @@ Lighthouse generó los cuatro JSON/HTML sin `runtimeError`. El CLI devolvió `EP
 Se detectó contenido WordPress antiguo en Home y Contacto por Dynamic Cache tras el intercambio. La purga manual fue confirmada por SiteGround y la repetición devolvió el build nuevo en todas las rutas. No quedaron P0 ni P1 abiertos y no se ejecutó rollback.
 
 Decisión final: `GO`. Mantener los backups y ejecutar los controles de 24 horas y 7 días definidos en `POST_LAUNCH_MONITORING.md`.
+
+## Repeticion tras rediseño visual — 2026-07-23
+
+- Resultado: `PASS — GO`, sin rollback.
+- Head: `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116`.
+- Build: SHA-256 `801eda53fc0bec3dd3b16224b4c2fd1b7f4dd1397843fe3c9df2d3099f7cecc6`.
+- Rutas: Home, Carta, Especiales, Nosotros, Contacto, FAQ, Reserva, legales y 404 logica respondieron con el shell nuevo.
+- SEO: `robots.txt`, `sitemap.xml`, manifest, assets con hash, canonical hidratado y rutas directas conformes.
+- Interaccion: menú móvil, teclado, refresh, historial, zoom 200 %, reduced motion y Carta sticky conformes.
+- Reserva: 45 E2E aprobadas, 5 omitidas previstas, 0 fallos; WhatsApp, correo, copia y llamada siguen siendo acciones explicitas sin persistencia ni confirmacion falsa.
+- Privacidad: alergias requieren consentimiento; mapa bloqueado antes del consentimiento y desmontado tras revocarlo; cero Supabase/backend, PII, errores de consola o requests inesperadas.
+- Axe: 24/24 superficies, cero violaciones.
+
+| Superficie | Rendimiento | Accesibilidad | Buenas prácticas | SEO | FCP | LCP | CLS | TBT |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Home móvil | 93 | 100 | 100 | 100 | 1.701 ms | 3.051 ms | 0 | 0 ms |
+| Reserva móvil | 92 | 100 | 100 | 100 | 1.715 ms | 3.270 ms | 0 | 5 ms |
+| Home escritorio | 99 | 100 | 100 | 100 | 420 ms | 699 ms | 0 | 0 ms |
+| Reserva escritorio | 100 | 100 | 100 | 100 | 403 ms | 697 ms | 0 | 0 ms |
+
+Lighthouse escribio los cuatro JSON validos. El `EPERM` posterior al intentar limpiar temporales de Chrome en Windows no invalida los informes y queda como P3 de tooling.

@@ -15,6 +15,8 @@ Fases 0–12B cerradas. La web está publicada en [malcriadobcn.com](https://mal
 
 El smoke remoto cerró con 45 E2E aprobadas, Axe sin violaciones en las superficies auditadas, canonical/SSL/redirecciones correctos y sin requests externas inesperadas. El backup anterior y el rollback permanecen disponibles durante la estabilización.
 
+El rediseño visual integrado en `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116` se publico el 2026-07-23. El artefacto de 384 entradas (`801eda53fc0bec3dd3b16224b4c2fd1b7f4dd1397843fe3c9df2d3099f7cecc6`) paso de nuevo 45 E2E, 24 auditorias Axe y 28 escenarios responsive/zoom/reduced-motion en produccion. SiteGround Dynamic Cache fue purgada y el backup previo al rediseño permanece verificable.
+
 No existe Supabase, base de datos, SMTP, webhook o función serverless. `api` es arquitectura futura inactiva. Preparar una solicitud no afirma que se haya enviado, almacenado o confirmado.
 
 ## Desarrollo

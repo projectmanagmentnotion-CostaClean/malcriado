@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { NavLink } from "react-router-dom";
 import type { HeaderDensity, HeaderTheme } from "@/app/shell/routeHandles";
 import { Cluster } from "@/components/layout/Cluster";
@@ -38,6 +39,7 @@ export function Header({
   const whatsappHref = getWhatsappHref();
   const phoneHref = getTelephoneHref();
   const reducedMotion = useReducedMotion();
+  const canUsePortal = typeof document !== "undefined";
 
   useEffect(() => {
     if (!mobileMounted) {
@@ -222,128 +224,133 @@ export function Header({
     };
   }, [mobileMounted, mobileOpen, reducedMotion]);
 
-  return (
-    <header
-      className="site-header"
-      data-density={mobileOpen ? "default" : density}
-      data-menu-open={mobileOpen ? "true" : "false"}
-      data-theme={theme}
-    >
-      {mobileMounted ? (
-        <div
-          aria-hidden="true"
-          className="mobile-nav-overlay"
+  const mobileNavigation = mobileMounted ? (
+    <>
+      <div
+        aria-hidden="true"
+        className="mobile-nav-overlay"
+        onClick={() => setMobileOpen(false)}
+        ref={overlayRef}
+      />
+      <div
+        ref={dialogRef}
+        aria-label="Menu movil"
+        className="mobile-nav-panel"
+        id="mobile-navigation"
+        role="dialog"
+        aria-modal="true"
+      >
+        <IconButton
+          className="mobile-nav-panel__close"
+          icon="close"
+          label="Cerrar menu movil"
           onClick={() => setMobileOpen(false)}
-          ref={overlayRef}
+          variant="inverse"
         />
-      ) : null}
-      <Container width="wide">
-        <div className="site-header__shell">
-          <div className="site-header__inner">
-            <NavLink aria-label="Malcriado BCN" className="brand-mark" to="/">
-              <ResponsiveImage
-                alt="Malcriado"
-                asset={logoAsset}
-                crop="original"
-                eager
-                sizes="220px"
-              />
-            </NavLink>
-            <nav className="desktop-nav" aria-label="Principal">
-              <ul>
-                {siteRoutes.map((route) => (
-                  <li key={route.path}>
-                    <NavLink to={route.path}>{route.label}</NavLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            {hideBookingCta ? null : (
+        <nav aria-label="Menu movil" className="mobile-nav-panel__landmark">
+          <ul>
+            {siteRoutes.map((route) => (
+              <li key={route.path}>
+                <NavLink to={route.path} onClick={() => setMobileOpen(false)}>
+                  {route.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <Cluster className="mobile-nav-panel__actions" gap="sm">
+            <LinkButton
+              iconEnd="arrow-right"
+              to={buildBookingIntentHref({ context: "mobile-nav" })}
+              variant="editorial"
+              onClick={() => setMobileOpen(false)}
+            >
+              Reservar mesa
+            </LinkButton>
+            {whatsappHref ? (
               <LinkButton
-                className="desktop-cta"
-                iconEnd="arrow-right"
-                to={buildBookingIntentHref({ context: "header" })}
-                variant="editorial"
+                href={whatsappHref}
+                onClick={() => setMobileOpen(false)}
+                rel="noreferrer"
+                target="_blank"
+                variant="secondary"
               >
-                Reservar mesa
+                WhatsApp
               </LinkButton>
-            )}
-            <IconButton
-              ref={buttonRef}
-              aria-controls="mobile-navigation"
-              aria-expanded={mobileOpen}
-              className="mobile-nav-toggle"
-              icon={mobileOpen ? "close" : "menu"}
-              label={mobileOpen ? "Cerrar menu" : "Abrir menu"}
-              onClick={() => setMobileOpen((value) => !value)}
-            />
+            ) : null}
+          </Cluster>
+          <div className="mobile-nav-panel__meta">
+            <p>{businessContent.hours.summary.value ?? "Horario pendiente"}</p>
+            <Cluster gap="sm">
+              {phoneHref ? (
+                <TextLink href={phoneHref} icon="phone">
+                  {businessContent.contact.phone.value ?? "Telefono pendiente"}
+                </TextLink>
+              ) : null}
+              <TextLink icon="location" to="/contacto/">
+                Contacto
+              </TextLink>
+            </Cluster>
           </div>
-        </div>
-      </Container>
-      {mobileMounted ? (
+        </nav>
+      </div>
+    </>
+  ) : null;
+
+  return (
+    <>
+      <header
+        className="site-header"
+        data-density={mobileOpen ? "default" : density}
+        data-menu-open={mobileOpen ? "true" : "false"}
+        data-theme={theme}
+      >
         <Container width="wide">
-          <div
-            ref={dialogRef}
-            aria-label="Menu movil"
-            className="mobile-nav-panel"
-            id="mobile-navigation"
-            role="dialog"
-            aria-modal="true"
-          >
-            <nav aria-label="Menu movil" className="mobile-nav-panel__landmark">
-              <ul>
-                {siteRoutes.map((route) => (
-                  <li key={route.path}>
-                    <NavLink
-                      to={route.path}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {route.label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-              <Cluster className="mobile-nav-panel__actions" gap="sm">
+          <div className="site-header__shell">
+            <div className="site-header__inner">
+              <NavLink aria-label="Malcriado BCN" className="brand-mark" to="/">
+                <ResponsiveImage
+                  alt="Malcriado"
+                  asset={logoAsset}
+                  crop="original"
+                  eager
+                  sizes="220px"
+                />
+              </NavLink>
+              <nav className="desktop-nav" aria-label="Principal">
+                <ul>
+                  {siteRoutes.map((route) => (
+                    <li key={route.path}>
+                      <NavLink to={route.path}>{route.label}</NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              {hideBookingCta ? null : (
                 <LinkButton
+                  className="desktop-cta"
                   iconEnd="arrow-right"
-                  to={buildBookingIntentHref({ context: "mobile-nav" })}
+                  to={buildBookingIntentHref({ context: "header" })}
                   variant="editorial"
-                  onClick={() => setMobileOpen(false)}
                 >
                   Reservar mesa
                 </LinkButton>
-                {whatsappHref ? (
-                  <LinkButton
-                    href={whatsappHref}
-                    onClick={() => setMobileOpen(false)}
-                    rel="noreferrer"
-                    target="_blank"
-                    variant="secondary"
-                  >
-                    WhatsApp
-                  </LinkButton>
-                ) : null}
-              </Cluster>
-              <div className="mobile-nav-panel__meta">
-                <p>
-                  {businessContent.hours.summary.value ?? "Horario pendiente"}
-                </p>
-                <Cluster gap="sm">
-                  {phoneHref ? (
-                    <TextLink href={phoneHref} icon="phone">
-                      {businessContent.contact.phone.value ??
-                        "Telefono pendiente"}
-                    </TextLink>
-                  ) : null}
-                  <TextLink icon="location" to="/contacto/">
-                    Contacto
-                  </TextLink>
-                </Cluster>
-              </div>
-            </nav>
+              )}
+              <IconButton
+                ref={buttonRef}
+                aria-controls="mobile-navigation"
+                aria-expanded={mobileOpen}
+                className="mobile-nav-toggle"
+                icon={mobileOpen ? "close" : "menu"}
+                label={mobileOpen ? "Cerrar menu" : "Abrir menu"}
+                onClick={() => setMobileOpen((value) => !value)}
+              />
+            </div>
           </div>
         </Container>
-      ) : null}
-    </header>
+      </header>
+      {mobileNavigation && canUsePortal
+        ? createPortal(mobileNavigation, document.body)
+        : mobileNavigation}
+    </>
   );
 }

@@ -23,3 +23,7 @@
 | CWV p75                      | Laboratorio no es campo                        | Datos reales suficientes                   |
 
 La revision independiente cierra con cero P0, P1 o P2 abiertos. La puntuacion 88/100 no se eleva por resolver defectos de conformidad que debian estar incluidos; la deuda restante exige evidencia humana o contenido nuevo aprobado.
+
+## Estado tras despliegue visual
+
+Produccion fue verificada el 2026-07-23 sin reabrir deuda P0/P1/P2. La emulacion remota cubrio 200 %, reduced motion, landscape movil/tablet, menú móvil, Carta sticky y consentimiento del mapa. Lighthouse movil midio LCP 3.051 s en Home y 3.270 s en Reserva; permanece como P3 hasta disponer de CWV p75. La limpieza temporal `EPERM` de Lighthouse en Windows tambien permanece como P3 de tooling porque los cuatro informes se escribieron y validaron correctamente.

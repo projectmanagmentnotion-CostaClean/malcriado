@@ -42,3 +42,21 @@ Abrir una ruta interna directamente y refrescarla, comprobar 404 lógica, canoni
 - HTTP redirige a HTTPS; `www` redirige al dominio sin `www`; no hay bucles. Los assets con hash tienen caché anual y se sirven comprimidos con Gzip.
 
 Incidencia: justo después del intercambio, Home y Contacto seguían mostrando HTML antiguo mientras rutas no cacheadas ya servían el SPA. Se clasificó `P1` operativo, se purgó Dynamic Cache y la matriz completa quedó coherente. No fue necesario rollback.
+
+## Despliegue del rediseño visual — 2026-07-23
+
+- Ventana ejecutada: 10:21–10:33 CEST.
+- Head desplegado: `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116`.
+- Artefacto: `release/malcriado-production.zip`.
+- SHA-256: `801eda53fc0bec3dd3b16224b4c2fd1b7f4dd1397843fe3c9df2d3099f7cecc6`.
+- Carpeta candidata extraida: 384 entradas verificadas.
+- Document root: `malcriadobcn.com/public_html`.
+- Estructura final: `index.html`, `.htaccess`, `_redirects`, `assets/`, `robots.txt`, `sitemap.xml` y `site.webmanifest`.
+- Exclusiones verificadas: sin `src`, tests, docs, mocks, secretos, source maps ni rutas dev.
+- Formatos visuales: AVIF/WebP presentes en `assets/`.
+- Intercambio: las siete entradas anteriores se movieron a `public_html_before_visual_redesign_20260723_0948/` y las siete entradas del candidato a `public_html/`.
+- Limpieza: el ZIP remoto fue eliminado del document root tras la extraccion.
+- Cache: Dynamic Cache purgada; SiteGround mostro `Caché de malcriadobcn.com vaciada`.
+- DNS, backend, reservas y configuracion funcional: sin cambios.
+
+El rediseño se verifico desde Chrome, contextos automatizados limpios y un fetch externo independiente. No hubo P0/P1 y no se ejecuto rollback.
