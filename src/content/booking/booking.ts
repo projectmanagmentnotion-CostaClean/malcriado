@@ -23,8 +23,7 @@ export const bookingChannels: readonly BookingChannel[] = [
 ];
 
 export const bookingPolicy: BookingPolicy = {
-  summary:
-    "Completa los datos y continúa por WhatsApp o correo. El equipo revisará la disponibilidad y te confirmará personalmente la reserva.",
+  summary: "Solicitud sujeta a confirmación del equipo.",
   privacyStatus: "PENDING_VALIDATION",
   confirmationStatus: "MANUAL_CONFIRMATION",
   cancellationPolicy: null,

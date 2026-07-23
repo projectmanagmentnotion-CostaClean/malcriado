@@ -205,4 +205,65 @@ test.describe("mobile and iPad art direction v2", () => {
     expect(forwardTransform).not.toBe(middleTransform);
     expect(reverseTransform).not.toBe(forwardTransform);
   });
+
+  test("owner imagery and reduced mobile copy stay correctly mapped", async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name !== "chromium",
+      "One deterministic responsive pass is sufficient",
+    );
+    await page.setViewportSize({ width: 390, height: 844 });
+
+    await page.goto("/menu/#menu-category-postres");
+    const dessert = page.locator("#menu-category-postres");
+    await expect(
+      dessert.getByRole("heading", { name: "Tarta de Queso" }),
+    ).toBeVisible();
+    await expect(dessert.locator("img")).toHaveAttribute("src", /asset-032/);
+
+    await page.goto("/nosotros/");
+    await expect(page.locator(".story-hero__media img")).toHaveAttribute(
+      "src",
+      /asset-033/,
+    );
+    await expect(page.locator(".story-hero__person-media img")).toHaveAttribute(
+      "src",
+      /asset-035/,
+    );
+
+    await page.goto("/especiales/");
+    await expect(page.locator(".specials-hero__media img")).toHaveAttribute(
+      "src",
+      /asset-034/,
+    );
+    await expect(page.getByText("Chicharron Malcriado").first()).toBeVisible();
+    await expect(page.getByText("Disponibilidad por confirmar")).toBeVisible();
+
+    await page.goto("/reservar/");
+    await expect(
+      page.locator(".booking-form .form-field__description"),
+    ).toHaveCount(0);
+    await expect(
+      page.getByText("Reserva sujeta a confirmación."),
+    ).toBeVisible();
+
+    await page.goto("/");
+    await expect(page.locator(".home-story__media img")).toHaveAttribute(
+      "src",
+      /asset-035/,
+    );
+    const statementColor = await page
+      .locator(".home-fusion__statement")
+      .evaluate((element) => getComputedStyle(element).color);
+    expect(statementColor).toBe("rgb(33, 24, 21)");
+
+    const footer = page.locator(".site-footer");
+    await footer.scrollIntoViewIfNeeded();
+    await expect(footer.locator(".site-footer__hours-summary")).toBeVisible();
+    await expect(footer.locator(".site-footer__hours-detail")).toBeHidden();
+    await expect(
+      footer.getByText("Lun cerrado · Mar–Dom, mediodía y noche"),
+    ).toBeVisible();
+  });
 });

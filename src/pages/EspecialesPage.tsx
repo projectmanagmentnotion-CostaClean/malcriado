@@ -14,6 +14,9 @@ import { buildPageSeoProps } from "@/lib/seo/pageSeoProps";
 function getSpecialsCopy() {
   const snapshot = getOfferEditorialSnapshot(offers);
   const offer = snapshot.primaryOffer;
+  const pendingOffer = offers.find(
+    (candidate) => candidate.editorialStatus === "PENDING_CONTENT",
+  );
 
   if (snapshot.kind === "active" && offer) {
     return {
@@ -51,6 +54,20 @@ function getSpecialsCopy() {
     };
   }
 
+  if (pendingOffer) {
+    return {
+      eyebrow: pendingOffer.label ?? "Especial de la casa",
+      title: pendingOffer.title,
+      body:
+        pendingOffer.description ??
+        "Consulta disponibilidad y detalles con el equipo.",
+      noteTitle: "Disponibilidad por confirmar",
+      noteBody:
+        pendingOffer.fallbackContent ??
+        "No publicamos precio ni vigencia hasta tener confirmacion.",
+    };
+  }
+
   return {
     eyebrow: "Especiales",
     title: "Ahora mismo no hay promociones activas publicadas.",
@@ -64,6 +81,10 @@ function getSpecialsCopy() {
 export function EspecialesPage() {
   const seoPage = seoPages.offers!;
   const copy = getSpecialsCopy();
+  const visualOffer = offers.find((offer) => offer.assetId);
+  const heroAsset = visualOffer?.assetId
+    ? getAsset(visualOffer.assetId)
+    : getAsset("asset-017");
 
   return (
     <>
@@ -72,8 +93,8 @@ export function EspecialesPage() {
         <section className="specials-hero">
           <div className="specials-hero__media">
             <EditorialImage
-              alt="Imagen gastronomica para la apertura de especiales."
-              asset={getAsset("asset-017")}
+              alt="Especial de chicharron presentado por Malcriado."
+              asset={heroAsset}
               crop="portrait"
               eager
               ratio="cinema"
@@ -89,8 +110,8 @@ export function EspecialesPage() {
                   Especiales y promociones de Malcriado
                 </h1>
                 <p className="specials-hero__lede">
-                  Aqui solo aparecen promociones con fechas claras. Si hoy no
-                  hay una publicada, puedes reservar igualmente desde la carta.
+                  Especiales de la casa y promociones confirmadas. Consulta
+                  disponibilidad antes de reservar.
                 </p>
               </header>
               <div className="specials-hero__status">

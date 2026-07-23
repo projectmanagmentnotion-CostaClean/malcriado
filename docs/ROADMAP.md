@@ -491,9 +491,13 @@ Rediseño publicado el 2026-07-23 desde `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77
 - [x] Añadir E2E de 320 px, breakpoint y menú a viewport completo.
 - [x] Llevar la fotografía editorial móvil a full-bleed y retirar marcos visibles.
 - [x] Incorporar y mapear originales de cócteles, refrescos, sangría y vinos.
+- [x] Convertir a WebP y asignar la fotografía entregada para Tarta de Queso en Postres.
+- [x] Convertir a WebP y asignar las fotografías entregadas al hero de Nosotros y al especial de chicharrón.
+- [x] Convertir a WebP y asociar el retrato entregado al perfil verificado de Héctor en Home y Nosotros.
+- [x] Simplificar el formulario de Reserva, el horario móvil del footer y el contraste de la escena fusión.
 - [x] Eliminar solapamientos de chips y apilar las acciones comerciales del drawer.
 - [x] Hacer reversible el movimiento de imágenes ligado al scroll, sin mover el layout.
-- [x] Revalidar `264/264`, 83 tests, 51 E2E, 24 Axe y 28 escenarios visuales.
+- [x] Revalidar `264/264`, 85 tests, 52 E2E, 24 Axe y 28 escenarios visuales.
 - [ ] Validar Safari iOS, Chrome Android, lector de pantalla y teclado virtual reales.
 - [ ] Obtener aprobación visual explícita del propietario.
 

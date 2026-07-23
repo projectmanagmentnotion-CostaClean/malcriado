@@ -13,6 +13,10 @@
 - refresco-limon-owner-supplied.jpg: Lead image for the soft drinks menu category.
 - sangria-malcriado-owner-supplied.jpg: Lead image for the sangria menu category.
 - vino-botella-uvas-owner-supplied.jpg: Lead image for the wines menu category.
+- zz-postre-tarta-queso-owner-supplied.webp: Lead image for the desserts menu category and cheesecake item.
+- zzz-nosotros-hero-owner-supplied.webp: Hero image for the Nosotros page.
+- zzzz-especial-chicharron-owner-supplied.webp: Lead image for the chicharron special.
+- zzzzz-hector-owner-supplied.webp: Portrait identifying Hector in the Home and Nosotros story sections.
 
 ## Reshoot or replace
 

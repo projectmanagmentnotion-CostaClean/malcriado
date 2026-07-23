@@ -9,7 +9,7 @@
 
 ## Current source baseline
 
-- Original assets total: 34261 KB
-- Source count: 31
-- Accepted for optimization: 27
+- Original assets total: 35477 KB
+- Source count: 35
+- Accepted for optimization: 31
 - Excluded from production pipeline: 4

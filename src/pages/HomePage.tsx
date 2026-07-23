@@ -82,6 +82,9 @@ export function HomePage() {
   const leadDish = featuredDishes[0] ?? null;
   const primaryOffer = getPrimaryOffer(offers);
   const chefProfile = peopleProfiles[0] ?? null;
+  const chefAsset = chefProfile?.mediaAssetId
+    ? getAsset(chefProfile.mediaAssetId)
+    : getAsset("asset-018");
   const storyHighlights = homeStoryContent.slice(0, 3);
   const visibleCategories = menuContent.categories.slice(0, 5);
   const mapsHref = getGoogleMapsHref();
@@ -448,8 +451,8 @@ export function HomePage() {
           <div className="home-story">
             <div className="home-story__media" data-scene-media="true">
               <EditorialImage
-                alt="Detalle de un plato de Malcriado que acompana la historia del proyecto."
-                asset={getAsset("asset-018")}
+                alt="Hector atendiendo desde la cocina movil de Malcriado."
+                asset={chefAsset}
                 crop="portrait"
                 ratio="portrait"
                 sizes="(max-width: 900px) 100vw, 38vw"

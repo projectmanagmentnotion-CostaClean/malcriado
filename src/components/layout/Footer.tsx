@@ -31,10 +31,14 @@ export function Footer() {
         <div>
           <p className="eyebrow">{footerBusiness.name}</p>
           <p>{getReadableAddress()}</p>
-          <OpeningHours compact />
-          <p className="site-footer__note">
-            Las solicitudes de mesa quedan sujetas a confirmacion del equipo.
+          <div className="site-footer__hours-detail">
+            <OpeningHours compact />
+          </div>
+          <p className="site-footer__hours-summary">
+            Lun cerrado · Mar–Dom, mediodía y noche
           </p>
+          <TextLink to="/contacto/">Ver horario completo</TextLink>
+          <p className="site-footer__note">Reservas sujetas a confirmación.</p>
         </div>
         <div>
           {footerBusiness.phone ? (

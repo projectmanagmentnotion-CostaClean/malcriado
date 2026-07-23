@@ -837,7 +837,10 @@ const sourcedMenuItems: readonly MenuItem[] = [
     dietaryTags: ["VEGETARIAN"],
     spicyLevel: null,
     availability: "UNKNOWN",
-    media: null,
+    media: pendingMedia(
+      "asset-032",
+      "Porcion de tarta de queso con salsa de frutos rojos",
+    ),
     editorialOrder: 3,
     publicationStatus: "PUBLIC",
   }),

@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { Checkbox } from "@/components/forms/Checkbox";
-import { OpeningHours } from "@/components/business/OpeningHours";
 import { DateInput } from "@/components/forms/DateInput";
 import { FormField } from "@/components/forms/FormField";
 import { FormSection } from "@/components/forms/FormSection";
@@ -8,13 +7,8 @@ import { Select } from "@/components/forms/Select";
 import { TextArea } from "@/components/forms/TextArea";
 import { TextInput } from "@/components/forms/TextInput";
 import { TimeInput } from "@/components/forms/TimeInput";
-import { LinkButton } from "@/components/ui/LinkButton";
 import { TextLink } from "@/components/ui/TextLink";
-import {
-  bookingChannels,
-  bookingPolicy,
-  bookingRequestContext,
-} from "@/content";
+import { bookingRequestContext } from "@/content";
 import { reservationConfig } from "@/features/reservation/config/reservationConfig";
 import type { ReservationContext } from "@/features/reservation/domain/reservationTypes";
 import { useReservationForm } from "@/features/reservation/state/useReservationForm";
@@ -76,10 +70,7 @@ export function ReservationForm({ context }: ReservationFormProps) {
           void submit();
         }}
       >
-        <FormSection
-          body="Completa los datos y continúa por WhatsApp o correo. El equipo revisará la disponibilidad y te confirmará personalmente la reserva."
-          title="Datos de la solicitud"
-        >
+        <FormSection title="Datos de la solicitud">
           <ReservationStatusPanel
             onRetry={() => {
               void submit();
@@ -92,15 +83,10 @@ export function ReservationForm({ context }: ReservationFormProps) {
             context={context}
           />
           <div className="reservation-inline-note">
-            <strong>Horario y disponibilidad:</strong> la solicitud siempre
-            queda sujeta a confirmacion manual del equipo. Si necesitas una mesa
-            muy concreta, te recomendamos anadirlo en el mensaje o usar
-            WhatsApp.
-            <OpeningHours />
+            <strong>Reserva sujeta a confirmación.</strong>
           </div>
           <div className="reservation-form__grid">
             <FormField
-              description="Fecha deseada de la visita."
               error={errorMap.get("date")}
               htmlFor="booking-date"
               label="Fecha"
@@ -108,7 +94,6 @@ export function ReservationForm({ context }: ReservationFormProps) {
             >
               <DateInput
                 aria-describedby={describedBy("booking-date", {
-                  description: true,
                   error: errorMap.has("date"),
                 })}
                 aria-invalid={errorMap.has("date")}
@@ -124,7 +109,6 @@ export function ReservationForm({ context }: ReservationFormProps) {
               />
             </FormField>
             <FormField
-              description="Hora orientativa sujeta a confirmacion manual."
               error={errorMap.get("time")}
               htmlFor="booking-time"
               label="Hora"
@@ -132,7 +116,6 @@ export function ReservationForm({ context }: ReservationFormProps) {
             >
               <TimeInput
                 aria-describedby={describedBy("booking-time", {
-                  description: true,
                   error: errorMap.has("time"),
                 })}
                 aria-invalid={errorMap.has("time")}
@@ -150,15 +133,8 @@ export function ReservationForm({ context }: ReservationFormProps) {
               <span className="form-field__label" id="booking-guests-label">
                 Comensales <span aria-hidden="true">*</span>
               </span>
-              <span
-                className="form-field__description"
-                id="booking-guests-description"
-              >
-                Puedes escribir el numero directamente o usar los controles.
-              </span>
               <ReservationGuestField
                 describedBy={describedBy("booking-guests", {
-                  description: true,
                   error: errorMap.has("guests"),
                 })}
                 id="booking-guests"
@@ -198,7 +174,6 @@ export function ReservationForm({ context }: ReservationFormProps) {
               />
             </FormField>
             <FormField
-              description="Telefono con prefijo internacional si procede."
               error={errorMap.get("phone")}
               htmlFor="booking-phone"
               label="Telefono"
@@ -206,7 +181,6 @@ export function ReservationForm({ context }: ReservationFormProps) {
             >
               <TextInput
                 aria-describedby={describedBy("booking-phone", {
-                  description: true,
                   error: errorMap.has("phone"),
                 })}
                 aria-invalid={errorMap.has("phone")}
@@ -224,14 +198,12 @@ export function ReservationForm({ context }: ReservationFormProps) {
               />
             </FormField>
             <FormField
-              description="Solo es obligatorio si prefieres recibir respuesta por correo."
               error={errorMap.get("email")}
               htmlFor="booking-email"
-              label="Correo electronico"
+              label="Correo electronico (opcional)"
             >
               <TextInput
                 aria-describedby={describedBy("booking-email", {
-                  description: true,
                   error: errorMap.has("email"),
                 })}
                 aria-invalid={errorMap.has("email")}
@@ -251,18 +223,7 @@ export function ReservationForm({ context }: ReservationFormProps) {
             <legend className="form-field__label">
               Canal preferido de respuesta
             </legend>
-            <p
-              className="form-field__description"
-              id="booking-preferred-channel-description"
-            >
-              Se usara como preferencia, pero la confirmacion real depende del
-              equipo y del proveedor final.
-            </p>
-            <div
-              aria-describedby="booking-preferred-channel-description"
-              className="reservation-channel-options"
-              role="radiogroup"
-            >
+            <div className="reservation-channel-options" role="radiogroup">
               {[
                 { value: "phone", label: "Llamada" },
                 { value: "whatsapp", label: "WhatsApp" },
@@ -291,10 +252,9 @@ export function ReservationForm({ context }: ReservationFormProps) {
           </fieldset>
           <div className="reservation-form__grid">
             <FormField
-              description="Indica una preferencia; no garantiza asignacion."
               error={errorMap.get("zone")}
               htmlFor="booking-zone"
-              label="Zona preferida"
+              label="Zona preferida (opcional)"
             >
               <Select
                 id="booking-zone"
@@ -313,10 +273,9 @@ export function ReservationForm({ context }: ReservationFormProps) {
               </Select>
             </FormField>
             <FormField
-              description="Cumpleanos, aniversario u otra ocasion."
               error={errorMap.get("occasion")}
               htmlFor="booking-occasion"
-              label="Ocasion"
+              label="Ocasion (opcional)"
             >
               <TextInput
                 aria-invalid={errorMap.has("occasion")}
@@ -333,10 +292,9 @@ export function ReservationForm({ context }: ReservationFormProps) {
             </FormField>
           </div>
           <FormField
-            description="Solo se añadirá al mensaje si marcas el consentimiento específico que aparece a continuación."
             error={errorMap.get("allergies")}
             htmlFor="booking-allergies"
-            label="Alergias o intolerancias"
+            label="Alergias o intolerancias (opcional)"
           >
             <TextArea
               aria-invalid={errorMap.has("allergies")}
@@ -369,14 +327,12 @@ export function ReservationForm({ context }: ReservationFormProps) {
             .
           </p>
           <FormField
-            description="Añade solo comentarios necesarios y no sensibles, como acceso, carrito u otra preferencia."
             error={errorMap.get("message")}
             htmlFor="booking-message"
-            label="Mensaje"
+            label="Mensaje (opcional)"
           >
             <TextArea
               aria-describedby={describedBy("booking-message", {
-                description: true,
                 error: errorMap.has("message"),
               })}
               aria-invalid={errorMap.has("message")}
@@ -420,24 +376,6 @@ export function ReservationForm({ context }: ReservationFormProps) {
               {errorMap.get("privacyAccepted")}
             </p>
           ) : null}
-          <div
-            className="reservation-hint-list"
-            aria-label="Politica de solicitud"
-          >
-            <p>{bookingPolicy.summary}</p>
-            <p>
-              El formulario no comunica disponibilidad en tiempo real ni escribe
-              datos personales en la URL.
-            </p>
-          </div>
-          <div className="reservation-actions">
-            <LinkButton to="/contacto/" variant="ghost">
-              Ver canales alternativos
-            </LinkButton>
-            <TextLink to="/contacto/">
-              Tambien puedes solicitar por telefono o WhatsApp
-            </TextLink>
-          </div>
         </FormSection>
         <button
           className="ui-button ui-button--editorial"
@@ -448,13 +386,7 @@ export function ReservationForm({ context }: ReservationFormProps) {
             ? "Preparando solicitud..."
             : "Preparar solicitud"}
         </button>
-        <ul className="booking-hero__list">
-          {bookingChannels.map((channel) => (
-            <li key={channel.id}>
-              {channel.label}: disponible para solicitar mesa
-            </li>
-          ))}
-        </ul>
+        <TextLink to="/contacto/">Solicitar por telefono o WhatsApp</TextLink>
       </form>
     </section>
   );

@@ -1,15 +1,15 @@
 # Image Optimization
 
-Generated on 2026-07-23T11:52:34.596Z.
+Generated on 2026-07-23T12:52:21.144Z.
 
 ## Pipeline
 
 - Source directory: public/assets/source
 - Output directory: public/assets/optimized
 - Manifest: src/content/assets/asset-manifest.json
-- Derivatives generated: 402
-- Primary production bytes: 1089081
-- Generated derivative bytes: 23047944
+- Derivatives generated: 490
+- Primary production bytes: 1181691
+- Generated derivative bytes: 26315626
 
 ## Profiles
 
@@ -54,3 +54,7 @@ Generated on 2026-07-23T11:52:34.596Z.
 | refresco-limon-owner-supplied.jpg                | featured-dish | 22       | /assets/optimized/asset-029/original-720.avif |
 | sangria-malcriado-owner-supplied.jpg             | cocktail      | 18       | /assets/optimized/asset-030/original-720.avif |
 | vino-botella-uvas-owner-supplied.jpg             | featured-dish | 22       | /assets/optimized/asset-031/original-720.avif |
+| zz-postre-tarta-queso-owner-supplied.webp        | featured-dish | 22       | /assets/optimized/asset-032/original-720.avif |
+| zzz-nosotros-hero-owner-supplied.webp            | featured-dish | 22       | /assets/optimized/asset-033/original-720.avif |
+| zzzz-especial-chicharron-owner-supplied.webp     | featured-dish | 22       | /assets/optimized/asset-034/original-720.avif |
+| zzzzz-hector-owner-supplied.webp                 | featured-dish | 22       | /assets/optimized/asset-035/original-720.avif |

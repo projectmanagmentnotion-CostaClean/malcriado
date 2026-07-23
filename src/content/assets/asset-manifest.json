@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-23T11:47:57.957Z",
-  "sourceCount": 31,
-  "originalTotalBytes": 35083406,
-  "optimizedTotalBytes": 1089081,
-  "derivativesCount": 402,
+  "generatedAt": "2026-07-23T12:49:17.262Z",
+  "sourceCount": 35,
+  "originalTotalBytes": 36328774,
+  "optimizedTotalBytes": 1181691,
+  "derivativesCount": 490,
   "duplicateGroups": [
     {
       "id": "dup-001",
@@ -5106,6 +5106,988 @@
           "width": 1080,
           "height": 1440,
           "bytes": 136282,
+          "crop": "editorial"
+        }
+      ]
+    },
+    {
+      "id": "asset-032",
+      "originalName": "zz-postre-tarta-queso-owner-supplied.webp",
+      "localPath": "/assets/source/owner-supplied/zz-postre-tarta-queso-owner-supplied.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
+      "extension": ".webp",
+      "sizeBytes": 51898,
+      "sha256": "2d743b56e4fdccbbd67669ff84983c6b1be54fa4fdb33f6fab3d1c59521a2e54",
+      "width": 1000,
+      "height": 560,
+      "orientation": "landscape",
+      "hasTransparency": false,
+      "containsEmbeddedText": false,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "Converted from the JPEG supplied by the project owner in this task. Final rights review remains an owner responsibility.",
+      "cropSafety": "high",
+      "focalPoint": {
+        "x": 61,
+        "y": 48,
+        "confidence": "manual"
+      },
+      "recommendedObjectPosition": "61% 48%",
+      "roles": [
+        "FEATURED_DISH"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "featured-dish",
+      "productionPath": "/assets/optimized/asset-032/original-720.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "USER_SUPPLIED_FOR_PROJECT",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Lead image for the desserts menu category and cheesecake item.",
+      "suggestedScene": "Desserts menu",
+      "variants": [
+        {
+          "id": "asset-032-original-720-avif",
+          "path": "/assets/optimized/asset-032/original-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 403,
+          "bytes": 16058,
+          "crop": "original"
+        },
+        {
+          "id": "asset-032-original-720-webp",
+          "path": "/assets/optimized/asset-032/original-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 403,
+          "bytes": 20896,
+          "crop": "original"
+        },
+        {
+          "id": "asset-032-original-1080-avif",
+          "path": "/assets/optimized/asset-032/original-1080.avif",
+          "format": "avif",
+          "width": 1000,
+          "height": 560,
+          "bytes": 26860,
+          "crop": "original"
+        },
+        {
+          "id": "asset-032-original-1080-webp",
+          "path": "/assets/optimized/asset-032/original-1080.webp",
+          "format": "webp",
+          "width": 1000,
+          "height": 560,
+          "bytes": 36346,
+          "crop": "original"
+        },
+        {
+          "id": "asset-032-original-1440-avif",
+          "path": "/assets/optimized/asset-032/original-1440.avif",
+          "format": "avif",
+          "width": 1000,
+          "height": 560,
+          "bytes": 26860,
+          "crop": "original"
+        },
+        {
+          "id": "asset-032-original-1440-webp",
+          "path": "/assets/optimized/asset-032/original-1440.webp",
+          "format": "webp",
+          "width": 1000,
+          "height": 560,
+          "bytes": 36346,
+          "crop": "original"
+        },
+        {
+          "id": "asset-032-square-480-avif",
+          "path": "/assets/optimized/asset-032/square-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 480,
+          "bytes": 14548,
+          "crop": "square"
+        },
+        {
+          "id": "asset-032-square-480-webp",
+          "path": "/assets/optimized/asset-032/square-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 17818,
+          "crop": "square"
+        },
+        {
+          "id": "asset-032-square-720-avif",
+          "path": "/assets/optimized/asset-032/square-720.avif",
+          "format": "avif",
+          "width": 560,
+          "height": 560,
+          "bytes": 18683,
+          "crop": "square"
+        },
+        {
+          "id": "asset-032-square-720-webp",
+          "path": "/assets/optimized/asset-032/square-720.webp",
+          "format": "webp",
+          "width": 560,
+          "height": 560,
+          "bytes": 22694,
+          "crop": "square"
+        },
+        {
+          "id": "asset-032-square-1080-avif",
+          "path": "/assets/optimized/asset-032/square-1080.avif",
+          "format": "avif",
+          "width": 560,
+          "height": 560,
+          "bytes": 18683,
+          "crop": "square"
+        },
+        {
+          "id": "asset-032-square-1080-webp",
+          "path": "/assets/optimized/asset-032/square-1080.webp",
+          "format": "webp",
+          "width": 560,
+          "height": 560,
+          "bytes": 22694,
+          "crop": "square"
+        },
+        {
+          "id": "asset-032-portrait-480-avif",
+          "path": "/assets/optimized/asset-032/portrait-480.avif",
+          "format": "avif",
+          "width": 448,
+          "height": 560,
+          "bytes": 16645,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-032-portrait-480-webp",
+          "path": "/assets/optimized/asset-032/portrait-480.webp",
+          "format": "webp",
+          "width": 448,
+          "height": 560,
+          "bytes": 20298,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-032-portrait-720-avif",
+          "path": "/assets/optimized/asset-032/portrait-720.avif",
+          "format": "avif",
+          "width": 448,
+          "height": 560,
+          "bytes": 16645,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-032-portrait-720-webp",
+          "path": "/assets/optimized/asset-032/portrait-720.webp",
+          "format": "webp",
+          "width": 448,
+          "height": 560,
+          "bytes": 20298,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-032-portrait-960-avif",
+          "path": "/assets/optimized/asset-032/portrait-960.avif",
+          "format": "avif",
+          "width": 448,
+          "height": 560,
+          "bytes": 16645,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-032-portrait-960-webp",
+          "path": "/assets/optimized/asset-032/portrait-960.webp",
+          "format": "webp",
+          "width": 448,
+          "height": 560,
+          "bytes": 20298,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-032-editorial-720-avif",
+          "path": "/assets/optimized/asset-032/editorial-720.avif",
+          "format": "avif",
+          "width": 420,
+          "height": 560,
+          "bytes": 15877,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-032-editorial-720-webp",
+          "path": "/assets/optimized/asset-032/editorial-720.webp",
+          "format": "webp",
+          "width": 420,
+          "height": 560,
+          "bytes": 20806,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-032-editorial-1080-avif",
+          "path": "/assets/optimized/asset-032/editorial-1080.avif",
+          "format": "avif",
+          "width": 420,
+          "height": 560,
+          "bytes": 15877,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-032-editorial-1080-webp",
+          "path": "/assets/optimized/asset-032/editorial-1080.webp",
+          "format": "webp",
+          "width": 420,
+          "height": 560,
+          "bytes": 20806,
+          "crop": "editorial"
+        }
+      ]
+    },
+    {
+      "id": "asset-033",
+      "originalName": "zzz-nosotros-hero-owner-supplied.webp",
+      "localPath": "/assets/source/owner-supplied/zzz-nosotros-hero-owner-supplied.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
+      "extension": ".webp",
+      "sizeBytes": 324370,
+      "sha256": "4b96120adb447853dfed7adec83023e57715aa4ab0723b7071652e11931f4560",
+      "width": 3762,
+      "height": 2507,
+      "orientation": "landscape",
+      "hasTransparency": false,
+      "containsEmbeddedText": true,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "Converted from the JPEG supplied by the project owner in this task. Final rights review remains an owner responsibility.",
+      "cropSafety": "high",
+      "focalPoint": {
+        "x": 52,
+        "y": 58,
+        "confidence": "manual"
+      },
+      "recommendedObjectPosition": "52% 58%",
+      "roles": [
+        "HERO_CANDIDATE",
+        "FEATURED_DISH"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": true,
+      "backgroundCandidate": true,
+      "productionProfile": "featured-dish",
+      "productionPath": "/assets/optimized/asset-033/original-720.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "USER_SUPPLIED_FOR_PROJECT",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Hero image for the Nosotros page.",
+      "suggestedScene": "Nosotros hero",
+      "variants": [
+        {
+          "id": "asset-033-original-720-avif",
+          "path": "/assets/optimized/asset-033/original-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 480,
+          "bytes": 14623,
+          "crop": "original"
+        },
+        {
+          "id": "asset-033-original-720-webp",
+          "path": "/assets/optimized/asset-033/original-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 480,
+          "bytes": 19634,
+          "crop": "original"
+        },
+        {
+          "id": "asset-033-original-1080-avif",
+          "path": "/assets/optimized/asset-033/original-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 720,
+          "bytes": 25650,
+          "crop": "original"
+        },
+        {
+          "id": "asset-033-original-1080-webp",
+          "path": "/assets/optimized/asset-033/original-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 720,
+          "bytes": 34262,
+          "crop": "original"
+        },
+        {
+          "id": "asset-033-original-1440-avif",
+          "path": "/assets/optimized/asset-033/original-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 960,
+          "bytes": 37440,
+          "crop": "original"
+        },
+        {
+          "id": "asset-033-original-1440-webp",
+          "path": "/assets/optimized/asset-033/original-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 50824,
+          "crop": "original"
+        },
+        {
+          "id": "asset-033-square-480-avif",
+          "path": "/assets/optimized/asset-033/square-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 480,
+          "bytes": 14746,
+          "crop": "square"
+        },
+        {
+          "id": "asset-033-square-480-webp",
+          "path": "/assets/optimized/asset-033/square-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 19882,
+          "crop": "square"
+        },
+        {
+          "id": "asset-033-square-720-avif",
+          "path": "/assets/optimized/asset-033/square-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 720,
+          "bytes": 25531,
+          "crop": "square"
+        },
+        {
+          "id": "asset-033-square-720-webp",
+          "path": "/assets/optimized/asset-033/square-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 720,
+          "bytes": 34334,
+          "crop": "square"
+        },
+        {
+          "id": "asset-033-square-1080-avif",
+          "path": "/assets/optimized/asset-033/square-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 44197,
+          "crop": "square"
+        },
+        {
+          "id": "asset-033-square-1080-webp",
+          "path": "/assets/optimized/asset-033/square-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 59764,
+          "crop": "square"
+        },
+        {
+          "id": "asset-033-portrait-480-avif",
+          "path": "/assets/optimized/asset-033/portrait-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 20058,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-033-portrait-480-webp",
+          "path": "/assets/optimized/asset-033/portrait-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 26540,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-033-portrait-720-avif",
+          "path": "/assets/optimized/asset-033/portrait-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 900,
+          "bytes": 34997,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-033-portrait-720-webp",
+          "path": "/assets/optimized/asset-033/portrait-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 46386,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-033-portrait-960-avif",
+          "path": "/assets/optimized/asset-033/portrait-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 51436,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-033-portrait-960-webp",
+          "path": "/assets/optimized/asset-033/portrait-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 68200,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-033-editorial-720-avif",
+          "path": "/assets/optimized/asset-033/editorial-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 37491,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-033-editorial-720-webp",
+          "path": "/assets/optimized/asset-033/editorial-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 50114,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-033-editorial-1080-avif",
+          "path": "/assets/optimized/asset-033/editorial-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 65119,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-033-editorial-1080-webp",
+          "path": "/assets/optimized/asset-033/editorial-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 86830,
+          "crop": "editorial"
+        }
+      ]
+    },
+    {
+      "id": "asset-034",
+      "originalName": "zzzz-especial-chicharron-owner-supplied.webp",
+      "localPath": "/assets/source/owner-supplied/zzzz-especial-chicharron-owner-supplied.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
+      "extension": ".webp",
+      "sizeBytes": 377134,
+      "sha256": "9077aa37ba2d94df0ef7846482c9629a67514e9555c44345a7039d9812edd9b9",
+      "width": 2445,
+      "height": 3669,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": true,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "Converted from the JPEG supplied by the project owner in this task. Final rights review remains an owner responsibility.",
+      "cropSafety": "high",
+      "focalPoint": {
+        "x": 50,
+        "y": 60,
+        "confidence": "manual"
+      },
+      "recommendedObjectPosition": "50% 60%",
+      "roles": [
+        "FEATURED_DISH"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": true,
+      "productionProfile": "featured-dish",
+      "productionPath": "/assets/optimized/asset-034/original-720.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "USER_SUPPLIED_FOR_PROJECT",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Lead image for the chicharron special.",
+      "suggestedScene": "Chicharron special",
+      "variants": [
+        {
+          "id": "asset-034-original-720-avif",
+          "path": "/assets/optimized/asset-034/original-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 1080,
+          "bytes": 31651,
+          "crop": "original"
+        },
+        {
+          "id": "asset-034-original-720-webp",
+          "path": "/assets/optimized/asset-034/original-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 1080,
+          "bytes": 42672,
+          "crop": "original"
+        },
+        {
+          "id": "asset-034-original-1080-avif",
+          "path": "/assets/optimized/asset-034/original-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1621,
+          "bytes": 53554,
+          "crop": "original"
+        },
+        {
+          "id": "asset-034-original-1080-webp",
+          "path": "/assets/optimized/asset-034/original-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1621,
+          "bytes": 74204,
+          "crop": "original"
+        },
+        {
+          "id": "asset-034-original-1440-avif",
+          "path": "/assets/optimized/asset-034/original-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 2161,
+          "bytes": 80509,
+          "crop": "original"
+        },
+        {
+          "id": "asset-034-original-1440-webp",
+          "path": "/assets/optimized/asset-034/original-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 2161,
+          "bytes": 109176,
+          "crop": "original"
+        },
+        {
+          "id": "asset-034-square-480-avif",
+          "path": "/assets/optimized/asset-034/square-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 480,
+          "bytes": 16498,
+          "crop": "square"
+        },
+        {
+          "id": "asset-034-square-480-webp",
+          "path": "/assets/optimized/asset-034/square-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 22216,
+          "crop": "square"
+        },
+        {
+          "id": "asset-034-square-720-avif",
+          "path": "/assets/optimized/asset-034/square-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 720,
+          "bytes": 28872,
+          "crop": "square"
+        },
+        {
+          "id": "asset-034-square-720-webp",
+          "path": "/assets/optimized/asset-034/square-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 720,
+          "bytes": 38658,
+          "crop": "square"
+        },
+        {
+          "id": "asset-034-square-1080-avif",
+          "path": "/assets/optimized/asset-034/square-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 49058,
+          "crop": "square"
+        },
+        {
+          "id": "asset-034-square-1080-webp",
+          "path": "/assets/optimized/asset-034/square-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 66714,
+          "crop": "square"
+        },
+        {
+          "id": "asset-034-portrait-480-avif",
+          "path": "/assets/optimized/asset-034/portrait-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 18105,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-034-portrait-480-webp",
+          "path": "/assets/optimized/asset-034/portrait-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 24578,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-034-portrait-720-avif",
+          "path": "/assets/optimized/asset-034/portrait-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 900,
+          "bytes": 31691,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-034-portrait-720-webp",
+          "path": "/assets/optimized/asset-034/portrait-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 42184,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-034-portrait-960-avif",
+          "path": "/assets/optimized/asset-034/portrait-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 45557,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-034-portrait-960-webp",
+          "path": "/assets/optimized/asset-034/portrait-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 61706,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-034-editorial-720-avif",
+          "path": "/assets/optimized/asset-034/editorial-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 31473,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-034-editorial-720-webp",
+          "path": "/assets/optimized/asset-034/editorial-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 42232,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-034-editorial-1080-avif",
+          "path": "/assets/optimized/asset-034/editorial-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 53227,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-034-editorial-1080-webp",
+          "path": "/assets/optimized/asset-034/editorial-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 73252,
+          "crop": "editorial"
+        }
+      ]
+    },
+    {
+      "id": "asset-035",
+      "originalName": "zzzzz-hector-owner-supplied.webp",
+      "localPath": "/assets/source/owner-supplied/zzzzz-hector-owner-supplied.webp",
+      "sourceUrl": "",
+      "pageUrls": [],
+      "mimeType": "image/webp",
+      "extension": ".webp",
+      "sizeBytes": 491966,
+      "sha256": "8bab6359a13b63ce61e5c59a7aeb848021e40a765c1da522403dda63e67186d5",
+      "width": 4000,
+      "height": 6000,
+      "orientation": "portrait",
+      "hasTransparency": false,
+      "containsEmbeddedText": true,
+      "colorSpace": "srgb",
+      "quality": "high",
+      "qualityNotes": "Converted from the JPEG supplied by the project owner in this task. Hector is identified by the owner; final rights review remains an owner responsibility.",
+      "cropSafety": "high",
+      "focalPoint": {
+        "x": 72,
+        "y": 38,
+        "confidence": "manual"
+      },
+      "recommendedObjectPosition": "72% 38%",
+      "roles": [
+        "PORTRAIT",
+        "STORY_SUPPORT"
+      ],
+      "state": "ACCEPTED",
+      "deviceSupport": [
+        "mobile",
+        "desktop"
+      ],
+      "heroCandidate": false,
+      "backgroundCandidate": false,
+      "productionProfile": "featured-dish",
+      "productionPath": "/assets/optimized/asset-035/original-720.avif",
+      "duplicateGroup": null,
+      "duplicateOf": null,
+      "rightsStatus": "USER_SUPPLIED_FOR_PROJECT",
+      "currentAltText": "",
+      "provisionalAltText": "",
+      "recommendedUsage": "Portrait identifying Hector in the Home and Nosotros story sections.",
+      "suggestedScene": "Hector profile",
+      "variants": [
+        {
+          "id": "asset-035-original-720-avif",
+          "path": "/assets/optimized/asset-035/original-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 1080,
+          "bytes": 30278,
+          "crop": "original"
+        },
+        {
+          "id": "asset-035-original-720-webp",
+          "path": "/assets/optimized/asset-035/original-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 1080,
+          "bytes": 41714,
+          "crop": "original"
+        },
+        {
+          "id": "asset-035-original-1080-avif",
+          "path": "/assets/optimized/asset-035/original-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1620,
+          "bytes": 49410,
+          "crop": "original"
+        },
+        {
+          "id": "asset-035-original-1080-webp",
+          "path": "/assets/optimized/asset-035/original-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1620,
+          "bytes": 69550,
+          "crop": "original"
+        },
+        {
+          "id": "asset-035-original-1440-avif",
+          "path": "/assets/optimized/asset-035/original-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 69583,
+          "crop": "original"
+        },
+        {
+          "id": "asset-035-original-1440-webp",
+          "path": "/assets/optimized/asset-035/original-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 2160,
+          "bytes": 98096,
+          "crop": "original"
+        },
+        {
+          "id": "asset-035-square-480-avif",
+          "path": "/assets/optimized/asset-035/square-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 480,
+          "bytes": 12851,
+          "crop": "square"
+        },
+        {
+          "id": "asset-035-square-480-webp",
+          "path": "/assets/optimized/asset-035/square-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 16442,
+          "crop": "square"
+        },
+        {
+          "id": "asset-035-square-720-avif",
+          "path": "/assets/optimized/asset-035/square-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 720,
+          "bytes": 21103,
+          "crop": "square"
+        },
+        {
+          "id": "asset-035-square-720-webp",
+          "path": "/assets/optimized/asset-035/square-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 720,
+          "bytes": 27128,
+          "crop": "square"
+        },
+        {
+          "id": "asset-035-square-1080-avif",
+          "path": "/assets/optimized/asset-035/square-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 33830,
+          "crop": "square"
+        },
+        {
+          "id": "asset-035-square-1080-webp",
+          "path": "/assets/optimized/asset-035/square-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 45176,
+          "crop": "square"
+        },
+        {
+          "id": "asset-035-portrait-480-avif",
+          "path": "/assets/optimized/asset-035/portrait-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 16894,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-035-portrait-480-webp",
+          "path": "/assets/optimized/asset-035/portrait-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 22950,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-035-portrait-720-avif",
+          "path": "/assets/optimized/asset-035/portrait-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 900,
+          "bytes": 27951,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-035-portrait-720-webp",
+          "path": "/assets/optimized/asset-035/portrait-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 39144,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-035-portrait-960-avif",
+          "path": "/assets/optimized/asset-035/portrait-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 39228,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-035-portrait-960-webp",
+          "path": "/assets/optimized/asset-035/portrait-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 55446,
+          "crop": "portrait"
+        },
+        {
+          "id": "asset-035-editorial-720-avif",
+          "path": "/assets/optimized/asset-035/editorial-720.avif",
+          "format": "avif",
+          "width": 720,
+          "height": 960,
+          "bytes": 28766,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-035-editorial-720-webp",
+          "path": "/assets/optimized/asset-035/editorial-720.webp",
+          "format": "webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 39996,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-035-editorial-1080-avif",
+          "path": "/assets/optimized/asset-035/editorial-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 46934,
+          "crop": "editorial"
+        },
+        {
+          "id": "asset-035-editorial-1080-webp",
+          "path": "/assets/optimized/asset-035/editorial-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 66686,
           "crop": "editorial"
         }
       ]
