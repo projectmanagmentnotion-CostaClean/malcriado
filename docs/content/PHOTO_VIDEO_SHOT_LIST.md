@@ -9,6 +9,10 @@
 - Pizza-malcriado.webp: Featured dish card and editorial portrait crop.
 - pulpo-al-chimichurri-2.webp: Desktop hero, editorial scene divider and immersive dish opener.
 - tartar-de-atun.webp: Mobile hero candidate and premium food editorial crop.
+- cocteles-malcriado-owner-supplied.jpg: Lead image for the cocktails menu category and the home night scene.
+- refresco-limon-owner-supplied.jpg: Lead image for the soft drinks menu category.
+- sangria-malcriado-owner-supplied.jpg: Lead image for the sangria menu category.
+- vino-botella-uvas-owner-supplied.jpg: Lead image for the wines menu category.
 
 ## Reshoot or replace
 

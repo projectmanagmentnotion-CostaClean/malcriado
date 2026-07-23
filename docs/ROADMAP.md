@@ -489,6 +489,11 @@ Rediseño publicado el 2026-07-23 desde `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77
 - [x] Validar 12 rutas en 22 viewports: candidato `264/264`.
 - [x] Comparar producción/candidato y proteger desktop.
 - [x] Añadir E2E de 320 px, breakpoint y menú a viewport completo.
+- [x] Llevar la fotografía editorial móvil a full-bleed y retirar marcos visibles.
+- [x] Incorporar y mapear originales de cócteles, refrescos, sangría y vinos.
+- [x] Eliminar solapamientos de chips y apilar las acciones comerciales del drawer.
+- [x] Hacer reversible el movimiento de imágenes ligado al scroll, sin mover el layout.
+- [x] Revalidar `264/264`, 83 tests, 51 E2E, 24 Axe y 28 escenarios visuales.
 - [ ] Validar Safari iOS, Chrome Android, lector de pantalla y teclado virtual reales.
 - [ ] Obtener aprobación visual explícita del propietario.
 

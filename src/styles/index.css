@@ -4731,3 +4731,202 @@ body.has-consent-dialog {
     object-position: 62% 58% !important;
   }
 }
+
+/* Edge-to-edge editorial media.
+   Photography is treated as a full-bleed scene, never as a card decoration. */
+
+@media (max-width: 1199px) {
+  .media-frame__media,
+  .home-featured-card,
+  .home-featured-card__media,
+  .menu-category__feature-media,
+  .story-column--media,
+  .story-gallery .media-frame,
+  .story-gallery .media-frame__media {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .home-featured-card {
+    overflow: visible;
+    background: transparent;
+  }
+
+  .home-featured-card__media::after {
+    background: linear-gradient(180deg, rgba(8, 6, 6, 0), rgba(8, 6, 6, 0.16));
+  }
+
+  .home-featured-card__media img {
+    transform: none;
+  }
+
+  .home-featured-card:hover .home-featured-card__media img,
+  .home-featured-card:focus-within .home-featured-card__media img {
+    transform: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .home-featured-card {
+    grid-column: 1 / -1;
+    min-height: auto;
+    padding: 0;
+  }
+
+  .home-featured-card__body {
+    padding: 1.1rem 0 0;
+    border-top: 0;
+  }
+
+  .home-special__media,
+  .home-fusion__media,
+  .home-featured-card__media,
+  .home-night__media,
+  .home-story__media,
+  .menu-category__feature-media,
+  .story-column--media,
+  .story-gallery__grid,
+  .booking-hero__media {
+    width: 100vw;
+    max-width: none;
+    margin-inline: calc(50% - 50vw);
+    overflow: hidden;
+  }
+
+  .home-special__media .media-frame,
+  .home-special__media .media-frame__media,
+  .home-fusion__media .media-frame,
+  .home-fusion__media .media-frame__media,
+  .home-featured-card__media .media-frame,
+  .home-featured-card__media .media-frame__media,
+  .home-night__media .media-frame,
+  .home-night__media .media-frame__media,
+  .home-story__media .media-frame,
+  .home-story__media .media-frame__media,
+  .menu-category__feature-media .media-frame,
+  .menu-category__feature-media .media-frame__media,
+  .story-column--media .media-frame,
+  .story-column--media .media-frame__media,
+  .story-gallery__grid .media-frame,
+  .story-gallery__grid .media-frame__media,
+  .booking-hero__media .media-frame,
+  .booking-hero__media .media-frame__media {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .home-featured__rail {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--mobile-section-gap);
+  }
+
+  .story-gallery__grid {
+    gap: 0;
+  }
+
+  .home-scene--coast {
+    display: grid;
+    padding-block: 0;
+    background: #eadbc8;
+    color: #171111;
+  }
+
+  .home-coast__media {
+    position: relative;
+    inset: auto;
+    width: 100vw;
+    height: clamp(18rem, 76vw, 23rem);
+    overflow: hidden;
+  }
+
+  .home-coast__media .media-frame,
+  .home-coast__media .media-frame__media,
+  .home-coast__media picture,
+  .home-coast__media img {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .home-coast__media img {
+    object-fit: cover;
+    object-position: 62% 58% !important;
+  }
+
+  .home-coast__media::after {
+    display: none;
+  }
+
+  .home-coast__content {
+    max-width: none;
+    min-height: auto;
+    padding-block: var(--mobile-section-gap);
+  }
+
+  .home-coast__content .eyebrow {
+    color: #7a4a2f;
+  }
+
+  .home-coast__content > p:not(.eyebrow) {
+    color: rgba(23, 17, 17, 0.82);
+  }
+
+  .home-coast__content .ui-button--secondary {
+    border-color: rgba(23, 17, 17, 0.42);
+    background: rgba(23, 17, 17, 0.06);
+    color: #171111;
+  }
+
+  .home-night__chips {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .home-night__chips span {
+    width: 100%;
+    min-height: var(--touch-target-min);
+    padding: 0.55rem 0.65rem;
+    font-size: 0.72rem;
+    line-height: 1.15;
+    letter-spacing: 0.1em;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .home-night__chips span:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .mobile-nav-panel__actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.65rem;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .mobile-nav-panel__actions .ui-button {
+    width: 100%;
+    min-width: 0;
+    min-height: 3.5rem;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .mobile-nav-panel__actions .ui-button--secondary {
+    justify-content: center;
+  }
+}

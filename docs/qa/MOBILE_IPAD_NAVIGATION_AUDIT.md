@@ -20,6 +20,8 @@ Verificado a 390 × 844:
 - restauración de foco al trigger;
 - cierre al cambiar de ruta;
 - capas por encima del shell.
+- acciones comerciales apiladas a ancho completo, con 56 px de alto y sin salto de línea forzado;
+- separación vertical entre `Reservar mesa` y `WhatsApp`, sin solapamiento.
 
 ## Carta
 

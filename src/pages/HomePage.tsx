@@ -75,7 +75,7 @@ export function HomePage() {
   const specialAsset = getAsset("asset-017");
   const fusionAsset = getAsset("asset-026");
   const coastAsset = getAsset("asset-019");
-  const nightAsset = getAsset("asset-013");
+  const nightAsset = getAsset("asset-028");
 
   const heroTitleLines = splitHeadline(heroScene.content.heading);
   const featuredDishes = getFeaturedMenuItems();

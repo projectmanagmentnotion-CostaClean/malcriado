@@ -35,4 +35,24 @@ describe("Phase 12A commercial content", () => {
       ),
     ).toBe(true);
   });
+
+  it("maps the owner-supplied beverage photography to its intended categories", () => {
+    const expectedAssetByCategory = {
+      "cat-cocktails": "asset-028",
+      "cat-soft-drinks": "asset-029",
+      "cat-sangrias": "asset-030",
+      "cat-wines": "asset-031",
+    };
+
+    for (const [categoryId, assetId] of Object.entries(
+      expectedAssetByCategory,
+    )) {
+      expect(
+        menuContent.items.find(
+          (item) =>
+            item.categoryId === categoryId && item.media?.assetId === assetId,
+        ),
+      ).toBeDefined();
+    }
+  });
 });

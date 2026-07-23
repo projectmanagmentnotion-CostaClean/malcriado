@@ -46,6 +46,12 @@
   Fase: `Fase 2`.
   Criterio de cierre: rights status resuelto y decision final de inclusion o descarte.
 
+- Archivar la confirmacion de derechos de los cuatro originales de bebidas entregados en la iteracion responsive.
+  Razon: se incorporaron con trazabilidad `USER_SUPPLIED_FOR_PROJECT`, pero la entrega tecnica no sustituye la validacion juridica del titular.
+  Dependencia: confirmacion documental del titular.
+  Fase: `Fase 2`.
+  Criterio de cierre: derechos y autorizacion de uso archivados para cocteles, refresco, sangria y vino.
+
 - Consolidar `descargo-de-responsabilidad` con la estrategia legal definitiva.
   Razon: posible solape con `aviso-legal`.
   Dependencia: validacion legal.
