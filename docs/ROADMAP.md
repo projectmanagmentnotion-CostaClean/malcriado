@@ -469,3 +469,12 @@ Producción publicada el 2026-07-22 a las 16:12 CEST desde `main` `8d16c4fc99c8b
 - [x] Purgar Dynamic Cache y repetir smoke, Axe, E2E y Lighthouse contra produccion.
 
 Rediseño publicado el 2026-07-23 desde `main` `8ee7ebb93ee1eecf0dbd7b0c78deae77a75b0116`. El smoke remoto cerro `GO`: 45 E2E, 24 Axe y 28 escenarios visuales sin fallos; no hubo P0/P1 ni rollback.
+
+## Correccion postlanzamiento - navegacion movil
+
+- [x] Reproducir el overlay limitado al alto del header en viewport movil.
+- [x] Sacar overlay y panel del contexto de `backdrop-filter` mediante portal al `body`.
+- [x] Incorporar una X visible y accesible dentro del propio panel.
+- [x] Mantener cierre por backdrop, `Escape`, enlaces y restauracion de foco.
+- [x] Verificar formato, lint, tipos, 82 tests y build de produccion.
+- [ ] Confirmar visualmente el hotfix en produccion despues de su despliegue.
