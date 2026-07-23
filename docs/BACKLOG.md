@@ -98,6 +98,18 @@
 
 ## P3
 
+- Completar la descarga de originales oficiales temporalmente limitada por Google Drive.
+  Razon: el inventario y las 98 previews estan completos, pero Drive limito el lote de originales despues de varias descargas.
+  Criterio de cierre: 98 JPG originales inventariados con dimensiones, EXIF, hash y duplicados, siempre fuera del build y de Git.
+
+- Realizar una sesion fotografica del local, terraza y equipo.
+  Razon: la biblioteca oficial contiene platos y un evento de food truck, pero no una serie inequivoca de sala/equipo del restaurante.
+  Criterio de cierre: seleccion A con derechos confirmados, crops responsive y derivados AVIF/WebP.
+
+- Validar la Fase 13 en Safari/iOS, Android y lector de pantalla real.
+  Razon: la matriz `180/180` es Chromium emulado.
+  Criterio de cierre: evidencia humana sin P0/P1/P2 o incidencias corregidas.
+
 - Confirmar LCP p75 de campo y valorar prerender del shell SPA.
   Razon: Lighthouse remoto identifica `asset-019` como LCP; Home móvil midió 3,42 s y Reserva móvil 3,28 s, con prioridad alta, CLS 0 y puntuaciones 91/92. No existen aún datos p75 reales.
   Dependencia: tráfico de producción y dispositivo real.

@@ -45,3 +45,25 @@ La cuenta FTP temporal del despliegue fue eliminada. No conservar ni recrear cre
 - Incidente resuelto: HTML antiguo servido por Dynamic Cache justo después del intercambio; purga confirmada y repetición verde.
 
 No iniciar cambios funcionales como parte del seguimiento. Si el control post-lanzamiento detecta un P0/P1 real, aplicar rollback o abrir una rama correctiva independiente.
+
+## Checkpoint Fase 13 - QA visual
+
+- Rama: `codex/pure-visual-design-qa`.
+- Base: `main` `15696c88e1071fdb3d57257c946ce82d80041b20`.
+- App local: `http://127.0.0.1:5173/` mientras siga abierta esta sesion.
+- Matriz visual: `180/180` verde, Chromium emulado, 12 rutas y 15 viewports; extension independiente `28/28` verde.
+- Cambios principales: Carta full-width con indice sticky; Home mas directo; Nosotros fotografico; Reserva con mapa consentido y enlace externo a Google.
+- Assets oficiales: 100 inventariados, 98 previews y hojas de contacto; originales en `external-assets/` excluidos de Git.
+- No se ha desplegado produccion ni modificado reservas, datos, SEO o backend.
+- Revision independiente: Axe `24/24`, sticky Carta y ciclo de consentimiento del mapa verdes; cero P0/P1/P2 abiertos.
+- Candidato local: 384 entradas, SHA-256 `801eda53fc0bec3dd3b16224b4c2fd1b7f4dd1397843fe3c9df2d3099f7cecc6`.
+
+Para retomar:
+
+```bash
+git fetch --all --prune
+git switch codex/pure-visual-design-qa
+npm ci
+npm run qa
+npm run qa:visual:independent
+```

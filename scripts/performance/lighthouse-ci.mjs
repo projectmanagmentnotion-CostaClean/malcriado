@@ -10,6 +10,7 @@ const baseUrl = `http://127.0.0.1:${port}`;
 const outputDir = resolve(
   process.env.LIGHTHOUSE_OUTPUT_DIR ?? ".tmp-lighthouse",
 );
+const lighthousePreset = process.env.LIGHTHOUSE_PRESET;
 const viteBin = resolve("node_modules/vite/bin/vite.js");
 const npx = process.platform === "win32" ? "npx.cmd" : "npx";
 const chromiumLogPath = resolve(outputDir, "chromium.log");
@@ -256,6 +257,7 @@ async function runLighthouse(name, route) {
 
   for (let attempt = 1; attempt <= 2; attempt += 1) {
     await rm(jsonPath, { force: true });
+    const presetArgs = lighthousePreset ? [`--preset=${lighthousePreset}`] : [];
     const exitCode = await run(
       npx,
       [
@@ -263,6 +265,7 @@ async function runLighthouse(name, route) {
         "lighthouse@13.4.1",
         `${baseUrl}${route}`,
         "--quiet",
+        ...presetArgs,
         `--chrome-flags=${chromeFlags}`,
         "--max-wait-for-load=45000",
         "--output=json",

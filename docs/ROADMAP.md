@@ -452,3 +452,17 @@ Producción publicada el 2026-07-22 a las 16:12 CEST desde `main` `8d16c4fc99c8b
 - Integracion con sistema real de disponibilidad.
 - Automatizacion de carta y eventos.
 - Experimentos A/B respetuosos con privacidad.
+
+## Fase 13 - QA visual integral
+
+- [x] Verificar que produccion sirve el SPA nuevo y no WordPress.
+- [x] Auditar 12 rutas en 15 viewports (`180/180` comprobaciones).
+- [x] Corregir overflow movil de Carta y frames vacios por crops invalidos.
+- [x] Replantear Carta como capitulos full-width con indice sticky.
+- [x] Dar a Nosotros un hero fotografico y una galeria editorial.
+- [x] Integrar mapa consentido y enlace honesto a ubicacion/reseñas en Reserva.
+- [x] Reducir densidad, paneles y radios en Home, Carta y Reserva.
+- [x] Inventariar la biblioteca oficial Drive y generar hojas de contacto.
+- [ ] Completar prueba humana en Safari/iOS, Android y lector de pantalla.
+
+No se desplego produccion. La fase se entrega en draft PR para revision visual humana.

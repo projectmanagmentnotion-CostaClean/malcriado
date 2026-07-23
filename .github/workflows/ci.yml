@@ -47,7 +47,7 @@ jobs:
         run: npm run release:build
       - name: Verify production release
         env:
-          EXPECTED_RELEASE_SHA256: b43ef4ff6d395b820067641a15883a174256dfba9b7e16f061e6c87004ae997a
+          EXPECTED_RELEASE_SHA256: 801eda53fc0bec3dd3b16224b4c2fd1b7f4dd1397843fe3c9df2d3099f7cecc6
         run: npm run release:verify
       - name: Dependency audit
         run: npm audit --audit-level=high

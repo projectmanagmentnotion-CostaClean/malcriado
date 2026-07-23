@@ -55,243 +55,253 @@ export function useHomePageMotion({
 
     const header = document.querySelector<HTMLElement>(".site-header");
     const defaultHeaderTheme = header?.dataset.theme ?? "overlay";
+
+    if (reducedMotion) {
+      header?.setAttribute("data-theme", defaultHeaderTheme);
+      if (showPreloader) onPreloaderComplete();
+      return;
+    }
+
     let cancelled = false;
     let mm: GsapMatchMediaController | null = null;
     let ctx: { revert: () => void } | null = null;
     let disposeScrollLifecycle: (() => void) | null = null;
+    const activationEvents = [
+      "pointerdown",
+      "wheel",
+      "touchstart",
+      "keydown",
+      "scroll",
+    ] as const;
 
-    void loadGsapRuntime()
-      .then(({ gsap, ScrollTrigger }) => {
-        if (cancelled) {
-          return;
-        }
-
-        mm = gsap.matchMedia();
-        disposeScrollLifecycle = reducedMotion
-          ? null
-          : createScrollTriggerLifecycle(ScrollTrigger);
-        ctx = gsap.context(() => {
-          const debugTimelines: Array<{ isActive: () => boolean }> = [];
-          const setHeaderTheme = (theme: string) => {
-            header?.setAttribute("data-theme", theme);
-          };
-
-          const updateDebugSummary = () => {
-            if (!import.meta.env.DEV) {
-              return;
-            }
-
-            const triggers = ScrollTrigger.getAll();
-            const triggerDetails = triggers.map((trigger) => {
-              const triggerElement = trigger.vars.trigger;
-              const sceneElement =
-                triggerElement instanceof Element
-                  ? triggerElement.closest<HTMLElement>(".home-scene")
-                  : null;
-
-              return {
-                scene:
-                  sceneElement?.id ??
-                  sceneElement?.dataset.motion ??
-                  "global-home-context",
-                start:
-                  typeof trigger.vars.start === "function"
-                    ? "function"
-                    : trigger.vars.start,
-                end:
-                  typeof trigger.vars.end === "function"
-                    ? "function"
-                    : trigger.vars.end,
-                pin: Boolean(trigger.vars.pin),
-              };
-            });
-
-            const triggersByScene = triggerDetails.reduce<
-              Record<string, number>
-            >((accumulator, detail) => {
-              accumulator[detail.scene] = (accumulator[detail.scene] ?? 0) + 1;
-              return accumulator;
-            }, {});
-
-            window.__phase6GsapDebug = {
-              totalTriggers: triggerDetails.length,
-              totalPins: triggerDetails.filter((detail) => detail.pin).length,
-              activeTimelines: debugTimelines.filter((timeline) =>
-                timeline.isActive(),
-              ).length,
-              triggersByScene,
-              triggerDetails,
-            };
-          };
-
-          const createHeaderTriggers = () => {
-            const sceneElements = gsap.utils.toArray<HTMLElement>(
-              ".home-scene[data-header-theme]",
-              root,
-            );
-
-            sceneElements.forEach((scene) => {
-              const theme = scene.dataset.headerTheme ?? defaultHeaderTheme;
-
-              ScrollTrigger.create({
-                trigger: scene,
-                start: "top 48%",
-                end: "bottom 48%",
-                invalidateOnRefresh: true,
-                onEnter: () => setHeaderTheme(theme),
-                onEnterBack: () => setHeaderTheme(theme),
-              });
-            });
-          };
-
-          if (reducedMotion) {
-            setHeaderTheme(defaultHeaderTheme);
-
-            if (showPreloader) {
-              onPreloaderComplete();
-            }
-
+    const startMotion = () =>
+      void loadGsapRuntime()
+        .then(({ gsap, ScrollTrigger }) => {
+          if (cancelled) {
             return;
           }
 
-          const heroTimeline = gsap.timeline({
-            defaults: { duration: 0.9, ease: "power3.out" },
-          });
-          debugTimelines.push(heroTimeline);
+          mm = gsap.matchMedia();
+          disposeScrollLifecycle = createScrollTriggerLifecycle(ScrollTrigger);
+          ctx = gsap.context(() => {
+            const debugTimelines: Array<{ isActive: () => boolean }> = [];
+            const setHeaderTheme = (theme: string) => {
+              header?.setAttribute("data-theme", theme);
+            };
 
-          const heroLead = root.querySelectorAll(
-            ".home-hero__eyebrow, .home-hero__title-line, .home-hero__lede, .home-hero__actions, .home-hero__details",
-          );
-          const heroMedia = root.querySelector(".home-hero__media");
-          const compactHeroViewport = window.matchMedia(
-            "(max-width: 22.5rem)",
-          ).matches;
+            const updateDebugSummary = () => {
+              if (!import.meta.env.DEV) {
+                return;
+              }
 
-          heroTimeline.from(heroLead, { yPercent: 24, stagger: 0.08 }, 0).from(
-            heroMedia,
-            {
-              scale: compactHeroViewport ? 1 : 1.08,
-              duration: 1.2,
-              ease: "power3.out",
-            },
-            0.08,
-          );
+              const triggers = ScrollTrigger.getAll();
+              const triggerDetails = triggers.map((trigger) => {
+                const triggerElement = trigger.vars.trigger;
+                const sceneElement =
+                  triggerElement instanceof Element
+                    ? triggerElement.closest<HTMLElement>(".home-scene")
+                    : null;
 
-          mm?.add("(min-width: 901px)", () => {
-            const featuredRail = root.querySelector(".home-featured__rail");
-
-            if (featuredRail instanceof HTMLElement) {
-              gsap.to(featuredRail, {
-                yPercent: -10,
-                ease: "none",
-                scrollTrigger: {
-                  trigger: featuredRail,
-                  start: "top bottom",
-                  end: "bottom top",
-                  invalidateOnRefresh: true,
-                  scrub: 0.8,
-                },
+                return {
+                  scene:
+                    sceneElement?.id ??
+                    sceneElement?.dataset.motion ??
+                    "global-home-context",
+                  start:
+                    typeof trigger.vars.start === "function"
+                      ? "function"
+                      : trigger.vars.start,
+                  end:
+                    typeof trigger.vars.end === "function"
+                      ? "function"
+                      : trigger.vars.end,
+                  pin: Boolean(trigger.vars.pin),
+                };
               });
-            }
-          });
 
-          const revealScenes = gsap.utils
-            .toArray<HTMLElement>(
-              ".home-scene[data-motion='reveal'], .home-scene[data-motion='layered'], .home-scene[data-motion='quiet-reading'], .home-scene[data-motion='booking-focus'], .home-scene[data-motion='horizontal-gallery']",
-              root,
-            )
-            .filter((scene) => scene.id !== "home-hero");
+              const triggersByScene = triggerDetails.reduce<
+                Record<string, number>
+              >((accumulator, detail) => {
+                accumulator[detail.scene] =
+                  (accumulator[detail.scene] ?? 0) + 1;
+                return accumulator;
+              }, {});
 
-          revealScenes.forEach((scene) => {
-            const revealTargets = scene.querySelectorAll("[data-scene-reveal]");
+              window.__phase6GsapDebug = {
+                totalTriggers: triggerDetails.length,
+                totalPins: triggerDetails.filter((detail) => detail.pin).length,
+                activeTimelines: debugTimelines.filter((timeline) =>
+                  timeline.isActive(),
+                ).length,
+                triggersByScene,
+                triggerDetails,
+              };
+            };
 
-            if (revealTargets.length > 0) {
-              gsap.from(revealTargets, {
-                y: 48,
-                opacity: 0,
-                duration: 0.9,
-                ease: "power3.out",
-                stagger: 0.08,
-                scrollTrigger: {
+            const createHeaderTriggers = () => {
+              const sceneElements = gsap.utils.toArray<HTMLElement>(
+                ".home-scene[data-header-theme]",
+                root,
+              );
+
+              sceneElements.forEach((scene) => {
+                const theme = scene.dataset.headerTheme ?? defaultHeaderTheme;
+
+                ScrollTrigger.create({
                   trigger: scene,
-                  start: "top 76%",
-                  once: true,
+                  start: "top 48%",
+                  end: "bottom 48%",
                   invalidateOnRefresh: true,
-                },
+                  onEnter: () => setHeaderTheme(theme),
+                  onEnterBack: () => setHeaderTheme(theme),
+                });
               });
-            }
+            };
 
-            const media =
-              scene.querySelector<HTMLElement>("[data-scene-media]");
+            mm?.add("(min-width: 901px)", () => {
+              const featuredRail = root.querySelector(".home-featured__rail");
 
-            if (media) {
-              gsap.fromTo(
-                media,
-                { yPercent: -4 },
-                {
-                  yPercent: 4,
+              if (featuredRail instanceof HTMLElement) {
+                gsap.to(featuredRail, {
+                  yPercent: -10,
                   ease: "none",
                   scrollTrigger: {
-                    trigger: scene,
+                    trigger: featuredRail,
                     start: "top bottom",
                     end: "bottom top",
                     invalidateOnRefresh: true,
-                    scrub: 0.7,
+                    scrub: 0.8,
                   },
-                },
+                });
+              }
+            });
+
+            const revealScenes = gsap.utils
+              .toArray<HTMLElement>(
+                ".home-scene[data-motion='reveal'], .home-scene[data-motion='layered'], .home-scene[data-motion='quiet-reading'], .home-scene[data-motion='booking-focus'], .home-scene[data-motion='horizontal-gallery']",
+                root,
+              )
+              .filter((scene) => scene.id !== "home-hero");
+
+            revealScenes.forEach((scene) => {
+              const revealTargets = scene.querySelectorAll(
+                "[data-scene-reveal]",
               );
-            }
-          });
 
-          createHeaderTriggers();
-          updateDebugSummary();
-
-          if (showPreloader) {
-            const preloader = root.querySelector(".home-preloader");
-            const preloaderInner = root.querySelector(".home-preloader__inner");
-            const preloaderText = root.querySelectorAll(
-              ".home-preloader__eyebrow, .home-preloader__wordmark, .home-preloader__note",
-            );
-
-            if (preloader instanceof HTMLElement) {
-              const preloaderTimeline = gsap.timeline({
-                defaults: { ease: "power3.out" },
-                onComplete: onPreloaderComplete,
-              });
-              debugTimelines.push(preloaderTimeline);
-
-              preloaderTimeline
-                .fromTo(
-                  preloaderText,
-                  { y: 28 },
-                  { y: 0, duration: 0.55, stagger: 0.08 },
-                )
-                .to(preloaderInner, { yPercent: -8, duration: 0.45 }, "+=0.15")
-                .to(
-                  preloader,
-                  {
-                    opacity: 0,
-                    duration: 0.45,
-                    pointerEvents: "none",
+              if (revealTargets.length > 0) {
+                gsap.from(revealTargets, {
+                  y: 48,
+                  opacity: 0,
+                  duration: 0.9,
+                  ease: "power3.out",
+                  stagger: 0.08,
+                  scrollTrigger: {
+                    trigger: scene,
+                    start: "top 76%",
+                    once: true,
+                    invalidateOnRefresh: true,
                   },
-                  "-=0.2",
-                );
-            } else {
-              onPreloaderComplete();
-            }
-          }
+                });
+              }
 
-          updateDebugSummary();
-        }, root);
-      })
-      .catch(() => {
-        if (!cancelled && showPreloader) {
-          onPreloaderComplete();
-        }
-      });
+              const media =
+                scene.querySelector<HTMLElement>("[data-scene-media]");
+
+              if (media) {
+                gsap.fromTo(
+                  media,
+                  { yPercent: -4 },
+                  {
+                    yPercent: 4,
+                    ease: "none",
+                    scrollTrigger: {
+                      trigger: scene,
+                      start: "top bottom",
+                      end: "bottom top",
+                      invalidateOnRefresh: true,
+                      scrub: 0.7,
+                    },
+                  },
+                );
+              }
+            });
+
+            createHeaderTriggers();
+            updateDebugSummary();
+
+            if (showPreloader) {
+              const preloader = root.querySelector(".home-preloader");
+              const preloaderInner = root.querySelector(
+                ".home-preloader__inner",
+              );
+              const preloaderText = root.querySelectorAll(
+                ".home-preloader__eyebrow, .home-preloader__wordmark, .home-preloader__note",
+              );
+
+              if (preloader instanceof HTMLElement) {
+                const preloaderTimeline = gsap.timeline({
+                  defaults: { ease: "power3.out" },
+                  onComplete: onPreloaderComplete,
+                });
+                debugTimelines.push(preloaderTimeline);
+
+                preloaderTimeline
+                  .fromTo(
+                    preloaderText,
+                    { y: 28 },
+                    { y: 0, duration: 0.55, stagger: 0.08 },
+                  )
+                  .to(
+                    preloaderInner,
+                    { yPercent: -8, duration: 0.45 },
+                    "+=0.15",
+                  )
+                  .to(
+                    preloader,
+                    {
+                      opacity: 0,
+                      duration: 0.45,
+                      pointerEvents: "none",
+                    },
+                    "-=0.2",
+                  );
+              } else {
+                onPreloaderComplete();
+              }
+            }
+
+            updateDebugSummary();
+          }, root);
+        })
+        .catch(() => {
+          if (!cancelled && showPreloader) {
+            onPreloaderComplete();
+          }
+        });
+
+    const activateMotion = () => {
+      activationEvents.forEach((eventName) =>
+        window.removeEventListener(eventName, activateMotion),
+      );
+      startMotion();
+    };
+
+    if (showPreloader) {
+      startMotion();
+    } else {
+      activationEvents.forEach((eventName) =>
+        window.addEventListener(eventName, activateMotion, {
+          once: true,
+          passive: true,
+        }),
+      );
+    }
 
     return () => {
       cancelled = true;
+      activationEvents.forEach((eventName) =>
+        window.removeEventListener(eventName, activateMotion),
+      );
       header?.setAttribute("data-theme", defaultHeaderTheme);
       disposeScrollLifecycle?.();
       mm?.revert();
